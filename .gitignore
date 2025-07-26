@@ -1,0 +1,67 @@
+# Bỏ qua các file hệ thống của OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Bỏ qua user-specific files (do Unity tạo riêng cho từng máy)
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+
+# Bỏ qua các file Visual Studio/JetBrains Rider
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+.vs
+.vsconfig
+# Bỏ qua dữ liệu cache và các file do Unity tạo lại được
+*.pidb.meta
+*.bak
+*.orig
+*.swp
+
+# Bỏ qua các file Android/iOS build
+.gradle/
+*.apk
+*.aab
+*.obb
+*.keystore
+*.jks
+build/
+
+# Bỏ qua thư mục nặng (asset store cache)
+Assets/AssetStoreTools*
+
+# Bỏ qua các file Lighting và GI Cache
+LightingData.asset
+GICache/
+
+# Bỏ qua các log
+*.log
+
+# Bỏ qua các file khác có thể gây lỗi
+MemoryCaptures/
+*.stacktrace
+*.mdmp
+*.dmp
+
+# Nếu bạn dùng Collaborate của Unity, có thể bỏ qua
+.collabignore
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# VSCode settings (nếu không muốn chia sẻ)
+.vscode/
