@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98957b107a2a9b34fbee556b5ab417e8, type: 3}
-  m_Name: Star Scrip Table
+  m_Script: {fileID: 11500000, guid: 01d9c37711a3bde488c2e6fafe2478d5, type: 3}
+  m_Name: Logo Space
   m_EditorClassIdentifier: 
-  min_speed: 0.2
-  max_speed: 0.4
-  timelive_min: 2
-  timelive_max: 4
-  scale_min: 0.3
-  scale_max: 0.8
+  addForce_max: 1
+  addForce_min: 3
+  addForceTorque_max: -0.5
+  addForceTorque_min: 0.5
+  timeReset: 5
+  timeStart: 2
