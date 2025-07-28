@@ -17,4 +17,4 @@ MonoBehaviour:
   addForceTorque_max: -0.5
   addForceTorque_min: 0.5
   timeReset: 5
-  timeStart: 2
+  timeStart: 3
