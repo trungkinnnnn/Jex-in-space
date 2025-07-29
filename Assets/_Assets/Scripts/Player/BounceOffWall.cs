@@ -5,9 +5,7 @@ using UnityEngine;
 public class BounceOffWall : MonoBehaviour
 {
     public float bounceForceEnter = 1f;
-    public float bounceForceStay = 0.1f;
     public string wallTag = "Wall";
-    public float minVelocityToBounce = 0.1f;
 
     private Rigidbody2D rb;
     void Start()

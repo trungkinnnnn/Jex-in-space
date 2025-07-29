@@ -44,20 +44,17 @@ public class JexMovement : MonoBehaviour
             {
                 rb.AddTorque(-addTorque_Max, ForceMode2D.Impulse);
                 rb.AddForce(direction * addForceMax, ForceMode2D.Impulse);
-                Debug.Log("Sử dụng lực mạnh");
             }
             else
             {
                 rb.AddForce(direction * addForceMin, ForceMode2D.Impulse);
                 rb.AddTorque(-addTorque_Min, ForceMode2D.Impulse);
-                Debug.Log("Sử dụng lực nhẹ");
             }
 
             timeLastShoot = timeNow;
         }
         else
         {
-            // gió xoay nhẹ
             rb.AddTorque(-addTorqueWind, ForceMode2D.Force);
         }
 

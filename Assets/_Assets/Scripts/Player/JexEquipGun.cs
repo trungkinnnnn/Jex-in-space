@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class JexEquipGun : MonoBehaviour
 {
     // data
     [SerializeField] GunData gunData;
-
     [SerializeField] Transform gunPostion;
 
     private void Start()
@@ -15,10 +15,12 @@ public class JexEquipGun : MonoBehaviour
         {
             if(stat.unlock == true)
             {
-                Instantiate(stat.gunPrefabs, gunPostion);
+                GameObject gun =  Instantiate(stat.gunPrefabs, gunPostion);
                 break;
             }    
         }    
     }
+
+  
 
 }

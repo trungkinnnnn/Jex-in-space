@@ -17,15 +17,15 @@ MonoBehaviour:
     nameGun: Explosive Bullet
     priceCoin: 0
     priceMoney: 0
-    unlock: 0
-    equip: 0
+    unlock: 1
+    equip: 1
     gunPrefabs: {fileID: 9115486880346418809, guid: 881ec5ebcb8a7ad48b49aafbf01ffb33, type: 3}
   - idGun: Gun02
     nameGun: Cold Blue Plasma
     priceCoin: 1000
     priceMoney: 1000
-    unlock: 1
-    equip: 1
+    unlock: 0
+    equip: 0
     gunPrefabs: {fileID: 4567225188526172958, guid: 58e01717fdc29604e9b453676f8abeb7, type: 3}
   - idGun: Gun03
     nameGun: Lightweight Lazer
