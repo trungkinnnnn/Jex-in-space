@@ -29,7 +29,7 @@ public class Tool_ImportGunStatData
             var statLevel = new StatLevel();
          
             statLevel.idGun = values[index++];
-            statLevel.nameGun = values[index++];
+            statLevel.nameStat = values[index++];
 
             statLevel.stats = new DataLevel();
             statLevel.stats.level = (int)TryParseInt(values[index++]);

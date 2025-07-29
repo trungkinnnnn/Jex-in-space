@@ -18,4 +18,5 @@ public class GunStat
     public bool equip;
 
     public GameObject gunPrefabs;
+    public GameObject bulletPrefabs;
 }

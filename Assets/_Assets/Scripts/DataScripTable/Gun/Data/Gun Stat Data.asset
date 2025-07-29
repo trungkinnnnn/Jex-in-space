@@ -14,420 +14,420 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statLevels:
   - idGun: Gun01
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 1
       value: 8
       price: 0
       unlock: 1
   - idGun: Gun01
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 2
       value: 15
       price: 100
       unlock: 0
   - idGun: Gun01
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 3
       value: 20
       price: 200
       unlock: 0
   - idGun: Gun01
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 1
       value: 3
       price: 0
       unlock: 1
   - idGun: Gun01
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 2
       value: 4
       price: 100
       unlock: 0
   - idGun: Gun01
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 3
       value: 5
       price: 200
       unlock: 0
   - idGun: Gun01
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 1
       value: 3
       price: 0
       unlock: 1
   - idGun: Gun01
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 2
       value: 2.5
       price: 100
       unlock: 0
   - idGun: Gun01
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 3
       value: 2
       price: 200
       unlock: 0
   - idGun: Gun01
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 1
       value: 0.5
       price: 0
       unlock: 1
   - idGun: Gun01
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 2
       value: 0.3
       price: 100
       unlock: 0
   - idGun: Gun01
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 3
       value: 0.2
       price: 200
       unlock: 0
   - idGun: Gun02
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 1
       value: 8
       price: 0
       unlock: 1
   - idGun: Gun02
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 2
       value: 12
       price: 100
       unlock: 0
   - idGun: Gun02
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 3
       value: 15
       price: 200
       unlock: 0
   - idGun: Gun02
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 1
       value: 3
       price: 0
       unlock: 1
   - idGun: Gun02
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 2
       value: 3.5
       price: 100
       unlock: 0
   - idGun: Gun02
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 3
       value: 4.5
       price: 200
       unlock: 0
   - idGun: Gun02
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 1
       value: 3
       price: 0
       unlock: 1
   - idGun: Gun02
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 2
       value: 2.5
       price: 100
       unlock: 0
   - idGun: Gun02
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 3
       value: 2
       price: 200
       unlock: 0
   - idGun: Gun02
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 1
       value: 0.6
       price: 0
       unlock: 1
   - idGun: Gun02
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 2
       value: 0.4
       price: 100
       unlock: 0
   - idGun: Gun02
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 3
       value: 0.3
       price: 200
       unlock: 0
   - idGun: Gun03
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 1
       value: 10
       price: 0
       unlock: 1
   - idGun: Gun03
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 2
       value: 15
       price: 100
       unlock: 0
   - idGun: Gun03
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 3
       value: 20
       price: 200
       unlock: 0
   - idGun: Gun03
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 1
       value: 5
       price: 0
       unlock: 1
   - idGun: Gun03
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 2
       value: 6
       price: 100
       unlock: 0
   - idGun: Gun03
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 3
       value: 7
       price: 200
       unlock: 0
   - idGun: Gun03
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 1
       value: 2
       price: 0
       unlock: 1
   - idGun: Gun03
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 2
       value: 1.5
       price: 100
       unlock: 0
   - idGun: Gun03
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 3
       value: 1
       price: 200
       unlock: 0
   - idGun: Gun03
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 1
       value: 0.3
       price: 0
       unlock: 1
   - idGun: Gun03
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 2
       value: 0.2
       price: 100
       unlock: 0
   - idGun: Gun03
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 3
       value: 0.15
       price: 200
       unlock: 0
   - idGun: Gun04
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 1
       value: 6
       price: 0
       unlock: 1
   - idGun: Gun04
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 2
       value: 8
       price: 100
       unlock: 0
   - idGun: Gun04
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 3
       value: 12
       price: 200
       unlock: 0
   - idGun: Gun04
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 1
       value: 2.5
       price: 0
       unlock: 1
   - idGun: Gun04
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 2
       value: 3
       price: 100
       unlock: 0
   - idGun: Gun04
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 3
       value: 3.5
       price: 200
       unlock: 0
   - idGun: Gun04
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 1
       value: 4
       price: 0
       unlock: 1
   - idGun: Gun04
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 2
       value: 3.5
       price: 100
       unlock: 0
   - idGun: Gun04
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 3
       value: 2.5
       price: 200
       unlock: 0
   - idGun: Gun04
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 1
       value: 1
       price: 0
       unlock: 1
   - idGun: Gun04
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 2
       value: 0.7
       price: 100
       unlock: 0
   - idGun: Gun04
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 3
       value: 0.5
       price: 200
       unlock: 0
   - idGun: Gun05
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 1
       value: 8
       price: 0
       unlock: 1
   - idGun: Gun05
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 2
       value: 12
       price: 100
       unlock: 0
   - idGun: Gun05
-    nameGun: magSize
+    nameStat: magSize
     stats:
       level: 3
       value: 15
       price: 200
       unlock: 0
   - idGun: Gun05
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 1
       value: 3
       price: 0
       unlock: 1
   - idGun: Gun05
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 2
       value: 3.5
       price: 100
       unlock: 0
   - idGun: Gun05
-    nameGun: bulletSpeed
+    nameStat: bulletSpeed
     stats:
       level: 3
       value: 4.5
       price: 200
       unlock: 0
   - idGun: Gun05
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 1
       value: 4
       price: 0
       unlock: 1
   - idGun: Gun05
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 2
       value: 3
       price: 100
       unlock: 0
   - idGun: Gun05
-    nameGun: timeReload
+    nameStat: timeReload
     stats:
       level: 3
       value: 3.5
       price: 200
       unlock: 0
   - idGun: Gun05
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 1
       value: 0.6
       price: 0
       unlock: 1
   - idGun: Gun05
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 2
       value: 0.4
       price: 100
       unlock: 0
   - idGun: Gun05
-    nameGun: fireRate
+    nameStat: fireRate
     stats:
       level: 3
       value: 0.3

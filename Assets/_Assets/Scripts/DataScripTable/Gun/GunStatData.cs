@@ -11,7 +11,7 @@ public class GunStatData : ScriptableObject
 public class StatLevel
 {
     public string idGun;
-    public string nameGun;
+    public string nameStat;
     public DataLevel stats;
 }
 

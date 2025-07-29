@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7976970141292496176
 Transform:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6190239147550284353
 Transform:
   m_ObjectHideFlags: 0
@@ -268,6 +268,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f547c504fca2f43b385e6cbcbb75de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointFire: {fileID: 6241823878280502679}
+  _gunData: {fileID: 11400000, guid: 94b8cee17da2c1b4781e1757c29aef1a, type: 2}
+  _gunStatData: {fileID: 11400000, guid: 7e864b0b4b68e00449dd8785c200751d, type: 2}
 --- !u!1 &9115486881099206710
 GameObject:
   m_ObjectHideFlags: 0
