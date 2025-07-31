@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 8112682384249088662}
   - component: {fileID: -7676406624871877158}
   - component: {fileID: -6053998264205397997}
+  - component: {fileID: 274085832776246999}
   m_Layer: 0
   m_Name: Bullet_Root
   m_TagString: Untagged
@@ -152,6 +153,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &274085832776246999
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8112682384249088649}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0010860004, y: 0.00054297596}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.12828013, y: 0.056289867}
+  m_EdgeRadius: 0
 --- !u!1 &9017084946252026296
 GameObject:
   m_ObjectHideFlags: 0

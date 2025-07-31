@@ -18,6 +18,7 @@ public class JexMovement : MonoBehaviour
 
     private float timeRecovery;
     private float timeLastShoot;
+
     // component
     private Rigidbody2D rb;
 
@@ -36,7 +37,15 @@ public class JexMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        rotationFishZero.rotation = Quaternion.Euler(Vector3.zero);
+
+        if (InputManager.isInputLocked)
+        {
+            rb.AddTorque(-addTorqueWind, ForceMode2D.Force);
+            return;
+        }    
+            
+        if (Input.GetMouseButtonDown(0) && FireRate.canShoot)
         {
             Vector2 direction = transform.position - positionForce.position;
             float timeNow = Time.time;
@@ -58,7 +67,7 @@ public class JexMovement : MonoBehaviour
             rb.AddTorque(-addTorqueWind, ForceMode2D.Force);
         }
 
-        rotationFishZero.rotation = Quaternion.Euler(Vector3.zero);
+       
 
     }
 }

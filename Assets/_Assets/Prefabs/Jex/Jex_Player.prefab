@@ -1006,9 +1006,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008580287, y: 0.077222735}
+  m_Offset: {x: -0.008580287, y: 0.07164021}
   serializedVersion: 2
-  m_Radius: 0.34898663
+  m_Radius: 0.3043266
 --- !u!114 &1619543566409652991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,6 +1051,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceForceEnter: 0.4
-  bounceForceStay: 0.1
   wallTag: Wall
-  minVelocityToBounce: 0.1

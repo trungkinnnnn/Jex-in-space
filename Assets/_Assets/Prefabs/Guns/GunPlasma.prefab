@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 6135303480781221522}
   - component: {fileID: 6790145385179654338}
   - component: {fileID: 7806881733740482773}
+  - component: {fileID: 9025046455732691281}
   m_Layer: 0
   m_Name: GunPlasma
   m_TagString: Untagged
@@ -304,6 +305,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointFire: {fileID: 7476684215036009241}
+--- !u!114 &9025046455732691281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567225188526172958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a023338702a810b4e9bc344890edef6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _gunData: {fileID: 11400000, guid: 94b8cee17da2c1b4781e1757c29aef1a, type: 2}
   _gunStatData: {fileID: 11400000, guid: 7e864b0b4b68e00449dd8785c200751d, type: 2}
 --- !u!1 &5284965709560991303

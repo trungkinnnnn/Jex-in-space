@@ -1,120 +1,113 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(GunGetData))]
 public class GunCotroller : MonoBehaviour
 {
     private string NAME_ANI_TRIGGER_SHOOT = "isShoot";
     private Animator _animator;
     [SerializeField] Transform pointFire;
 
-    //data
-    [SerializeField] GunData _gunData;
-    [SerializeField] GunStatData _gunStatData;
+    private GunGetData _gunGetData;
 
-    // Name paramaster
-    private string NAME_MAG_SIZE = "magSize";
-    private string NAME_BULLET_SPEED = "bulletSpeed";
-    private string NAME_TIME_RELOAD = "timeReload";
-    private string NAME_FIRE_RATE = "fireRate";
-
+    //Data
+    private GunStat currentGun;
     private float magSize;
     private float bulletSpeed;
     private float timeReload;
     private float fireRate;
 
+    //
+    private float currentMagSizebullet;
+    private float totalbullet;
 
-
-    private GunStat currentGun;
-    private List<StatLevel> _levelList;
-
-    private float currentSpeedBullet;
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _levelList = new List<StatLevel>();
-        SetGunEquip();
-        SetGunStatEquip();
-        SetParamasterStat();
+        _gunGetData = GetComponent<GunGetData>();
+        SetDataGun();
+
+        totalbullet = magSize * 3;
+        currentMagSizebullet = magSize;
+        Debug.Log("bullet : " + currentMagSizebullet);
+        Debug.Log("Total : " + totalbullet);
     }
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (InputManager.isInputLocked) return;
+
+        if (Input.GetMouseButtonDown(0) && currentMagSizebullet > 0 && FireRate.canShoot)
         {
             _animator.SetTrigger(NAME_ANI_TRIGGER_SHOOT);
-            FireBullet();
-        }    
+            StartCoroutine(FireBullet());
+        }
     }
 
-
-    private void FireBullet()
+    private IEnumerator FireBullet()
     {
+        FireRate.canShoot = false;
+
+        currentMagSizebullet -= 1;
+
         GameObject bullet = Instantiate(currentGun.bulletPrefabs, pointFire.position, pointFire.rotation);
-        BulletController bulletController = bullet.GetComponent<BulletController>();    
-        if(bulletController != null ) bulletController.Init(pointFire.right, bulletSpeed);
-    }
+        BulletController bulletController = bullet.GetComponent<BulletController>();
+        if (bulletController != null) bulletController.Init(pointFire.right, bulletSpeed);
 
-
-    private void SetGunEquip()
-    {
-        foreach(var gun in _gunData.gunStats)
+        if (currentMagSizebullet == 0)
         {
-            if(gun.unlock && gun.equip)
-            {
-                currentGun = gun;
-                break;
-            }
+            Reload();
+        }
+        else
+        {
+            yield return new WaitForSeconds(fireRate);
+            FireRate.canShoot = true;
         }
     }
 
-    private void SetGunStatEquip()
+    private void Reload()
     {
-        bool finded = false;    
-        foreach(var gunStat in _gunStatData.statLevels)
-        {
-            if (gunStat.idGun != currentGun.idGun)
-            {
-                if (finded) break;
-                continue;
-            }
-            else
-            {
-                _levelList.Add(gunStat);
-                finded = true;
-            }
+        StartCoroutine(LockInputForSecons(timeReload));
+    }
 
+    private IEnumerator LockInputForSecons(float timeReload)
+    {
+        InputManager.isInputLocked = true;
+        yield return new WaitForSeconds(timeReload);
+        InputManager.isInputLocked = false;
+        if (magSize <= totalbullet)
+        {
+            currentMagSizebullet = magSize;
+            totalbullet -= currentMagSizebullet;
+        }
+        else
+        {
+            currentMagSizebullet = totalbullet;
+        }
+        FireRate.canShoot = true;
+
+        Debug.Log("currentBullet : " + currentMagSizebullet);
+        Debug.Log("Total : " + totalbullet);
+
+        if (currentMagSizebullet == 0)
+        {
+            Debug.Log("Total : " + totalbullet + "Het Dan");
+            InputManager.isInputLocked = true;
         }
     }
 
-    private void SetParamasterStat()
+    private void SetDataGun()
     {
-        foreach (var stat in _levelList)
-        {
-            if (stat.nameStat == NAME_MAG_SIZE && stat.stats.unlock)
-            {
-                magSize = stat.stats.value;
-                continue;
-            }
-            if (stat.nameStat == NAME_BULLET_SPEED && stat.stats.unlock)
-            {
-                bulletSpeed = stat.stats.value;
-                continue;
-            }
-            if (stat.nameStat == NAME_TIME_RELOAD && stat.stats.unlock)
-            {
-                timeReload = stat.stats.value;
-                continue;
-            }
-            if (stat.nameStat == NAME_FIRE_RATE && stat.stats.unlock)
-            {
-                fireRate = stat.stats.value;
-                continue ;
-            }
-        }
-        Debug.Log($"{magSize} + {bulletSpeed} + {timeReload} + {fireRate}");
+        currentGun = _gunGetData.CurrentGun();
+        magSize = _gunGetData.GetMagSize();
+        bulletSpeed = _gunGetData.GetBulletSpeed();
+        timeReload = _gunGetData.GetTimeReload();
+        fireRate = _gunGetData.GetFireRate();
     }
+
 
 
 }

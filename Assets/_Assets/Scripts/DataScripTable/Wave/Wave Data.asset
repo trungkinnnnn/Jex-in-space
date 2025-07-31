@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72a7a8d66dbad2740b096cf5e7c52da0, type: 3}
+  m_Name: Wave Data
+  m_EditorClassIdentifier: 
+  bigAts:
+  - {fileID: 4789106831533462422, guid: 7a8d272eaaf34f746b21acde7254fadb, type: 3}
+  - {fileID: 7230487271006942577, guid: 8ae1fcafa9f23704abd2cd8a2e319d80, type: 3}
+  - {fileID: 6539982329256001052, guid: d33f6bdab76817e4682cea8b7cd7bc7e, type: 3}
+  mediumAts:
+  - {fileID: 4771680628682149, guid: 10facccba08a24340ac6d340499ff8e1, type: 3}
+  - {fileID: 69914645436661549, guid: 8e8cd6ac0cfb84645a062e2b83a5b5d1, type: 3}
+  - {fileID: 7347757544831075897, guid: 6864cbc7a0fbb6243accebdc71290bec, type: 3}
+  - {fileID: 4994089879657864973, guid: 81e36231aba0e1a4a8130147a2859188, type: 3}
+  - {fileID: 5951291020145530155, guid: dc1d07c1ca075f945a565756a036134b, type: 3}
+  - {fileID: 6403058555196238206, guid: aea65b853472f724496c9fbc7b0f6fa8, type: 3}
+  smallAts:
+  - {fileID: 2251268788886450818, guid: 2634ef006f80da547837929b4d29617d, type: 3}
+  - {fileID: 8022106534528148204, guid: 1f82b4a47dd398a44ac7699a6a1d2887, type: 3}
+  - {fileID: 5794995035158211966, guid: ed6a472c78d83684aaee8ae79b786f84, type: 3}
+  - {fileID: 2792188838414630740, guid: 851c2ee68579d464e8c9c709d031b4d2, type: 3}
+  - {fileID: 1286476880498654479, guid: f7c7ddb4f3e41b1478e5b4d653a6d73c, type: 3}
+  - {fileID: 7611059863325315891, guid: 287143e51b3570643ba9446454723b1e, type: 3}
+  - {fileID: 2039777122048623161, guid: 52c0e429976317340927df34045aa4a3, type: 3}
+  - {fileID: 522217194746248142, guid: a17f4d21efe791c4a991b9bbf8301ab1, type: 3}
+  - {fileID: 1586076659441218964, guid: 4433a0c271d1bf849a366b729f45c5e1, type: 3}
+  - {fileID: 7650081949019583947, guid: 394dc678542355e42b8272ae05c3f325, type: 3}
+  - {fileID: 8480982556268782696, guid: 7cb0e2bbf3b902b419ec163cfd9722dd, type: 3}
+  - {fileID: 3637614284199269361, guid: cc91b4d054f2c1248ac328a79fe425d3, type: 3}
+  - {fileID: 5722972252539778878, guid: 52336655be3c00244bfca7b4caa1e8f7, type: 3}
+  - {fileID: 7013011916624127209, guid: 20d57876e75525b498857d0694335f65, type: 3}
+  goldAts:
+  - {fileID: 4062856154581699655, guid: 2706cc4103d3deb49a511064817a758f, type: 3}
+  itemHealth:
+  - {fileID: 7002720218544730525, guid: bba1bf6ed7398f349947051eb31e4452, type: 3}
+  - {fileID: 4426054384956351610, guid: 19b11950712b94d4e83dfbe692122a0d, type: 3}
+  - {fileID: 2465642697720686105, guid: 97619942c0317a14ea4302cb24f0f121, type: 3}
+  - {fileID: 6274410453219705634, guid: e381bf157ed572a47b2d4cc3d72552d9, type: 3}
+  - {fileID: 221977898289412035, guid: f82e7a6e1ac212840ab22c146aae7583, type: 3}
+  amorBox:
+  - {fileID: 5332755612768548454, guid: 2d2de284a467bdc4487e9a62ad8c656e, type: 3}

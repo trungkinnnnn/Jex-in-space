@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,13 +12,16 @@ public class GunStatData : ScriptableObject
 public class StatLevel
 {
     public string idGun;
-    public string nameStat;
-    public DataLevel stats;
+    public List<DataLevel> magSize;
+    public List<DataLevel> bulletSpeed;
+    public List<DataLevel> timeReload;
+    public List<DataLevel> fireRate;
 }
 
 [System.Serializable]
 public class DataLevel
 {
+    public string name;
     public int level;
     public float value;
     public float price;
