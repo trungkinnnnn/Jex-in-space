@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpaceMovement : MonoBehaviour
+public class AstMovement : MonoBehaviour
 {
     [SerializeField] MovementData movementData;
     private Transform playerPostion;
@@ -17,6 +17,7 @@ public class SpaceMovement : MonoBehaviour
     private float maxScreen = 1.1f;
     private float minScreenDestroy = 0.4f;
     private float maxScreenDestroy = 1.4f;
+    private float timeDestroy = 1f;
    
 
     public void SetTranformPlayer(Transform position)
@@ -79,8 +80,12 @@ public class SpaceMovement : MonoBehaviour
     private void IsInToFar(Vector3 worldPos)
     {
         Vector3 viewPos = Camera.main.WorldToViewportPoint(worldPos);
-        if (viewPos.x < -minScreenDestroy || viewPos.y < -minScreenDestroy || viewPos.x > maxScreenDestroy || viewPos.y > maxScreenDestroy) Destroy(gameObject, 3f);
-    }    
-   
+        if (viewPos.x < -minScreenDestroy || viewPos.y < -minScreenDestroy || viewPos.x > maxScreenDestroy || viewPos.y > maxScreenDestroy) AtsDestroy();
+    }
+
+    protected void AtsDestroy()
+    {
+        Destroy(gameObject, timeDestroy);
+    }
 
 }

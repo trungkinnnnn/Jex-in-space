@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class RectangSpawner
 {
-    private Vector2 topLeft = new Vector2(-0.3f, 1.3f);
-    private Vector2 bottomRight = new Vector2(1.3f, -0.3f);
+    private readonly Vector2 topLeft = new Vector2(-0.3f, 1.3f);
+    private readonly Vector2 bottomRight = new Vector2(1.3f, -0.3f);
 
     private enum Edge { Top, Right, Bottom, Left }
 
-    private List<Edge> clockWiseEdges = new List<Edge> { Edge.Top, Edge.Right, Edge.Bottom, Edge.Left };
+    private readonly List<Edge> clockWiseEdges = new List<Edge> { Edge.Top, Edge.Right, Edge.Bottom, Edge.Left };
 
-    private Edge start;
+    private readonly Edge start;
 
     public RectangSpawner()
     {
@@ -21,10 +21,9 @@ public class RectangSpawner
     public Vector3 GetSpawnPoint(int index)
     {
         int edgeIndex = (clockWiseEdges.IndexOf(start) + index) % 4;
-
         Edge edge = clockWiseEdges[edgeIndex];
 
-        float x, y;
+        float x = 0f, y = 0f;
 
         switch (edge)
         {
@@ -44,17 +43,10 @@ public class RectangSpawner
                 x = topLeft.x;
                 y = Random.Range(bottomRight.y, topLeft.y);
                 break;
-            default:
-                x = 0;
-                y = 0;
-                break;
         }
 
-     
-
         Vector3 viewPortPoint = new Vector3(x, y, 0f);
-        Vector3 worldPoint = Camera.main.ViewportToWorldPoint(viewPortPoint);
-        return worldPoint;
+        return Camera.main.ViewportToWorldPoint(viewPortPoint);
     }
 
 }

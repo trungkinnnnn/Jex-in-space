@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8760913326644715978}
   - component: {fileID: 2188079124680194973}
   - component: {fileID: 1525142436983699552}
+  - component: {fileID: 9187304676831793848}
   m_Layer: 7
   m_Name: junk17-solar
   m_TagString: Untagged
@@ -155,3 +156,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
+--- !u!114 &9187304676831793848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8760913326644715983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d4050866d00754b9a36008998a8f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
