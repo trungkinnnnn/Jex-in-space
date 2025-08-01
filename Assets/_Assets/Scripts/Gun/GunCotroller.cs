@@ -32,8 +32,7 @@ public class GunCotroller : MonoBehaviour
 
         totalbullet = magSize * 3;
         currentMagSizebullet = magSize;
-        Debug.Log("bullet : " + currentMagSizebullet);
-        Debug.Log("Total : " + totalbullet);
+        //Debug.Log("Total : " + totalbullet);
     }
 
     private void Update()
@@ -88,9 +87,6 @@ public class GunCotroller : MonoBehaviour
             currentMagSizebullet = totalbullet;
         }
         FireRate.canShoot = true;
-
-        Debug.Log("currentBullet : " + currentMagSizebullet);
-        Debug.Log("Total : " + totalbullet);
 
         if (currentMagSizebullet == 0)
         {

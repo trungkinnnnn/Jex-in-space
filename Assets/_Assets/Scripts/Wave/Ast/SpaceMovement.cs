@@ -6,14 +6,18 @@ public class SpaceMovement : MonoBehaviour
 {
     [SerializeField] MovementData movementData;
     private Transform playerPostion;
+    private Rigidbody2D rb;
 
     private float addForceRandom;
     private float addForceTowerRandom;
-
     private float addTorqueRandom;
     private float timeDelay;
 
-    private Rigidbody2D rb;
+    private float minScreen = 0.1f;
+    private float maxScreen = 1.1f;
+    private float minScreenDestroy = 0.4f;
+    private float maxScreenDestroy = 1.4f;
+   
 
     public void SetTranformPlayer(Transform position)
     {
@@ -33,7 +37,7 @@ public class SpaceMovement : MonoBehaviour
         {
             if (!IsInView(transform.position))
             {
-                AddForce();
+                AddForceOutScreen();
             }
         }
         IsInToFar(transform.position);
@@ -49,26 +53,33 @@ public class SpaceMovement : MonoBehaviour
         addForceRandom = Random.Range(movementData.addForceMin, movementData.addForceMax);
         addForceTowerRandom = Random.Range(movementData.addForceTorqueMin, movementData.addForceTorqueMax);
         timeDelay = movementData.timeBack;
-        AddForce();
+        AddForceStart();
     }
 
-    private void AddForce()
+    private void AddForceStart()
     {
         Vector2 direction = (playerPostion.position - transform.position).normalized;
         rb.AddForce(direction * addForceRandom, ForceMode2D.Impulse);
         rb.AddTorque(addForceTowerRandom, ForceMode2D.Impulse);
     }
 
+    private void AddForceOutScreen()
+    {
+        Vector2 direction = (playerPostion.position - transform.position).normalized;
+        rb.AddForce(direction * movementData.addForceMin, ForceMode2D.Force);
+        rb.AddTorque(movementData.addForceTorqueMin, ForceMode2D.Force);
+    }
+
     private bool IsInView(Vector3 worldPos)
     {
         Vector3 viewPos = Camera.main.WorldToViewportPoint(worldPos);
-        return viewPos.x > -0.1 && viewPos.y > -0.1 && viewPos.x < 1.1 && viewPos.y < 1.1;
+        return viewPos.x > -minScreen && viewPos.y > -minScreen && viewPos.x < maxScreen && viewPos.y < maxScreen;
     }
 
     private void IsInToFar(Vector3 worldPos)
     {
         Vector3 viewPos = Camera.main.WorldToViewportPoint(worldPos);
-        if (viewPos.x < -0.4 || viewPos.y < -0.4 || viewPos.x > 1.4 || viewPos.y > 1.4) Destroy(gameObject, 3f);
+        if (viewPos.x < -minScreenDestroy || viewPos.y < -minScreenDestroy || viewPos.x > maxScreenDestroy || viewPos.y > maxScreenDestroy) Destroy(gameObject, 3f);
     }    
    
 

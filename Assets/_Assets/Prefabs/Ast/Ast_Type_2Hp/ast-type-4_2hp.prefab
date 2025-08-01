@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 0aff80ff7e3965c468f1a934686ae59f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 4771680628682148}
   - component: {fileID: -3020851828759750212}
   - component: {fileID: 7795370598741062265}
+  - component: {fileID: 837403080750371450}
   m_Layer: 7
   m_Name: ast-type-4_2hp
   m_TagString: Untagged
@@ -158,7 +159,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -313323977
+  m_SortingLayerID: -815096627
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 16a42b6f4c1299a4fb7543b1108fd2d9, type: 3}
@@ -201,7 +202,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 5
-  m_LinearDrag: 0.04
+  m_LinearDrag: 0.07
   m_AngularDrag: 0.1
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -222,3 +223,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
+--- !u!114 &837403080750371450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4771680628682149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d4050866d00754b9a36008998a8f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1586076659441218963}
   - component: {fileID: 6767652616951120299}
   - component: {fileID: 8807201611212566710}
+  - component: {fileID: 6226965459447922048}
   m_Layer: 7
   m_Name: crystal1 1
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -313323977
+  m_SortingLayerID: -815096627
   m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 177f1d66adaa31345a351ffbb6c5ba4b, type: 3}
@@ -132,7 +133,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 4
-  m_LinearDrag: 0.04
+  m_LinearDrag: 0.07
   m_AngularDrag: 0.1
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -153,3 +154,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
+--- !u!114 &6226965459447922048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586076659441218964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d4050866d00754b9a36008998a8f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

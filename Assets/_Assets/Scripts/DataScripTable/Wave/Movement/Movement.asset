@@ -15,6 +15,6 @@ MonoBehaviour:
   addForceMax: 0.5
   addForceMin: 0.1
   addForceTorqueMax: 0.1
-  addForceTorqueMin: 0.05
+  addForceTorqueMin: 0.01
   minSpeed: 0.4
   timeBack: 6

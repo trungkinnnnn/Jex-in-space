@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestRespon : MonoBehaviour
 {
-    public float zDepth = 10f; // khoảng cách tính từ camera để vẽ gizmo
+    public float zDepth = 10f; 
 
     private void OnDrawGizmos()
     {

@@ -11,9 +11,14 @@ public class WaveConfig : ScriptableObject
     public SpawnUnitConfig itemHealth;
     public SpawnUnitConfig amorBox;
 
-    public float spawnIntervalTime = 10f;
+    public float spawnIntervalTime = 7f;
     public float spawnDownEvery3Wave = 0.5f;
     public float minSpawnInterval = 5f;
+
+    public int totalAst = 30;
+    public int upTotalNextWave = 5;
+
+    public float timeNextWave = 10f;
 }
 
 
@@ -21,12 +26,7 @@ public class WaveConfig : ScriptableObject
 public class SpawnUnitConfig
 {
     public int totalCount;
-    public int perBatch;
-
     public int countUpNextWave;
-    public int countUpPerNextWave;
-
-    public int maxPerBatch = 10;
 
     public float delayBetweenBatch = 1f;
 }

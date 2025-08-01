@@ -13,47 +13,32 @@ MonoBehaviour:
   m_Name: Wave Config
   m_EditorClassIdentifier: 
   bigAts:
-    totalCount: 10
-    perBatch: 4
-    countUpNextWave: 0
-    countUpPerNextWave: 0
-    maxPerBatch: 10
-    delayBetweenBatch: 2
+    totalCount: 13
+    countUpNextWave: 3
+    delayBetweenBatch: 4
   mediumAts:
-    totalCount: 20
-    perBatch: 10
-    countUpNextWave: 0
-    countUpPerNextWave: 0
-    maxPerBatch: 10
-    delayBetweenBatch: 1
+    totalCount: 25
+    countUpNextWave: 5
+    delayBetweenBatch: 3
   smallAts:
-    totalCount: 30
-    perBatch: 15
-    countUpNextWave: 0
-    countUpPerNextWave: 0
-    maxPerBatch: 10
-    delayBetweenBatch: 0.5
+    totalCount: 38
+    countUpNextWave: 8
+    delayBetweenBatch: 2
   goldAts:
-    totalCount: 1
-    perBatch: 1
-    countUpNextWave: 0
-    countUpPerNextWave: 0
-    maxPerBatch: 10
-    delayBetweenBatch: 1
+    totalCount: 2
+    countUpNextWave: 1
+    delayBetweenBatch: 5
   itemHealth:
     totalCount: 3
-    perBatch: 1
     countUpNextWave: 0
-    countUpPerNextWave: 0
-    maxPerBatch: 10
-    delayBetweenBatch: 1
+    delayBetweenBatch: 5
   amorBox:
-    totalCount: 5
-    perBatch: 1
-    countUpNextWave: 0
-    countUpPerNextWave: 0
-    maxPerBatch: 10
-    delayBetweenBatch: 1
-  spawnIntervalTime: 10
+    totalCount: 6
+    countUpNextWave: 1
+    delayBetweenBatch: 7
+  spawnIntervalTime: 7
   spawnDownEvery3Wave: 0.5
   minSpawnInterval: 5
+  totalAst: 35
+  upTotalNextWave: 5
+  timeNextWave: 10
