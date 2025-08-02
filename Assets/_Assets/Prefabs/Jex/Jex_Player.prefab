@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1619543564297989715}
+  - component: {fileID: 362070816}
+  - component: {fileID: 362070815}
   m_Layer: 0
   m_Name: BodyJex
   m_TagString: Untagged
@@ -41,6 +43,40 @@ Transform:
   m_Father: {fileID: 1619543566409652990}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &362070816
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619543564297989714}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5bd13145b7dc9cf4a9ad5e9399f1a46b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &362070815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619543564297989714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cdd000489e8516418f174790ee587ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeSpin: 3
 --- !u!1 &1619543564314811052
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +148,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 129f62b170d688342b31db697ab1004f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -196,7 +232,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1360858123, guid: 60f00f75bdb01784d8b64ab58fb51a7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -280,7 +316,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 772096dcc852dc341b784fe83ac194a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -364,7 +400,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4a3dabd1ab26fef43b90ab1ae9badfa1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -448,7 +484,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: a36e5150fd731b647a82c7f0c0ff25f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -532,7 +568,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 7528c82c1136c4e4baa9b7bc4aea27cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -647,7 +683,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: e3ada45c4d887094b9e5ad7756d1543e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -731,7 +767,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9bb6c6bd603925c45954178b9b9ae281, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -815,7 +851,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7609042763fe0b748b18ab679c2cea9c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -900,7 +936,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: ff91ca6b9cbd7844992317f6c687e700, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -948,6 +984,7 @@ GameObject:
   - component: {fileID: 1619543566409652991}
   - component: {fileID: 1619543566409652738}
   - component: {fileID: 1619543566409652739}
+  - component: {fileID: 1359370060}
   m_Layer: 0
   m_Name: Jex_Player
   m_TagString: Untagged
@@ -965,7 +1002,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1619543564297989715}
   - {fileID: 1619543565783665919}
@@ -985,7 +1022,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1.5
-  m_LinearDrag: 0.02
+  m_LinearDrag: 0.04
   m_AngularDrag: 0.9
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: bc0c344aa0e84c445b337a449a5adeed, type: 2}
@@ -1022,7 +1059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: 94b8cee17da2c1b4781e1757c29aef1a, type: 2}
-  gunPostion: {fileID: 1619543566409652990}
+  gunPostion: {fileID: 1619543564297989715}
 --- !u!114 &1619543566409652738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,3 +1089,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounceForceEnter: 0.4
   wallTag: Wall
+--- !u!114 &1359370060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619543566409652989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ec54fcc55cc7f409a284020eac2528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addForceTorque: 1
+  timeSpin: 3
+  timeStart: 5
