@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4789106831533462411}
   - component: {fileID: 5375003535843085333}
   - component: {fileID: -6775004980185344147}
-  - component: {fileID: 8373740505215285941}
+  - component: {fileID: 4724858869466699978}
   m_Layer: 7
   m_Name: crystal
-  m_TagString: Untagged
+  m_TagString: Ast
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -815096627
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 14ac80e9a1f91dd4db35f792602fbc8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
---- !u!114 &8373740505215285941
+--- !u!114 &4724858869466699978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,6 +147,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4789106831533462422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99d4050866d00754b9a36008998a8f3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 517faf8efb73eb342bb2755ffec01530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

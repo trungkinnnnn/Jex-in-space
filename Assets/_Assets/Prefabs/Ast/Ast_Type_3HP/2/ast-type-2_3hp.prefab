@@ -97,10 +97,10 @@ GameObject:
   - component: {fileID: 7230487271006942590}
   - component: {fileID: -4373066098676641242}
   - component: {fileID: 2247982525627511470}
-  - component: {fileID: 1015970984953463537}
+  - component: {fileID: -3871227371897405813}
   m_Layer: 7
   m_Name: ast-type-2_3hp
-  m_TagString: Untagged
+  m_TagString: Ast
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -815096627
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 9a5a3dd3f9dec1b43bd4dc57c0b13fa6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
---- !u!114 &1015970984953463537
+--- !u!114 &-3871227371897405813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,6 +232,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7230487271006942577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99d4050866d00754b9a36008998a8f3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 517faf8efb73eb342bb2755ffec01530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

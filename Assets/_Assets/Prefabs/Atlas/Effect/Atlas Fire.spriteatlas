@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas Fire
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 2
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 4b9dec30c9563924db33dc413839f431, type: 3}
+    - {fileID: 2800000, guid: b409e0b544ff8c447b57300d5cc79d17, type: 3}
+    - {fileID: 2800000, guid: 296393990ea01eb4ab5b47021cfbc24f, type: 3}
+    - {fileID: 2800000, guid: b4a403300344fb04d9ff5347e599448b, type: 3}
+    - {fileID: 2800000, guid: b57ac31a3c288c247aa90f08ee505814, type: 3}
+    - {fileID: 2800000, guid: 8b04b83b3f768e644b9ee6c911e63489, type: 3}
+    - {fileID: 2800000, guid: 2789e8a44530420498b529b352a3310e, type: 3}
+    - {fileID: 2800000, guid: 2b29d76642e2e7d41b41dfd7ad78f23e, type: 3}
+    - {fileID: 2800000, guid: e42988e887cf7f24a888a55a78437b68, type: 3}
+    - {fileID: 2800000, guid: 7a7bbc9fc8bf97d44aa9b8b09211f72f, type: 3}
+    - {fileID: 2800000, guid: 20b2b785880a3a74ca87fb5ecde65fc0, type: 3}
+    - {fileID: 2800000, guid: e847603842369b4458cd07a30169c381, type: 3}
+    - {fileID: 2800000, guid: 1b700302c4a575c409ef50cc4c5afb2e, type: 3}
+    - {fileID: 2800000, guid: 2a4674118146ec74aba81e2644abe68b, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: b4a403300344fb04d9ff5347e599448b, type: 3}
+  - {fileID: 21300000, guid: 4b9dec30c9563924db33dc413839f431, type: 3}
+  - {fileID: 21300000, guid: 2a4674118146ec74aba81e2644abe68b, type: 3}
+  - {fileID: 21300000, guid: 1b700302c4a575c409ef50cc4c5afb2e, type: 3}
+  - {fileID: 21300000, guid: 2789e8a44530420498b529b352a3310e, type: 3}
+  - {fileID: 21300000, guid: 20b2b785880a3a74ca87fb5ecde65fc0, type: 3}
+  - {fileID: 21300000, guid: b409e0b544ff8c447b57300d5cc79d17, type: 3}
+  - {fileID: 21300000, guid: 2b29d76642e2e7d41b41dfd7ad78f23e, type: 3}
+  - {fileID: 21300000, guid: e847603842369b4458cd07a30169c381, type: 3}
+  - {fileID: 21300000, guid: e42988e887cf7f24a888a55a78437b68, type: 3}
+  - {fileID: 21300000, guid: 296393990ea01eb4ab5b47021cfbc24f, type: 3}
+  - {fileID: 21300000, guid: b57ac31a3c288c247aa90f08ee505814, type: 3}
+  - {fileID: 21300000, guid: 8b04b83b3f768e644b9ee6c911e63489, type: 3}
+  - {fileID: 21300000, guid: 7a7bbc9fc8bf97d44aa9b8b09211f72f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - ezgif-frame-004
+  - ezgif-frame-001
+  - ezgif-frame-014
+  - ezgif-frame-013
+  - ezgif-frame-007
+  - ezgif-frame-011
+  - ezgif-frame-002
+  - ezgif-frame-008
+  - ezgif-frame-012
+  - ezgif-frame-009
+  - ezgif-frame-003
+  - ezgif-frame-005
+  - ezgif-frame-006
+  - ezgif-frame-010
+  m_RenderDataMap: {}
+  m_Tag: Atlas Fire
+  m_IsVariant: 0

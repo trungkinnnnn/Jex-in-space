@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 3637614284199269372}
   - component: {fileID: -4358666980661296524}
   - component: {fileID: -4508048984914897903}
-  - component: {fileID: 6882472550194930196}
+  - component: {fileID: 5286055680835679357}
   m_Layer: 7
   m_Name: crystal4 1
-  m_TagString: Untagged
+  m_TagString: Ast
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -815096627
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 7ced4301539499e49aff585eee6c6f46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -113,13 +113,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.26757812, y: -0.12695312}
-      - {x: -0.265625, y: 0.0625}
-      - {x: -0.1640625, y: 0.20117188}
-      - {x: 0.095703125, y: 0.19921875}
-      - {x: 0.25, y: 0.111328125}
-      - {x: 0.26367188, y: -0.068359375}
-      - {x: -0.0625, y: -0.20117188}
+    - - {x: -0.21484375, y: -0.11328125}
+      - {x: -0.21875, y: 0.068359375}
+      - {x: -0.140625, y: 0.1640625}
+      - {x: 0.08984375, y: 0.16210938}
+      - {x: 0.21289062, y: 0.087890625}
+      - {x: 0.22851562, y: -0.052734375}
+      - {x: -0.046875, y: -0.16015625}
 --- !u!50 &-4358666980661296524
 Rigidbody2D:
   serializedVersion: 4
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
---- !u!114 &6882472550194930196
+--- !u!114 &5286055680835679357
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,6 +163,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3637614284199269361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99d4050866d00754b9a36008998a8f3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 517faf8efb73eb342bb2755ffec01530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

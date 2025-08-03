@@ -2,21 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunGetData : MonoBehaviour
+public class GunGetData
 {
-    [SerializeField] GunData _gunData;
-    [SerializeField] GunStatData _gunStatData;
+    private GunData _gunData;
+    private GunStatData _gunStatData;
 
     private float magSize;
     private float bulletSpeed;
     private float timeReload;
     private float fireRate;
 
-    private StatLevel _levelList;
+    private StatLevel _levelList = new StatLevel();
     private GunStat currentGun;
-    private void Awake()
+
+    public GunGetData(GunData gunData, GunStatData gunStatData)
     {
-        _levelList = new StatLevel();
+        _gunData = gunData;
+        _gunStatData = gunStatData;
+    }
+
+    public void StartTakeData()
+    {
         SetGunEquip();
         SetGunStatEquip();
         SetParamasterStat();

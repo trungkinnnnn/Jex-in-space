@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 7650081949019583950}
   - component: {fileID: -4441441454503255191}
   - component: {fileID: 5973047461719957726}
-  - component: {fileID: -8943679568410812524}
+  - component: {fileID: 7504506489178999196}
   m_Layer: 7
   m_Name: crystal2
-  m_TagString: Untagged
+  m_TagString: Ast
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -815096627
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 01048cb18e076884b947153b08ec90cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -113,11 +113,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.12207031, y: -0.21484375}
-      - {x: -0.19433594, y: 0.16601562}
-      - {x: -0.12597656, y: 0.28320312}
-      - {x: 0.19238281, y: 0.123046875}
-      - {x: 0.10644531, y: -0.28515625}
+    - - {x: -0.08105469, y: -0.171875}
+      - {x: -0.15917969, y: 0.16601562}
+      - {x: -0.10644531, y: 0.25}
+      - {x: 0.13574219, y: 0.099609375}
+      - {x: 0.09472656, y: -0.2421875}
 --- !u!50 &-4441441454503255191
 Rigidbody2D:
   serializedVersion: 4
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
---- !u!114 &-8943679568410812524
+--- !u!114 &7504506489178999196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,6 +161,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7650081949019583947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99d4050866d00754b9a36008998a8f3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 517faf8efb73eb342bb2755ffec01530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

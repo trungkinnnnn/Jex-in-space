@@ -17,8 +17,8 @@ MonoBehaviour:
     nameGun: Explosive Bullet
     priceCoin: 0
     priceMoney: 0
-    unlock: 0
-    equip: 0
+    unlock: 1
+    equip: 1
     gunPrefabs: {fileID: 9115486880346418809, guid: 881ec5ebcb8a7ad48b49aafbf01ffb33, type: 3}
     bulletPrefabs: {fileID: 8112682384249088649, guid: b277be9936651ac4bb0de435bd319151, type: 3}
   - idGun: Gun02
@@ -33,8 +33,8 @@ MonoBehaviour:
     nameGun: Lightweight Lazer
     priceCoin: 2000
     priceMoney: 2000
-    unlock: 1
-    equip: 1
+    unlock: 0
+    equip: 0
     gunPrefabs: {fileID: 6069738807175842853, guid: 6bd6b4c2fe5034046b71592cade65cd5, type: 3}
     bulletPrefabs: {fileID: 2990621471026272631, guid: 6125f50392d7ab44b9c93df842043d2d, type: 3}
   - idGun: Gun04

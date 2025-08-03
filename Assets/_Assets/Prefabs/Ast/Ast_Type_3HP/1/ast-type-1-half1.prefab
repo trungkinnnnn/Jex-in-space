@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 1836853778616657772}
   - component: {fileID: 2665612591831345631}
   - component: {fileID: -7218736440826952566}
-  - component: {fileID: 5817498178868107545}
+  - component: {fileID: -3807788144485744279}
   m_Layer: 7
   m_Name: ast-type-1-half1
-  m_TagString: Untagged
+  m_TagString: Ast
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -815096627
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 875cf465d4014ca44a0ba9f52ba75421, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -113,14 +113,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.06542969, y: -0.3955078}
-      - {x: -0.08691406, y: -0.33496094}
-      - {x: -0.19433594, y: -0.23535156}
-      - {x: -0.22753906, y: 0.016601562}
-      - {x: -0.12792969, y: 0.2939453}
-      - {x: 0.13378906, y: 0.39160156}
-      - {x: 0.20214844, y: 0.15722656}
-      - {x: 0.22753906, y: -0.36621094}
+    - - {x: -0.07714844, y: -0.33496094}
+      - {x: -0.21972656, y: -0.020507812}
+      - {x: -0.12011719, y: 0.2607422}
+      - {x: 0.13378906, y: 0.35253906}
+      - {x: 0.20996094, y: -0.3466797}
 --- !u!50 &2665612591831345631
 Rigidbody2D:
   serializedVersion: 4
@@ -155,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
---- !u!114 &5817498178868107545
+--- !u!114 &-3807788144485744279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,6 +161,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2251268788886450818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99d4050866d00754b9a36008998a8f3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 517faf8efb73eb342bb2755ffec01530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

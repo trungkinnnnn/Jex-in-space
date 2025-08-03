@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas Ast1
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 2
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 852ca3cf1af4a844b9886d2566879064, type: 3}
+    - {fileID: 2800000, guid: 5cef63416b2a0f143be637f03657da4c, type: 3}
+    - {fileID: 2800000, guid: 875cf465d4014ca44a0ba9f52ba75421, type: 3}
+    - {fileID: 2800000, guid: d03484ba8562cab4fa2efff9231959f3, type: 3}
+    - {fileID: 2800000, guid: d2235d91a92deaf43a0148f275142948, type: 3}
+    - {fileID: 2800000, guid: 0aff80ff7e3965c468f1a934686ae59f, type: 3}
+    - {fileID: 2800000, guid: ea9925fc2d6cade42bf4bf2412c5eef2, type: 3}
+    - {fileID: 2800000, guid: de54a3d87dc7e5d4b83f2191ffcb73c0, type: 3}
+    - {fileID: 2800000, guid: 9a5a3dd3f9dec1b43bd4dc57c0b13fa6, type: 3}
+    - {fileID: 2800000, guid: 921f4a1dc397a1045a366ad952b9e0f6, type: 3}
+    - {fileID: 2800000, guid: 16a42b6f4c1299a4fb7543b1108fd2d9, type: 3}
+    - {fileID: 2800000, guid: 78ff091013dce01428309d26fdcb3b27, type: 3}
+    - {fileID: 2800000, guid: e007accf05367454ea9d570c03066c26, type: 3}
+    - {fileID: 2800000, guid: c5c701362d428d3488452331fc614e74, type: 3}
+    - {fileID: 2800000, guid: 83c68b6cbab4c2543be0fcc7b266804e, type: 3}
+    - {fileID: 2800000, guid: 20c15d3f32c3be24eb4505581afba648, type: 3}
+    - {fileID: 2800000, guid: 3c9d761394fac1a469e2c19637ac21ec, type: 3}
+    - {fileID: 2800000, guid: 88de30ef0143d2540af1cf48bb4a7eb5, type: 3}
+    - {fileID: 2800000, guid: c699f541b43c99a44ae86b5a6bb78378, type: 3}
+    - {fileID: 2800000, guid: 53ba01e3af4a63c4e8ab1047539e5481, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 78ff091013dce01428309d26fdcb3b27, type: 3}
+  - {fileID: 21300000, guid: 5cef63416b2a0f143be637f03657da4c, type: 3}
+  - {fileID: 21300000, guid: c699f541b43c99a44ae86b5a6bb78378, type: 3}
+  - {fileID: 21300000, guid: d2235d91a92deaf43a0148f275142948, type: 3}
+  - {fileID: 21300000, guid: 3c9d761394fac1a469e2c19637ac21ec, type: 3}
+  - {fileID: 21300000, guid: 9a5a3dd3f9dec1b43bd4dc57c0b13fa6, type: 3}
+  - {fileID: 21300000, guid: 53ba01e3af4a63c4e8ab1047539e5481, type: 3}
+  - {fileID: 21300000, guid: 875cf465d4014ca44a0ba9f52ba75421, type: 3}
+  - {fileID: 21300000, guid: c5c701362d428d3488452331fc614e74, type: 3}
+  - {fileID: 21300000, guid: de54a3d87dc7e5d4b83f2191ffcb73c0, type: 3}
+  - {fileID: 21300000, guid: d03484ba8562cab4fa2efff9231959f3, type: 3}
+  - {fileID: 21300000, guid: 83c68b6cbab4c2543be0fcc7b266804e, type: 3}
+  - {fileID: 21300000, guid: ea9925fc2d6cade42bf4bf2412c5eef2, type: 3}
+  - {fileID: 21300000, guid: 921f4a1dc397a1045a366ad952b9e0f6, type: 3}
+  - {fileID: 21300000, guid: 20c15d3f32c3be24eb4505581afba648, type: 3}
+  - {fileID: 21300000, guid: 16a42b6f4c1299a4fb7543b1108fd2d9, type: 3}
+  - {fileID: 21300000, guid: 852ca3cf1af4a844b9886d2566879064, type: 3}
+  - {fileID: 21300000, guid: e007accf05367454ea9d570c03066c26, type: 3}
+  - {fileID: 21300000, guid: 88de30ef0143d2540af1cf48bb4a7eb5, type: 3}
+  - {fileID: 21300000, guid: 0aff80ff7e3965c468f1a934686ae59f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - ast-type-5_1hp
+  - ast-type-1-crack
+  - ast-type-12-same as 4_2hp
+  - ast-type-1_3hp
+  - ast-type-10-golden.png.meta_1hp
+  - ast-type-2_3hp
+  - ast-type-13-same as 4_2hp
+  - ast-type-1-half1
+  - ast-type-7_2h
+  - ast-type-2-half2
+  - ast-type-1-half2
+  - ast-type-8_1hp
+  - ast-type-2-half1
+  - ast-type-3_1hp
+  - ast-type-9-volatile_1hp
+  - ast-type-4_2hp
+  - ammo-box
+  - ast-type-6_2hp
+  - ast-type-12-0.3_2hp
+  - ast-type-2-crack
+  m_RenderDataMap: {}
+  m_Tag: Atlas Ast1
+  m_IsVariant: 0

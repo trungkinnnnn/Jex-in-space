@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas Gun
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: ec07632f8fe93dd419ef242d6f853564, type: 3}
+    - {fileID: 2800000, guid: 1148f0ede92312744b9c1fb2b007aa17, type: 3}
+    - {fileID: 2800000, guid: 5213321760d07004ebf628548cd5564e, type: 3}
+    - {fileID: 21300000, guid: 5213321760d07004ebf628548cd5564e, type: 3}
+    - {fileID: 2800000, guid: 9a61410a622dd144e8200f7517b8b96a, type: 3}
+    - {fileID: 2800000, guid: 6cea4e759d2c1ee4f8e9abd92c3958d6, type: 3}
+    - {fileID: 2800000, guid: aeea2c4101976954496b94979a62ffd5, type: 3}
+    - {fileID: 2800000, guid: 8db72c47b9c6737458f5bdde85080e66, type: 3}
+    - {fileID: 2800000, guid: 685132d5bd53ce04b8e3ccf737f347ab, type: 3}
+    - {fileID: 2800000, guid: d296f68afa5666943b8767d358235d4e, type: 3}
+    - {fileID: 2800000, guid: b9904e4609596fe4195794576d57508d, type: 3}
+    - {fileID: 2800000, guid: d99fdac50da8d5e49ba6e132849b9f3e, type: 3}
+    - {fileID: 2800000, guid: f294a457d4840614db1b6a71b6271a72, type: 3}
+    - {fileID: 2800000, guid: 96fda5cdb95f50446890ab3dea223323, type: 3}
+    - {fileID: 2800000, guid: ffc208aa421d1a24d889b235791a045f, type: 3}
+    - {fileID: 2800000, guid: 3f2f1a584f273c345af3dfe714895a0e, type: 3}
+    - {fileID: 2800000, guid: 6d8fecf61f795df4a8cc79b2d6fc1549, type: 3}
+    - {fileID: 2800000, guid: 5e020d13b708a3a40b049a67859bb396, type: 3}
+    - {fileID: 2800000, guid: c5c6721869a01db47aa0c607386b79f9, type: 3}
+    - {fileID: 2800000, guid: 63bf33eba11ff9942b9453e6b3c005e2, type: 3}
+    - {fileID: 2800000, guid: 0df80d6ba1a3e9541ac710b7102aa0f0, type: 3}
+    - {fileID: 2800000, guid: ffd956d7794808541a142dbd72f1915c, type: 3}
+    - {fileID: 2800000, guid: f707988866cdddc44b863461efff39ff, type: 3}
+    - {fileID: 2800000, guid: 9a002e856e1c14a4aa52e9aca24f6f60, type: 3}
+    - {fileID: 2800000, guid: 318996206420e6f438e75e06d46e6fc9, type: 3}
+    - {fileID: 2800000, guid: 8c724d89aa74547478038f1edd2527b1, type: 3}
+    - {fileID: 2800000, guid: 29fd4f3b175b4334d9d4ecf331e015f9, type: 3}
+    - {fileID: 2800000, guid: 8a50752ecca4e3d48a8cf0adf68dd434, type: 3}
+    - {fileID: 2800000, guid: d4bdcfa061faea04d9295e7dbadc8882, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 318996206420e6f438e75e06d46e6fc9, type: 3}
+  - {fileID: 21300000, guid: d4bdcfa061faea04d9295e7dbadc8882, type: 3}
+  - {fileID: 21300000, guid: aeea2c4101976954496b94979a62ffd5, type: 3}
+  - {fileID: 21300000, guid: 5e020d13b708a3a40b049a67859bb396, type: 3}
+  - {fileID: 21300000, guid: 6cea4e759d2c1ee4f8e9abd92c3958d6, type: 3}
+  - {fileID: 21300000, guid: 9a002e856e1c14a4aa52e9aca24f6f60, type: 3}
+  - {fileID: 21300000, guid: d99fdac50da8d5e49ba6e132849b9f3e, type: 3}
+  - {fileID: 21300000, guid: 685132d5bd53ce04b8e3ccf737f347ab, type: 3}
+  - {fileID: 21300000, guid: b9904e4609596fe4195794576d57508d, type: 3}
+  - {fileID: 21300000, guid: 6d8fecf61f795df4a8cc79b2d6fc1549, type: 3}
+  - {fileID: 21300000, guid: 5213321760d07004ebf628548cd5564e, type: 3}
+  - {fileID: 21300000, guid: 8db72c47b9c6737458f5bdde85080e66, type: 3}
+  - {fileID: 21300000, guid: f294a457d4840614db1b6a71b6271a72, type: 3}
+  - {fileID: 21300000, guid: ffd956d7794808541a142dbd72f1915c, type: 3}
+  - {fileID: 21300000, guid: c5c6721869a01db47aa0c607386b79f9, type: 3}
+  - {fileID: 21300000, guid: 3f2f1a584f273c345af3dfe714895a0e, type: 3}
+  - {fileID: 21300000, guid: f707988866cdddc44b863461efff39ff, type: 3}
+  - {fileID: 21300000, guid: 8c724d89aa74547478038f1edd2527b1, type: 3}
+  - {fileID: 21300000, guid: 9a61410a622dd144e8200f7517b8b96a, type: 3}
+  - {fileID: 21300000, guid: d296f68afa5666943b8767d358235d4e, type: 3}
+  - {fileID: 21300000, guid: ffc208aa421d1a24d889b235791a045f, type: 3}
+  - {fileID: 21300000, guid: 29fd4f3b175b4334d9d4ecf331e015f9, type: 3}
+  - {fileID: 21300000, guid: 0df80d6ba1a3e9541ac710b7102aa0f0, type: 3}
+  - {fileID: 21300000, guid: 63bf33eba11ff9942b9453e6b3c005e2, type: 3}
+  - {fileID: 21300000, guid: 96fda5cdb95f50446890ab3dea223323, type: 3}
+  - {fileID: 21300000, guid: 1148f0ede92312744b9c1fb2b007aa17, type: 3}
+  - {fileID: 21300000, guid: 8a50752ecca4e3d48a8cf0adf68dd434, type: 3}
+  - {fileID: 21300000, guid: ec07632f8fe93dd419ef242d6f853564, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - projectile-laser
+  - projectile-red-plasma
+  - weapon-bullet-casing
+  - weapon-tip-rocket-1
+  - weapon-body-rocket
+  - projectile-laser-light
+  - weapon-tip-bullet-1
+  - weapon-magazine
+  - weapon-tip-blue-2
+  - weapon-tip-red-2
+  - weapon-body-laser
+  - weapon-cable
+  - weapon-tip-bullet-2
+  - projectile-blue-plasma-v3-light
+  - weapon-tip-rocket-2
+  - weapon-tip-red-1
+  - projectile-blue-plasma-v3
+  - projectile-missile-light
+  - weapon-body-redplasma
+  - weapon-tip-blue-1
+  - weapon-tip-laser-2
+  - projectile-missile
+  - bullet2
+  - bullet-muzzle-flash
+  - weapon-tip-laser-1
+  - weapon-body-bullet
+  - projectile-red-plasma-light
+  - weapon-body-blueplasma
+  m_RenderDataMap: {}
+  m_Tag: Atlas Gun
+  m_IsVariant: 0

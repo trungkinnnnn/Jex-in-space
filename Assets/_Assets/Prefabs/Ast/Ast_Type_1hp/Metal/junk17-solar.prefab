@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 8760913326644715978}
   - component: {fileID: 2188079124680194973}
   - component: {fileID: 1525142436983699552}
-  - component: {fileID: 9187304676831793848}
+  - component: {fileID: 1453799793215132891}
   m_Layer: 7
   m_Name: junk17-solar
-  m_TagString: Untagged
+  m_TagString: Ast
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -815096627
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 0f844fc56dda0844187bb2c60e813c11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -113,15 +113,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.4814453, y: -0.30273438}
-      - {x: 0.2919922, y: -0.25390625}
-      - {x: -0.06347656, y: -0.21679688}
-      - {x: -0.2548828, y: -0.30664062}
-      - {x: -0.63964844, y: 0.109375}
-      - {x: -0.2939453, y: 0.30859375}
-      - {x: -0.045898438, y: 0.25390625}
-      - {x: 0.18847656, y: 0.26367188}
-      - {x: 0.63964844, y: -0.2109375}
+    - - {x: -0.21386719, y: -0.21875}
+      - {x: -0.54003906, y: 0.1171875}
+      - {x: 0.10644531, y: 0.2734375}
+      - {x: 0.5283203, y: -0.18164062}
 --- !u!50 &2188079124680194973
 Rigidbody2D:
   serializedVersion: 4
@@ -156,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
---- !u!114 &9187304676831793848
+--- !u!114 &1453799793215132891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,6 +160,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8760913326644715983}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99d4050866d00754b9a36008998a8f3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 517faf8efb73eb342bb2755ffec01530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

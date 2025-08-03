@@ -55,11 +55,11 @@ public class WaveSpawner
                 if(SpawnUtility.IsTrackAst(type))
                 {
                     listTrackerAst.Add(ast);
-                    AstTracker astTracker = ast.GetComponent<AstTracker>() ?? ast.AddComponent<AstTracker>();
+                    Ast astTracker = ast.GetComponent<Ast>() ?? ast.AddComponent<Ast>();
                     astTracker.Init(() => listTrackerAst.Remove(ast));  
                 }
 
-                Debug.Log("listTracker : " + listTrackerAst.Count);
+                //Debug.Log("listTracker : " + listTrackerAst.Count);
 
                 yield return new WaitForSeconds(SpawnUtility.GetDelayForType(type, waveConfig));
             }

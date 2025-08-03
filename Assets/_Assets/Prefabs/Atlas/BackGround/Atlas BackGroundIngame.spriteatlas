@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas BackGroundIngame
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 2
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: dd01f66c330bb5d428dce2ed464d3be8, type: 3}
+    - {fileID: 2800000, guid: 06d865c17ea740e439b3e89af7fd10ea, type: 3}
+    - {fileID: 2800000, guid: 30adc1113a872984690a5091d654220f, type: 3}
+    - {fileID: 2800000, guid: dd190cfc2c33e4140a32307332f33cf8, type: 3}
+    - {fileID: 2800000, guid: c6637fa729904724893cc4b56d90d344, type: 3}
+    - {fileID: 2800000, guid: 7a1ed2fe4d32f754497d921f306fbb31, type: 3}
+    - {fileID: 2800000, guid: cad406a880060ea42a72ac3f1e4dc8f0, type: 3}
+    - {fileID: 2800000, guid: 2a8d9d259a9e2a445a0060257d2b8b66, type: 3}
+    - {fileID: 2800000, guid: 1aa662465e72d044ab91b37e696fb215, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 30adc1113a872984690a5091d654220f, type: 3}
+  - {fileID: 21300000, guid: 06d865c17ea740e439b3e89af7fd10ea, type: 3}
+  - {fileID: 21300000, guid: 2a8d9d259a9e2a445a0060257d2b8b66, type: 3}
+  - {fileID: 21300000, guid: 1aa662465e72d044ab91b37e696fb215, type: 3}
+  - {fileID: 21300000, guid: c6637fa729904724893cc4b56d90d344, type: 3}
+  - {fileID: 21300000, guid: cad406a880060ea42a72ac3f1e4dc8f0, type: 3}
+  - {fileID: 21300000, guid: dd01f66c330bb5d428dce2ed464d3be8, type: 3}
+  - {fileID: 21300000, guid: dd190cfc2c33e4140a32307332f33cf8, type: 3}
+  - {fileID: 21300000, guid: 7a1ed2fe4d32f754497d921f306fbb31, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - asteroid-bg3
+  - asteroid-bg2
+  - junk26
+  - junk15
+  - junk10-metal
+  - junk16-exhaust
+  - asteroid-bg1
+  - asteroid-foreground-blur
+  - junk8-metal
+  m_RenderDataMap: {}
+  m_Tag: Atlas BackGroundIngame
+  m_IsVariant: 0

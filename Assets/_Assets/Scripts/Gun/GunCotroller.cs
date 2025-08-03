@@ -7,11 +7,12 @@ using UnityEngine;
 [RequireComponent(typeof(GunGetData))]
 public class GunCotroller : MonoBehaviour
 {
-    private string NAME_ANI_TRIGGER_SHOOT = "isShoot";
-    private Animator _animator;
+    [SerializeField] GunData data;
+    [SerializeField] GunStatData stat;
     [SerializeField] Transform pointFire;
 
     private GunGetData _gunGetData;
+    private Animator _animator;
 
     //Data
     private GunStat currentGun;
@@ -24,10 +25,14 @@ public class GunCotroller : MonoBehaviour
     private float currentMagSizebullet;
     private float totalbullet;
 
+    //Ani
+    private string NAME_ANI_TRIGGER_SHOOT = "isShoot";
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _gunGetData = GetComponent<GunGetData>();
+        _gunGetData = new GunGetData(data, stat);
+        _gunGetData.StartTakeData();
         SetDataGun();
 
         totalbullet = magSize * 3;
@@ -53,7 +58,7 @@ public class GunCotroller : MonoBehaviour
         currentMagSizebullet -= 1;
 
         GameObject bullet = Instantiate(currentGun.bulletPrefabs, pointFire.position, pointFire.rotation);
-        BulletController bulletController = bullet.GetComponent<BulletController>();
+        BulletBase bulletController = bullet.GetComponent<BulletBase>();
         if (bulletController != null) bulletController.Init(pointFire.right, bulletSpeed);
 
         if (currentMagSizebullet == 0)

@@ -1,6 +1,5 @@
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.Rendering.DebugUI;
+
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Star : MonoBehaviour
@@ -18,6 +17,9 @@ public class Star : MonoBehaviour
     private float angle;
     private float scale;
     private Vector3 direction;
+
+    public float minPosition = 0.1f;
+    public float maxPosition = 1.1f;
 
     // alpha
     private Color color;
@@ -64,8 +66,8 @@ public class Star : MonoBehaviour
     {
         Vector3 viewPort = Camera.main.WorldToViewportPoint(position);
         
-        if (viewPort.x < -0.1f || viewPort.x > 1.1f) direction.x *= -1;
-        if (viewPort.y < -0.1f || viewPort.y > 1.1f) direction.y *= -1;
+        if (viewPort.x < -minPosition || viewPort.x > maxPosition) direction.x *= -1;
+        if (viewPort.y < -minPosition || viewPort.y > maxPosition) direction.y *= -1;
     }    
 
     private void Reset_Star()

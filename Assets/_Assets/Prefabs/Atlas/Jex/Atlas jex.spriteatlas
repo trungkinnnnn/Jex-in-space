@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas jex
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 60f00f75bdb01784d8b64ab58fb51a7b, type: 3}
+    - {fileID: 2800000, guid: c608189fd4d244b48abeefcc60e7a663, type: 3}
+    - {fileID: 2800000, guid: 580594c0874e35e4ca7e4e2073551ad6, type: 3}
+    - {fileID: 2800000, guid: c615f871744529d4e9f86b971ef842d7, type: 3}
+    - {fileID: 2800000, guid: ecc4d94ff7f3f9648b0c3fb093c5f001, type: 3}
+    - {fileID: 2800000, guid: 4a3dabd1ab26fef43b90ab1ae9badfa1, type: 3}
+    - {fileID: 2800000, guid: 7609042763fe0b748b18ab679c2cea9c, type: 3}
+    - {fileID: 2800000, guid: 772096dcc852dc341b784fe83ac194a1, type: 3}
+    - {fileID: 2800000, guid: a2ca6f390c4b9c545bb4ea1049b404b9, type: 3}
+    - {fileID: 2800000, guid: 8b28280da1e12874ab39c2c18e8efedf, type: 3}
+    - {fileID: 2800000, guid: 2aa55671f4363c6489c368050f88b2ce, type: 3}
+    - {fileID: 2800000, guid: 63354a010e8682b4f88b3123fe6a50f5, type: 3}
+    - {fileID: 2800000, guid: 25f0afaafe7fe5448b8c2b9e3a23c750, type: 3}
+    - {fileID: 2800000, guid: 07ed50e39ba225c41a81ece15cbe58e0, type: 3}
+    - {fileID: 2800000, guid: 129f62b170d688342b31db697ab1004f, type: 3}
+    - {fileID: 2800000, guid: ff91ca6b9cbd7844992317f6c687e700, type: 3}
+    - {fileID: 2800000, guid: 9bb6c6bd603925c45954178b9b9ae281, type: 3}
+    - {fileID: 2800000, guid: 7528c82c1136c4e4baa9b7bc4aea27cc, type: 3}
+    - {fileID: 2800000, guid: e3ada45c4d887094b9e5ad7756d1543e, type: 3}
+    - {fileID: 2800000, guid: a36e5150fd731b647a82c7f0c0ff25f0, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a36e5150fd731b647a82c7f0c0ff25f0, type: 3}
+  - {fileID: 21300000, guid: 580594c0874e35e4ca7e4e2073551ad6, type: 3}
+  - {fileID: 21300000, guid: 63354a010e8682b4f88b3123fe6a50f5, type: 3}
+  - {fileID: 21300000, guid: 2aa55671f4363c6489c368050f88b2ce, type: 3}
+  - {fileID: 21300000, guid: c615f871744529d4e9f86b971ef842d7, type: 3}
+  - {fileID: 21300000, guid: 129f62b170d688342b31db697ab1004f, type: 3}
+  - {fileID: 21300000, guid: 4a3dabd1ab26fef43b90ab1ae9badfa1, type: 3}
+  - {fileID: 21300000, guid: 07ed50e39ba225c41a81ece15cbe58e0, type: 3}
+  - {fileID: -1360858123, guid: 60f00f75bdb01784d8b64ab58fb51a7b, type: 3}
+  - {fileID: 1537309221, guid: 60f00f75bdb01784d8b64ab58fb51a7b, type: 3}
+  - {fileID: 21300000, guid: 7609042763fe0b748b18ab679c2cea9c, type: 3}
+  - {fileID: 21300000, guid: a2ca6f390c4b9c545bb4ea1049b404b9, type: 3}
+  - {fileID: 21300000, guid: 25f0afaafe7fe5448b8c2b9e3a23c750, type: 3}
+  - {fileID: 21300000, guid: ff91ca6b9cbd7844992317f6c687e700, type: 3}
+  - {fileID: 21300000, guid: 7528c82c1136c4e4baa9b7bc4aea27cc, type: 3}
+  - {fileID: 21300000, guid: e3ada45c4d887094b9e5ad7756d1543e, type: 3}
+  - {fileID: 21300000, guid: 772096dcc852dc341b784fe83ac194a1, type: 3}
+  - {fileID: 21300000, guid: 8b28280da1e12874ab39c2c18e8efedf, type: 3}
+  - {fileID: 21300000, guid: 9bb6c6bd603925c45954178b9b9ae281, type: 3}
+  - {fileID: 21300000, guid: ecc4d94ff7f3f9648b0c3fb093c5f001, type: 3}
+  - {fileID: 21300000, guid: c608189fd4d244b48abeefcc60e7a663, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - jex-tail-v2
+  - cat-crack2
+  - jex-face-eat1
+  - jex-face-dead
+  - coin-v2
+  - jex-face-normal
+  - jex-backpack-belt
+  - jex-face-hurt
+  - jex-tail_0
+  - jex-tail_1
+  - jex-backpack
+  - jex-face-annoyed
+  - jex-face-eat2
+  - jex-fish-bowl-reflexion
+  - jex-right-hand
+  - jex-left-hand
+  - jex-body
+  - jex-face-blink
+  - jex-fish-bowl-v2
+  - headlight
+  - cat-crack1
+  m_RenderDataMap: {}
+  m_Tag: Atlas jex
+  m_IsVariant: 0

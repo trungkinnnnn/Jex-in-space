@@ -8,8 +8,6 @@ public class JexStartPhysic : MonoBehaviour
     public float timeSpin = 3;
     public float timeStart = 5f;
 
-    private string NAME_ANI_TRIGGER_SCALEUP = "isScaleUp";
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
