@@ -1,40 +1,65 @@
+
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Ast : MonoBehaviour
 {
-    private Action onDestroyed;
 
-    public int hp = 2;
+    private Action onDestroy;
 
-    private void Start()
+    [SerializeField] GameObject objBroken;
+    [SerializeField] GameObject effectLight2DExplosion;
+    [SerializeField] GameObject effectAniDestroy;
+
+    public int hp = 1;
+    public float radiusExplosion = 1f;
+
+    public void Init(Action onDestroy)
     {
-        BulletBase.OnhitAst += OnBulletHit;
+        this.onDestroy = onDestroy;
     }
+
     private void OnDestroy()
     {
-        onDestroyed?.Invoke();
-        BulletBase.OnhitAst -= OnBulletHit;
+        onDestroy?.Invoke();
     }
 
-    public void Init(Action onDestroyed)
+    public void TakeDameBullet(int dmage)
     {
-        this.onDestroyed = onDestroyed;
-       
-    }
+        hp -= dmage;
 
-    private void OnBulletHit(Ast ast)
-    {
-        if(ast != this) return;
-        hp -= 1;
-        
-        if(hp <= 0)
+        OnBroken();
+
+        if (hp <= 0)
         {
-            Destroy(gameObject);
+
+            Instantiate(effectAniDestroy, transform.position, Quaternion.identity);
+
+            CreatLight2DExplosion();
+            AstDestroy();
+        }    
+    }
+
+    private void OnBroken()
+    {
+        if (objBroken != null)
+        {
+            objBroken.SetActive(true);
         }
     }    
 
+    private void CreatLight2DExplosion()
+    {
+        var explosion = Instantiate(effectLight2DExplosion, transform.position, Quaternion.identity);
+        EffectLightExplosion light = explosion.GetComponent<EffectLightExplosion>();
+        light.Init(radiusExplosion);
+    }    
 
-   
+
+    protected virtual void AstDestroy()
+    {
+        Destroy(gameObject);
+    }
 
 }

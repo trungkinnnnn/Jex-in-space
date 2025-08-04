@@ -7,9 +7,6 @@ public abstract class BulletBase : MonoBehaviour
     //Data
     [SerializeField] protected List<GameObject> effectHits;
 
-    // Even
-    public static System.Action<Ast> OnhitAst;
-
     //Para
     private float speed;
     private Vector2 direction;

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(Light2D), typeof(CircleCollider2D))]
@@ -21,8 +19,11 @@ public class EffectLightExplosion : MonoBehaviour
     private float _timer = 0f;
     private Color _alpha;
 
-    private string NAME_TAG_PHYSIC = "Ast";
 
+    public void Init(float radius)
+    {
+        explosionRadius = radius;
+    }
     private void Start()
     {
         _light = GetComponent<Light2D>();
@@ -71,7 +72,7 @@ public class EffectLightExplosion : MonoBehaviour
         _light.color = color;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         Rigidbody2D rb = collision.attachedRigidbody;
         if(rb != null)

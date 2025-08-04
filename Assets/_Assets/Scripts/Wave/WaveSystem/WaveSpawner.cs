@@ -59,7 +59,7 @@ public class WaveSpawner
                     astTracker.Init(() => listTrackerAst.Remove(ast));  
                 }
 
-                //Debug.Log("listTracker : " + listTrackerAst.Count);
+                Debug.Log("listTracker : " + listTrackerAst.Count);
 
                 yield return new WaitForSeconds(SpawnUtility.GetDelayForType(type, waveConfig));
             }

@@ -5,14 +5,26 @@ using UnityEngine;
 
 public class BasicBullet : BulletBase
 {
+    private int dmage = 1;
     protected override void OnTriggerEnter2D(Collider2D other)
     {
-        Ast ast = other.GetComponent<Ast>();
-        if(ast != null && other.CompareTag(NAME_COMPARETAG_PHYSIC))
+        if(other.CompareTag(NAME_COMPARETAG_PHYSIC))
         {
             CreateEffectHit();
-            OnhitAst?.Invoke(ast);
+
+            AstHitBullet(other);
+
             Destroy(gameObject);
         }
     }
+
+    private void AstHitBullet(Collider2D other)
+    {
+        Ast obj = other.GetComponent<Ast>();
+        if (obj != null)
+        {
+            obj.TakeDameBullet(dmage);
+        }
+    }
+
 }

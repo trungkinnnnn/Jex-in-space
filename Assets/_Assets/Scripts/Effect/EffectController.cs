@@ -19,7 +19,7 @@ public class EffectController : MonoBehaviour
     {
         Color color;
         string hexString = "#" + hexColor;
-        Debug.Log(hexString);
+        //Debug.Log(hexString);
         if(ColorUtility.TryParseHtmlString(hexString, out color))
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();

@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Wave Config
   m_EditorClassIdentifier: 
   bigAts:
-    totalCount: 16
+    totalCount: 10
     countUpNextWave: 3
     delayBetweenBatch: 4
   mediumAts:
-    totalCount: 30
+    totalCount: 20
     countUpNextWave: 5
     delayBetweenBatch: 2
   smallAts:
-    totalCount: 40
+    totalCount: 30
     countUpNextWave: 8
     delayBetweenBatch: 1
   goldAts:
@@ -39,6 +39,6 @@ MonoBehaviour:
   spawnIntervalTime: 5
   spawnDownEvery3Wave: 0.5
   minSpawnInterval: 5
-  totalAst: 40
+  totalAst: 30
   upTotalNextWave: 5
   timeNextWave: 10

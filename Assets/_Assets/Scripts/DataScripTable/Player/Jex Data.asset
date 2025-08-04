@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Jex Data
   m_EditorClassIdentifier: 
   health: 9
-  addForceMax: 6
-  addForceMin: 4
-  addForceTorqueInput_Max: 0.1
+  addForceMax: 5
+  addForceMin: 3
+  addForceTorqueInput_Max: 0.06
   addForceTorqueInput_Min: 0.03
   addForceTorqueWind: 0.01
   timeRecovery: 0.4

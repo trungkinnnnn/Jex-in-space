@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7347757544831075896}
   - component: {fileID: 3130651891604947715}
   - component: {fileID: 7081425611047481947}
-  - component: {fileID: -8489034687528805400}
+  - component: {fileID: -993982668526742014}
   m_Layer: 7
   m_Name: ast-type-7_2h
   m_TagString: Ast
@@ -114,7 +114,7 @@ Transform:
   m_GameObject: {fileID: 7347757544831075897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.73, y: 0.93, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 139707459}
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
---- !u!114 &-8489034687528805400
+--- !u!114 &-993982668526742014
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,3 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517faf8efb73eb342bb2755ffec01530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objBroken: {fileID: 139707457}
+  effectLight2DExplosion: {fileID: 8486099257211429435, guid: 0748e2a0762d3e04e915af4feda0c07b, type: 3}
+  effectAniDestroy: {fileID: 5450029284689995186, guid: da6094d5703788b42abfc610e7d49c57, type: 3}
+  hp: 2
+  radiusExplosion: 1.2

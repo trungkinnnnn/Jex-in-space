@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1836853778616657772}
   - component: {fileID: -4157753188794202407}
   - component: {fileID: 5821351860524481115}
-  - component: {fileID: 2190368186825382577}
+  - component: {fileID: 242993469300938209}
   m_Layer: 7
   m_Name: ast-type-1-half1 1
   m_TagString: Ast
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
---- !u!114 &2190368186825382577
+--- !u!114 &242993469300938209
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,3 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517faf8efb73eb342bb2755ffec01530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objBroken: {fileID: 0}
+  effectLight2DExplosion: {fileID: 8486099257211429435, guid: 0748e2a0762d3e04e915af4feda0c07b, type: 3}
+  effectAniDestroy: {fileID: 5450029284689995186, guid: 61116026afc8fb74ebd9eb3b7c187d2b, type: 3}
+  hp: 1
+  radiusExplosion: 0.8

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8760913326644715978}
   - component: {fileID: 2188079124680194973}
   - component: {fileID: 1525142436983699552}
-  - component: {fileID: 1453799793215132891}
+  - component: {fileID: -5336132535098582207}
   m_Layer: 7
   m_Name: junk17-solar
   m_TagString: Ast
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8760913326644715983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.885, y: 1.752, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
---- !u!114 &1453799793215132891
+--- !u!114 &-5336132535098582207
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,3 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517faf8efb73eb342bb2755ffec01530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objBroken: {fileID: 0}
+  effectLight2DExplosion: {fileID: 8486099257211429435, guid: 0748e2a0762d3e04e915af4feda0c07b, type: 3}
+  effectAniDestroy: {fileID: 7352736209106529191, guid: b0fab46a77ac6c94f8aad861be1d68e9, type: 3}
+  hp: 1
+  radiusExplosion: 1
