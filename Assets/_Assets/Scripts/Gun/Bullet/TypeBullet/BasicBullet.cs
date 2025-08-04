@@ -10,6 +10,7 @@ public class BasicBullet : BulletBase
         Ast ast = other.GetComponent<Ast>();
         if(ast != null && other.CompareTag(NAME_COMPARETAG_PHYSIC))
         {
+            CreateEffectHit();
             OnhitAst?.Invoke(ast);
             Destroy(gameObject);
         }
