@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objBroken: {fileID: 0}
-  effectLight2DExplosion: {fileID: 8486099257211429435, guid: 0748e2a0762d3e04e915af4feda0c07b, type: 3}
-  effectAniDestroy: {fileID: 5450029284689995186, guid: 61116026afc8fb74ebd9eb3b7c187d2b, type: 3}
+  effectLight2DExplosion: {fileID: 8486099257211429435, guid: 1ec47b22f57ea804983ab35750732797, type: 3}
+  effectAniDestroy: {fileID: 3079504843717696322, guid: ecc672717e4b5c84aa6f198f7a922ac6, type: 3}
   hp: 1
-  radiusExplosion: 0.8
+  radiusExplosion: 1.2
