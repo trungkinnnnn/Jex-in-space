@@ -15,6 +15,9 @@ public class BoxAmor : Ast
     public int minAmor = 15;
     private int amorDrops;
 
+    private int alphaEnd = 0;
+    private int alphaStart = 1;
+
     private Animator _animator;
 
     public void Init(TextMeshProUGUI text)
@@ -25,40 +28,26 @@ public class BoxAmor : Ast
     private void Start()
     {
         _animator = GetComponent<Animator>();
-
-        SetTextStart();
-
         amorDrops = Random.Range(minAmor, maxAmor);
         timeDestroy = GetLeghtClipByName(_animator, NAME_ANIMATION);
-    }
-
-    private void SetTextStart()
-    {
-        if (textProAmor == null) return;
-        textProAmor.gameObject.SetActive(false);
-        SetAlpha(1f);
     }
 
     // Thực thi destroy
     protected override void AstDestroy()
     {
+        Destroy(gameObject, timeDestroy);
         _animator.SetTrigger(NAME_ANI_BREAK);
         OnBoxBroken?.Invoke(amorDrops);
 
-        SetTextProAmor();
+        SetTextProAmor(alphaStart);
         StartCoroutine(FadeAlpha(timeDestroy));
-
-        Destroy(gameObject, timeDestroy);
     }
 
-  
-
-    private void SetTextProAmor()
+    private void SetTextProAmor(int alpha)
     {
-        textProAmor.gameObject.SetActive(true);
         textProAmor.transform.position = transform.position;
         textProAmor.text = "+" + amorDrops;
-        SetAlpha(1f);
+        SetAlpha(alpha);
     }    
 
     private IEnumerator FadeAlpha(float duration)
@@ -68,12 +57,10 @@ public class BoxAmor : Ast
         while(timer < duration)
         {
             timer += Time.deltaTime;
-            float alpha = Mathf.Lerp(1f, 0f, timer/duration);
+            float alpha = Mathf.Lerp(alphaStart, alphaEnd, timer/duration);
             SetAlpha(alpha);
             yield return null;
         }    
-        SetAlpha(0f);
-        textProAmor.gameObject.SetActive(false);
     }    
 
     private void SetAlpha(float a)

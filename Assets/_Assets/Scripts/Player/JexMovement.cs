@@ -7,7 +7,7 @@ public class JexMovement : MonoBehaviour
 {
     [SerializeField] public JexData jexData;
     [SerializeField] Transform positionForce;
-    [SerializeField] Transform rotationFishZero;
+    [SerializeField] Transform rotationFishZero; // Hiệu ứng ánh sáng trên kính
     private Vector3 direction;
 
     private float addForceMax;

@@ -13,11 +13,11 @@ public class AstMovement : MonoBehaviour
     private float addTorqueRandom;
     private float timeDelay;
 
-    private float minScreen = 0.1f;
-    private float maxScreen = 1.1f;
+    private float minScreen = 0.05f;
+    private float maxScreen = 1.05f;
     private float minScreenDestroy = 0.4f;
     private float maxScreenDestroy = 1.4f;
-    private float timeDestroy = 1f;
+    private float timeDestroy = 0f;
    
 
     public void SetTranformPlayer(Transform position)

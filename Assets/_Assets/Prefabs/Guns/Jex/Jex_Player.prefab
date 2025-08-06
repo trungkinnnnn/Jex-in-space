@@ -985,9 +985,10 @@ GameObject:
   - component: {fileID: 1619543566409652738}
   - component: {fileID: 1619543566409652739}
   - component: {fileID: 1359370060}
+  - component: {fileID: 1985239794}
   m_Layer: 0
   m_Name: Jex_Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1022,7 +1023,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1.5
-  m_LinearDrag: 0.06
+  m_LinearDrag: 0.08
   m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: bc0c344aa0e84c445b337a449a5adeed, type: 2}
@@ -1104,3 +1105,18 @@ MonoBehaviour:
   addForceTorque: 1
   timeSpin: 3
   timeStart: 5
+--- !u!114 &1985239794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619543566409652989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63bb3184487ca974492fe126646d0cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 8d9d91c50ebb4a443a8b64f8ecb36de7, type: 2}
+  addforceImpact: 0.2
+  impactSpeedMax: 0.3

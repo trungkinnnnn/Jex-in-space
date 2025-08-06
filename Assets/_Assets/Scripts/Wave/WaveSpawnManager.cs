@@ -15,11 +15,20 @@ public class WaveSpawnManager : MonoBehaviour
 
     private WaveSpawner waveSpawner;
     private int currentWave = 0;
+    private int alphaStart = 0;
 
     private void Start()
     {
+        SetAlphaZero();
         StartCoroutine(TimeStart(timeStart));
     }
+
+    private void SetAlphaZero()
+    {
+        Color color = textMeshProUGUI.color;
+        color.a = alphaStart;
+        textMeshProUGUI.color = color;
+    }    
 
     private IEnumerator TimeStart(float time)
     {

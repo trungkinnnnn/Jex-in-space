@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class RectangSpawner
 {
-    private readonly Vector2 topLeft = new Vector2(-0.3f, 1.3f);
-    private readonly Vector2 bottomRight = new Vector2(1.3f, -0.3f);
+    private const float min = 0.3f;
+    private const float max = 1.3f;
+
+    private readonly Vector2 topLeft = new Vector2(-min, max);
+    private readonly Vector2 bottomRight = new Vector2(max, -min);
 
     private enum Edge { Top, Right, Bottom, Left }
 

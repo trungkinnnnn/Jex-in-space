@@ -13,5 +13,5 @@ public class JexData : ScriptableObject
     public float addForceTorqueWind;
 
     public float timeRecovery;
-    public float timeImmotal;
+    public float timeImmortal;
 }

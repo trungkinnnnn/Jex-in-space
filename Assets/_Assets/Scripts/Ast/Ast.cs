@@ -33,10 +33,15 @@ public class Ast : MonoBehaviour
 
         if (hp <= 0)
         {
-            CreateAniDestroy();
-            CreatLight2DExplosion();
             AstDestroy();
         }    
+    }
+
+    protected virtual void AstDestroy()
+    {
+        CreateAniDestroy();
+        CreatLight2DExplosion();
+        Destroy(gameObject);
     }
 
     private void OnBroken()
@@ -61,9 +66,6 @@ public class Ast : MonoBehaviour
         Instantiate(effectAniDestroy, transform.position, Quaternion.identity);
     }    
 
-    protected virtual void AstDestroy()
-    {
-        Destroy(gameObject);
-    }
+   
 
 }

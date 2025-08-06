@@ -6,16 +6,12 @@ using UnityEngine;
 public class BasicBullet : BulletBase
 {
     private int dmage = 1;
-    protected override void OnTriggerEnter2D(Collider2D other)
+
+    protected override void HandleHitAst(Collider2D other)
     {
-        if(other.CompareTag(NAME_COMPARETAG_PHYSIC))
-        {
-            CreateEffectHit();
-
-            AstHitBullet(other);
-
-            Destroy(gameObject);
-        }
+        CreateEffectHit();
+        AstHitBullet(other);
+        Destroy(gameObject);
     }
 
     private void AstHitBullet(Collider2D other)

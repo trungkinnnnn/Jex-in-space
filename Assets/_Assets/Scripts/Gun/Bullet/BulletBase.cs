@@ -12,6 +12,8 @@ public abstract class BulletBase : MonoBehaviour
     private Vector2 direction;
    
     protected string NAME_COMPARETAG_PHYSIC = "Ast";
+    protected string NAME_COMPARETAG_PHYSIC_ITEM = "Health";
+
     public string COLORHEXA = "FFC015";
 
     //Component
@@ -43,6 +45,14 @@ public abstract class BulletBase : MonoBehaviour
         return effectHits[random];
     }    
 
-    protected abstract void OnTriggerEnter2D(Collider2D other);
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag(NAME_COMPARETAG_PHYSIC) || other.CompareTag(NAME_COMPARETAG_PHYSIC_ITEM))
+        {
+            HandleHitAst(other);
+        }
+    }
+
+    protected abstract void HandleHitAst(Collider2D other);
 
 }
