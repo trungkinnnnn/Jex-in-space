@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdd000489e8516418f174790ee587ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSpin: 4
+  timeSpin: 3
 --- !u!1 &1619543564314811052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,5 +1102,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   addForceTorque: 1
-  timeSpin: 4
+  timeSpin: 3
   timeStart: 5

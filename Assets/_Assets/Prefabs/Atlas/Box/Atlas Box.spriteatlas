@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas Box
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 2
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: 821296292, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -2104051379, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: 346067500, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -2020660154, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -2129955371, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -1156880316, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: 97188366, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -337481973, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: 178569406, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: 1218041796, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -979969526, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: 1800868257, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -187914182, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -149998062, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: 489568205, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -779087286, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: 72327677, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -1587066447, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -109635072, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -99850086, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -428166733, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -1584944109, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: 222411191, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: 1248213404, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    - {fileID: -719148372, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -1584944109, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: 222411191, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: 1248213404, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -719148372, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: 821296292, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: 1218041796, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -187914182, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -979969526, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: 1800868257, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: 489568205, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -149998062, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: 72327677, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -779087286, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -2020660154, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -109635072, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -2129955371, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -1587066447, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -2104051379, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -428166733, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: 346067500, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -99850086, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -337481973, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: 178569406, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: -1156880316, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  - {fileID: 97188366, guid: 649fce77b8ec14b4baea5b873788a625, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - crate-sheet-v2_20
+  - crate-sheet-v2_21
+  - crate-sheet-v2_22
+  - crate-sheet-v2_23
+  - crate-sheet-v2_24
+  - crate-sheet-v2_8
+  - crate-sheet-v2_11
+  - crate-sheet-v2_9
+  - crate-sheet-v2_10
+  - crate-sheet-v2_13
+  - crate-sheet-v2_12
+  - crate-sheet-v2_15
+  - crate-sheet-v2_14
+  - crate-sheet-v2_2
+  - crate-sheet-v2_17
+  - crate-sheet-v2_3
+  - crate-sheet-v2_16
+  - crate-sheet-v2_0
+  - crate-sheet-v2_19
+  - crate-sheet-v2_1
+  - crate-sheet-v2_18
+  - crate-sheet-v2_6
+  - crate-sheet-v2_7
+  - crate-sheet-v2_4
+  - crate-sheet-v2_5
+  m_RenderDataMap: {}
+  m_Tag: Atlas Box
+  m_IsVariant: 0

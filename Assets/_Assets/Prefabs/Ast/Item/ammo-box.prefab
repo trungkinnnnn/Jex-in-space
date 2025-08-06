@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5332755612768548455}
   - component: {fileID: -7448370004530292784}
   - component: {fileID: 7655382340820070386}
+  - component: {fileID: -7525105691756871477}
   m_Layer: 7
   m_Name: ammo-box
   m_TagString: Ast
@@ -169,3 +170,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
+--- !u!114 &-7525105691756871477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5332755612768548454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2ec8cfa4138c2428184b73f76d8963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textProAmor: {fileID: 0}
+  maxAmor: 40
+  minAmor: 15

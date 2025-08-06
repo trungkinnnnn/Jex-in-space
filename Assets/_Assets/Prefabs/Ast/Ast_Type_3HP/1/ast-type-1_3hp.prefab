@@ -241,7 +241,7 @@ MonoBehaviour:
   effectLight2DExplosion: {fileID: 8486099257211429435, guid: 0748e2a0762d3e04e915af4feda0c07b, type: 3}
   effectAniDestroy: {fileID: 5450029284689995186, guid: dec1613223c4c3b41beaa36cf456822f, type: 3}
   hp: 2
-  radiusExplosion: 1.5
+  radiusExplosion: 1.7
   CreatAst:
   - {fileID: 2743430133569553353}
   - {fileID: 1690831436410317187}
@@ -255,10 +255,6 @@ PrefabInstance:
     - target: {fileID: 2251268788886450818, guid: aec32d10cc6c8c542a4cfb77f174bbec, type: 3}
       propertyPath: m_Name
       value: ast-halt_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2251268788886450818, guid: aec32d10cc6c8c542a4cfb77f174bbec, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2251268788886450820, guid: aec32d10cc6c8c542a4cfb77f174bbec, type: 3}
       propertyPath: m_RootOrder
@@ -326,10 +322,6 @@ PrefabInstance:
     - target: {fileID: 8022106534528148204, guid: 10559e309f0ac264ea75199142342b19, type: 3}
       propertyPath: m_Name
       value: ast_half_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8022106534528148204, guid: 10559e309f0ac264ea75199142342b19, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8022106534528148206, guid: 10559e309f0ac264ea75199142342b19, type: 3}
       propertyPath: m_RootOrder

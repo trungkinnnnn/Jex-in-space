@@ -241,7 +241,7 @@ MonoBehaviour:
   effectLight2DExplosion: {fileID: 8486099257211429435, guid: 0748e2a0762d3e04e915af4feda0c07b, type: 3}
   effectAniDestroy: {fileID: 5450029284689995186, guid: dec1613223c4c3b41beaa36cf456822f, type: 3}
   hp: 2
-  radiusExplosion: 1.5
+  radiusExplosion: 1.7
   CreatAst:
   - {fileID: 2834105895077187743}
   - {fileID: 5872951164896753346}

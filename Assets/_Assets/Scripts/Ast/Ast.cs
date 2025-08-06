@@ -33,9 +33,7 @@ public class Ast : MonoBehaviour
 
         if (hp <= 0)
         {
-
-            Instantiate(effectAniDestroy, transform.position, Quaternion.identity);
-
+            CreateAniDestroy();
             CreatLight2DExplosion();
             AstDestroy();
         }    
@@ -51,11 +49,17 @@ public class Ast : MonoBehaviour
 
     private void CreatLight2DExplosion()
     {
+        if (effectLight2DExplosion == null) return;
         var explosion = Instantiate(effectLight2DExplosion, transform.position, Quaternion.identity);
         EffectLightExplosion light = explosion.GetComponent<EffectLightExplosion>();
         light.Init(radiusExplosion);
     }    
 
+    private void CreateAniDestroy()
+    {
+        if (effectAniDestroy == null) return;
+        Instantiate(effectAniDestroy, transform.position, Quaternion.identity);
+    }    
 
     protected virtual void AstDestroy()
     {

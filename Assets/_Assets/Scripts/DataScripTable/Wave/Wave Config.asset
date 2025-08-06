@@ -17,7 +17,7 @@ MonoBehaviour:
     countUpNextWave: 3
     delayBetweenBatch: 4
   mediumAts:
-    totalCount: 20
+    totalCount: 15
     countUpNextWave: 5
     delayBetweenBatch: 2
   smallAts:
@@ -33,12 +33,12 @@ MonoBehaviour:
     countUpNextWave: 0
     delayBetweenBatch: 4
   amorBox:
-    totalCount: 4
+    totalCount: 5
     countUpNextWave: 1
     delayBetweenBatch: 7
   spawnIntervalTime: 5
   spawnDownEvery3Wave: 0.5
   minSpawnInterval: 5
-  totalAst: 30
+  totalAst: 25
   upTotalNextWave: 5
   timeNextWave: 10

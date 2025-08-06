@@ -1,6 +1,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WaveSpawner
@@ -10,13 +11,15 @@ public class WaveSpawner
     private readonly Transform playerPosition;
     private readonly RectangSpawner rectangSpawner = new RectangSpawner();
     private readonly List<GameObject> listTrackerAst = new List<GameObject>();
+    private readonly TextMeshProUGUI textMeshProUGUI;
     private readonly int speedGame;
-    public WaveSpawner(WaveData waveData, WaveConfig waveConfig, Transform playerPosition, int speedGame)
+    public WaveSpawner(WaveData waveData, WaveConfig waveConfig, Transform playerPosition, TextMeshProUGUI text, int speedGame)
     {
         this.waveData = waveData;
         this.waveConfig = waveConfig;
         this.playerPosition = playerPosition;   
         this.speedGame = speedGame;
+        this.textMeshProUGUI = text;    
     }
 
     public bool IsWaveCleared() => listTrackerAst.Count == 0;
@@ -46,20 +49,16 @@ public class WaveSpawner
             for(int i = 0; i < batchSize; i++)
             {
                 SpawnType type = shuffer[i + index];
-                GameObject prefabs = PrefabSelector.GetRandomPrefabs(type, waveData);
-                Vector3 spawnPoint = rectangSpawner.GetSpawnPoint(i);
-
-                GameObject ast = Object.Instantiate(prefabs, spawnPoint, Quaternion.identity);
-                ast.GetComponent<AstMovement>()?.SetTranformPlayer(playerPosition);
-
-                if(SpawnUtility.IsTrackAst(type))
+                
+                if(type == SpawnType.AmorBox)
                 {
-                    listTrackerAst.Add(ast);
-                    Ast astTracker = ast.GetComponent<Ast>() ?? ast.AddComponent<Ast>();
-                    astTracker.Init(() => listTrackerAst.Remove(ast));  
+                    CreatPrefabBox(type, i);
+                }else
+                {
+                    CreatPrefabAst(type, i);
                 }
 
-                Debug.Log("listTracker : " + listTrackerAst.Count);
+                //Debug.Log("listTracker : " + listTrackerAst.Count);
 
                 yield return new WaitForSeconds(SpawnUtility.GetDelayForType(type, waveConfig));
             }
@@ -70,5 +69,38 @@ public class WaveSpawner
         }
 
     }
+
+    private void CreatPrefabAst(SpawnType type, int direction)
+    {
+        GameObject prefabs = PrefabSelector.GetRandomPrefabs(type, waveData);
+        Vector3 spawnPoint = rectangSpawner.GetSpawnPoint(direction);
+
+        GameObject ast = Object.Instantiate(prefabs, spawnPoint, Quaternion.identity);
+        ast.GetComponent<AstMovement>()?.SetTranformPlayer(playerPosition);
+
+        AddTracker(ast, type);
+    }
+    private void AddTracker(GameObject ast, SpawnType type)
+    {
+        if (SpawnUtility.IsTrackAst(type))
+        {
+            listTrackerAst.Add(ast);
+            Ast astTracker = ast.GetComponent<Ast>() ?? ast.AddComponent<Ast>();
+            astTracker.Init(() => listTrackerAst.Remove(ast));
+        }
+    }
+
+    private GameObject CreatPrefabBox(SpawnType type, int direction)
+    {
+        GameObject prefabs = PrefabSelector.GetRandomPrefabs(type, waveData);
+        Vector3 spawnPoint = rectangSpawner.GetSpawnPoint(direction);
+
+        GameObject ast = Object.Instantiate(prefabs, spawnPoint, Quaternion.identity);
+        ast.GetComponent<AstMovement>()?.SetTranformPlayer(playerPosition);
+        ast.GetComponent<BoxAmor>()?.Init(textMeshProUGUI);
+        return ast;
+    }
+
+
 
 }

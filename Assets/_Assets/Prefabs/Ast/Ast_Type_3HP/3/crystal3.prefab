@@ -13,13 +13,14 @@ GameObject:
   - component: {fileID: 8480982556268782699}
   - component: {fileID: 4518087935484083118}
   - component: {fileID: 2334675572799732815}
+  - component: {fileID: 4314874141676401722}
   m_Layer: 7
   m_Name: crystal3
   m_TagString: Ast
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8480982556268782698
 Transform:
   m_ObjectHideFlags: 0
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8480982556268782696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.13, y: 0.81, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -156,3 +157,15 @@ MonoBehaviour:
   effectAniDestroy: {fileID: 7960218921950989236, guid: 32e22ee9372b2e34fa5d42c2767f6a54, type: 3}
   hp: 1
   radiusExplosion: 1
+--- !u!114 &4314874141676401722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8480982556268782696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fedda469e68b4b4f93f6c23eab1becf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

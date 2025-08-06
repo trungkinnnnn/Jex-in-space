@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(GunGetData))]
@@ -7,7 +8,6 @@ public class GunCotroller : MonoBehaviour
     [SerializeField] GunData data;
     [SerializeField] GunStatData stat;
     [SerializeField] Transform pointFire;
-
     private GunGetData _gunGetData;
     private Animator _animator;
 
@@ -35,6 +35,8 @@ public class GunCotroller : MonoBehaviour
         totalbullet = magSize * 3;
         currentMagSizebullet = magSize;
         //Debug.Log("Total : " + totalbullet);
+
+     
     }
 
     private void Update()
@@ -72,6 +74,7 @@ public class GunCotroller : MonoBehaviour
     private void Reload()
     {
         StartCoroutine(LockInputForSecons(timeReload));
+        Debug.Log("current totalAmor : " + totalbullet);
     }
 
     private IEnumerator LockInputForSecons(float timeReload)
@@ -107,5 +110,20 @@ public class GunCotroller : MonoBehaviour
     }
 
 
+    private void OnEnable()
+    {
+        BoxAmor.OnBoxBroken += HandleTakeAmor;
+    }
+
+    private void OnDisable()
+    {
+        BoxAmor.OnBoxBroken -= HandleTakeAmor;
+    }    
+
+    private void HandleTakeAmor(int amor)
+    {
+        totalbullet += amor;
+        Debug.Log("Amor last : " + totalbullet);
+    }    
 
 }

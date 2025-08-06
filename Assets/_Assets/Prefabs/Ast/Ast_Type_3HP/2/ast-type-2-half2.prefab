@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2792188838414630743}
   - component: {fileID: 3980030406855026605}
   - component: {fileID: 2974753791935316746}
+  - component: {fileID: 136356301886305132}
   m_Layer: 7
   m_Name: ast-type-2-half2
   m_TagString: Ast
@@ -155,3 +156,15 @@ MonoBehaviour:
   effectAniDestroy: {fileID: 5450029284689995186, guid: da6094d5703788b42abfc610e7d49c57, type: 3}
   hp: 1
   radiusExplosion: 1
+--- !u!114 &136356301886305132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2792188838414630740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fedda469e68b4b4f93f6c23eab1becf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

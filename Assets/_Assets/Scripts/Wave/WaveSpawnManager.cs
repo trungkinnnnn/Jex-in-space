@@ -1,6 +1,7 @@
 ﻿
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WaveSpawnManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class WaveSpawnManager : MonoBehaviour
     [SerializeField] WaveData waveData;
     [SerializeField] WaveConfig waveConfig;
     [SerializeField] Transform playerPosition;
+    [SerializeField] TextMeshProUGUI textMeshProUGUI;
     [SerializeField] int speedGame;
     [SerializeField] float timeStart = 5f;
 
@@ -22,7 +24,7 @@ public class WaveSpawnManager : MonoBehaviour
     private IEnumerator TimeStart(float time)
     {
         yield return new WaitForSeconds(time);
-        waveSpawner = new WaveSpawner(waveData, waveConfig, playerPosition, speedGame);
+        waveSpawner = new WaveSpawner(waveData, waveConfig, playerPosition, textMeshProUGUI, speedGame);
         StartCoroutine(WaveLoop());
     }    
 
