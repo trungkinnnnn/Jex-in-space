@@ -31,7 +31,7 @@ public class Ast : MonoBehaviour
 
         OnBroken();
 
-        if (hp <= 0)
+        if (hp == 0)
         {
             AstDestroy();
         }    
@@ -57,7 +57,7 @@ public class Ast : MonoBehaviour
         if (effectLight2DExplosion == null) return;
         var explosion = Instantiate(effectLight2DExplosion, transform.position, Quaternion.identity);
         EffectLightExplosion light = explosion.GetComponent<EffectLightExplosion>();
-        light.Init(radiusExplosion);
+        light.InitRadius(radiusExplosion);
     }    
 
     private void CreateAniDestroy()

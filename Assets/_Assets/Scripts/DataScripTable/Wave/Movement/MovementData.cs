@@ -10,6 +10,8 @@ public class MovementData : ScriptableObject
     public float addForceTorqueMax;
     public float addForceTorqueMin;
 
+    public float addForceOutScreen;
+
     public float minSpeed;
     public float timeBack;
 }

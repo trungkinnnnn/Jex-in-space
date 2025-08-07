@@ -188,9 +188,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014045984, y: 0.003941506}
+  m_Offset: {x: -0.008895819, y: 0.00044241548}
   serializedVersion: 2
-  m_Radius: 0.41256818
+  m_Radius: 0.3891338
 --- !u!50 &-7741834642489833994
 Rigidbody2D:
   serializedVersion: 4
@@ -255,6 +255,10 @@ PrefabInstance:
     - target: {fileID: 2251268788886450818, guid: aec32d10cc6c8c542a4cfb77f174bbec, type: 3}
       propertyPath: m_Name
       value: ast-halt_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251268788886450818, guid: aec32d10cc6c8c542a4cfb77f174bbec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2251268788886450820, guid: aec32d10cc6c8c542a4cfb77f174bbec, type: 3}
       propertyPath: m_RootOrder
@@ -322,6 +326,10 @@ PrefabInstance:
     - target: {fileID: 8022106534528148204, guid: 10559e309f0ac264ea75199142342b19, type: 3}
       propertyPath: m_Name
       value: ast_half_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022106534528148204, guid: 10559e309f0ac264ea75199142342b19, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8022106534528148206, guid: 10559e309f0ac264ea75199142342b19, type: 3}
       propertyPath: m_RootOrder

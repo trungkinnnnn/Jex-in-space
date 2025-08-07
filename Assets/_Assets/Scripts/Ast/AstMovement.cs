@@ -67,7 +67,7 @@ public class AstMovement : MonoBehaviour
     private void AddForceOutScreen()
     {
         Vector2 direction = (playerPostion.position - transform.position).normalized;
-        rb.AddForce(direction * movementData.addForceMin, ForceMode2D.Force);
+        rb.AddForce(direction * movementData.addForceOutScreen, ForceMode2D.Force);
         rb.AddTorque(movementData.addForceTorqueMin, ForceMode2D.Force);
     }
 

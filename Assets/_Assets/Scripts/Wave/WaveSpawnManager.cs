@@ -69,7 +69,8 @@ public class WaveSpawnManager : MonoBehaviour
 
         if(wave % 3 == 0)
         {
-            waveConfig.spawnIntervalTime = Mathf.Max(waveConfig.spawnIntervalTime - waveConfig.spawnDownEvery3Wave, waveConfig.minSpawnInterval);
+            waveConfig.spawnIntervalTime = Mathf.Max(waveConfig.spawnIntervalTime - waveConfig.spawnDownEvery3Wave
+                                                        , waveConfig.minSpawnInterval);
         }    
 
     }

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Movement
   m_EditorClassIdentifier: 
   addForceMax: 0.5
-  addForceMin: 0.1
+  addForceMin: 0.05
   addForceTorqueMax: 0.1
   addForceTorqueMin: 0.01
+  addForceOutScreen: 0.1
   minSpeed: 0.4
   timeBack: 6

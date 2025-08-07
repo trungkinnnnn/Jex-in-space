@@ -273,3 +273,68 @@ MonoBehaviour:
       value: 0.5
       price: 200
       unlock: 0
+  - idGun: Gun05
+    magSize:
+    - name: magSize
+      level: 1
+      value: 8
+      price: 0
+      unlock: 1
+    - name: magSize
+      level: 2
+      value: 12
+      price: 100
+      unlock: 0
+    - name: magSize
+      level: 3
+      value: 15
+      price: 200
+      unlock: 0
+    bulletSpeed:
+    - name: bulletSpeed
+      level: 1
+      value: 2
+      price: 0
+      unlock: 1
+    - name: bulletSpeed
+      level: 2
+      value: 3
+      price: 100
+      unlock: 0
+    - name: bulletSpeed
+      level: 3
+      value: 3.5
+      price: 200
+      unlock: 0
+    timeReload:
+    - name: timeReload
+      level: 1
+      value: 4
+      price: 0
+      unlock: 1
+    - name: timeReload
+      level: 2
+      value: 3
+      price: 100
+      unlock: 0
+    - name: timeReload
+      level: 3
+      value: 3.5
+      price: 200
+      unlock: 0
+    fireRate:
+    - name: fireRate
+      level: 1
+      value: 0.6
+      price: 0
+      unlock: 1
+    - name: fireRate
+      level: 2
+      value: 0.4
+      price: 100
+      unlock: 0
+    - name: fireRate
+      level: 3
+      value: 0.3
+      price: 200
+      unlock: 0

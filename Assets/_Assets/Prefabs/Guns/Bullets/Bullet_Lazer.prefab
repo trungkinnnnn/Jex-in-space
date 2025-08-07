@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2990621471026272616}
   - component: {fileID: 8100711136076788477}
   - component: {fileID: 6260473113983013255}
+  - component: {fileID: -5844493511886506427}
   m_Layer: 0
   m_Name: Bullet_Lazer
   m_TagString: Bullet
@@ -65,7 +66,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.06313586, y: 0.000000029802322}
@@ -81,6 +82,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.057828188, y: 0.053305924}
   m_EdgeRadius: 0
+--- !u!114 &-5844493511886506427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2990621471026272631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99961a103e56cbf40a3b02a0cdcc3a1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectHits:
+  - {fileID: 5938362892784879280, guid: 43215c98ebaf81e409d2eb67fac38f47, type: 3}
+  - {fileID: 443291633286878820, guid: 3e5d96214e93fdd4d8a87890f2f393ca, type: 3}
+  lightEffect: {fileID: 0}
+  COLORHEXA: FFB104
+  radiusEffectLight: 0.4
+  forceStay: 0.8
+  forceEnter: 0.5
+  hpAmor: 2
+  hpAmorDown: 1
 --- !u!1 &2990621471102280575
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,9 +256,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -313323977
-  m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingLayerID: 920819605
+  m_SortingLayer: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 9a002e856e1c14a4aa52e9aca24f6f60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -319,9 +342,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -313323977
-  m_SortingLayer: 4
-  m_SortingOrder: 1
+  m_SortingLayerID: 920819605
+  m_SortingLayer: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 318996206420e6f438e75e06d46e6fc9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

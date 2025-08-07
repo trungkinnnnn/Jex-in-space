@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LazerBullet : MonoBehaviour
+public class LazerBullet : BulletBase
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("PARA LAZEBULLET")]
+    public int hpAmor = 2;
+    public int hpAmorDown = 1;
+    protected override void HandleHitAst(Collider2D other)
     {
-        
-    }
+        CreateEffectHit();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        hpAmor -= hpAmorDown;
+        if (hpAmor <= 0)
+        {
+            Destroy(gameObject);
+        }    
+
     }
 }

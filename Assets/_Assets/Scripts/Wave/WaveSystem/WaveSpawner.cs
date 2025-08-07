@@ -49,18 +49,12 @@ public class WaveSpawner
             for(int i = 0; i < batchSize; i++)
             {
                 SpawnType type = shuffer[i + index];
-                
-                if(type == SpawnType.AmorBox)
-                {
-                    CreatPrefabBox(type, i);
-                }else
-                {
-                    CreatPrefabAst(type, i);
-                }
 
-                //Debug.Log("listTracker : " + listTrackerAst.Count);
+                CreatPrefabAst(type, i);
 
-                yield return new WaitForSeconds(SpawnUtility.GetDelayForType(type, waveConfig));
+                 //Debug.Log("listTracker : " + listTrackerAst.Count);
+
+                 yield return new WaitForSeconds(SpawnUtility.GetDelayForType(type, waveConfig));
             }
 
             index += batchSize;
@@ -78,6 +72,11 @@ public class WaveSpawner
         GameObject ast = Object.Instantiate(prefabs, spawnPoint, Quaternion.identity);
         ast.GetComponent<AstMovement>()?.SetTranformPlayer(playerPosition);
 
+        if(type == SpawnType.AmorBox)
+        {
+            ast.GetComponent<BoxAmor>()?.Init(textMeshProUGUI);
+        }    
+
         AddTracker(ast, type);
     }
     private void AddTracker(GameObject ast, SpawnType type)
@@ -90,16 +89,7 @@ public class WaveSpawner
         }
     }
 
-    private GameObject CreatPrefabBox(SpawnType type, int direction)
-    {
-        GameObject prefabs = PrefabSelector.GetRandomPrefabs(type, waveData);
-        Vector3 spawnPoint = rectangSpawner.GetSpawnPoint(direction);
-
-        GameObject ast = Object.Instantiate(prefabs, spawnPoint, Quaternion.identity);
-        ast.GetComponent<AstMovement>()?.SetTranformPlayer(playerPosition);
-        ast.GetComponent<BoxAmor>()?.Init(textMeshProUGUI);
-        return ast;
-    }
+  
 
 
 

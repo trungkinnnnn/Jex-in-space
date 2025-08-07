@@ -17,10 +17,15 @@ public class GunCotroller : MonoBehaviour
     private float bulletSpeed;
     private float timeReload;
     private float fireRate;
+    private string idGun;
 
     //
     private float currentMagSizebullet;
     private float totalbullet;
+
+    //IDBULLET
+    private readonly string ID_BULLET_REDPLASMA = "Gun05";
+    public float angleRedPlasma = 30f;
 
     //Ani
     private string NAME_ANI_TRIGGER_SHOOT = "isShoot";
@@ -34,9 +39,7 @@ public class GunCotroller : MonoBehaviour
 
         totalbullet = magSize * 3;
         currentMagSizebullet = magSize;
-        //Debug.Log("Total : " + totalbullet);
-
-     
+        Debug.Log("Total : " + totalbullet);
     }
 
     private void Update()
@@ -59,6 +62,11 @@ public class GunCotroller : MonoBehaviour
         GameObject bullet = Instantiate(currentGun.bulletPrefabs, pointFire.position, pointFire.rotation);
         BulletBase bulletController = bullet.GetComponent<BulletBase>();
         if (bulletController != null) bulletController.Init(pointFire.right, bulletSpeed);
+
+        if(currentGun.idGun == ID_BULLET_REDPLASMA)
+        {
+            HandleBulletRedPlasma();
+        }    
 
         if (currentMagSizebullet == 0)
         {
@@ -124,6 +132,18 @@ public class GunCotroller : MonoBehaviour
     {
         totalbullet += amor;
         Debug.Log("Amor last : " + totalbullet);
+    }    
+
+    private void HandleBulletRedPlasma()
+    {
+        float[] angles = {angleRedPlasma, - angleRedPlasma};
+        foreach(var angle  in angles)
+        {
+            Vector3 dir = Quaternion.Euler(0f , 0f, angle) * pointFire.right;
+            GameObject bullet = Instantiate(currentGun.bulletPrefabs, pointFire.position, Quaternion.Euler(0f, 0f, angle) * pointFire.rotation);
+            BulletBase bulletController = bullet.GetComponent<BulletBase>();
+            if (bulletController != null) bulletController.Init(dir, bulletSpeed);
+        }    
     }    
 
 }

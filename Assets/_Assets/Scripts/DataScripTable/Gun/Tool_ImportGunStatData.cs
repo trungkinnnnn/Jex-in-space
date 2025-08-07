@@ -9,7 +9,7 @@ public class Tool_ImportGunStatData
     [MenuItem("Tools/ Import GunStatData From CSV")]
     public static void ImportGunStatData()
     {
-        string fileAssets = Application.dataPath + "/_Assets/Data/GunUpdate.csv";
+        string fileAssets = Application.dataPath + "/_Assets/_Data/GunUpdate.csv";
         string[] lines = File.ReadAllLines(fileAssets);
         if (lines.Length <= 1)
         {
@@ -73,9 +73,9 @@ public class Tool_ImportGunStatData
                 currentStatLevel.fireRate.Add(value);
             }
 
-          
-
         }
+        gunStatData.statLevels.Add(currentStatLevel);
+
 
         string filePath = "Assets/_Assets/Scripts/DataScripTable/Gun/Data";
         Directory.CreateDirectory(filePath);

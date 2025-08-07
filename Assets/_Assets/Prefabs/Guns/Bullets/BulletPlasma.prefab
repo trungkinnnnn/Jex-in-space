@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 6031634804674065010}
   - component: {fileID: 3016889609164514051}
   - component: {fileID: 1531494732843712173}
+  - component: {fileID: 3383868189267579074}
   m_Layer: 0
   m_Name: BulletPlasma
   m_TagString: Bullet
@@ -317,7 +318,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.00039729476, y: -0.0009797812}
@@ -333,3 +334,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.08161861, y: 0.055473864}
   m_EdgeRadius: 0
+--- !u!114 &3383868189267579074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6031634804674065009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5b3d72832610142ade5c37dc2a2a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectHits:
+  - {fileID: 7960218921950989236, guid: 32e22ee9372b2e34fa5d42c2767f6a54, type: 3}
+  lightEffect: {fileID: 8486099257211429435, guid: 5cc2945671c72cd41925a87c5977b4c8, type: 3}
+  timeLife: 3
+  damage: 1
+  radiusEffectLight: 0.8
+  forceStay: 1
+  forceEnter: 0.8
+  COLORHEXA: FFFFFF

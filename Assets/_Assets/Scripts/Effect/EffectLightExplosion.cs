@@ -20,10 +20,17 @@ public class EffectLightExplosion : MonoBehaviour
     private Color _alpha;
 
 
-    public void Init(float radius)
+    public void InitRadius(float radius)
     {
         explosionRadius = radius;
     }
+
+    public void InitForce(float forceEnter, float forceStay)
+    {
+        this.forceEnter = forceEnter;
+        this.forceStay = forceStay;
+    }    
+
     private void Start()
     {
         _light = GetComponent<Light2D>();
