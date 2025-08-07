@@ -105,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
   m_SortingLayer: 4
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: b9904e4609596fe4195794576d57508d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -189,7 +189,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
   m_SortingLayer: 4
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: ec07632f8fe93dd419ef242d6f853564, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -306,6 +306,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 94b8cee17da2c1b4781e1757c29aef1a, type: 2}
   stat: {fileID: 11400000, guid: 7e864b0b4b68e00449dd8785c200751d, type: 2}
   pointFire: {fileID: 7476684215036009241}
+  angleRedPlasma: 30
 --- !u!1 &5284965709560991303
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +379,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
   m_SortingLayer: 4
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: d296f68afa5666943b8767d358235d4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

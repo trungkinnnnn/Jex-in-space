@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class EffectExplosionDmage : EffectLightExplosion
 {
-    public int dmage = 1;
+
+    private const string NAME_TAG_AST = "Ast";
+    private const string NAME_TAG_PLAYER = "Player";
+
+    public int damage = 1;
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         Rigidbody2D rb = collision.attachedRigidbody;
@@ -21,10 +25,24 @@ public class EffectExplosionDmage : EffectLightExplosion
             }
         }
 
-        Ast ast = collision.GetComponent<Ast>();
-        if (ast != null)
+        
+        if(collision.CompareTag(NAME_TAG_AST))
         {
-            ast.TakeDameBullet(dmage);
+            Ast ast = collision.GetComponent<Ast>();
+            if (ast != null)
+            {
+                ast.TakeDameBullet(damage);
+            }
         }    
+       
+        if(collision.CompareTag(NAME_TAG_PLAYER))
+        {
+            JexHeatlh jexHeatlh = collision.GetComponent<JexHeatlh>();
+            if (jexHeatlh != null)
+            {
+                jexHeatlh.TakeDameAst(damage);
+            }    
+        }    
+       
     }
 }

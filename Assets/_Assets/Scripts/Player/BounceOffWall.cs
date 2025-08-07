@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BounceOffWall : MonoBehaviour
 {
+    public static Action OnAnnoyed;
+
     public float bounceForceEnter = 1f;
     public string wallTag = "Wall";
 
@@ -18,6 +21,7 @@ public class BounceOffWall : MonoBehaviour
         if(collision.gameObject.CompareTag(wallTag))
         {
             BounceBreak(collision, bounceForceEnter);
+            OnAnnoyed?.Invoke();
         }
     }
 

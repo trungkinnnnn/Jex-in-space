@@ -271,6 +271,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 94b8cee17da2c1b4781e1757c29aef1a, type: 2}
   stat: {fileID: 11400000, guid: 7e864b0b4b68e00449dd8785c200751d, type: 2}
   pointFire: {fileID: 6241823878280502679}
+  angleRedPlasma: 30
 --- !u!1 &9115486881099206710
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +376,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
   m_SortingLayer: 4
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: f294a457d4840614db1b6a71b6271a72, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -492,7 +493,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
   m_SortingLayer: 4
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: d99fdac50da8d5e49ba6e132849b9f3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -576,7 +577,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
   m_SortingLayer: 4
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 1148f0ede92312744b9c1fb2b007aa17, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

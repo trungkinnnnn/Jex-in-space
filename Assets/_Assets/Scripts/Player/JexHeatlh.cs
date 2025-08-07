@@ -1,10 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.Rendering;
+
 
 public class JexHeatlh : MonoBehaviour
 {
+    public static Action Eat;
+    public static Action Hurt;
+    public static Action Die;
+
     [SerializeField] JexData data;
     private Rigidbody2D rb;
 
@@ -43,6 +46,8 @@ public class JexHeatlh : MonoBehaviour
                 lastTimeTakeDame = Time.time + timeImmortal;
                 TakeDameAst(dmage);
 
+                Hurt?.Invoke();
+
                 AddForce(collision.collider.transform.position);
             }    
         }
@@ -50,7 +55,9 @@ public class JexHeatlh : MonoBehaviour
         if (collision.collider.CompareTag(NAME_ITEM_HEALTH))
         {
             AddHealth(health);
-            
+
+            Eat?.Invoke();
+
             ItemHealth itemHealth = collision.collider.GetComponent<ItemHealth>();
             if (itemHealth != null) itemHealth.HandleDestroyHealth();
         }
@@ -62,6 +69,7 @@ public class JexHeatlh : MonoBehaviour
         Debug.Log("Hp : " + currentHp);
         if(currentHp <= 0)
         {
+            Die?.Invoke();
             Debug.Log("Jex die");
         }    
     }
