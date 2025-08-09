@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    [SerializeField] private float timeDuration = 0.4f;
-    [SerializeField] private float damping = 1.5f;
-    [SerializeField] private float frequency = 20f;
-    [SerializeField] Transform playerTranform;
+    [SerializeField] float _timeDuration = 0.4f;
+    [SerializeField] float _damping = 1.5f;
+    [SerializeField] float _frequency = 20f;
+    [SerializeField] Transform _playerTranform;
 
-    private Vector3 originalLocalPosition;
-    private bool originalCaptured = false;
-    private Coroutine currentShake;
+    private Vector3 _originalLocalPosition;
+    private bool _originalCaptured = false;
+    private Coroutine _currentShake;
 
     private Animator _animator;
 
@@ -34,35 +34,34 @@ public class CameraShake : MonoBehaviour
     private void HandleExploed(Vector2 pos, float range, float intensity)
     {
         TriggerShake(pos, range, intensity);
-        Debug.Log("camraShake");
     }    
 
     private void TriggerShake(Vector2 positionEx, float range, float maxIntensity)
     {
-        if (playerTranform == null) return;
+        if (_playerTranform == null) return;
         if(range <= 0) return;
 
-        float distance = Vector2.Distance(positionEx, playerTranform.position);
+        float distance = Vector2.Distance(positionEx, _playerTranform.position);
         if (distance > range) return;
 
         float intensity = Mathf.Clamp01(1f - (distance/range)) * maxIntensity;
 
-        if(!originalCaptured)
+        if(!_originalCaptured)
         {
-            originalCaptured = true;
-            originalLocalPosition = transform.localPosition;
+            _originalCaptured = true;
+            _originalLocalPosition = transform.localPosition;
             _animator.enabled = false;
         }    
 
-        if(currentShake != null)
+        if(_currentShake != null)
         {
-            StopCoroutine(currentShake);
-            currentShake = null;
+            StopCoroutine(_currentShake);
+            _currentShake = null;
 
-            transform.localPosition = originalLocalPosition;
+            transform.localPosition = _originalLocalPosition;
         }
 
-        currentShake = StartCoroutine(Shake(timeDuration, intensity));
+        _currentShake = StartCoroutine(Shake(_timeDuration, intensity));
        
 
     }
@@ -75,27 +74,27 @@ public class CameraShake : MonoBehaviour
 
         while (elapsed < duration)
         {
-            float dampingFactor = Mathf.Pow(1 - (elapsed/duration), damping);
+            float dampingFactor = Mathf.Pow(1 - (elapsed/duration), _damping);
 
-            float nx = Mathf.PerlinNoise(seed, elapsed * frequency);
-            float ny = Mathf.PerlinNoise(seed * 37.1f, elapsed * frequency);
+            float nx = Mathf.PerlinNoise(seed, elapsed * _frequency);
+            float ny = Mathf.PerlinNoise(seed * 37.1f, elapsed * _frequency);
 
             float offX = (nx * 2f - 1f) * magnitude * dampingFactor;
             float offY = (ny * 2f - 1f) * magnitude * dampingFactor;
 
-            transform.localPosition = originalLocalPosition + new Vector3(offX, offY);
+            transform.localPosition = _originalLocalPosition + new Vector3(offX, offY);
 
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        transform.localPosition = originalLocalPosition;    
-        currentShake = null;
+        transform.localPosition = _originalLocalPosition;    
+        _currentShake = null;
         
     }
 
     public void ResetOriginalCapture()
     {
-        originalCaptured = false;
+        _originalCaptured = false;
     }
 }

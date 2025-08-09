@@ -1,24 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class JexEquipGun : MonoBehaviour
 {
     // data
-    [SerializeField] GunData gunData;
-    [SerializeField] Transform gunPostion;
+    [SerializeField] GunData _gunData;
+    [SerializeField] Transform _gunPostion;
 
     private void Start()
     {
-        foreach(var stat in gunData.gunStats)
+        var unlockedGun = _gunData.gunStats.FirstOrDefault(stat => stat.equip);
+        if (unlockedGun != null )
         {
-            if(stat.unlock == true)
-            {
-                GameObject gun =  Instantiate(stat.gunPrefabs, gunPostion);
-                break;
-            }    
-        }    
+            Instantiate(unlockedGun.gunPrefabs, _gunPostion);
+        }
     }
 
   

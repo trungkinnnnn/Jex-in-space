@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class RocketBullet : BulletBase
@@ -8,5 +7,15 @@ public class RocketBullet : BulletBase
     {
         CreateEffectHit();
         Destroy(gameObject);
+    }
+
+    protected override void CreateEffectLight()
+    {
+        if (_lightEffect == null) return;
+        GameObject effect = Instantiate(_lightEffect, transform.position, Quaternion.identity);
+        var effectLight = effect.GetComponent<EffectExplosionDamage>();
+        effectLight?.InitRadius(radiusEffectLight);
+        effectLight?.InitForce(forceEnter, forceStay);
+        effectLight?.InitSetUpTakeDamagePlayer(false);
     }
 }

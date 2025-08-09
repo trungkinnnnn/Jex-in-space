@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RectangSpawner
 {
-    private const float min = 0.3f;
-    private const float max = 1.3f;
+    private const float _min = 0.3f;
+    private const float _max = 1.3f;
 
-    private readonly Vector2 topLeft = new Vector2(-min, max);
-    private readonly Vector2 bottomRight = new Vector2(max, -min);
+    private readonly Vector2 _topLeft = new Vector2(-_min, _max);
+    private readonly Vector2 _bottomRight = new Vector2(_max, -_min);
 
     private enum Edge { Top, Right, Bottom, Left }
 
@@ -31,20 +31,20 @@ public class RectangSpawner
         switch (edge)
         {
             case Edge.Top:
-                x = Random.Range(topLeft.x, bottomRight.x);
-                y = topLeft.y;
+                x = Random.Range(_topLeft.x, _bottomRight.x);
+                y = _topLeft.y;
                 break;
             case Edge.Right:
-                x = bottomRight.x;
-                y = Random.Range(bottomRight.y, topLeft.y);
+                x = _bottomRight.x;
+                y = Random.Range(_bottomRight.y, _topLeft.y);
                 break;
             case Edge.Bottom:
-                x = Random.Range(topLeft.x, bottomRight.x);
-                y = bottomRight.y;
+                x = Random.Range(_topLeft.x, _bottomRight.x);
+                y = _bottomRight.y;
                 break;
             case Edge.Left:
-                x = topLeft.x;
-                y = Random.Range(bottomRight.y, topLeft.y);
+                x = _topLeft.x;
+                y = Random.Range(_bottomRight.y, _topLeft.y);
                 break;
         }
 

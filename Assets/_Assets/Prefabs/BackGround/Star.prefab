@@ -111,7 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d3e815566462b4b9ce11aa31cefcce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starData: {fileID: 11400000, guid: d7397ffe812be7b408409b0bcbd8f4ec, type: 2}
-  timeStart: 0
+  _starData: {fileID: 11400000, guid: d7397ffe812be7b408409b0bcbd8f4ec, type: 2}
   minPosition: 0.1
   maxPosition: 1.1

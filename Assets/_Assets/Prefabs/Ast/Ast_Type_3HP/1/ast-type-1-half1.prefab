@@ -151,12 +151,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517faf8efb73eb342bb2755ffec01530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objBroken: {fileID: 0}
-  effectLight2DExplosion: {fileID: 8486099257211429435, guid: 0748e2a0762d3e04e915af4feda0c07b, type: 3}
-  effectAniDestroy: {fileID: 5450029284689995186, guid: da6094d5703788b42abfc610e7d49c57, type: 3}
+  _objBroken: {fileID: 0}
+  _effectLight2DExplosion: {fileID: 8486099257211429435, guid: 0748e2a0762d3e04e915af4feda0c07b, type: 3}
+  _effectAniDestroy: {fileID: 5450029284689995186, guid: da6094d5703788b42abfc610e7d49c57, type: 3}
   hp: 1
   radiusExplosion: 0.8
-  shakeData: {fileID: 11400000, guid: da6801f16b5088648aed09ef274cac3e, type: 2}
+  _shakeData: {fileID: 11400000, guid: da6801f16b5088648aed09ef274cac3e, type: 2}
 --- !u!114 &2879834389713266840
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,16 +6,16 @@ using UnityEngine.Playables;
 public class TimeLineController : MonoBehaviour
 {
    
-    private PlayableDirector playableDirector;
+    private PlayableDirector _playableDirector;
 
     private void Awake()
     {
-        playableDirector = GetComponent<PlayableDirector>();
+        _playableDirector = GetComponent<PlayableDirector>();
     }
 
     private void Start()
     {
-        playableDirector.Play();
+        _playableDirector.Play();
     }
 
 }

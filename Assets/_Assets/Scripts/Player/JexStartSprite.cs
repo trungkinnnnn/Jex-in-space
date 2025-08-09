@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class JexStartSprite : MonoBehaviour
 {
-    private Animator animator;
+    private Animator _animator;
     public float timeSpin = 3;
 
-    private string NAME_ANI_TRIGGER_SCALEUP = "isScaleUp";
+    private static readonly int HashIsScaleUp = Animator.StringToHash("isScaleUp");
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         StartCoroutine(TimeStart(timeSpin));
     }
 
     private IEnumerator TimeStart(float timeSpin)
     {
         yield return new WaitForSeconds(timeSpin);
-        animator.SetTrigger(NAME_ANI_TRIGGER_SCALEUP);
+        _animator.SetTrigger(HashIsScaleUp);
     }
 
 }

@@ -179,10 +179,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe13f502776d7b43aa4af7d37c94465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectHits:
+  _effectHits:
   - {fileID: 5938362892784879280, guid: 43215c98ebaf81e409d2eb67fac38f47, type: 3}
   - {fileID: 443291633286878820, guid: 3e5d96214e93fdd4d8a87890f2f393ca, type: 3}
-  COLORHEXA: FFC015
+  COLORHEXA: F9FF49
+  _lightEffect: {fileID: 0}
+  radiusEffectLight: 0.4
+  forceStay: 0.8
+  forceEnter: 0.5
 --- !u!1 &9017084946252026296
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,48 +5,47 @@ using UnityEngine;
 public class BoxAmor : Ast
 {
     public static System.Action<int> OnBoxBroken;
-    private TextMeshProUGUI textProAmor;
+    private TextMeshProUGUI _textProAmor;
 
     private string NAME_ANIMATION = "BoxAmor";
     private string NAME_ANI_BREAK = "isBreak";
-    private float timeDestroy;
+    private float _timeDestroy;
+    private int _amorDrops;
+    private int _alphaEnd = 0;
+    private int _alphaStart = 1;
 
     public int maxAmor = 40;
     public int minAmor = 15;
-    private int amorDrops;
-
-    private int alphaEnd = 0;
-    private int alphaStart = 1;
 
     private Animator _animator;
 
     public void Init(TextMeshProUGUI text)
     {
-        textProAmor = text;
+        _textProAmor = text;
     }    
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        amorDrops = Random.Range(minAmor, maxAmor);
-        timeDestroy = GetLeghtClipByName(_animator, NAME_ANIMATION);
+        _amorDrops = Random.Range(minAmor, maxAmor);
+        _timeDestroy = GetLeghtClipByName(_animator, NAME_ANIMATION);
     }
 
     // Thực thi destroy
     protected override void AstDestroy()
     {
-        Destroy(gameObject, timeDestroy);
+        Destroy(gameObject, _timeDestroy);
         _animator.SetTrigger(NAME_ANI_BREAK);
-        OnBoxBroken?.Invoke(amorDrops);
+        OnBoxBroken?.Invoke(_amorDrops);
 
-        SetTextProAmor(alphaStart);
-        StartCoroutine(FadeAlpha(timeDestroy));
+        SetTextProAmor(_alphaStart);
+        StartCoroutine(FadeAlpha(_timeDestroy));
     }
 
     private void SetTextProAmor(int alpha)
     {
-        textProAmor.transform.position = transform.position;
-        textProAmor.text = "+" + amorDrops;
+        _textProAmor.transform.position = transform.position;
+        _textProAmor.text = "+" + _amorDrops;
         SetAlpha(alpha);
     }    
 
@@ -57,7 +56,7 @@ public class BoxAmor : Ast
         while(timer < duration)
         {
             timer += Time.deltaTime;
-            float alpha = Mathf.Lerp(alphaStart, alphaEnd, timer/duration);
+            float alpha = Mathf.Lerp(_alphaStart, _alphaEnd, timer/duration);
             SetAlpha(alpha);
             yield return null;
         }    
@@ -65,9 +64,9 @@ public class BoxAmor : Ast
 
     private void SetAlpha(float a)
     {
-        Color color = textProAmor.color;
+        Color color = _textProAmor.color;
         color.a = a;
-        textProAmor.color = color;
+        _textProAmor.color = color;
     }
 
 

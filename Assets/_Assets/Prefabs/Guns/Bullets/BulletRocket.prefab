@@ -176,15 +176,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fada32b994fbfd4da2f004d745b0d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectHits:
+  _effectHits:
   - {fileID: 5282760281340539052, guid: 07da7e7ec7ed81e44af4b79f857d84a7, type: 3}
-  lightEffect: {fileID: 8486099257211429435, guid: 4d452e14821042a46b8a46a1cd3cacaa, type: 3}
-  timeLife: 3
-  damage: 1
-  radiusEffectLight: 0.7
-  forceStay: 0.8
-  forceEnter: 0.6
   COLORHEXA: FFFFFF
+  _lightEffect: {fileID: 8486099257211429435, guid: 4d452e14821042a46b8a46a1cd3cacaa, type: 3}
+  radiusEffectLight: 0.6
+  forceStay: 0.8
+  forceEnter: 0.5
 --- !u!1 &7035346190625436416
 GameObject:
   m_ObjectHideFlags: 0

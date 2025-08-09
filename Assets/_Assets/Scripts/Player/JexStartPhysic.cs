@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class JexStartPhysic : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    private Rigidbody2D _rb;
     public float addForceTorque = 3f;
     public float timeSpin = 3;
     public float timeStart = 5f;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
         StartCoroutine(TimeStart(timeSpin, timeStart));
     }
 
@@ -20,7 +20,7 @@ public class JexStartPhysic : MonoBehaviour
         
         yield return new WaitForSeconds(timeSpin);
 
-        rb.AddTorque(-addForceTorque, ForceMode2D.Impulse);
+        _rb.AddTorque(-addForceTorque, ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(timeStart);
         InputManager.isInputLocked = false;

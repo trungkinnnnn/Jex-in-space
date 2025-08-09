@@ -6,26 +6,26 @@ using UnityEngine;
 public class Ast : MonoBehaviour
 {
 
-    private Action onDestroy;
+    private Action OnDestroyAst;
 
-    [SerializeField] GameObject objBroken;
-    [SerializeField] GameObject effectLight2DExplosion;
-    [SerializeField] GameObject effectAniDestroy;
+    [SerializeField] GameObject _objBroken;
+    [SerializeField] GameObject _effectLight2DExplosion;
+    [SerializeField] GameObject _effectAniDestroy;
 
     public int hp = 1;
     public float radiusExplosion = 1f;
 
     [Header("CameraShake")]
-    [SerializeField] CameraShakeData shakeData;
+    [SerializeField] CameraShakeData _shakeData;
 
     public void Init(Action onDestroy)
     {
-        this.onDestroy = onDestroy;
+        OnDestroyAst = onDestroy;
     }
 
     private void OnDestroy()
     {
-        onDestroy?.Invoke();
+        OnDestroyAst?.Invoke();
     }
 
     public void TakeDameBullet(int dmage)
@@ -49,26 +49,26 @@ public class Ast : MonoBehaviour
 
     private void OnBroken()
     {
-        if (objBroken != null)
+        if (_objBroken != null)
         {
-            objBroken.SetActive(true);
+            _objBroken.SetActive(true);
         }
     }    
 
     private void CreatLight2DExplosion()
     {
-        if (effectLight2DExplosion == null) return;
-        var explosion = Instantiate(effectLight2DExplosion, transform.position, Quaternion.identity);
+        if (_effectLight2DExplosion == null) return;
+        var explosion = Instantiate(_effectLight2DExplosion, transform.position, Quaternion.identity);
         EffectLightExplosion light = explosion.GetComponent<EffectLightExplosion>();
         light.InitRadius(radiusExplosion);
-        if (shakeData == null) return;
-        light.InitCameraShake(shakeData.range, shakeData.intensity);
+        if (_shakeData == null) return;
+        light.InitCameraShake(_shakeData.range, _shakeData.intensity);
     }    
 
     private void CreateAniDestroy()
     {
-        if (effectAniDestroy == null) return;
-        Instantiate(effectAniDestroy, transform.position, Quaternion.identity);
+        if (_effectAniDestroy == null) return;
+        Instantiate(_effectAniDestroy, transform.position, Quaternion.identity);
     }    
 
    

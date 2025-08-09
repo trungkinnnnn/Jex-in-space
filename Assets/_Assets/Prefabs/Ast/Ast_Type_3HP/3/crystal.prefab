@@ -141,12 +141,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea59cf4750febd4581bbdafc538c08c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objBroken: {fileID: 0}
-  effectLight2DExplosion: {fileID: 8486099257211429435, guid: 5cc2945671c72cd41925a87c5977b4c8, type: 3}
-  effectAniDestroy: {fileID: 7960218921950989236, guid: 6c32a773a4874c14b8c6553583ccf632, type: 3}
+  _objBroken: {fileID: 0}
+  _effectLight2DExplosion: {fileID: 8486099257211429435, guid: 5cc2945671c72cd41925a87c5977b4c8, type: 3}
+  _effectAniDestroy: {fileID: 7960218921950989236, guid: 6c32a773a4874c14b8c6553583ccf632, type: 3}
   hp: 1
   radiusExplosion: 1.7
-  shakeData: {fileID: 11400000, guid: c4dc32ebd22ff2c42ada0f3af744cf9c, type: 2}
+  _shakeData: {fileID: 11400000, guid: c4dc32ebd22ff2c42ada0f3af744cf9c, type: 2}
   CreatAst:
   - {fileID: 1586076660589867608}
   - {fileID: 7650081949032891705}
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f3f7a7ffd2ddc4fbee430f70a45484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
+  _movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
 --- !u!1001 &55275762
 PrefabInstance:
   m_ObjectHideFlags: 0

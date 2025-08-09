@@ -1,73 +1,66 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class JexMovement : MonoBehaviour
 {
-    [SerializeField] public JexData jexData;
-    [SerializeField] Transform positionForce;
-    [SerializeField] Transform rotationFishZero; // Hiệu ứng ánh sáng trên kính
-    private Vector3 direction;
+    [SerializeField] private JexData _jexData;
+    [SerializeField] private Transform _positionForce;
+    [SerializeField] private Transform _rotationFishZero;
 
-    private float addForceMax;
-    private float addForceMin;
-    private float addTorque_Max;
-    private float addTorque_Min;
-    private float addTorqueWind;
+    private Rigidbody2D _rb;
 
-    private float timeRecovery;
-    private float timeLastShoot;
+    private float _addForceMax;
+    private float _addForceMin;
+    private float _addTorqueMax;
+    private float _addTorqueMin;
+    private float _addTorqueWind;
+    private float _timeRecovery;
+    private float _timeLastShoot = -Mathf.Infinity;
 
-    // component
-    private Rigidbody2D rb;
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+    }
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        addForceMax = jexData.addForceMax;
-        addForceMin = jexData.addForceMin;
-        addTorque_Max = jexData.addForceTorqueInput_Max;
-        addTorque_Min = jexData.addForceTorqueInput_Min;
-        addTorqueWind = jexData.addForceTorqueWind;
-        timeRecovery = jexData.timeRecovery;
-
-        timeLastShoot = Time.deltaTime; 
+        _addForceMax = _jexData.addForceMax;
+        _addForceMin = _jexData.addForceMin;
+        _addTorqueMax = _jexData.addForceTorqueInput_Max;
+        _addTorqueMin = _jexData.addForceTorqueInput_Min;
+        _addTorqueWind = _jexData.addForceTorqueWind;
+        _timeRecovery = _jexData.timeRecovery;
     }
 
-    void Update()
+    private void Update()
     {
-        rotationFishZero.rotation = Quaternion.Euler(Vector3.zero);
+        if (_rotationFishZero != null)
+            _rotationFishZero.rotation = Quaternion.identity;
 
         if (InputManager.isInputLocked)
         {
-            rb.AddTorque(-addTorqueWind, ForceMode2D.Force);
+            _rb.AddTorque(-_addTorqueWind, ForceMode2D.Force);
             return;
-        }    
-            
+        }
+
         if (Input.GetMouseButtonDown(0) && FireRate.canShoot)
         {
-            Vector2 direction = transform.position - positionForce.position;
-            float timeNow = Time.time;
-            if (timeNow - timeLastShoot >= timeRecovery)
+            Vector2 direction = (Vector2)transform.position - (Vector2)_positionForce.position;
+            float now = Time.time;
+            if (now - _timeLastShoot >= _timeRecovery)
             {
-                rb.AddTorque(-addTorque_Max, ForceMode2D.Impulse);
-                rb.AddForce(direction * addForceMax, ForceMode2D.Impulse);
+                _rb.AddTorque(-_addTorqueMax, ForceMode2D.Impulse);
+                _rb.AddForce(direction * _addForceMax, ForceMode2D.Impulse);
             }
             else
             {
-                rb.AddForce(direction * addForceMin, ForceMode2D.Impulse);
-                rb.AddTorque(-addTorque_Min, ForceMode2D.Impulse);
+                _rb.AddForce(direction * _addForceMin, ForceMode2D.Impulse);
+                _rb.AddTorque(-_addTorqueMin, ForceMode2D.Impulse);
             }
-
-            timeLastShoot = timeNow;
+            _timeLastShoot = now;
         }
         else
         {
-            rb.AddTorque(-addTorqueWind, ForceMode2D.Force);
+            _rb.AddTorque(-_addTorqueWind, ForceMode2D.Force);
         }
-
-       
-
     }
 }

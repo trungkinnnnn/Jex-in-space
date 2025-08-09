@@ -1,27 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class AnimationListener : MonoBehaviour
 {
 
-    private const string NAME_ANI_TRIGGER_ANNOYED = "isAnnoyed";
-    private const string NAME_ANI_TRIGGER_HURT = "isHurt";
-    private const string NAME_ANI_TRIGGER_EAT = "isEat";
-    private const string NAME_ANI_TRIGGER_EAT2 = "isEat2";
-    private const string NAME_ANI_TRIGGER_DIE = "isDie";
+    private static readonly int HashAnnoyed = Animator.StringToHash("isAnnoyed");
+    private static readonly int HashHurt = Animator.StringToHash("isHurt");
+    private static readonly int HashEat = Animator.StringToHash("isEat");
+    private static readonly int HashEat2 = Animator.StringToHash("isEat2");
+    private static readonly int HashDie = Animator.StringToHash("isDie");
 
-    private float timeDelaySate = 0.3f;
-    private float lastTimeState = 0f;   
+    private float _timeDelaySate = 0.3f;
+    private float _lastTimeState = 0f;   
 
-    private bool checkAni = false;
+    private bool _eatToggle = false;
     
-    private Animator animator;
+    private Animator _animator;
 
-    private void Start()
+    private void Awake()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -37,58 +35,44 @@ public class AnimationListener : MonoBehaviour
     private void RegisterEvents()
     {
         BounceOffWall.OnAnnoyed += Annoyed;
-        JexHeatlh.Hurt += Hurt;
-        JexHeatlh.Eat += Eat;
-        JexHeatlh.Die += Die;
+        JexHealth.Hurt += Hurt;
+        JexHealth.Eat += Eat;
+        JexHealth.Die += Die;
     }
 
     private void UnregisterEvents()
     {
         BounceOffWall.OnAnnoyed -= Annoyed;
-        JexHeatlh.Hurt -= Hurt;
-        JexHeatlh.Eat -= Eat;
-        JexHeatlh.Die -= Die;
+        JexHealth.Hurt -= Hurt;
+        JexHealth.Eat -= Eat;
+        JexHealth.Die -= Die;
     }
 
-    private void Annoyed()
-    {
-        if(checkTimeState()) animator.SetTrigger(NAME_ANI_TRIGGER_ANNOYED);
-    }    
+    private void Annoyed() => TryTrigger(HashAnnoyed);
+    
 
-    private void Hurt()
-    {
-        if (checkTimeState()) animator.SetTrigger(NAME_ANI_TRIGGER_HURT);
-    }  
+    private void Hurt() => TryTrigger(HashHurt); 
 
     private void Eat()
     {
-        if(checkTimeState())
-        {
-            if (checkAni)
-            {
-                animator.SetTrigger(NAME_ANI_TRIGGER_EAT);
-                checkAni = false;
-            }
-            else
-            {
-                animator.SetTrigger(NAME_ANI_TRIGGER_EAT2);
-                checkAni = true;
-            }
-        }    
+        if (!CanChangeState()) return;
+
+        _animator.SetTrigger(_eatToggle ? HashEat : HashEat2);
+        _eatToggle = !_eatToggle;
+        _timeDelaySate = Time.time;
     }
 
-    private void Die()
-    {
-        animator.SetTrigger(NAME_ANI_TRIGGER_DIE);
-    }
+    private void Die() => _animator.SetTrigger(HashDie);
 
-    private bool checkTimeState()
+    private void TryTrigger(int hash)
     {
-        if(Time.time - lastTimeState >= timeDelaySate)
-        {
-            lastTimeState = Time.time;
-            return true;
-        }    
-        return false;
+        if(!CanChangeState()) return;
+        _animator.SetTrigger(hash);
+        _lastTimeState = Time.time;  
+    }    
+
+    private bool CanChangeState()
+    {
+       return Time.time - _lastTimeState >= _timeDelaySate;
     }    
 }

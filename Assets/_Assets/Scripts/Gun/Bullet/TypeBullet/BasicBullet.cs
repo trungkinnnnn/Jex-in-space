@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class BasicBullet : BulletBase
@@ -10,7 +8,4 @@ public class BasicBullet : BulletBase
         CreateEffectHit();
         Destroy(gameObject);
     }
-
-  
-
 }

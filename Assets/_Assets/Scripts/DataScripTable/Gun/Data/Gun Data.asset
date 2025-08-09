@@ -33,16 +33,16 @@ MonoBehaviour:
     nameGun: Lightweight Lazer
     priceCoin: 2000
     priceMoney: 2000
-    unlock: 1
-    equip: 1
+    unlock: 0
+    equip: 0
     gunPrefabs: {fileID: 6069738807175842853, guid: 6bd6b4c2fe5034046b71592cade65cd5, type: 3}
     bulletPrefabs: {fileID: 2990621471026272631, guid: 6125f50392d7ab44b9c93df842043d2d, type: 3}
   - idGun: Gun04
     nameGun: Homing Rockets
     priceCoin: 5000
     priceMoney: 5000
-    unlock: 0
-    equip: 0
+    unlock: 1
+    equip: 1
     gunPrefabs: {fileID: 2233261330046700322, guid: 37aa4c793940dbb41ba60bc8216ea934, type: 3}
     bulletPrefabs: {fileID: 7035346189995802353, guid: 66b6094381a6ee24b97919b5abaf437f, type: 3}
   - idGun: Gun05

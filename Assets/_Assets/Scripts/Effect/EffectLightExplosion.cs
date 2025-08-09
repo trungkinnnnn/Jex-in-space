@@ -8,8 +8,8 @@ public class EffectLightExplosion : MonoBehaviour
     public static Action<Vector2, float, float> OnExploed;
 
     //CameraShake
-    private float range = 0f;
-    private float intensity = 0f;
+    private float _range = 0f;
+    private float _intensity = 0f;
 
     [Header("Info explosion light")]
     public float explosionRadius = 1f;
@@ -42,8 +42,8 @@ public class EffectLightExplosion : MonoBehaviour
     // Using for CameraShake
     public void InitCameraShake(float range, float intensity)
     {
-        this.range = range;
-        this.intensity = intensity;
+        _range = range;
+        _intensity = intensity;
     }    
 
     private void Start()
@@ -56,7 +56,7 @@ public class EffectLightExplosion : MonoBehaviour
 
         _alpha = _light.color;
 
-        OnExploed?.Invoke(new Vector2(transform.position.x, transform.position.y), range, intensity);
+        OnExploed?.Invoke(new Vector2(transform.position.x, transform.position.y), _range, _intensity);
     }
 
     private void Update()

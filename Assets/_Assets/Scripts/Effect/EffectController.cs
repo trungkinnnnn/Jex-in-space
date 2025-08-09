@@ -7,7 +7,6 @@ public class EffectController : MonoBehaviour
 {
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
-    private float randomAngle;
     void Start()
     {
         _animator = GetComponent<Animator>();

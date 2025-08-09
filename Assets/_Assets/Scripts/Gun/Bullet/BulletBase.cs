@@ -5,16 +5,17 @@ using UnityEngine;
 public abstract class BulletBase : MonoBehaviour
 {
     //Data
-    [SerializeField] protected List<GameObject> effectHits;
-    [SerializeField] protected GameObject lightEffect;
+    [SerializeField] protected List<GameObject> _effectHits;
+    public string COLORHEXA = "FFC015";
+    [SerializeField] protected GameObject _lightEffect;
 
 
     //Para
-    private Vector2 direction;
-    private float speed;
-    private float timeLife = 3f;
-    private int damage = 1;
-    public string COLORHEXA = "FFC015";
+    private Vector2 _direction;
+    private float _speed;
+    private const float _timeLife = 3f;
+    private const int _damage = 1;
+    
 
     [Header("PARA EXPLOSION LIGHT")]
     public float radiusEffectLight = 0.4f;
@@ -25,19 +26,19 @@ public abstract class BulletBase : MonoBehaviour
     protected string NAME_COMPARETAG_PHYSIC_ITEM = "Health";
 
     //Component
-    private Rigidbody2D rb;
+    private Rigidbody2D _rb;
 
     public void Init(Vector2 direction, float speed)
     {
-        this.direction = direction;
-        this.speed = speed;
+        _direction = direction;
+        _speed = speed;
     }
 
     protected virtual void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = direction * speed;
-        Destroy(gameObject, timeLife);
+        _rb = GetComponent<Rigidbody2D>();
+        _rb.velocity = _direction * _speed;
+        Destroy(gameObject, _timeLife);
     }
 
     // Hiệu ứng va chạm
@@ -45,29 +46,27 @@ public abstract class BulletBase : MonoBehaviour
     {
         GameObject prefabEffect = RandomEffect();
         var objEffect = Instantiate(prefabEffect, transform.position, Quaternion.identity);
-        EffectController effect = objEffect.GetComponent<EffectController>();
-        effect.ApplyHexColor(COLORHEXA);
+        var effect = objEffect.GetComponent<EffectController>();
+        effect?.ApplyHexColor(COLORHEXA);
 
         CreateEffectLight();
-
     }    
 
 
     // Hiệu ứng ánh sáng
-    private void CreateEffectLight()
+    protected virtual void CreateEffectLight()
     {
-        if (lightEffect == null) return;
-        GameObject effect = Instantiate(lightEffect, transform.position, Quaternion.identity);
-        EffectLightExplosion effectLight = effect.GetComponent<EffectLightExplosion>();
-        effectLight.InitRadius(radiusEffectLight);
-        effectLight.InitForce(forceEnter, forceStay);
+        if (_lightEffect == null) return;
+        GameObject effect = Instantiate(_lightEffect, transform.position, Quaternion.identity);
+        var effectLight = effect.GetComponent<EffectLightExplosion>();
+        effectLight?.InitRadius(radiusEffectLight);
+        effectLight?.InitForce(forceEnter, forceStay);
     }    
 
     protected GameObject RandomEffect()
     {
-        if(effectHits.Count == 1) return effectHits[0];
-        int random = Random.Range(0, effectHits.Count);
-        return effectHits[random];
+        if(_effectHits.Count == 1) return _effectHits[0];
+        return _effectHits[Random.Range(0, _effectHits.Count)];
     }    
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -83,11 +82,8 @@ public abstract class BulletBase : MonoBehaviour
 
     private void AstHitBullet(Collider2D other)
     {
-        Ast obj = other.GetComponent<Ast>();
-        if (obj != null)
-        {
-            obj.TakeDameBullet(damage);
-        }
+        var obj = other.GetComponent<Ast>();
+        obj?.TakeDameBullet(_damage);
     }
 
 }

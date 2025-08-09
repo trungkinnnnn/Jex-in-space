@@ -6,34 +6,34 @@ using UnityEngine;
 
 public class WaveSpawnManager : MonoBehaviour
 {
-    [SerializeField] WaveData waveData;
-    [SerializeField] WaveConfig waveConfig;
-    [SerializeField] Transform playerPosition;
-    [SerializeField] TextMeshProUGUI textMeshProUGUI;
-    [SerializeField] int speedGame;
-    [SerializeField] float timeStart = 5f;
+    [SerializeField] WaveData _waveData;
+    [SerializeField] WaveConfig _waveConfig;
+    [SerializeField] Transform _playerPosition;
+    [SerializeField] TextMeshProUGUI _textMeshProUGUI;
+    [SerializeField] int _speedGame;
+    [SerializeField] float _timeStart = 5f;
 
-    private WaveSpawner waveSpawner;
-    private int currentWave = 0;
-    private int alphaStart = 0;
+    private WaveSpawner _waveSpawner;
+    private int _currentWave = 0;
+    private int _alphaStart = 0;
 
     private void Start()
     {
         SetAlphaZero();
-        StartCoroutine(TimeStart(timeStart));
+        StartCoroutine(TimeStart(_timeStart));
     }
 
     private void SetAlphaZero()
     {
-        Color color = textMeshProUGUI.color;
-        color.a = alphaStart;
-        textMeshProUGUI.color = color;
+        Color color = _textMeshProUGUI.color;
+        color.a = _alphaStart;
+        _textMeshProUGUI.color = color;
     }    
 
     private IEnumerator TimeStart(float time)
     {
         yield return new WaitForSeconds(time);
-        waveSpawner = new WaveSpawner(waveData, waveConfig, playerPosition, textMeshProUGUI, speedGame);
+        _waveSpawner = new WaveSpawner(_waveData, _waveConfig, _playerPosition, _textMeshProUGUI, _speedGame);
         StartCoroutine(WaveLoop());
     }    
 
@@ -42,35 +42,35 @@ public class WaveSpawnManager : MonoBehaviour
     {
         while (true)
         {
-            currentWave++;
-            Debug.Log("Wave : " +  currentWave);    
+            _currentWave++;
+            Debug.Log("Wave : " + _currentWave);    
 
-            List<SpawnType> spawnList = waveSpawner.GenerateSpawnList();
-            yield return StartCoroutine(waveSpawner.SpawnWave(spawnList));
+            List<SpawnType> spawnList = _waveSpawner.GenerateSpawnList();
+            yield return StartCoroutine(_waveSpawner.SpawnWave(spawnList));
 
-            yield return new WaitUntil(() => waveSpawner.IsWaveCleared());
+            yield return new WaitUntil(() => _waveSpawner.IsWaveCleared());
 
-            UpdateWaveConfig(currentWave);
+            Update_waveConfig(_currentWave);
 
-            yield return new WaitForSeconds(waveConfig.timeNextWave);
+            yield return new WaitForSeconds(_waveConfig.timeNextWave);
 
         }
     }
 
 
-    private void UpdateWaveConfig(int wave)
+    private void Update_waveConfig(int wave)
     {
-        waveConfig.bigAts.totalCount += waveConfig.bigAts.countUpNextWave;
-        waveConfig.mediumAts.totalCount += waveConfig.mediumAts.countUpNextWave;
-        waveConfig.smallAts.totalCount += waveConfig.smallAts.countUpNextWave;
-        waveConfig.goldAts.totalCount += waveConfig.goldAts.countUpNextWave;
-        waveConfig.itemHealth.totalCount += waveConfig.itemHealth.countUpNextWave;
-        waveConfig.amorBox.totalCount += waveConfig.amorBox.countUpNextWave;
+        _waveConfig.bigAts.totalCount += _waveConfig.bigAts.countUpNextWave;
+        _waveConfig.mediumAts.totalCount += _waveConfig.mediumAts.countUpNextWave;
+        _waveConfig.smallAts.totalCount += _waveConfig.smallAts.countUpNextWave;
+        _waveConfig.goldAts.totalCount += _waveConfig.goldAts.countUpNextWave;
+        _waveConfig.itemHealth.totalCount += _waveConfig.itemHealth.countUpNextWave;
+        _waveConfig.amorBox.totalCount += _waveConfig.amorBox.countUpNextWave;
 
         if(wave % 3 == 0)
         {
-            waveConfig.spawnIntervalTime = Mathf.Max(waveConfig.spawnIntervalTime - waveConfig.spawnDownEvery3Wave
-                                                        , waveConfig.minSpawnInterval);
+            _waveConfig.spawnIntervalTime = Mathf.Max(_waveConfig.spawnIntervalTime - _waveConfig.spawnDownEvery3Wave
+                                                        , _waveConfig.minSpawnInterval);
         }    
 
     }
