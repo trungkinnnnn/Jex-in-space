@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d63c0adc12c5b438111ea5912510c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 4
+  intensity: 0.3
   explosionRadius: 1
   forceEnter: 0.5
   forceStay: 0.2

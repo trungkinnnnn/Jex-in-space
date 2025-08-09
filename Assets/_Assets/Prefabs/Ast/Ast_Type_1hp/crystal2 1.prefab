@@ -169,3 +169,4 @@ MonoBehaviour:
   effectAniDestroy: {fileID: 7960218921950989236, guid: 32e22ee9372b2e34fa5d42c2767f6a54, type: 3}
   hp: 1
   radiusExplosion: 0.8
+  shakeData: {fileID: 11400000, guid: 97000ca2c305f1a4ea21705ca1812652, type: 2}

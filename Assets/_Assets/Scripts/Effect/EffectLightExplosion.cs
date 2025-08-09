@@ -1,9 +1,16 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(Light2D), typeof(CircleCollider2D))]
 public class EffectLightExplosion : MonoBehaviour
 {
+    public static Action<Vector2, float, float> OnExploed;
+
+    //CameraShake
+    private float range = 0f;
+    private float intensity = 0f;
+
     [Header("Info explosion light")]
     public float explosionRadius = 1f;
     public float forceEnter = 1f;
@@ -19,16 +26,24 @@ public class EffectLightExplosion : MonoBehaviour
     private float _timer = 0f;
     private Color _alpha;
 
-
+    // Using for light
     public void InitRadius(float radius)
     {
         explosionRadius = radius;
     }
 
+    // Using for Bullet
     public void InitForce(float forceEnter, float forceStay)
     {
         this.forceEnter = forceEnter;
         this.forceStay = forceStay;
+    }    
+
+    // Using for CameraShake
+    public void InitCameraShake(float range, float intensity)
+    {
+        this.range = range;
+        this.intensity = intensity;
     }    
 
     private void Start()
@@ -40,6 +55,8 @@ public class EffectLightExplosion : MonoBehaviour
         _circleCollider.radius = 0f;
 
         _alpha = _light.color;
+
+        OnExploed?.Invoke(new Vector2(transform.position.x, transform.position.y), range, intensity);
     }
 
     private void Update()

@@ -15,6 +15,9 @@ public class Ast : MonoBehaviour
     public int hp = 1;
     public float radiusExplosion = 1f;
 
+    [Header("CameraShake")]
+    [SerializeField] CameraShakeData shakeData;
+
     public void Init(Action onDestroy)
     {
         this.onDestroy = onDestroy;
@@ -58,6 +61,8 @@ public class Ast : MonoBehaviour
         var explosion = Instantiate(effectLight2DExplosion, transform.position, Quaternion.identity);
         EffectLightExplosion light = explosion.GetComponent<EffectLightExplosion>();
         light.InitRadius(radiusExplosion);
+        if (shakeData == null) return;
+        light.InitCameraShake(shakeData.range, shakeData.intensity);
     }    
 
     private void CreateAniDestroy()

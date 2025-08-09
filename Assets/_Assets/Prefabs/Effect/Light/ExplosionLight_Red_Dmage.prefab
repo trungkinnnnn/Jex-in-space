@@ -112,9 +112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 885aee252acb9ad40a3c45b25ab4b47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 7
+  intensity: 0.5
   explosionRadius: 1
   forceEnter: 0.5
   forceStay: 0.3
   lifeTime: 0.8
   growRatio: 0.3
-  dmage: 1
+  damage: 1

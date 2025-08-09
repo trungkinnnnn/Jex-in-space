@@ -146,6 +146,7 @@ MonoBehaviour:
   effectAniDestroy: {fileID: 7960218921950989236, guid: 6c32a773a4874c14b8c6553583ccf632, type: 3}
   hp: 1
   radiusExplosion: 1.7
+  shakeData: {fileID: 11400000, guid: c4dc32ebd22ff2c42ada0f3af744cf9c, type: 2}
   CreatAst:
   - {fileID: 1586076660589867608}
   - {fileID: 7650081949032891705}
@@ -174,10 +175,6 @@ PrefabInstance:
     - target: {fileID: 7650081949019583947, guid: 39e83c5cd5a709646aa18a667f6701c2, type: 3}
       propertyPath: m_Name
       value: crystal2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7650081949019583947, guid: 39e83c5cd5a709646aa18a667f6701c2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7650081949019583949, guid: 39e83c5cd5a709646aa18a667f6701c2, type: 3}
       propertyPath: m_RootOrder
@@ -245,10 +242,6 @@ PrefabInstance:
     - target: {fileID: 3637614284199269361, guid: f8653bd94b7a272448b0be92c8982b6b, type: 3}
       propertyPath: m_Name
       value: crystal4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3637614284199269361, guid: f8653bd94b7a272448b0be92c8982b6b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3637614284199269363, guid: f8653bd94b7a272448b0be92c8982b6b, type: 3}
       propertyPath: m_RootOrder
@@ -361,10 +354,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: crystal1
       objectReference: {fileID: 0}
-    - target: {fileID: 1586076659441218964, guid: 6efac1032d378b84ea134ab161380a58, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efac1032d378b84ea134ab161380a58, type: 3}
 --- !u!1 &1586076660589867608 stripped
@@ -387,10 +376,6 @@ PrefabInstance:
     - target: {fileID: 8480982556268782696, guid: a164d8a0751fb124f8de027d56063787, type: 3}
       propertyPath: m_Name
       value: crystal3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8480982556268782696, guid: a164d8a0751fb124f8de027d56063787, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8480982556268782698, guid: a164d8a0751fb124f8de027d56063787, type: 3}
       propertyPath: m_RootOrder
