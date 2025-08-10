@@ -35,17 +35,17 @@ public class AnimationListener : MonoBehaviour
     private void RegisterEvents()
     {
         BounceOffWall.OnAnnoyed += Annoyed;
-        JexHealth.Hurt += Hurt;
-        JexHealth.Eat += Eat;
-        JexHealth.Die += Die;
+        PlayerHealth.Hurt += Hurt;
+        PlayerHealth.Eat += Eat;
+        PlayerHealth.Die += Die;
     }
 
     private void UnregisterEvents()
     {
         BounceOffWall.OnAnnoyed -= Annoyed;
-        JexHealth.Hurt -= Hurt;
-        JexHealth.Eat -= Eat;
-        JexHealth.Die -= Die;
+        PlayerHealth.Hurt -= Hurt;
+        PlayerHealth.Eat -= Eat;
+        PlayerHealth.Die -= Die;
     }
 
     private void Annoyed() => TryTrigger(HashAnnoyed);

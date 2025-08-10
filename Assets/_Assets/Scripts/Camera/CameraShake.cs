@@ -7,6 +7,8 @@ public class CameraShake : MonoBehaviour
     [SerializeField] float _timeDuration = 0.4f;
     [SerializeField] float _damping = 1.5f;
     [SerializeField] float _frequency = 20f;
+    [SerializeField] private float _seedRange = 500f;
+    [SerializeField] private float _seedMultiplier = 37.1f;
     [SerializeField] Transform _playerTranform;
 
     private Vector3 _originalLocalPosition;
@@ -70,14 +72,14 @@ public class CameraShake : MonoBehaviour
     {
        
         float elapsed = 0f;
-        float seed = Random.Range(0f, 1000f);
+        float seed = Random.Range(0f, _seedRange);
 
         while (elapsed < duration)
         {
             float dampingFactor = Mathf.Pow(1 - (elapsed/duration), _damping);
 
             float nx = Mathf.PerlinNoise(seed, elapsed * _frequency);
-            float ny = Mathf.PerlinNoise(seed * 37.1f, elapsed * _frequency);
+            float ny = Mathf.PerlinNoise(seed * _seedMultiplier, elapsed * _frequency);
 
             float offX = (nx * 2f - 1f) * magnitude * dampingFactor;
             float offY = (ny * 2f - 1f) * magnitude * dampingFactor;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class JexMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private JexData _jexData;
     [SerializeField] private Transform _positionForce;

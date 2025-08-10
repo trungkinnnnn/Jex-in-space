@@ -1,26 +1,34 @@
 
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Ast : MonoBehaviour
 {
 
-    private Action OnDestroyAst;
+    private System.Action OnDestroyAst;
 
+    [Header("OnDestroy")]
     [SerializeField] GameObject _objBroken;
     [SerializeField] GameObject _effectLight2DExplosion;
     [SerializeField] GameObject _effectAniDestroy;
-
     public int hp = 1;
     public float radiusExplosion = 1f;
+
+    [Header("Coin")]
+    [SerializeField] CoinDropData _coinData;
+    [SerializeField] GameObject _coinPrefab;
+    private int _quanityCoin;
 
     [Header("CameraShake")]
     [SerializeField] CameraShakeData _shakeData;
 
-    public void Init(Action onDestroy)
+    public void Init(System.Action onDestroy)
     {
         OnDestroyAst = onDestroy;
+    }
+
+    private void Start()
+    {
+        if(_coinData != null) _quanityCoin = Random.Range(_coinData.quanityMin, _coinData.quanityMax);
     }
 
     private void OnDestroy()
@@ -44,6 +52,7 @@ public class Ast : MonoBehaviour
     {
         CreateAniDestroy();
         CreatLight2DExplosion();
+        CreateCoins();
         Destroy(gameObject);
     }
 
@@ -71,6 +80,14 @@ public class Ast : MonoBehaviour
         Instantiate(_effectAniDestroy, transform.position, Quaternion.identity);
     }    
 
+    private void CreateCoins()
+    {
+        if(_coinData == null) return;   
+        for (int i = 0; i < _quanityCoin; i++)
+        {
+            Instantiate(_coinPrefab, transform.position, Quaternion.identity);
+        }
+    }    
    
 
 }

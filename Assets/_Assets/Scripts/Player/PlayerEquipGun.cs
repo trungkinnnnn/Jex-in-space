@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class JexEquipGun : MonoBehaviour
+public class PlayerEquipGun : MonoBehaviour
 {
     // data
     [SerializeField] GunData _gunData;

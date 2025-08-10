@@ -1,18 +1,20 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class JexHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     public static Action Eat;
     public static Action Hurt;
     public static Action Die;
 
-    [SerializeField] private JexData _data;
-    [SerializeField] private string _asteroidTag = "Ast";
-    [SerializeField] private string _healthItemTag = "Health";
-    [SerializeField] private int _damage = 1;
-    [SerializeField] private int _healAmount = 1;
-    [SerializeField] public float addForceImpact = 0.1f;
+    [SerializeField] JexData _data;
+    [SerializeField] List<GameObject> _catCracks;
+    [SerializeField] string _asteroidTag = "Ast";
+    [SerializeField] string _healthItemTag = "Health";
+    [SerializeField] int _damage = 1;
+    [SerializeField] int _healAmount = 1;
+    
 
     private Rigidbody2D _rb;
     private int _hpMax;
@@ -20,6 +22,7 @@ public class JexHealth : MonoBehaviour
     private float _timeImmortal;
     private float _lastTimeTakenDamage = -Mathf.Infinity;
 
+    public float addForceImpact = 0.1f;
     public float impactSpeedMax = 0.2f;
 
     private void Awake()
@@ -63,6 +66,9 @@ public class JexHealth : MonoBehaviour
     {
         _currentHp -= damage;
         Debug.Log("Hp" + _currentHp);
+
+        OnCatCrack();
+
         if (_currentHp <= 0)
         {
             Die?.Invoke();
@@ -73,6 +79,7 @@ public class JexHealth : MonoBehaviour
     private void AddHealth(int heal)
     {
         _currentHp = Mathf.Min(_currentHp + heal, _hpMax);
+        OnCatCrack();
     }
 
     private void AddForceFrom(Vector3 sourcePosition)
@@ -80,4 +87,20 @@ public class JexHealth : MonoBehaviour
         Vector3 direction = (transform.position - sourcePosition).normalized;
         _rb.AddForce(direction * addForceImpact, ForceMode2D.Impulse);
     }
+
+    private void OnCatCrack()
+    {
+
+        if (_catCracks.Count < 2) return;
+
+    if (_currentHp > 2)
+    {
+        _catCracks.ForEach(c => c.gameObject.SetActive(false));
+    }
+    else
+    {
+        _catCracks[0].gameObject.SetActive(true);
+        _catCracks[1].gameObject.SetActive(_currentHp <= 1);
+    }
+    }    
 }

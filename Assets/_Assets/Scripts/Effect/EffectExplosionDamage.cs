@@ -6,6 +6,7 @@ public class EffectExplosionDamage : EffectLightExplosion
 {
 
     private const string NAME_TAG_AST = "Ast";
+    private const string NAME_TAG_ITEMHEALTH = "Health";
     private const string NAME_TAG_PLAYER = "Player";
     private bool _playerCanTakeDamage = true;
 
@@ -34,7 +35,7 @@ public class EffectExplosionDamage : EffectLightExplosion
         }
 
         
-        if(collision.CompareTag(NAME_TAG_AST))
+        if(collision.CompareTag(NAME_TAG_AST) || collision.CompareTag(NAME_TAG_ITEMHEALTH))
         {
             Ast ast = collision.GetComponent<Ast>();
             if (ast != null)
@@ -45,7 +46,7 @@ public class EffectExplosionDamage : EffectLightExplosion
        
         if(collision.CompareTag(NAME_TAG_PLAYER) && _playerCanTakeDamage)
         {
-            JexHealth jexHeatlh = collision.GetComponent<JexHealth>();
+            PlayerHealth jexHeatlh = collision.GetComponent<PlayerHealth>();
             if (jexHeatlh != null)
             {
                 jexHeatlh.TakeDamage(damage);

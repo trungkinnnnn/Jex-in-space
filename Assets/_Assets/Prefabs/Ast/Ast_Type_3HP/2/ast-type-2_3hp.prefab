@@ -242,6 +242,8 @@ MonoBehaviour:
   _effectAniDestroy: {fileID: 5450029284689995186, guid: dec1613223c4c3b41beaa36cf456822f, type: 3}
   hp: 2
   radiusExplosion: 1.7
+  _coinData: {fileID: 11400000, guid: 4c170ff9185d16d4285b1e0534659168, type: 2}
+  _coinPrefab: {fileID: 77803660138276536, guid: f622cbff57aac6d4ea8e0d384e6c59df, type: 3}
   _shakeData: {fileID: 11400000, guid: c4dc32ebd22ff2c42ada0f3af744cf9c, type: 2}
   CreatAst:
   - {fileID: 2834105895077187743}

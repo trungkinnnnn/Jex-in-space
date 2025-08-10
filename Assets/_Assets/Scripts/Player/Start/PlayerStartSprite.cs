@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JexStartSprite : MonoBehaviour
+public class PlayerStartSprite : MonoBehaviour
 {
     private Animator _animator;
     public float timeSpin = 3;

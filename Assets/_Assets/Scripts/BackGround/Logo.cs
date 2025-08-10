@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class Logo : MonoBehaviour
 {
     [SerializeField] LogoScripTable _logoData;
@@ -37,7 +36,6 @@ public class Logo : MonoBehaviour
             ResetForce();
             _timeStart = _logoData.timeReset;
         }    
-        Debug.Log("Time : " + _timeStart);   
         
     }
 

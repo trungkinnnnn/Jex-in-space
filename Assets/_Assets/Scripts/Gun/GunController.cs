@@ -8,7 +8,14 @@ public class GunController : MonoBehaviour
     [SerializeField] GunData _gunData;
     [SerializeField] GunStatData _gunStatData;
     [SerializeField] Transform _pointFire;
-   
+
+    [Header("Trash")]        
+    [SerializeField] Transform _positionGun;
+    [SerializeField] Transform _positionSpawnCasing;
+    [SerializeField] Transform _positionSpawnMagazine;
+    [SerializeField] GameObject _prefabCasing;
+    [SerializeField] GameObject _prefabMagazine;
+    
 
     // runtime
     private Animator _animator;
@@ -62,7 +69,9 @@ public class GunController : MonoBehaviour
         if (_paramasters.currentGun != null && _paramasters.currentGun.idGun == ID_BULLET_REDPLASMA)
         {
             SpawnExtraRedPlasma();
-        }    
+        }
+
+        CreateTrash(_prefabCasing, _positionSpawnCasing, _positionGun);
 
         if (_currentMagSizebullet <= 0)
         {
@@ -95,6 +104,7 @@ public class GunController : MonoBehaviour
     private IEnumerator ReloadCoroutine()
     {
         InputManager.isInputLocked = true;
+        CreateTrash(_prefabMagazine, _positionSpawnMagazine, _positionGun);
         yield return new WaitForSeconds(Mathf.Max(0f, _paramasters.timeReload));
 
         float amountToLoad = Mathf.Min(_paramasters.magSize, _totalbullet);
@@ -111,6 +121,14 @@ public class GunController : MonoBehaviour
             Debug.Log("Out Ammo");
         }
 
+    }
+
+    private void CreateTrash(GameObject trashPrefab, Transform pointSpawn, Transform pointGun)
+    {
+        Vector2 dir = (pointSpawn.position - pointGun.position).normalized;
+        GameObject trash = Instantiate(trashPrefab, pointSpawn.position, Quaternion.identity);
+        var trashInit = trash.GetComponent<TrashGun>();
+        if (trashInit != null) trashInit.Init(dir);
     }
 
     private void OnEnable()

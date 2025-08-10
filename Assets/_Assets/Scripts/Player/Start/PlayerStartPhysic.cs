@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class JexStartPhysic : MonoBehaviour
+public class PlayerStartPhysic : MonoBehaviour
 {
     private Rigidbody2D _rb;
     public float addForceTorque = 3f;
