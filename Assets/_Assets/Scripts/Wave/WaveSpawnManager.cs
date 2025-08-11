@@ -10,6 +10,7 @@ public class WaveSpawnManager : MonoBehaviour
     [SerializeField] WaveConfig _waveConfig;
     [SerializeField] Transform _playerPosition;
     [SerializeField] TextMeshProUGUI _textMeshProUGUI;
+    [SerializeField] Transform _asteroiHolder;
     [SerializeField] int _speedGame;
     [SerializeField] float _timeStart = 5f;
 
@@ -33,7 +34,7 @@ public class WaveSpawnManager : MonoBehaviour
     private IEnumerator TimeStart(float time)
     {
         yield return new WaitForSeconds(time);
-        _waveSpawner = new WaveSpawner(_waveData, _waveConfig, _playerPosition, _textMeshProUGUI, _speedGame);
+        _waveSpawner = new WaveSpawner(_waveData, _waveConfig, _playerPosition, _asteroiHolder, _textMeshProUGUI, _speedGame);
         StartCoroutine(WaveLoop());
     }    
 

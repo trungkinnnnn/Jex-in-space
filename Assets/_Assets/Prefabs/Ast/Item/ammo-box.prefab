@@ -182,11 +182,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc2ec8cfa4138c2428184b73f76d8963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
   _objBroken: {fileID: 0}
   _effectLight2DExplosion: {fileID: 0}
   _effectAniDestroy: {fileID: 0}
   hp: 1
   radiusExplosion: 1
+  _coinData: {fileID: 0}
+  _coinPrefab: {fileID: 0}
   _shakeData: {fileID: 0}
   maxAmor: 40
   minAmor: 15

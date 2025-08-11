@@ -1,10 +1,14 @@
 
 using UnityEngine;
 
+public enum AsteroidType { AstNormal, AstExplosion, AstNon}
+
 public class Ast : MonoBehaviour
 {
 
     private System.Action OnDestroyAst;
+
+    public AsteroidType type = AsteroidType.AstNormal;
 
     [Header("OnDestroy")]
     [SerializeField] GameObject _objBroken;

@@ -160,9 +160,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9b61b1a8ba7dc4b80d14a31b6f83b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
   _objBroken: {fileID: 0}
   _effectLight2DExplosion: {fileID: 8486099257211429435, guid: 0748e2a0762d3e04e915af4feda0c07b, type: 3}
   _effectAniDestroy: {fileID: 648470649508538234, guid: f9597117dc633e547a115a9aa7cdc267, type: 3}
   hp: 1
   radiusExplosion: 0.4
+  _coinData: {fileID: 0}
+  _coinPrefab: {fileID: 0}
   _shakeData: {fileID: 0}

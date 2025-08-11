@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517faf8efb73eb342bb2755ffec01530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   _objBroken: {fileID: 0}
   _effectLight2DExplosion: {fileID: 8486099257211429435, guid: 1ec47b22f57ea804983ab35750732797, type: 3}
   _effectAniDestroy: {fileID: 3079504843717696322, guid: ecc672717e4b5c84aa6f198f7a922ac6, type: 3}

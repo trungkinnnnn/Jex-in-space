@@ -8,6 +8,6 @@ public class PlayerInventory : MonoBehaviour
     public void AddCoin(int amount)
     {
         coinCount += 1;
-        Debug.Log("Coin : " + coinCount);
+        //Debug.Log("Coin : " + coinCount);
     }
 }

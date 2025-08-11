@@ -9,15 +9,17 @@ public class WaveSpawner
     private readonly WaveData _waveData;
     private readonly WaveConfig _waveConfig;
     private readonly Transform _playerPosition;
+    private readonly Transform _asteroiHolder;
     private readonly RectangSpawner _rectangSpawner = new RectangSpawner();
     private readonly List<GameObject> _listTrackerAst = new List<GameObject>();
     private readonly TextMeshProUGUI _textMeshProUGUI;
     private readonly int _speedGame;
-    public WaveSpawner(WaveData waveData, WaveConfig waveConfig, Transform playerPosition, TextMeshProUGUI text, int speedGame)
+    public WaveSpawner(WaveData waveData, WaveConfig waveConfig, Transform playerPosition,Transform asteroiHolder, TextMeshProUGUI text, int speedGame)
     {
         _waveData = waveData;
         _waveConfig = waveConfig;
         _playerPosition = playerPosition;   
+        _asteroiHolder = asteroiHolder;
         _speedGame = speedGame;
         _textMeshProUGUI = text;    
     }
@@ -71,13 +73,16 @@ public class WaveSpawner
 
         GameObject ast = Object.Instantiate(prefabs, spawnPoint, Quaternion.identity);
         ast.GetComponent<AstMovement>()?.SetTranformPlayer(_playerPosition);
+        AddTracker(ast, type);
 
         if(type == SpawnType.AmorBox)
         {
             ast.GetComponent<BoxAmor>()?.Init(_textMeshProUGUI);
-        }    
+        }
 
-        AddTracker(ast, type);
+        if (type == SpawnType.ItemHealth || type == SpawnType.AmorBox) return;
+        ast.transform.SetParent(_asteroiHolder, true);
+       
     }
     private void AddTracker(GameObject ast, SpawnType type)
     {
