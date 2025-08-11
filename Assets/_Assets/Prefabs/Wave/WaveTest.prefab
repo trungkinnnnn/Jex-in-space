@@ -46,16 +46,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefabsWarningRed: {fileID: 1118471225010676909, guid: 0d8b76d3dc242054f8d64f8dbe962676, type: 3}
   _prefabsWarningOrange: {fileID: 3556102951333708680, guid: 4b9038d3f023d8643895722f528ec9ab, type: 3}
-  _positionPlayer: {fileID: 0}
-  _layerAst:
+  _playerTransform: {fileID: 0}
+  _asteroidLayerMark:
     serializedVersion: 2
     m_Bits: 128
-  _warningRadius: 2
-  _minPositionCheckPlayer: 0.1
-  _maxPositionCheckPlayer: 0.9
-  _minPositionCheckAst: 0.01
-  _maxPositionCheckAst: 1.01
-  _edgeOffset: 0.03
+  _warningRadius: 1.3
+  _viewPortMinPlayer: 0.1
+  _viewPortMaxPlayer: 0.9
+  _viewPortMinAst: 0.05
+  _viewPortMaxAst: 1.05
+  _viewPortEdgeOffset: 0.02
+  _checkInterval: 0.5
+  _overlapBuffSize: 15
 --- !u!1 &7000615503755856130
 GameObject:
   m_ObjectHideFlags: 0

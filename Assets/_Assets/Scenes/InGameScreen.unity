@@ -5463,11 +5463,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167901394774894776, guid: 9a81ccb3987ee1b47b435237df1d0d90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.33
+      value: 9.56
       objectReference: {fileID: 0}
     - target: {fileID: 4167901394774894776, guid: 9a81ccb3987ee1b47b435237df1d0d90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.91
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4167901394774894776, guid: 9a81ccb3987ee1b47b435237df1d0d90, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5515,21 +5515,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1724753388, guid: 170bc2756387fbc4faeffba1953c0c6d, type: 3}
-      propertyPath: _warningRadius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1724753388, guid: 170bc2756387fbc4faeffba1953c0c6d, type: 3}
-      propertyPath: _positionPlayer
+      propertyPath: _playerTransform
       value: 
       objectReference: {fileID: 1619543564532895944}
-    - target: {fileID: 1724753388, guid: 170bc2756387fbc4faeffba1953c0c6d, type: 3}
-      propertyPath: _maxPositionCheckAst
-      value: 1.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1724753388, guid: 170bc2756387fbc4faeffba1953c0c6d, type: 3}
-      propertyPath: _minPositionCheckAst
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 7000615503755856130, guid: 170bc2756387fbc4faeffba1953c0c6d, type: 3}
       propertyPath: m_Name
       value: WaveTest
