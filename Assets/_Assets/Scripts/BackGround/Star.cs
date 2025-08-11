@@ -1,93 +1,116 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-
-[RequireComponent(typeof(SpriteRenderer))]
 public class Star : MonoBehaviour
 {
-
     // Data
     [SerializeField] StarScripTable _starData;
+    [SerializeField] List<GameObject> _starObjs;
 
-    private SpriteRenderer _sr;
+    private struct StarState
+    {
+        public Vector3 position;
+        public Vector3 direction;
+        public float timeLive;
+        public float timeRemaining;
+        public float speedStar;
+        public float scale;
+        public SpriteRenderer _sr;
+    }
 
-    // moving
-    private float _timeLive;
-    private float _timeRemaining;
-    private float _speedStar;
-    private float _angle;
-    private float _scale;
-    private Vector3 _direction;
+    private List<StarState> starStates = new List<StarState>();
+    private Camera _camera;
 
     public float minPosition = 0.1f;
     public float maxPosition = 1.1f;
 
-    // alpha
-    private Color _color;
-
-    private void Awake()
-    {
-        _sr = GetComponent<SpriteRenderer>();
-    }
-
     void Start()
     {
-        Reset_Star();
-
-        ChangeAlpha(0);
+        _camera = Camera.main;
+        starStates.Clear();
+        int i = 0;
+        foreach (var obj in _starObjs)
+        {
+            StarState s = new StarState();
+            s._sr = obj.GetComponent<SpriteRenderer>();
+            Reset_Star(ref s, i++);
+            s.position = obj.transform.position;
+            starStates.Add(s);
+        }
     }
 
     void Update()
     {
-        transform.position += _direction * _speedStar * Time.deltaTime;
-
-        _timeRemaining -= Time.deltaTime;
-        if (_timeRemaining < 0f)
+       for(int i = 0; i < starStates.Count; i++)
         {
-            Reset_Star();
-        }
-
-        float t = _timeRemaining/_timeLive;
-        if(t < 0.2f)
-        {
-            ChangeAlpha(Mathf.InverseLerp(0f, 0.2f, t));    
-        }
-        else if(t > 0.5)
-        {
-            ChangeAlpha(Mathf.InverseLerp(0.8f, 0.5f, t));
-        }
-
-        CheckOutScreen(transform.position);
+            var s = starStates[i];
+            UpdateStar(ref s, i);
+            starStates[i] = s;
+            _starObjs[i].transform.position = s.position;
+        }    
 
     }
 
-    private void CheckOutScreen(Vector3 position)
+    private void UpdateStar(ref StarState s, int index)
     {
-        Vector3 viewPort = Camera.main.WorldToViewportPoint(position);
-        
-        if (viewPort.x < -minPosition || viewPort.x > maxPosition) _direction.x *= -1;
-        if (viewPort.y < -minPosition || viewPort.y > maxPosition) _direction.y *= -1;
+        s.position += s.direction * s.speedStar * Time.deltaTime;
+
+        s.timeRemaining -= Time.deltaTime;
+        if (s.timeRemaining < 0f)
+        {
+            Reset_Star(ref s, index);
+        }
+
+        float t = s.timeRemaining / s.timeLive;
+        if (t < 0.2f)
+        {
+            ChangeAlpha(s._sr, Mathf.InverseLerp(0f, 0.2f, t));
+        }
+        else if (t > 0.5)
+        {
+            ChangeAlpha(s._sr,Mathf.InverseLerp(0.8f, 0.5f, t));
+        }
+
+        CheckOutScreen(ref s);
     }    
 
-    private void Reset_Star()
+    private void CheckOutScreen(ref StarState star)
     {
-        _timeLive = Random.Range(_starData.timelive_min, _starData.timelive_max);
-        _timeRemaining = _timeLive;
 
-        _speedStar = Random.Range(_starData.min_speed, _starData.max_speed);
-        _angle = Random.Range(0, 360);
+        if (_camera == null)
+        {
+            Debug.LogError("Camera.main not found!");
+            return;
+        }
 
-        _scale = Random.Range(_starData.scale_min, _starData.scale_max);
-        transform.localScale = new Vector2(_scale, _scale);
+        Vector3 viewPort = _camera.WorldToViewportPoint(star.position);
+        
+        if (viewPort.x < -minPosition || viewPort.x > maxPosition) star.direction.x *= -1;
+        if (viewPort.y < -minPosition || viewPort.y > maxPosition) star.direction.y *= -1;
+    }    
 
-        _direction = new Vector2(Mathf.Cos(_angle * Mathf.Deg2Rad), Mathf.Sin(_angle * Mathf.Deg2Rad));
-        ChangeAlpha(0);
+    private void Reset_Star(ref StarState star, int index)
+    {
+        star.timeLive = Random.Range(_starData.timelive_min, _starData.timelive_max);
+        star.timeRemaining = star.timeLive;
+
+        star.speedStar = Random.Range(_starData.min_speed, _starData.max_speed);
+        float angle = Random.Range(0, 360);
+
+        star.scale = Random.Range(_starData.scale_min, _starData.scale_max);
+
+        star.direction = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+         
+        _starObjs[index].transform.localScale = new Vector3(star.scale, star.scale, 1f);
+
+        ChangeAlpha(star._sr, 0f);
     }
 
-    private void ChangeAlpha(float value)
+    private void ChangeAlpha(SpriteRenderer sprite, float value)
     {   
-        _color = _sr.color;
-        _color.a = Mathf.Clamp01(value);
-        _sr.color = _color;
+        Color color = sprite.color;
+        color.a = Mathf.Clamp01(value);
+        sprite.color = color;   
     }    
 
 }
