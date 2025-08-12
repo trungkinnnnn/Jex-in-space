@@ -8,39 +8,40 @@ public class WaveSpawner
 {
     private readonly WaveData _waveData;
     private readonly WaveConfig _waveConfig;
-    private readonly Transform _playerPosition;
+    private readonly Transform _playerTransform;
     private readonly Transform _asteroiHolder;
-    private readonly RectangSpawner _rectangSpawner = new RectangSpawner();
+    private readonly RectangSpawner _rectangSpawner;
     private readonly List<GameObject> _listTrackerAst = new List<GameObject>();
     private readonly TextMeshProUGUI _textMeshProUGUI;
     private readonly int _speedGame;
-    public WaveSpawner(WaveData waveData, WaveConfig waveConfig, Transform playerPosition,Transform asteroiHolder, TextMeshProUGUI text, int speedGame)
+    public WaveSpawner(WaveData waveData, WaveConfig waveConfig, Transform playerTransform, Transform asteroiHolder, TextMeshProUGUI text, Camera camera, int speedGame)
     {
         _waveData = waveData;
         _waveConfig = waveConfig;
-        _playerPosition = playerPosition;   
+        _playerTransform = playerTransform;   
         _asteroiHolder = asteroiHolder;
-        _speedGame = speedGame;
-        _textMeshProUGUI = text;    
+        _speedGame = Mathf.Max(1, speedGame);
+        _textMeshProUGUI = text;
+        _rectangSpawner = new RectangSpawner(camera);
     }
 
     public bool IsWaveCleared() => _listTrackerAst.Count == 0;
 
-    public List<SpawnType> GenerateSpawnList()
+    public List<(SpawnType, int score)> GenerateSpawnList()
     {
-        var list = new List<SpawnType>();
-        SpawnUtility.AddMultiple(list, SpawnType.BigAst, _waveConfig.bigAts.totalCount, _speedGame);
-        SpawnUtility.AddMultiple(list, SpawnType.MediumAst, _waveConfig.mediumAts.totalCount, _speedGame);
-        SpawnUtility.AddMultiple(list, SpawnType.SmallAst, _waveConfig.smallAts.totalCount, _speedGame);
-        SpawnUtility.AddMultiple(list, SpawnType.GoldAst, _waveConfig.goldAts.totalCount, _speedGame);
-        SpawnUtility.AddMultiple(list, SpawnType.ItemHealth, _waveConfig.itemHealth.totalCount, _speedGame);
-        SpawnUtility.AddMultiple(list, SpawnType.AmorBox, _waveConfig.amorBox.totalCount, _speedGame);
+        var list = new List<(SpawnType, int Score)>();
+        SpawnUtility.AddMultiple(list, SpawnType.BigAst, _waveConfig.bigAts.totalCount,_waveConfig.bigAts.score, _speedGame);
+        SpawnUtility.AddMultiple(list, SpawnType.MediumAst, _waveConfig.mediumAts.totalCount,_waveConfig.mediumAts.score, _speedGame);
+        SpawnUtility.AddMultiple(list, SpawnType.SmallAst, _waveConfig.smallAts.totalCount, _waveConfig.smallAts.score, _speedGame);
+        SpawnUtility.AddMultiple(list, SpawnType.GoldAst, _waveConfig.goldAts.totalCount, _waveConfig.goldAts.score, _speedGame);
+        SpawnUtility.AddMultiple(list, SpawnType.ItemHealth, _waveConfig.itemHealth.totalCount, _waveConfig.itemHealth.score, _speedGame);
+        SpawnUtility.AddMultiple(list, SpawnType.AmorBox, _waveConfig.amorBox.totalCount, _waveConfig.amorBox.score, _speedGame);
 
         SpawnUtility.Shuffle(list);
         return list;
     }
 
-    public IEnumerator SpawnWave(List<SpawnType> shuffer)
+    public IEnumerator SpawnWave(List<(SpawnType, int score)> shuffer)
     {
         int index = 0;
 
@@ -50,9 +51,10 @@ public class WaveSpawner
 
             for(int i = 0; i < batchSize; i++)
             {
-                SpawnType type = shuffer[i + index];
+                SpawnType type = shuffer[i + index].Item1;
+                int score = shuffer[i + index].score;
 
-                CreatPrefabAst(type, i);
+                CreatPrefabAst(type, score, i);
 
                  //Debug.Log("listTracker : " + listTrackerAst.Count);
 
@@ -66,22 +68,33 @@ public class WaveSpawner
 
     }
 
-    private void CreatPrefabAst(SpawnType type, int direction)
+    private void CreatPrefabAst(SpawnType type, int score, int direction)
     {
         GameObject prefabs = PrefabSelector.GetRandomPrefabs(type, _waveData);
+        if (prefabs == null)
+        {
+            Debug.Log("Prefabs Spawn null");
+            return;
+        }    
         Vector3 spawnPoint = _rectangSpawner.GetSpawnPoint(direction);
 
         GameObject ast = Object.Instantiate(prefabs, spawnPoint, Quaternion.identity);
-        ast.GetComponent<AstMovement>()?.SetTranformPlayer(_playerPosition);
+
+        if (ast.TryGetComponent<AstMovement>(out var movement) && _playerTransform != null)
+            movement.SetTranformPlayer(_playerTransform);
+
+        if(ast.TryGetComponent<Ast>(out var astScore))
+            astScore.InitAddScore(score);
+
         AddTracker(ast, type);
 
-        if(type == SpawnType.AmorBox)
+        if(type == SpawnType.AmorBox && ast.TryGetComponent<BoxAmor>(out var box))
         {
-            ast.GetComponent<BoxAmor>()?.Init(_textMeshProUGUI);
+            box.Init(_textMeshProUGUI);
         }
 
-        if (type == SpawnType.ItemHealth || type == SpawnType.AmorBox) return;
-        ast.transform.SetParent(_asteroiHolder, true);
+        if (type != SpawnType.ItemHealth && type != SpawnType.AmorBox)
+            ast.transform.SetParent(_asteroiHolder, true);
        
     }
     private void AddTracker(GameObject ast, SpawnType type)
@@ -90,7 +103,7 @@ public class WaveSpawner
         {
             _listTrackerAst.Add(ast);
             Ast astTracker = ast.GetComponent<Ast>() ?? ast.AddComponent<Ast>();
-            astTracker.Init(() => _listTrackerAst.Remove(ast));
+            astTracker.InitOnDestroy(() => _listTrackerAst.Remove(ast));
         }
     }
 

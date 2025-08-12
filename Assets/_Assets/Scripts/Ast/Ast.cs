@@ -5,8 +5,10 @@ public enum AsteroidType { AstNormal, AstExplosion, AstNon}
 
 public class Ast : MonoBehaviour
 {
-
+    // WaveSpawner
     private System.Action OnDestroyAst;
+    // PlayerInventory
+    public static System.Action<int> AddScoreOnDie;
 
     public AsteroidType type = AsteroidType.AstNormal;
 
@@ -25,10 +27,18 @@ public class Ast : MonoBehaviour
     [Header("CameraShake")]
     [SerializeField] CameraShakeData _shakeData;
 
-    public void Init(System.Action onDestroy)
+    [Header("Score")]
+    [SerializeField] protected int _score = 1;
+
+    public void InitOnDestroy(System.Action onDestroy)
     {
         OnDestroyAst = onDestroy;
     }
+
+    public void InitAddScore(int score)
+    {
+        _score = score;
+    }    
 
     private void Start()
     {
@@ -57,6 +67,7 @@ public class Ast : MonoBehaviour
         CreateAniDestroy();
         CreatLight2DExplosion();
         CreateCoins();
+        AddScoreOnDie?.Invoke(_score);
         Destroy(gameObject);
     }
 

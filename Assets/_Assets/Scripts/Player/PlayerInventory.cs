@@ -1,13 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public int coinCount = 0;
-    public void AddCoin(int amount)
+    // HUD Controller
+    public static System.Action<int> OnActionCoin;
+    public static System.Action<int> OnActionScore;
+
+    public int coinTotal = 0;
+    public int scoreTotal = 0;
+   
+    public void OnEnable()
     {
-        coinCount += 1;
-        //Debug.Log("Coin : " + coinCount);
+        Ast.AddScoreOnDie += HandleAddScore;
+    }
+
+    public void OnDisable()
+    {
+        Ast.AddScoreOnDie -= HandleAddScore;
+    }
+
+    private void HandleAddScore(int score)
+    {
+        scoreTotal += score;
+        OnActionScore?.Invoke(scoreTotal);  
+    }
+
+    public void HandleAddCoin(int amount)
+    {
+        coinTotal += amount;
+        OnActionCoin?.Invoke(coinTotal);
     }
 }

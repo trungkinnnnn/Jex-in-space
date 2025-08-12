@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517faf8efb73eb342bb2755ffec01530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   _objBroken: {fileID: 0}
   _effectLight2DExplosion: {fileID: 8486099257211429435, guid: 09307714e38a44c48a6aeb8bbfddbd72, type: 3}
   _effectAniDestroy: {fileID: 6734133366400128000, guid: acf9d14e1b4be5845abee1d21eeb5266, type: 3}
@@ -172,3 +173,4 @@ MonoBehaviour:
   _coinData: {fileID: 11400000, guid: 2bff8dc0fb9082744a353574b5430e05, type: 2}
   _coinPrefab: {fileID: 77803660138276536, guid: f622cbff57aac6d4ea8e0d384e6c59df, type: 3}
   _shakeData: {fileID: 11400000, guid: da6801f16b5088648aed09ef274cac3e, type: 2}
+  _score: 1

@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
-using TMPro;
 using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
+    // HUD controller
+    public static Action<int> OnActionCurrentBullet;
+    public static Action<int> OnActionTotalBullet;
+
     [Header("Data")]
     [SerializeField] GunData _gunData;
     [SerializeField] GunStatData _gunStatData;
@@ -23,9 +27,9 @@ public class GunController : MonoBehaviour
     private GunParamasters _paramasters;
   
     // amor
-    private float _currentMagSizebullet;
-    private float _totalbullet;
-    private float maxMag = 3f;
+    private int _currentMagSizebullet;
+    private int _totalbullet;
+    private int maxMag = 3;
 
     // bullet plasma
     private const string ID_BULLET_REDPLASMA = "Gun05";
@@ -44,6 +48,10 @@ public class GunController : MonoBehaviour
 
         _totalbullet = _paramasters.magSize * maxMag;
         _currentMagSizebullet = _paramasters.magSize;
+
+        OnActionCurrentBullet?.Invoke(_currentMagSizebullet);
+        OnActionTotalBullet?.Invoke(_totalbullet);
+
     }
 
     private void Update()
@@ -60,8 +68,10 @@ public class GunController : MonoBehaviour
     private IEnumerator FireRoutine()
     {
         FireRate.canShoot = false;
-
         _currentMagSizebullet -= 1;
+
+        //Event
+        OnActionCurrentBullet?.Invoke(_currentMagSizebullet);
 
         SpawnBullet(_paramasters.currentGun?.bulletPrefabs, _pointFireTf.position, 
                     _pointFireTf.rotation, _pointFireTf.right, _paramasters.bulletSpeed);
@@ -107,9 +117,13 @@ public class GunController : MonoBehaviour
         CreateTrash(_prefabMagazine, _positionSpawnMagazine, _positionGun);
         yield return new WaitForSeconds(Mathf.Max(0f, _paramasters.timeReload));
 
-        float amountToLoad = Mathf.Min(_paramasters.magSize, _totalbullet);
+        int amountToLoad = Mathf.Min(_paramasters.magSize, _totalbullet);
         _currentMagSizebullet = amountToLoad;
-        _totalbullet = Mathf.Max(0f, _totalbullet - amountToLoad);
+        _totalbullet = Mathf.Max(0, _totalbullet - amountToLoad);
+
+        //Event
+        OnActionTotalBullet?.Invoke(_totalbullet);
+        OnActionCurrentBullet?.Invoke(_currentMagSizebullet);
 
         Debug.Log("TotalBullet : " + _totalbullet);
 

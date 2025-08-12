@@ -191,5 +191,6 @@ MonoBehaviour:
   _coinData: {fileID: 0}
   _coinPrefab: {fileID: 0}
   _shakeData: {fileID: 0}
+  _score: 1
   maxAmor: 40
   minAmor: 15

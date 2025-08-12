@@ -29,4 +29,6 @@ public class SpawnUnitConfig
     public int countUpNextWave;
 
     public float delayBetweenBatch = 1f;
+
+    public int score = 1;
 }

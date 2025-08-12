@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    // Hud controller
+    public static Action<int> OnActionHp;
+
     public static Action Eat;
     public static Action Hurt;
     public static Action Die;
@@ -64,10 +67,12 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _currentHp -= damage;
+        _currentHp = Math.Max(0, _currentHp - damage);
         Debug.Log("Hp" + _currentHp);
 
+
         OnCatCrack();
+        OnActionHp?.Invoke(_currentHp); 
 
         if (_currentHp <= 0)
         {

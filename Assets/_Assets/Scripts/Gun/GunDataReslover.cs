@@ -30,12 +30,12 @@ public static class GunDataReslover
     public static GunParamasters GetParamasters(GunData gunData, GunStatData gunStatData)
     {
         var currentGun = FindEquippedGun(gunData);
-        if (currentGun == null) return new GunParamasters(null, 0f, 0f, 0f, 0f);
+        if (currentGun == null) return new GunParamasters(null, 0, 0f, 0f, 0f);
 
         var statLevel = FindStatForGun(gunStatData, currentGun.idGun);
-        if (statLevel == null) return new GunParamasters(currentGun, 0f, 0f, 0f, 0f);
+        if (statLevel == null) return new GunParamasters(currentGun, 0, 0f, 0f, 0f);
 
-        float mag = GetHighestUnlockedValue(statLevel.magSize);
+        int mag = (int)GetHighestUnlockedValue(statLevel.magSize);
         float speed = GetHighestUnlockedValue(statLevel.bulletSpeed);
         float reload = GetHighestUnlockedValue(statLevel.timeReload);
         float rate = GetHighestUnlockedValue(statLevel.fireRate);
@@ -48,12 +48,12 @@ public static class GunDataReslover
 public readonly struct GunParamasters
 {
     public readonly GunStat currentGun;
-    public readonly float magSize;
+    public readonly int magSize;
     public readonly float bulletSpeed;
     public readonly float timeReload;
     public readonly float fireRate;
 
-    public GunParamasters(GunStat currentGun, float magSize, float bulletSpeed, float timeReload, float fireRate)
+    public GunParamasters(GunStat currentGun, int magSize, float bulletSpeed, float timeReload, float fireRate)
     {
         this.currentGun = currentGun;
         this.magSize = magSize;

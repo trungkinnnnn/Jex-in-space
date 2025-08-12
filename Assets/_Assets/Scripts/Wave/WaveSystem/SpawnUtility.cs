@@ -4,11 +4,12 @@ using UnityEngine;
 
 public static class SpawnUtility
 {
-   public static void AddMultiple(List<SpawnType> list, SpawnType spawnType, int count, int speedGame)
+   public static void AddMultiple(List<(SpawnType, int score)> list, SpawnType spawnType, int count,int score, int speedGame)
     {
-        for(int i = 0; i < count / speedGame; i++)
+        int loops = Mathf.Max(0, count / Mathf.Max(1, speedGame));
+        for(int i = 0; i < loops; i++)
         {
-            list.Add(spawnType);
+            list.Add((spawnType, score));
         }    
     }
 

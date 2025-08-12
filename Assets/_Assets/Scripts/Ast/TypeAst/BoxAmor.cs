@@ -37,7 +37,7 @@ public class BoxAmor : Ast
         Destroy(gameObject, _timeDestroy);
         _animator.SetTrigger(NAME_ANI_BREAK);
         OnBoxBroken?.Invoke(_amorDrops);
-
+        AddScoreOnDie?.Invoke(_score);
         SetTextProAmor(_alphaStart);
         StartCoroutine(FadeAlpha(_timeDestroy));
     }

@@ -106,11 +106,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waveData: {fileID: 11400000, guid: 43640937a645dfc43aee7abe8d88756c, type: 2}
   _waveConfig: {fileID: 11400000, guid: 732e3f184113d304e836bdb58507c83a, type: 2}
-  _playerPosition: {fileID: 0}
-  _textMeshProUGUI: {fileID: 0}
+  _playerTransform: {fileID: 0}
+  _textMeshProAmorBox: {fileID: 0}
   _asteroiHolder: {fileID: 1724753387}
-  _speedGame: 2
-  _timeStart: 6
+  _gameSpeed: 2
+  _delayStart: 5
 --- !u!114 &7000615503755856157
 MonoBehaviour:
   m_ObjectHideFlags: 0

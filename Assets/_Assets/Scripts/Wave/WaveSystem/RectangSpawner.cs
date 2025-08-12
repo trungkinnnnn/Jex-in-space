@@ -15,10 +15,12 @@ public class RectangSpawner
     private readonly List<Edge> clockWiseEdges = new List<Edge> { Edge.Top, Edge.Right, Edge.Bottom, Edge.Left };
 
     private readonly Edge start;
+    private readonly Camera _camera;
 
-    public RectangSpawner()
+    public RectangSpawner(Camera camera)
     {
         start = (Edge)Random.Range(0, 4);
+        _camera = camera ?? Camera.main;
     }
 
     public Vector3 GetSpawnPoint(int index)
@@ -49,7 +51,7 @@ public class RectangSpawner
         }
 
         Vector3 viewPortPoint = new Vector3(x, y, 0f);
-        return Camera.main.ViewportToWorldPoint(viewPortPoint);
+        return _camera.ViewportToWorldPoint(viewPortPoint);
     }
 
 }

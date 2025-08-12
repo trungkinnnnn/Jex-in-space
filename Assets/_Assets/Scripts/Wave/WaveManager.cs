@@ -4,49 +4,58 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class WaveSpawnManager : MonoBehaviour
+public class WaveManager : MonoBehaviour
 {
+    [Header("Wave Data")]
     [SerializeField] WaveData _waveData;
     [SerializeField] WaveConfig _waveConfig;
-    [SerializeField] Transform _playerPosition;
-    [SerializeField] TextMeshProUGUI _textMeshProUGUI;
+
+    [Header("References")]
+    [SerializeField] Transform _playerTransform;
+    [SerializeField] TextMeshProUGUI _textMeshProAmorBox;
     [SerializeField] Transform _asteroiHolder;
-    [SerializeField] int _speedGame;
-    [SerializeField] float _timeStart = 5f;
+
+    [Header("GamePlay")]
+    [SerializeField] int _gameSpeed;
+    [SerializeField] float _delayStart = 5f;
 
     private WaveSpawner _waveSpawner;
+    private Camera _camera; 
     private int _currentWave = 0;
     private int _alphaStart = 0;
+    private bool _isRunning = false;    
 
     private void Start()
     {
-        SetAlphaZero();
-        StartCoroutine(TimeStart(_timeStart));
+        _camera = Camera.main;
+        SetTextAlphaZero();
+        StartCoroutine(StartAfterDelay(_delayStart));
     }
 
-    private void SetAlphaZero()
+    private void SetTextAlphaZero()
     {
-        Color color = _textMeshProUGUI.color;
+        Color color = _textMeshProAmorBox.color;
         color.a = _alphaStart;
-        _textMeshProUGUI.color = color;
+        _textMeshProAmorBox.color = color;
     }    
 
-    private IEnumerator TimeStart(float time)
+    private IEnumerator StartAfterDelay(float time)
     {
         yield return new WaitForSeconds(time);
-        _waveSpawner = new WaveSpawner(_waveData, _waveConfig, _playerPosition, _asteroiHolder, _textMeshProUGUI, _speedGame);
+        _waveSpawner = new WaveSpawner(_waveData, _waveConfig, _playerTransform, _asteroiHolder, _textMeshProAmorBox, _camera, _gameSpeed);
+        _isRunning = true;
         StartCoroutine(WaveLoop());
     }    
 
 
     private IEnumerator WaveLoop()
     {
-        while (true)
+        while (_isRunning)
         {
             _currentWave++;
             Debug.Log("Wave : " + _currentWave);    
 
-            List<SpawnType> spawnList = _waveSpawner.GenerateSpawnList();
+            List<(SpawnType, int score)> spawnList = _waveSpawner.GenerateSpawnList();
             yield return StartCoroutine(_waveSpawner.SpawnWave(spawnList));
 
             yield return new WaitUntil(() => _waveSpawner.IsWaveCleared());

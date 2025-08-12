@@ -85,7 +85,7 @@ public class Coin : MonoBehaviour, IPickUp
     {
         var inventory = collector.GetComponent<PlayerInventory>();
         if (inventory == null) return;
-        inventory.AddCoin(_quanity);
+        inventory.HandleAddCoin(_quanity);
     }
 
 }
