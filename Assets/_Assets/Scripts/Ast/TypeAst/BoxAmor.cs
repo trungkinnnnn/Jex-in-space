@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoxAmor : Ast
 {
+    // Gun controller
     public static System.Action<int> OnBoxBroken;
     private TextMeshProUGUI _textProAmor;
 

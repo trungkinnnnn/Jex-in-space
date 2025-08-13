@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     // Hud controller
     public static Action<int> OnActionHp;
 
+    // AnimationLister
     public static Action Eat;
     public static Action Hurt;
     public static Action Die;
@@ -50,6 +51,8 @@ public class PlayerHealth : MonoBehaviour
             {
                 _lastTimeTakenDamage = Time.time;
                 TakeDamage(_damage);
+
+                //Event
                 Hurt?.Invoke();
                 AddForceFrom(collision.collider.transform.position);
             }
@@ -58,6 +61,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.collider.CompareTag(_healthItemTag))
         {
             AddHealth(_healAmount);
+            //Event
             Eat?.Invoke();
 
             var item = collision.collider.GetComponent<ItemHealth>();
@@ -72,6 +76,8 @@ public class PlayerHealth : MonoBehaviour
 
 
         OnCatCrack();
+
+        //Event
         OnActionHp?.Invoke(_currentHp); 
 
         if (_currentHp <= 0)
@@ -84,6 +90,9 @@ public class PlayerHealth : MonoBehaviour
     private void AddHealth(int heal)
     {
         _currentHp = Mathf.Min(_currentHp + heal, _hpMax);
+
+        //Event
+        OnActionHp?.Invoke(_currentHp);
         OnCatCrack();
     }
 

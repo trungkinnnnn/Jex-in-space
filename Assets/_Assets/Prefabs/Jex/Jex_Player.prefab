@@ -1144,7 +1144,7 @@ MonoBehaviour:
   _damage: 1
   _healAmount: 1
   addForceImpact: 0.1
-  impactSpeedMax: 0.3
+  impactSpeedMax: 0.4
 --- !u!114 &6421517196935206604
 MonoBehaviour:
   m_ObjectHideFlags: 0

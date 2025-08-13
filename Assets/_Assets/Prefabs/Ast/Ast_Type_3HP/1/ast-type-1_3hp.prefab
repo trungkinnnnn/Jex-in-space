@@ -143,7 +143,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: b78c6973906f70647a917a021d93c4c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea59cf4750febd4581bbdafc538c08c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   _objBroken: {fileID: 1101980149}
   _effectLight2DExplosion: {fileID: 8486099257211429435, guid: 0748e2a0762d3e04e915af4feda0c07b, type: 3}
   _effectAniDestroy: {fileID: 5450029284689995186, guid: dec1613223c4c3b41beaa36cf456822f, type: 3}
@@ -245,6 +246,7 @@ MonoBehaviour:
   _coinData: {fileID: 11400000, guid: 4c170ff9185d16d4285b1e0534659168, type: 2}
   _coinPrefab: {fileID: 77803660138276536, guid: f622cbff57aac6d4ea8e0d384e6c59df, type: 3}
   _shakeData: {fileID: 11400000, guid: c4dc32ebd22ff2c42ada0f3af744cf9c, type: 2}
+  _score: 1
   CreatAst:
   - {fileID: 2743430133569553353}
   - {fileID: 1690831436410317187}
@@ -259,6 +261,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ast-halt_2
       objectReference: {fileID: 0}
+    - target: {fileID: 2251268788886450819, guid: aec32d10cc6c8c542a4cfb77f174bbec, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 2251268788886450820, guid: aec32d10cc6c8c542a4cfb77f174bbec, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -326,6 +332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ast_half_1
       objectReference: {fileID: 0}
+    - target: {fileID: 8022106534528148205, guid: 10559e309f0ac264ea75199142342b19, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 8022106534528148206, guid: 10559e309f0ac264ea75199142342b19, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -158,6 +158,9 @@ public class GunController : MonoBehaviour
     private void HandleTakeAmor(int amor)
     {
         _totalbullet += amor;
+
+        // Event
+        OnActionTotalBullet?.Invoke(_totalbullet);
         Debug.Log("Amor last : " + _totalbullet);
     }    
 

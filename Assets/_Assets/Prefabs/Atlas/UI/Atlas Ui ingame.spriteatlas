@@ -52,6 +52,10 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 92ee6220db409fb48921768306018e6d, type: 3}
     - {fileID: 2800000, guid: 951b32aac8d19a040a489902e626eb51, type: 3}
     - {fileID: 2800000, guid: 953298c4cb030ce43a00441bb0a02beb, type: 3}
+    - {fileID: 2800000, guid: 4f3f5389b069d0d4bb3c461c4b4e8548, type: 3}
+    - {fileID: 2800000, guid: f5696b74124077347860a03c18b3d067, type: 3}
+    - {fileID: 2800000, guid: 29bfb7a77d5889442ac9998391151dbf, type: 3}
+    - {fileID: 2800000, guid: 84c6b409a57f303479e574dd768f1836, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -64,13 +68,17 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5d7742e2a8d7a2847a35562a38a492e6, type: 3}
   - {fileID: 21300000, guid: e94c30d32dff8394a8e2fd92c1c2f4b1, type: 3}
   - {fileID: 21300000, guid: ceb81474ef55c984b9842654d62fd546, type: 3}
+  - {fileID: 21300000, guid: f5696b74124077347860a03c18b3d067, type: 3}
   - {fileID: 21300000, guid: 6d070da4df7f51548a725be8f69afd4f, type: 3}
   - {fileID: 21300000, guid: 953298c4cb030ce43a00441bb0a02beb, type: 3}
   - {fileID: 21300000, guid: 77cbae46b6ef13143a9aeae47447c14e, type: 3}
   - {fileID: 21300000, guid: f926309618f329446af5f742c41ebff1, type: 3}
   - {fileID: 21300000, guid: ec1488e6222a7804d826d90bd6e45090, type: 3}
   - {fileID: 21300000, guid: 5fb67f67d0fafed4fa2302c37f663d56, type: 3}
+  - {fileID: 21300000, guid: 29bfb7a77d5889442ac9998391151dbf, type: 3}
+  - {fileID: 21300000, guid: 84c6b409a57f303479e574dd768f1836, type: 3}
   - {fileID: 21300000, guid: 795fa169b5741ab43a1ec797c2139810, type: 3}
+  - {fileID: 21300000, guid: 4f3f5389b069d0d4bb3c461c4b4e8548, type: 3}
   - {fileID: 21300000, guid: 058137e9614c8ff4e944710a583cc3bb, type: 3}
   - {fileID: 21300000, guid: 951b32aac8d19a040a489902e626eb51, type: 3}
   - {fileID: 21300000, guid: eec51aea3e068bb41b413f3d8ee1c8ca, type: 3}
@@ -85,13 +93,17 @@ SpriteAtlas:
   - lives-4
   - ui-bottom-right-v3
   - ammo-icon
+  - heart-icon-normal
   - lives-0
   - ui-bottom-left-v3-corner-only
   - ui-bottom-left-v3
   - UI-overheat-fill
   - lives-6
   - lives-7
+  - jex-preview-heart-b1
+  - jex-preview-heart-b2
   - ui-top-mid-v3
+  - heart-icon-beat
   - lives-2
   - ui-top-left
   - UIMask

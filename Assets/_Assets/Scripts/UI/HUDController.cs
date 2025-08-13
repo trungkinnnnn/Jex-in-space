@@ -5,8 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+
 public class HUDController : MonoBehaviour
 {
+    [Header("TextUI")]
     [SerializeField] TextMeshProUGUI _scoreText;
     [SerializeField] TextMeshProUGUI _coinText;
     [SerializeField] TextMeshProUGUI _hpText;

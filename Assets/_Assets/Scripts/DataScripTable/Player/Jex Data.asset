@@ -19,4 +19,4 @@ MonoBehaviour:
   addForceTorqueInput_Min: 0.03
   addForceTorqueWind: 0.01
   timeRecovery: 0.4
-  timeImmortal: 0.3
+  timeImmortal: 1
