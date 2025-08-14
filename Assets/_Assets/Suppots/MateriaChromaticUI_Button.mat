@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MateriaChromaticUI
+  m_Name: MateriaChromaticUI_Button
   m_Shader: {fileID: 4800000, guid: d3cd5f73d4d943e419869e7d9ecbc0f6, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -40,12 +40,11 @@ Material:
     m_Floats:
     - _Alpha: 1
     - _Angle: 0
-    - _Brightness: 1.2
+    - _Brightness: 1
     - _EnableExternalAlpha: 0
     - _Intensity: 0
-    - _IntensityX: 0.008
-    - _IntensityY: 0.008
-    - _Reveal: 0
+    - _IntensityX: 0.02
+    - _IntensityY: 0.02
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

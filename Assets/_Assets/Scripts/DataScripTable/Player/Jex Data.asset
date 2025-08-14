@@ -15,7 +15,7 @@ MonoBehaviour:
   health: 9
   addForceMax: 5
   addForceMin: 3
-  addForceTorqueInput_Max: 0.06
+  addForceTorqueInput_Max: 0.05
   addForceTorqueInput_Min: 0.03
   addForceTorqueWind: 0.01
   timeRecovery: 0.4

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas Ui PauseGame1
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 2
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 93e564adb75476e40a0706d95649252d, type: 3}
+    - {fileID: 2800000, guid: b97db3d6cda09b24ea16d0230466cc39, type: 3}
+    - {fileID: 2800000, guid: fafec611e1a10b14e9fd23929f26bac8, type: 3}
+    - {fileID: 2800000, guid: 7f6e7fc36a37f8a4988b9f518b47caf3, type: 3}
+    - {fileID: 2800000, guid: 931954e68ec84624a95312a231f50ea1, type: 3}
+    - {fileID: 2800000, guid: 73227951efdfa3b4193bf87884a8f92a, type: 3}
+    - {fileID: 2800000, guid: a37f1cbfb68b8884a835c109299ef6c8, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: fafec611e1a10b14e9fd23929f26bac8, type: 3}
+  - {fileID: 21300000, guid: 73227951efdfa3b4193bf87884a8f92a, type: 3}
+  - {fileID: 21300000, guid: 7f6e7fc36a37f8a4988b9f518b47caf3, type: 3}
+  - {fileID: 21300000, guid: b97db3d6cda09b24ea16d0230466cc39, type: 3}
+  - {fileID: 21300000, guid: 931954e68ec84624a95312a231f50ea1, type: 3}
+  - {fileID: 21300000, guid: 93e564adb75476e40a0706d95649252d, type: 3}
+  - {fileID: 21300000, guid: a37f1cbfb68b8884a835c109299ef6c8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - module-bg
+  - system-holo-tab-settings-active
+  - module-shockwave-icon
+  - ui-console-pause-modules-bg
+  - module-spiral-icon
+  - system-holo-bg-v2
+  - system-holo-tab-settings-inactive
+  m_RenderDataMap: {}
+  m_Tag: Atlas Ui PauseGame1
+  m_IsVariant: 0
