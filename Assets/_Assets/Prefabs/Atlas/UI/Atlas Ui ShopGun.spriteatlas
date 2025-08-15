@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas Ui ShopGun
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 2
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 47
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 3a9283a42ecabe84791f9181a28b6a52, type: 3}
+    - {fileID: 2800000, guid: 397c87977c413114286366720c5f221d, type: 3}
+    - {fileID: 2800000, guid: b0e4ea296b0802e49ac06acdc54faff9, type: 3}
+    - {fileID: 2800000, guid: dbe35649e6ebf964ebd491ba0d26f273, type: 3}
+    - {fileID: 2800000, guid: bcbd93577723fdf4d94de53e8624bf72, type: 3}
+    - {fileID: 2800000, guid: e7a09adbc8fdf8747b6b529c6c3727bd, type: 3}
+    - {fileID: 2800000, guid: 9858e4b0195046346927d4b938680777, type: 3}
+    - {fileID: 2800000, guid: f44dd596ee7321546bebe6e2b08c2bb2, type: 3}
+    - {fileID: 2800000, guid: 5cc9bbef160167f4aab254e28298155b, type: 3}
+    - {fileID: 2800000, guid: 940283e4099690a42a844d52456c6123, type: 3}
+    - {fileID: 2800000, guid: 6b8bfb4e0a342bf47a7b7a41fc30a884, type: 3}
+    - {fileID: 2800000, guid: 990e6187b57d9ad4fa20c16b9de53f06, type: 3}
+    - {fileID: 2800000, guid: 8a11e3a246ed4504e84864bb199ab3dc, type: 3}
+    - {fileID: 2800000, guid: 577c28e9172c08047820246c02f4a28f, type: 3}
+    - {fileID: 2800000, guid: fbd104e9a12a2a2448b26a755302e2c3, type: 3}
+    - {fileID: 2800000, guid: 2614b0af8155b794b8fd9092d7c16972, type: 3}
+    - {fileID: 2800000, guid: 2d623f596d2199c4aaa00a6eeaae62e1, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 9858e4b0195046346927d4b938680777, type: 3}
+  - {fileID: 21300000, guid: 8a11e3a246ed4504e84864bb199ab3dc, type: 3}
+  - {fileID: 21300000, guid: 3a9283a42ecabe84791f9181a28b6a52, type: 3}
+  - {fileID: 21300000, guid: 940283e4099690a42a844d52456c6123, type: 3}
+  - {fileID: 21300000, guid: f44dd596ee7321546bebe6e2b08c2bb2, type: 3}
+  - {fileID: 21300000, guid: bcbd93577723fdf4d94de53e8624bf72, type: 3}
+  - {fileID: 21300000, guid: 990e6187b57d9ad4fa20c16b9de53f06, type: 3}
+  - {fileID: 21300000, guid: 397c87977c413114286366720c5f221d, type: 3}
+  - {fileID: 21300000, guid: b0e4ea296b0802e49ac06acdc54faff9, type: 3}
+  - {fileID: 21300000, guid: dbe35649e6ebf964ebd491ba0d26f273, type: 3}
+  - {fileID: 21300000, guid: 2d623f596d2199c4aaa00a6eeaae62e1, type: 3}
+  - {fileID: 21300000, guid: fbd104e9a12a2a2448b26a755302e2c3, type: 3}
+  - {fileID: 21300000, guid: 577c28e9172c08047820246c02f4a28f, type: 3}
+  - {fileID: 21300000, guid: e7a09adbc8fdf8747b6b529c6c3727bd, type: 3}
+  - {fileID: 21300000, guid: 6b8bfb4e0a342bf47a7b7a41fc30a884, type: 3}
+  - {fileID: 21300000, guid: 2614b0af8155b794b8fd9092d7c16972, type: 3}
+  - {fileID: 21300000, guid: 5cc9bbef160167f4aab254e28298155b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - gun-item-preview-bullet
+  - gun-item-select
+  - gun-item-icon-blue
+  - gun-item-preview-rocket
+  - gun-item-preview-laser
+  - gun-item-icon-rocket
+  - gun-item-bg
+  - gun-item-icon-bullet
+  - gun-item-icon-laser
+  - gun-item-icon-red
+  - upgrade-bullet-icon
+  - replay
+  - bullet
+  - gun-item-preview-blue
+  - gun-item-bg-locked
+  - upgrade-mag-icon
+  - gun-item-preview-red
+  m_RenderDataMap: {}
+  m_Tag: Atlas Ui ShopGun
+  m_IsVariant: 0

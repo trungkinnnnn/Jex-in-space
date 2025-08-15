@@ -35,8 +35,8 @@ public class PauseController : MonoBehaviour
     private string _para_NAME_IntensityX = "_IntensityX";
     private string _para_NAME_IntensityY = "_IntensityY";
     private float _paraIntensityStart = 0f;
-    private float _paraIntensityTargetX = 0.008f;
-    private float _paraIntensityTargetY = 0.008f;
+    private float _paraIntensityTargetX = 0.005f;
+    private float _paraIntensityTargetY = 0.005f;
 
     // Reveal
     private float _para_RevealStart = 1f;

@@ -1,4 +1,4 @@
-﻿Shader "Custom/BrightSprite"
+﻿Shader "UI/BrightSprite"
 {
     Properties
     {

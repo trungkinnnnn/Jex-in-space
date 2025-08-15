@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Atlas Ui PauseGame2
+  m_Name: Atlas Ui PauseItem
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -23,7 +23,7 @@ SpriteAtlas:
     platformSettings: []
     packingSettings:
       serializedVersion: 2
-      padding: 4
+      padding: 8
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 0
@@ -32,15 +32,24 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: 216ac224b3e85624fad07814b8b63435, type: 3}
+    - {fileID: 2800000, guid: 7f6e7fc36a37f8a4988b9f518b47caf3, type: 3}
+    - {fileID: 2800000, guid: 931954e68ec84624a95312a231f50ea1, type: 3}
+    - {fileID: 2800000, guid: fafec611e1a10b14e9fd23929f26bac8, type: 3}
+    - {fileID: 2800000, guid: abeb8f8282359fd4380fb7e4418a05f5, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 216ac224b3e85624fad07814b8b63435, type: 3}
+  - {fileID: 21300000, guid: fafec611e1a10b14e9fd23929f26bac8, type: 3}
+  - {fileID: 21300000, guid: abeb8f8282359fd4380fb7e4418a05f5, type: 3}
+  - {fileID: 21300000, guid: 7f6e7fc36a37f8a4988b9f518b47caf3, type: 3}
+  - {fileID: 21300000, guid: 931954e68ec84624a95312a231f50ea1, type: 3}
   m_PackedSpriteNamesToIndex:
-  - UI-sys-paw
+  - module-bg
+  - normal-button-bg
+  - module-shockwave-icon
+  - module-spiral-icon
   m_RenderDataMap: {}
-  m_Tag: Atlas Ui PauseGame2
+  m_Tag: Atlas Ui PauseItem
   m_IsVariant: 0

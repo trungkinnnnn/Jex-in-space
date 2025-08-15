@@ -26,6 +26,8 @@ public class GameStateManager : MonoBehaviour
 
     public float timeOffScreen = 0.4f;
 
+    private PausePhysic2D _pausePhysic;
+
     private void Awake()
     {
         _screenInGame.SetActive(true);
@@ -38,13 +40,16 @@ public class GameStateManager : MonoBehaviour
         _canvasGroupInGame = _screenInGame.GetComponent<CanvasGroup>();
         _canvasGroupPauseGame = _screenPauseGame.GetComponent<CanvasGroup>();
         _canvasGroupEmpty = _sceenEmpty.GetComponent<CanvasGroup>();
+
+        _pausePhysic = GetComponent<PausePhysic2D>();
     }
    
 
     public void ActionDownButtonPauseON()
     {
         Debug.Log("Pause Game");
-        Time.timeScale = 0;
+        if(_pausePhysic != null) { _pausePhysic.PauseGame(); }
+
         StartCoroutine(OffScreen(_canvasGroupInGame, _screenInGame));
         StartCoroutine(OnScreen(_canvasGroupEmpty, _sceenEmpty));
         StartCoroutine(OnScreen(_canvasGroupPauseGame, _screenPauseGame));
@@ -62,7 +67,8 @@ public class GameStateManager : MonoBehaviour
             yield return StartCoroutine(ActionOffScreen());
         yield return StartCoroutine(OffScreen(_canvasGroupPauseGame, _screenPauseGame));
         StartCoroutine(OffScreen(_canvasGroupEmpty, _sceenEmpty));
-        Time.timeScale = 1;
+
+        if (_pausePhysic != null) { _pausePhysic.ResumeGame(); }
         StartCoroutine(OnScreen(_canvasGroupInGame, _screenInGame));
     }    
 

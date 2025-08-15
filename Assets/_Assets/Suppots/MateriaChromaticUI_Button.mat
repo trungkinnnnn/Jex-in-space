@@ -45,6 +45,7 @@ Material:
     - _Intensity: 0
     - _IntensityX: 0.02
     - _IntensityY: 0.02
+    - _Reveal: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
