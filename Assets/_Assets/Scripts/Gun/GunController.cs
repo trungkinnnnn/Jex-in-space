@@ -19,8 +19,8 @@ public class GunController : MonoBehaviour
     [SerializeField] Transform _positionSpawnMagazine;
     [SerializeField] GameObject _prefabCasing;
     [SerializeField] GameObject _prefabMagazine;
-    
 
+  
     // runtime
     private Animator _animator;
     private Transform _pointFireTf;
@@ -32,7 +32,7 @@ public class GunController : MonoBehaviour
     private int maxMag = 3;
 
     // bullet plasma
-    private const string ID_BULLET_REDPLASMA = "Gun05";
+    private const int ID_BULLET_REDPLASMA = 4;
     private const float angleRedPlasma = 15f;
     private static readonly int SHOOT_HASH = Animator.StringToHash("isShoot");
 
@@ -41,6 +41,8 @@ public class GunController : MonoBehaviour
         _animator = GetComponent<Animator>();   
         _pointFireTf = _pointFire != null ? _pointFire : transform;
     }
+
+    
 
     private void Start()
     {
@@ -58,12 +60,13 @@ public class GunController : MonoBehaviour
     {
         if (InputManager.isInputLocked) return;
 
-        if (Input.GetMouseButtonDown(0) && _currentMagSizebullet > 0 && FireRate.canShoot)
+        if (ShootSignal.fire && _currentMagSizebullet > 0 && FireRate.canShoot)
         {
             _animator.SetTrigger(SHOOT_HASH);
             StartCoroutine(FireRoutine());
         }
     }
+
 
     private IEnumerator FireRoutine()
     {
@@ -90,7 +93,10 @@ public class GunController : MonoBehaviour
         }
         yield return new WaitForSeconds(Mathf.Max(0.01f, _paramasters.fireRate));
         FireRate.canShoot = true;
+        ShootSignal.fire = false;
     }
+
+
 
     private void SpawnBullet(GameObject prefab, Vector3 pos,  Quaternion rot, Vector3 dir, float speed)
     {
@@ -126,13 +132,16 @@ public class GunController : MonoBehaviour
         OnActionCurrentBullet?.Invoke(_currentMagSizebullet);
 
         Debug.Log("TotalBullet : " + _totalbullet);
-
         FireRate.canShoot = true;
-        InputManager.isInputLocked = false;
-
+        
         if(_currentMagSizebullet <= 0f && _totalbullet <= 0f)
         {
             Debug.Log("Out Ammo");
+            InputManager.isInputLocked = true;
+        }
+        else
+        {
+            InputManager.isInputLocked = false;
         }
 
     }
@@ -148,11 +157,13 @@ public class GunController : MonoBehaviour
     private void OnEnable()
     {
         BoxAmor.OnBoxBroken += HandleTakeAmor;
+        ShootSignal.OnSkillShoot  = FireRoutineSkill;
     }
 
     private void OnDisable()
     {
         BoxAmor.OnBoxBroken -= HandleTakeAmor;
+        ShootSignal.OnSkillShoot = null;
     }    
 
     private void HandleTakeAmor(int amor)
@@ -162,6 +173,20 @@ public class GunController : MonoBehaviour
         // Event
         OnActionTotalBullet?.Invoke(_totalbullet);
         Debug.Log("Amor last : " + _totalbullet);
-    }    
+    }
+
+    private void FireRoutineSkill()
+    {
+        SpawnBullet(_paramasters.currentGun?.bulletPrefabs, _pointFireTf.position,
+                    _pointFireTf.rotation, _pointFireTf.right, _paramasters.bulletSpeed);
+
+        if (_paramasters.currentGun != null && _paramasters.currentGun.idGun == ID_BULLET_REDPLASMA)
+        {
+            SpawnExtraRedPlasma();
+        }
+
+        CreateTrash(_prefabCasing, _positionSpawnCasing, _positionGun);
+    }
+
 
 }

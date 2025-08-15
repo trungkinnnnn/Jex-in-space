@@ -11,9 +11,9 @@ public static class GunDataReslover
     }
 
 
-    public static StatLevel FindStatForGun(GunStatData gunStatData, string idGun)
+    public static StatLevel FindStatForGun(GunStatData gunStatData, int idGun)
     {
-        if(string.IsNullOrEmpty(idGun) || gunStatData?.statLevels == null) return null;
+        if(gunStatData?.statLevels == null) return null;
         return gunStatData.statLevels.FirstOrDefault(stat => stat != null && stat.idGun == idGun);
     }
 

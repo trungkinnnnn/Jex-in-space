@@ -394,6 +394,8 @@ MonoBehaviour:
   _positionSpawnMagazine: {fileID: 3686168643109215949}
   _prefabCasing: {fileID: 228255633600474807, guid: f7a7922a6fd75a54b88891c71e7e6855, type: 3}
   _prefabMagazine: {fileID: 6099148189297116239, guid: 1f992cda2b54832449f9643e75e43587, type: 3}
+  _magSizeSkill: 30
+  _fireRateSkill: 0.1
 --- !u!1 &6069738807182772944
 GameObject:
   m_ObjectHideFlags: 0

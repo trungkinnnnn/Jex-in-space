@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gun Stat Data
   m_EditorClassIdentifier: 
   statLevels:
-  - idGun: Gun01
+  - idGun: 0
     magSize:
     - name: magSize
       level: 1
@@ -78,7 +78,7 @@ MonoBehaviour:
       value: 0.2
       price: 200
       unlock: 0
-  - idGun: Gun02
+  - idGun: 1
     magSize:
     - name: magSize
       level: 1
@@ -143,7 +143,7 @@ MonoBehaviour:
       value: 0.3
       price: 200
       unlock: 0
-  - idGun: Gun03
+  - idGun: 2
     magSize:
     - name: magSize
       level: 1
@@ -208,7 +208,7 @@ MonoBehaviour:
       value: 0.15
       price: 200
       unlock: 0
-  - idGun: Gun04
+  - idGun: 3
     magSize:
     - name: magSize
       level: 1
@@ -273,7 +273,7 @@ MonoBehaviour:
       value: 0.5
       price: 200
       unlock: 0
-  - idGun: Gun05
+  - idGun: 4
     magSize:
     - name: magSize
       level: 1

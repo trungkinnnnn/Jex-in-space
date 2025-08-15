@@ -11,7 +11,7 @@ public class GunStatData : ScriptableObject
 [System.Serializable]
 public class StatLevel
 {
-    public string idGun;
+    public int idGun;
     public List<DataLevel> magSize;
     public List<DataLevel> bulletSpeed;
     public List<DataLevel> timeReload;

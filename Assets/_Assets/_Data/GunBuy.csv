@@ -1,6 +1,6 @@
 id_Gun,name,price_coin,price_money,unlock
-Gun01,Explosive Bullet,0,0,TRUE
-Gun02,Cold Blue Plasma,1000,10000,FALSE
-Gun03,Lightweight Lazer,2000,20000,FALSE
-Gun04,Homing Rockets,5000,50000,FALSE
-Gun05,Tripple Red Plasma,7000,70000,FALSE
+0,Explosive Bullet,0,0,TRUE
+1,Cold Blue Plasma,1000,10000,FALSE
+2,Lightweight Lazer,2000,20000,FALSE
+3,Homing Rockets,5000,50000,FALSE
+4,Tripple Red Plasma,7000,70000,FALSE

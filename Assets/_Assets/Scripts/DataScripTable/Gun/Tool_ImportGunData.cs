@@ -29,7 +29,7 @@ public class Tool_ImportGunData
 
             var stat = new GunStat();
 
-            stat.idGun = values[index++];
+            stat.idGun = (int)TryParseInt(values[index++]);
             stat.nameGun = values[index++];
             stat.priceCoin = (float)TryParseFloat(values[index++]);
             stat.priceMoney = (float)TryParseFloat(values[index++]);
@@ -47,6 +47,8 @@ public class Tool_ImportGunData
         AssetDatabase.SaveAssets();
 
     }
+    
+    static int? TryParseInt(string str) => int.TryParse(str, out var result) ? result : null;
 
     static float? TryParseFloat(string str) => float.TryParse(str, out var result) ? result : null;
     static bool? TryParseBool(string str) => str.Trim().ToLower() == "true";

@@ -10,7 +10,7 @@ public class GunData : ScriptableObject
 [System.Serializable]
 public class GunStat
 {
-    public string idGun;
+    public int idGun;
     public string nameGun;
     public float priceCoin;
     public float priceMoney;

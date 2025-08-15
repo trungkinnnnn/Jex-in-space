@@ -47,7 +47,7 @@ public class Tool_ImportGunStatData
             }
 
             currentId = values[0];
-            currentStatLevel.idGun = values[index++];
+            currentStatLevel.idGun = (int)TryParseInt(values[index++]);
 
             if (values[1] == "magSize")
             {

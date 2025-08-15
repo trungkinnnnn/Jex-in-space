@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (Input.GetMouseButtonDown(0) && FireRate.canShoot)
+        if (ShootSignal.fire && FireRate.canShoot)
         {
             Vector2 direction = (Vector2)transform.position - (Vector2)_positionForce.position;
             float now = Time.time;
@@ -63,4 +63,12 @@ public class PlayerMovement : MonoBehaviour
             _rb.AddTorque(-_addTorqueWind, ForceMode2D.Force);
         }
     }
+
+    public void AddForceMin(float force, float forceToque)
+    {
+        Vector2 direction = (Vector2)transform.position - (Vector2)_positionForce.position;
+        _rb.AddForce(direction * force, ForceMode2D.Impulse);
+        _rb.AddTorque(-forceToque, ForceMode2D.Impulse);
+    }    
+
 }
