@@ -6,16 +6,19 @@ using UnityEngine.UI;
 public class PauseController : MonoBehaviour
 {
     [Header("Screen")]
+    [SerializeField] GameObject _sceen;
+    private RectTransform _rectTransformScreen;
+    private Vector2 _hiddenPos = new Vector2(1010f, 0f);
+    private Vector2 _showPos = new Vector2(0f, 0f);
+    private bool _isShown = false;
+    private float _durationSceen = 0.4f;
+
+    [Header("Button")]
     [SerializeField] GameObject _buttonResume;
 
     [Header("ShowHand")]
     [SerializeField] GameObject _handObj;
-    [SerializeField] float _durationMoveHand = 0.4f;
-    private RectTransform _handTransform;
     private Image _handImage;
-    private Vector2 _hiddenPos = new Vector2(1140f, 145f);
-    private Vector2 _showPos = new Vector2(182f, 145f);
-    private bool _isShown = false;
     private Material _materialHand;
   
     private float _matDurationON = 0.1f;
@@ -64,13 +67,15 @@ public class PauseController : MonoBehaviour
 
     private void SetupHandObj()
     {
-        _handTransform = _handObj.GetComponent<RectTransform>();
-        _handImage = _handTransform.GetComponent<Image>();
+        _rectTransformScreen = _sceen.GetComponent<RectTransform>();
+        _rectTransformScreen.anchoredPosition = _hiddenPos;
+        // Hand
+        _handImage = _handObj.GetComponent<Image>();
 
         _materialHand = Instantiate(_handImage.material);
         _handImage.material = _materialHand;
 
-        _handTransform.anchoredPosition = _hiddenPos;
+        
         _materialHand.SetFloat(_para_NAME_IntensityX, _paraIntensityStart);
         _materialHand.SetFloat(_para_NAME_IntensityY, _paraIntensityStart);
     }
@@ -128,9 +133,9 @@ public class PauseController : MonoBehaviour
     private IEnumerator MoveHand()
     {
         _isShown = !_isShown;
-        _handTransform.DOKill();
-        Tween t = _handTransform
-            .DOAnchorPos(_isShown ? _showPos : _hiddenPos, _durationMoveHand)
+        _rectTransformScreen.DOKill();
+        Tween t = _rectTransformScreen
+            .DOAnchorPos(_isShown ? _showPos : _hiddenPos, _durationSceen)
             .SetEase(Ease.OutCubic)
             .SetUpdate(true);
         yield return t.WaitForCompletion();

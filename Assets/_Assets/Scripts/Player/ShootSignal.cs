@@ -38,6 +38,7 @@ public class ShootSignal : MonoBehaviour
     {
         _magSkill = magSizeBulletSkill;
         _playerMovement = GetComponent<PlayerMovement>();
+        
     }
 
     private void Update()
