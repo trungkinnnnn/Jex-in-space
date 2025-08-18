@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
     // Hud controller
     public static Action<int> OnActionHp;
 
-    // AnimationLister
+    // AnimationLister, DieScreenUI
     public static Action Eat;
     public static Action Hurt;
     public static Action Die;

@@ -5,7 +5,6 @@
         _MainTex ("Sprite Texture", 2D) = "white" {}
         _Brightness ("Brightness", Float) = 1.0
         _Color ("Tint", Color) = (1,1,1,1)
-        _Stencil ("Stencil", Float) = 0
     }
 
     SubShader
@@ -48,12 +47,13 @@
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            float4 frag (v2f i) : SV_Target
             {
-                fixed4 texColor = tex2D(_MainTex, i.uv) * _Color;
+                float4 texColor = tex2D(_MainTex, i.uv) * _Color;
                 texColor.rgb *= _Brightness;
                 return texColor;
             }
+
             ENDCG
         }
     }

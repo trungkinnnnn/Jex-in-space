@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,9 @@ public class TransitionController : MonoBehaviour
 {
     //Action
     public Action<int> OnTabSelected;
+
+    [Header("Tab")]
+    [SerializeField] GameObject _tabDie;
 
     [Header("Tabs")]
     [SerializeField] List<GameObject> _tabObjs;
@@ -19,22 +23,31 @@ public class TransitionController : MonoBehaviour
     [Header("ButtonOFF")]
     [SerializeField] List<Button> _buttonOFFs;
 
+    private GameObject _tabPause;
     private int _tabCount;
     private int _currentSeleted = 0;
 
     private void Start()
     {
-        if(_tabObjs.Count != _buttonOFFs.Count && _tabObjs.Count != _buttonONs.Count)
-        {
-            Debug.Log("Tab miss button");
-            return;
-        }
+        CheckValid();
+
+        _tabPause = _tabObjs[_currentSeleted];
+
         _tabCount = _tabObjs.Count;
     
         AddListenerButtonOFF();
         OnTabSelected += HandleTabSelected;
 
         SetObj(_tabObjs[_currentSeleted], _buttonONs[_currentSeleted], true);
+    }
+
+    private void CheckValid()
+    {
+        if (_tabObjs.Count != _buttonOFFs.Count && _tabObjs.Count != _buttonONs.Count)
+        {
+            Debug.Log("Tab miss button");
+            return;
+        }
     }
 
     private void AddListenerButtonOFF()
@@ -75,6 +88,36 @@ public class TransitionController : MonoBehaviour
     {
         objTab.SetActive(value);
         button.SetActive(value);
+    }
+
+
+    private void OnEnable()
+    {
+        RegisterEvents();
+    }
+      
+    private void OnDisable()
+    {
+        UnregisterEvents();
+    }
+
+    private void RegisterEvents()
+    {
+        PlayerHealth.Die += HandleActionOnTabDie;
+        GunController.Die += HandleActionOnTabDie;
+    }   
+    
+    private void UnregisterEvents()
+    {
+        PlayerHealth.Die -= HandleActionOnTabDie;
+        GunController.Die -= HandleActionOnTabDie;
+    }    
+
+    private void HandleActionOnTabDie()
+    {
+        _tabObjs[_currentSeleted].SetActive(false);
+        _tabObjs[0] = _tabDie;
+        _tabDie.SetActive(true);
     }
 
 }

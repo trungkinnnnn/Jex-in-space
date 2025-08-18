@@ -8,6 +8,9 @@ public class GunController : MonoBehaviour
     public static Action<int> OnActionCurrentBullet;
     public static Action<int> OnActionTotalBullet;
 
+    //DieScreenUI
+    public static Action Die;
+
     [Header("Data")]
     [SerializeField] GunData _gunData;
     [SerializeField] GunStatData _gunStatData;
@@ -138,6 +141,7 @@ public class GunController : MonoBehaviour
         {
             Debug.Log("Out Ammo");
             InputManager.isInputLocked = true;
+            Die?.Invoke();
         }
         else
         {

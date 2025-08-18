@@ -49,6 +49,9 @@ TagManager:
   - name: Invisible wall
     uniqueID: 3133659395
     locked: 0
+  - name: BackGroundNotLight
+    uniqueID: 4091967543
+    locked: 0
   - name: BackGround
     uniqueID: 920819605
     locked: 0

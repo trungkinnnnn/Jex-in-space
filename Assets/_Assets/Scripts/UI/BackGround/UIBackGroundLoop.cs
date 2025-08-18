@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class UIBackGroundLoop : MonoBehaviour
+{
+    public float speed = 0.1f;
+
+    private RawImage _image;
+    private Rect _uvRect;
+
+    private void Start()
+    {
+        _image = GetComponent<RawImage>();
+        _uvRect = _image.uvRect;
+    }
+
+    private void Update()
+    {
+        _uvRect.y += speed * Time.unscaledDeltaTime;
+        _image.uvRect = _uvRect;
+
+    }
+}

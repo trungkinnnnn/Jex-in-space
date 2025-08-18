@@ -4,8 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
 public class HUDController : MonoBehaviour
 {
     [Header("TextUI")]
