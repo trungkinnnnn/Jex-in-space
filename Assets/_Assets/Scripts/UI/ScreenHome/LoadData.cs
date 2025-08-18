@@ -10,6 +10,9 @@ public class LoadData : MonoBehaviour
     [SerializeField] GunData _gunData;
     [SerializeField] GunStatData _gunStatData;
 
+
+    private GunData _gunDataClone;
+    private GunStatData _gunStatDataClone;
     private static string _para_NAMESCENE_NEXT = "InGameScreen";
     private string _pathData;
 
@@ -26,8 +29,10 @@ public class LoadData : MonoBehaviour
             
         }
 
-
         _pathData = Path.Combine(Application.persistentDataPath, DataPlayerPrefs._pathSaveData);
+
+        _gunDataClone = Instantiate(_gunData);
+        _gunStatDataClone = Instantiate(_gunStatData);
     }
 
     private void Start()
@@ -48,8 +53,8 @@ public class LoadData : MonoBehaviour
 
         foreach(var gun in loads.guns)
         {
-            GunStat gunStat = _gunData.gunStats.Find(s => s.idGun == gun.gunID);
-            StatLevel levels = _gunStatData.statLevels.Find(s => s.idGun == gun.gunID);
+            GunStat gunStat = _gunDataClone.gunStats.Find(s => s.idGun == gun.gunID);
+            StatLevel levels = _gunStatDataClone.statLevels.Find(s => s.idGun == gun.gunID);
             SetGunStat(gunStat, gun);
             SetGunLevel(levels, gun);
         }
@@ -75,10 +80,47 @@ public class LoadData : MonoBehaviour
         SceneManager.LoadScene(_para_NAMESCENE_NEXT);
     }
 
-    public GunData GetGunData() => _gunData;
-    public GunStatData GetGunStatData() => _gunStatData;
+    public GunData GetGunData() => _gunDataClone;
+    public GunStatData GetGunStatData()
+    {
+        LogGunStatData(_gunStatDataClone);
+        return _gunStatDataClone;
+    }    
 
+    public static void LogGunStatData(GunStatData gunStatData)
+    {
+        if (gunStatData == null || gunStatData.statLevels == null)
+        {
+            Debug.Log("GunStatData hoặc statLevels null!");
+            return;
+        }
 
+        foreach (var statLevel in gunStatData.statLevels)
+        {
+            Debug.Log($"=== Gun ID: {statLevel.idGun} ===");
+
+            LogDataLevelList("Mag Size", statLevel.magSize);
+            LogDataLevelList("Bullet Speed", statLevel.bulletSpeed);
+            LogDataLevelList("Time Reload", statLevel.timeReload);
+            LogDataLevelList("Fire Rate", statLevel.fireRate);
+        }
+    }
+
+    private static void LogDataLevelList(string statName, List<DataLevel> levels)
+    {
+        if (levels == null || levels.Count == 0)
+        {
+            Debug.Log($"{statName}: Không có dữ liệu");
+            return;
+        }
+
+        Debug.Log($"{statName}:");
+
+        foreach (var data in levels)
+        {
+            Debug.Log($"  Name: {data.name}, Level: {data.level}, Value: {data.value}, Price: {data.price}, Unlock: {data.unlock}");
+        }
+    }
 
 
 }
