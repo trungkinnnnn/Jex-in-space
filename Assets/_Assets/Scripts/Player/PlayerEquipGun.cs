@@ -7,18 +7,22 @@ using UnityEngine.Rendering;
 public class PlayerEquipGun : MonoBehaviour
 {
     // data
-    [SerializeField] GunData _gunData;
     [SerializeField] Transform _gunPostion;
+
+    private LoadData _loadData;
+    private GunData _gunData;
 
     private void Start()
     {
+        _loadData = LoadData.Instance;
+        _gunData = _loadData.GetGunData();
+
         var unlockedGun = _gunData.gunStats.FirstOrDefault(stat => stat.equip);
-        if (unlockedGun != null )
+        if (unlockedGun != null)
         {
             Instantiate(unlockedGun.gunPrefabs, _gunPostion);
         }
     }
 
-  
 
 }

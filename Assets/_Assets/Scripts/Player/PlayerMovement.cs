@@ -19,10 +19,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void Start()
-    {
         _addForceMax = _jexData.addForceMax;
         _addForceMin = _jexData.addForceMin;
         _addTorqueMax = _jexData.addForceTorqueInput_Max;

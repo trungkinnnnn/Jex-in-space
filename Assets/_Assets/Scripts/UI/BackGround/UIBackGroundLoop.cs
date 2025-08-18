@@ -10,7 +10,7 @@ public class UIBackGroundLoop : MonoBehaviour
     private RawImage _image;
     private Rect _uvRect;
 
-    private void Start()
+    private void Awake()
     {
         _image = GetComponent<RawImage>();
         _uvRect = _image.uvRect;

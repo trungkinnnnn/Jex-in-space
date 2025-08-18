@@ -28,9 +28,12 @@ public class DieScreenUI : MonoBehaviour
     private int _wave;
     private int _highWave = 0;
 
-    private void Start()
+    private SaveSystem _saveSystem;
+
+    private void Awake()
     {
         _hudController = GetComponent<HUDController>();
+        _saveSystem = GetComponent<SaveSystem>();
         LoadData();
     }
 
@@ -114,6 +117,8 @@ public class DieScreenUI : MonoBehaviour
         PlayerPrefs.SetInt(DataPlayerPrefs.para_HIGHSCORE, highScore);
         PlayerPrefs.SetInt(DataPlayerPrefs.para_HIGHWAVE, hightWave);
         PlayerPrefs.Save();
+
+        _saveSystem.SaveData();
     }    
 
     

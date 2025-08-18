@@ -11,9 +11,7 @@ public class GunController : MonoBehaviour
     //DieScreenUI
     public static Action Die;
 
-    [Header("Data")]
-    [SerializeField] GunData _gunData;
-    [SerializeField] GunStatData _gunStatData;
+    [Header("PointFire")]
     [SerializeField] Transform _pointFire;
 
     [Header("Trash")]        
@@ -23,6 +21,10 @@ public class GunController : MonoBehaviour
     [SerializeField] GameObject _prefabCasing;
     [SerializeField] GameObject _prefabMagazine;
 
+    // Data
+    private GunData _gunData;
+    private GunStatData _gunStatData;
+    private LoadData _loadData;
   
     // runtime
     private Animator _animator;
@@ -49,6 +51,10 @@ public class GunController : MonoBehaviour
 
     private void Start()
     {
+        _loadData = LoadData.Instance;
+        _gunData = _loadData.GetGunData();
+        _gunStatData = _loadData.GetGunStatData();
+
         _paramasters = GunDataReslover.GetParamasters(_gunData, _gunStatData);
 
         _totalbullet = _paramasters.magSize * maxMag;

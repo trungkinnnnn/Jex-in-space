@@ -24,7 +24,7 @@ public class AstBackGround : MonoBehaviour
     private List<AstTrast> _astTrasts = new List<AstTrast>();
     private Camera _camera;
 
-    void Start()
+    private void Awake()
     {
         _camera = Camera.main;
         _astTrasts.Clear();

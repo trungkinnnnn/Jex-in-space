@@ -24,7 +24,7 @@ public class Star : MonoBehaviour
     public float minPosition = 0.1f;
     public float maxPosition = 1.1f;
 
-    void Start()
+    private void Awake()
     {
         _camera = Camera.main;
         starStates.Clear();

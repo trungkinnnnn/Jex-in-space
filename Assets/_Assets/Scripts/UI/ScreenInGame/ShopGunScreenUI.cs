@@ -34,7 +34,7 @@ public class ShopGunScreenUI : MonoBehaviour
     //Data
     private int _totalCoin;
 
-    private void Start()   
+    private void Awake()
     {
         SetUp();
         AddListener();

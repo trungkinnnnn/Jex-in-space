@@ -27,7 +27,7 @@ public class TransitionController : MonoBehaviour
     private int _tabCount;
     private int _currentSeleted = 0;
 
-    private void Start()
+    private void Awake()
     {
         CheckValid();
 
@@ -35,7 +35,7 @@ public class TransitionController : MonoBehaviour
 
         _tabPause = _tabObjs[_currentSeleted];
         _tabCount = _tabObjs.Count;
-    
+
         AddListenerButtonOFF();
         OnTabSelected += HandleTabSelected;
 
@@ -63,7 +63,7 @@ public class TransitionController : MonoBehaviour
     private void OnButtonClicked(int tabIndex)
     {
         if (tabIndex == _currentSeleted) return;
-        Debug.Log(tabIndex);
+        //Debug.Log(tabIndex);
         OnTabSelected?.Invoke(tabIndex);
     }
 
