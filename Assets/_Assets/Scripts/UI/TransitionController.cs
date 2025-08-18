@@ -31,8 +31,9 @@ public class TransitionController : MonoBehaviour
     {
         CheckValid();
 
-        _tabPause = _tabObjs[_currentSeleted];
+        _tabDie.SetActive(false);
 
+        _tabPause = _tabObjs[_currentSeleted];
         _tabCount = _tabObjs.Count;
     
         AddListenerButtonOFF();

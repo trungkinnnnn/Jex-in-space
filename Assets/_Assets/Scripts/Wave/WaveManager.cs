@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,6 +7,9 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+
+    public static Action<int> GetWave;
+
     [Header("Wave Data")]
     [SerializeField] WaveData _waveData;
     [SerializeField] WaveConfig _waveConfig;
@@ -53,7 +57,8 @@ public class WaveManager : MonoBehaviour
         while (_isRunning)
         {
             _currentWave++;
-            Debug.Log("Wave : " + _currentWave);    
+            Debug.Log("Wave : " + _currentWave);
+            GetWave?.Invoke(_currentWave);
 
             List<(SpawnType, int score)> spawnList = _waveSpawner.GenerateSpawnList();
             yield return StartCoroutine(_waveSpawner.SpawnWave(spawnList));

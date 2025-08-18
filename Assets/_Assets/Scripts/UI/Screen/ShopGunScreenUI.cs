@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -18,6 +19,9 @@ public class ShopGunScreenUI : MonoBehaviour
     [Header("Unlock")]
     [SerializeField] List<Image> _imageUnlock;
 
+    [Header("TextUI")]
+    [SerializeField] TextMeshProUGUI _textTotalCoin;
+
     private List<Image> _imageList = new List<Image>();
     private List<Button> _buttons = new List<Button>();
 
@@ -26,11 +30,18 @@ public class ShopGunScreenUI : MonoBehaviour
     private float _durationChangeAlpha = 0.3f;
     private float _alphaMax = 1f;
     private float _alphaMin = 0f;
+
+    //Data
+    private int _totalCoin;
+
     private void Start()   
     {
         SetUp();
         AddListener();
         actionSelected += HandleSelectedGun;
+
+        _totalCoin = PlayerPrefs.GetInt(DataPlayerPrefs.para_TOTALCOIN);
+        _textTotalCoin.text = _totalCoin.ToString();
     }
 
     private void SetUp()
@@ -51,7 +62,6 @@ public class ShopGunScreenUI : MonoBehaviour
         }
 
     }
-
 
     private void AddListener()
     {
