@@ -97,7 +97,7 @@ public class Tool_ImportGunStatData
         value.name = values[index++];
         value.level = (int)TryParseInt(values[index++]);
         value.value = (float)TryParseFloat(values[index++]);
-        value.price = (float)TryParseInt(values[index++]);
+        value.price = (int)TryParseInt(values[index++]);
         value.unlock = (bool)TryParseBool(values[index++]);
         return value;
     }

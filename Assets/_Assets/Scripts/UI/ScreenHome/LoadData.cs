@@ -1,6 +1,5 @@
 ﻿
 using System;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -81,76 +80,6 @@ public class LoadData : MonoBehaviour
 
     public GunData GetGunData() => _gunDataClone;
 
-    public GunStatData GetGunStatData()
-    {
-        LogGunStatData(_gunStatDataClone);
-        return _gunStatDataClone;
-    }
-
-    public static void LogGunStatData(GunStatData gunStatData)
-    {
-        if (gunStatData == null || gunStatData.statLevels == null)
-        {
-            Debug.Log("GunStatData hoặc statLevels null!");
-            return;
-        }
-
-        foreach (var statLevel in gunStatData.statLevels)
-        {
-            Debug.Log($"=== Gun ID: {statLevel.idGun} ===");
-
-            LogDataLevelList("Mag Size", statLevel.magSize);
-            LogDataLevelList("Bullet Speed", statLevel.bulletSpeed);
-            LogDataLevelList("Time Reload", statLevel.timeReload);
-            LogDataLevelList("Fire Rate", statLevel.fireRate);
-        }
-    }
-
-    private static void LogDataLevelList(string statName, List<DataLevel> levels)
-    {
-        if (levels == null || levels.Count == 0)
-        {
-            Debug.Log($"{statName}: Không có dữ liệu");
-            return;
-        }
-
-        Debug.Log($"{statName}:");
-
-        foreach (var data in levels)
-        {
-            Debug.Log($"  Name: {data.name}, Level: {data.level}, Value: {data.value}, Price: {data.price}, Unlock: {data.unlock}");
-        }
-    }
-
-    public void LogGunData(GunData gunData)
-    {
-        if (gunData == null)
-        {
-            Debug.Log("GunData is NULL!");
-            return;
-        }
-
-        if (gunData.gunStats == null || gunData.gunStats.Count == 0)
-        {
-            Debug.Log("GunData.gunStats is EMPTY!");
-            return;
-        }
-
-        foreach (var stat in gunData.gunStats)
-        {
-            Debug.Log(
-                $"ID: {stat.idGun} | " +
-                $"Name: {stat.nameGun} | " +
-                $"Coin: {stat.priceCoin} | " +
-                $"Money: {stat.priceMoney} | " +
-                $"Unlock: {stat.unlock} | " +
-                $"Equip: {stat.equip} | " +
-                $"GunPrefab: {(stat.gunPrefabs ? stat.gunPrefabs.name : "null")} | " +
-                $"BulletPrefab: {(stat.bulletPrefabs ? stat.bulletPrefabs.name : "null")}"
-            );
-        }
-    }
-
-
+    public GunStatData GetGunStatData() => _gunStatDataClone;
 
 }

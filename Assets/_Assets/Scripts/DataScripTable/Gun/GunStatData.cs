@@ -24,6 +24,6 @@ public class DataLevel
     public string name;
     public int level;
     public float value;
-    public float price;
+    public int price;
     public bool unlock;
 }

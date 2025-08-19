@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class ShopGunScreenUI : MonoBehaviour
 {
 
     public Action<int> actionSelected;
+    public Action<int> actionUpdateLevel;
 
     [Header("TextUI Coin")]
     [SerializeField] TextMeshProUGUI _textTotalCoin;
@@ -25,6 +25,7 @@ public class ShopGunScreenUI : MonoBehaviour
     [SerializeField] GameObject _lockGunobj;
     [SerializeField] GameObject _scrollViewObj;
     [SerializeField] List<Image> _imageLevels;
+    [SerializeField] List<Button> _buttonUpdateLevels;
 
     [Header("Image Scrollview Gun")]
     [SerializeField] List<GameObject> _borderSelectedObj;
@@ -37,8 +38,6 @@ public class ShopGunScreenUI : MonoBehaviour
     private int _itemCount;
     private int _currentSelected = 0;
     private float _durationChangeAlpha = 0.3f;
-    private float _alphaMax = 1f;
-    private float _alphaMin = 0f;
 
     //Check StatLevels
     private bool _magSize = false;  
@@ -46,27 +45,42 @@ public class ShopGunScreenUI : MonoBehaviour
     private bool _timeReload = false;   
     private bool _fireRate = false;
 
+    private bool _updateLevelConfirm = false;
+
     //Data
     private int _totalCoin;
     private int maxLevel = 3;
+
     private List<GunStat> _gunStatDatas;
     private List<StatLevel> _gunStatLevels;
+    private GunStatSelected _gunStatSelected = new GunStatSelected();
+
+    //Save
+    private SaveSystem _saveSystem;
 
     private void Awake()
     {
-        AddList();
-        AddListener();
-        actionSelected += HandleSelectedGun;
-
         _totalCoin = PlayerPrefs.GetInt(DataPlayerPrefs.para_TOTALCOIN);
         _textTotalCoin.text = _totalCoin.ToString();
     }
 
     private void Start()
     {
+        _saveSystem = GetComponent<SaveSystem>();
+
         _gunStatDatas = LoadData.Instance.GetGunData().gunStats;
         _gunStatLevels = LoadData.Instance.GetGunStatData().statLevels;
-        Debug.Log("Number Gun: " + _gunStatDatas.Count);
+
+        AddList();
+
+        // Add Action Button gun
+        AddListenerButtonSelectedGun();
+        actionSelected += HandleSelectedGun;
+
+        // Add Action ButttonUpdateLevel
+        AddListenerButtonUpdateLevel();
+        actionUpdateLevel += HandleUpdateLevel;
+
         SetUpScrollViewGun();
     }
 
@@ -91,6 +105,7 @@ public class ShopGunScreenUI : MonoBehaviour
                 SetAlpha(_imageList[i], 1);
                 _currentSelected = i;
                 ChangeInfoSelected(i);
+                ChangeGunSelected(i);
                 ChangeUpdateScrollViewInfo(_imageLevels, _textCoinUpdateLevels, _gunStatLevels[i]);
             }    
                
@@ -116,22 +131,104 @@ public class ShopGunScreenUI : MonoBehaviour
         }
     }
 
-    private void AddListener()
+    private void AddListenerButtonSelectedGun()
     {
-        for(int i = 0; i< _itemCount; i++)
+        for(int i = 0; i < _itemCount; i++)
         {
             int index = i;
-            _buttons[i].onClick.AddListener(() => OnClick(index));
+            _buttons[i].onClick.AddListener(() => OnClickSelectedGun(index));
         }    
-
     }
 
-    private void OnClick(int index)
+    private void AddListenerButtonUpdateLevel()
     {
-        Debug.Log("Gun :" +  index + "Current : " + _currentSelected);
+        int paraPublic = _gunStatLevels[0].GetType().GetFields().Length - 1;
+        for(int i = 0; i < paraPublic; i++)
+        {
+            int index = i;
+            _buttonUpdateLevels[i].onClick.AddListener(() => OnClickUpdateLevel(index));
+        }    
+    }
+
+    private void OnClickSelectedGun(int index)
+    {
+        //Debug.Log("Gun :" +  index + "Current : " + _currentSelected);
         if (index == _currentSelected) return;
         actionSelected?.Invoke(index);
     }    
+
+    private void OnClickUpdateLevel(int index)
+    {      
+        actionUpdateLevel?.Invoke(index);
+    }    
+
+    private void HandleUpdateLevel(int index)
+    {
+        //Debug.Log("Number Update : " + index);
+        switch(index)
+        {
+            case 0:
+                {
+                    int level = _gunStatSelected.magSizeLevel;
+                    int price = _gunStatSelected.magSizePrice;
+                    if (level >= maxLevel) break;
+                    if (_totalCoin < price) break;
+                    UpdateLevel(_gunStatLevels[_currentSelected].magSize, level, price);
+                    _updateLevelConfirm = true;
+                    break;
+                }
+            case 1:
+                {
+                    int level = _gunStatSelected.bulletSpeedLevel;
+                    int price = _gunStatSelected.bulletSpeedPrice;
+                    if (level >= maxLevel) break;
+                    if (_totalCoin < price) break;
+                    UpdateLevel(_gunStatLevels[_currentSelected].bulletSpeed, level, price);
+                    _updateLevelConfirm = true;
+                    break;
+                }
+            case 2:
+                {
+                    int level = _gunStatSelected.timeReloadLevel;
+                    int price = _gunStatSelected.timeReloadPrice;
+                    if (level >= maxLevel) break;
+                    if (_totalCoin < price) break;
+                    UpdateLevel(_gunStatLevels[_currentSelected].timeReload, level, price);
+                    _updateLevelConfirm = true;
+                    break;
+                }
+            case 3:
+                {
+                    int level = _gunStatSelected.fireRateLevel;
+                    int price = _gunStatSelected.fireRatePrice;
+                    if (level >= maxLevel) break;
+                    if (_totalCoin < price) break;
+                    UpdateLevel(_gunStatLevels[_currentSelected].fireRate, level, price);
+                    _updateLevelConfirm = true;
+                    break;
+                }
+            default:
+                break;
+        }  
+        
+        if (_updateLevelConfirm)
+            ChangeUpdateScrollViewInfo(_imageLevels, _textCoinUpdateLevels, _gunStatLevels[_currentSelected]);
+            _saveSystem.SaveData();
+            PlayerPrefs.SetInt(DataPlayerPrefs.para_TOTALCOIN, _totalCoin);
+            _updateLevelConfirm = false;
+    }    
+
+    private void UpdateLevel(List<DataLevel> dataLevels, int currentLevel, int price)
+    {
+        for(int i = 0; i < dataLevels.Count;i++)
+        {
+            if(dataLevels[i].level != currentLevel)continue;
+            dataLevels[i + 1].unlock = true;
+            _totalCoin -= price;
+            break;
+        }
+        //Debug.Log("unlock Level" + _gunStatLevels[_currentSelected].magSize[2].unlock);
+    }
 
     private void HandleSelectedGun(int index)
     {
@@ -149,8 +246,8 @@ public class ShopGunScreenUI : MonoBehaviour
 
     private void ChangeBorderSelected(Image imageSelected, Image imageCurrent)
     {
-        StartCoroutine(ChangeAlpha(imageSelected, _alphaMin, _alphaMax));
-        StartCoroutine(ChangeAlpha(imageCurrent, _alphaMax, _alphaMin));
+        StartCoroutine(ChangeAlpha(imageSelected, 0f, 1f));
+        StartCoroutine(ChangeAlpha(imageCurrent, 1f, 0f));
     }    
 
     private void ChangeGunSelected(int index)
@@ -185,8 +282,12 @@ public class ShopGunScreenUI : MonoBehaviour
                 images[0].fillAmount = (float)level / maxLevel;
                 if (level < maxLevel)
                 {
-                    textCoin[0].text = statLevel.magSize[i + 1].price.ToString();
+                    // hiển thị giá của level kế tiếp
+                    int price = statLevel.magSize[i + 1].price;
+                    _gunStatSelected.magSizePrice = price;
+                    textCoin[0].text = price.ToString();
                 }
+                _gunStatSelected.magSizeLevel = level;
                 _magSize = true;    
             }
 
@@ -196,8 +297,11 @@ public class ShopGunScreenUI : MonoBehaviour
                 images[1].fillAmount = (float)level / maxLevel;
                 if (level < maxLevel)
                 {
-                    textCoin[1].text = statLevel.bulletSpeed[i + 1].price.ToString();
+                    int price = statLevel.bulletSpeed[i + 1].price;
+                    _gunStatSelected.bulletSpeedPrice = price;
+                    textCoin[1].text = price.ToString();
                 }
+                _gunStatSelected.bulletSpeedLevel = level;
                 _bulletSpeed = true;
             }
 
@@ -207,8 +311,11 @@ public class ShopGunScreenUI : MonoBehaviour
                 images[2].fillAmount = (float)level / maxLevel;
                 if (level < maxLevel)
                 {
-                    textCoin[2].text = statLevel.timeReload[i + 1].price.ToString();
+                    int price = statLevel.timeReload[i + 1].price;
+                    _gunStatSelected.timeReloadPrice = price;
+                    textCoin[2].text = price.ToString();
                 }
+                _gunStatSelected.timeReloadLevel = level;
                 _timeReload = true;
             }
 
@@ -218,8 +325,11 @@ public class ShopGunScreenUI : MonoBehaviour
                 images[3].fillAmount = (float)level / maxLevel;
                 if (level < maxLevel)
                 {
-                    textCoin[3].text = statLevel.fireRate[i + 1].price.ToString();
+                    int price = statLevel.fireRate[i + 1].price;
+                    _gunStatSelected.fireRatePrice = price;
+                    textCoin[3].text = price.ToString();
                 }
+                _gunStatSelected.fireRateLevel = level;
                 _fireRate = true;
             }
         }
@@ -250,4 +360,17 @@ public class ShopGunScreenUI : MonoBehaviour
         image.color = color;
     }
 
+}
+
+[System.Serializable]
+public class GunStatSelected
+{
+    public int magSizeLevel;
+    public int magSizePrice;
+    public int bulletSpeedLevel;
+    public int bulletSpeedPrice;
+    public int timeReloadLevel;
+    public int timeReloadPrice;
+    public int fireRateLevel;
+    public int fireRatePrice;
 }
