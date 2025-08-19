@@ -35,10 +35,6 @@ public class LoadData : MonoBehaviour
         Debug.Log("Load path: " + _pathData);
         _gunDataClone = Instantiate(_gunData);
         _gunStatDataClone = Instantiate(_gunStatData);
-    }
-
-    private void Start()
-    {
         LoadDataGun();
     }
 
@@ -85,7 +81,11 @@ public class LoadData : MonoBehaviour
 
     public GunData GetGunData() => _gunDataClone;
 
-    public GunStatData GetGunStatData() => _gunStatDataClone; 
+    public GunStatData GetGunStatData()
+    {
+        LogGunStatData(_gunStatDataClone);
+        return _gunStatDataClone;
+    }
 
     public static void LogGunStatData(GunStatData gunStatData)
     {

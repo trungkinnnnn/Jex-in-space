@@ -24,11 +24,20 @@ public class PlayerEquipGun : MonoBehaviour
     private void GetData()
     {
         _gunData = LoadData.Instance.GetGunData();
+       
+    }
+
+    private void Start()
+    {
+        if (_gunData == null)
+            _gunData = LoadData.Instance.GetGunData();
         SetUpGun();
-    }    
+    }
 
     private void SetUpGun()
     {
+        if (_gunData == null)
+            _gunData = LoadData.Instance.GetGunData();
         var unlockedGun = _gunData.gunStats.FirstOrDefault(stat => stat.equip);
         Debug.Log("id" + unlockedGun.idGun);
         if (unlockedGun != null)

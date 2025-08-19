@@ -72,7 +72,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _currentHp = Math.Max(0, _currentHp - damage);
-        Debug.Log("Hp" + _currentHp);
+        //Debug.Log("Hp" + _currentHp);
 
 
         OnCatCrack();
