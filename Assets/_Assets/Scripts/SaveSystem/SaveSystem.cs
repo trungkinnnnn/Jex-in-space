@@ -13,18 +13,14 @@ public class SaveSystem : MonoBehaviour
     private void Awake()
     {
         savePath = Path.Combine(Application.persistentDataPath, DataPlayerPrefs._pathSaveData);
-        Debug.Log(savePath);
-    }
-
-    private void Start()
-    {
-        _loadData = LoadData.Instance;
-        _gunData = _loadData.GetGunData();
-        _gunStatData = _loadData.GetGunStatData();
+        Debug.Log("Save path: " + savePath);
     }
 
     public void SaveData()
     {
+        _gunData = LoadData.Instance.GetGunData();
+        _gunStatData = LoadData.Instance.GetGunStatData();
+
         GunProgessList gunProgessList = new GunProgessList();
         for (int i = 0; i < _gunData.gunStats.Count; i++)
         {

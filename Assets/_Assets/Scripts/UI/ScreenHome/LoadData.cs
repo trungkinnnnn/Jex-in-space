@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadData : MonoBehaviour
 {
+    public static Action OnLoadData;
 
     [SerializeField] GunData _gunData;
     [SerializeField] GunStatData _gunStatData;
@@ -30,7 +32,7 @@ public class LoadData : MonoBehaviour
         }
 
         _pathData = Path.Combine(Application.persistentDataPath, DataPlayerPrefs._pathSaveData);
-
+        Debug.Log("Load path: " + _pathData);
         _gunDataClone = Instantiate(_gunData);
         _gunStatDataClone = Instantiate(_gunStatData);
     }
@@ -59,6 +61,7 @@ public class LoadData : MonoBehaviour
             SetGunLevel(levels, gun);
         }
 
+        OnLoadData?.Invoke();
     }    
 
     private void SetGunStat(GunStat gunStat, GunProgress gunProgress)
@@ -81,11 +84,8 @@ public class LoadData : MonoBehaviour
     }
 
     public GunData GetGunData() => _gunDataClone;
-    public GunStatData GetGunStatData()
-    {
-        LogGunStatData(_gunStatDataClone);
-        return _gunStatDataClone;
-    }    
+
+    public GunStatData GetGunStatData() => _gunStatDataClone; 
 
     public static void LogGunStatData(GunStatData gunStatData)
     {
@@ -121,6 +121,36 @@ public class LoadData : MonoBehaviour
             Debug.Log($"  Name: {data.name}, Level: {data.level}, Value: {data.value}, Price: {data.price}, Unlock: {data.unlock}");
         }
     }
+
+    public void LogGunData(GunData gunData)
+    {
+        if (gunData == null)
+        {
+            Debug.Log("GunData is NULL!");
+            return;
+        }
+
+        if (gunData.gunStats == null || gunData.gunStats.Count == 0)
+        {
+            Debug.Log("GunData.gunStats is EMPTY!");
+            return;
+        }
+
+        foreach (var stat in gunData.gunStats)
+        {
+            Debug.Log(
+                $"ID: {stat.idGun} | " +
+                $"Name: {stat.nameGun} | " +
+                $"Coin: {stat.priceCoin} | " +
+                $"Money: {stat.priceMoney} | " +
+                $"Unlock: {stat.unlock} | " +
+                $"Equip: {stat.equip} | " +
+                $"GunPrefab: {(stat.gunPrefabs ? stat.gunPrefabs.name : "null")} | " +
+                $"BulletPrefab: {(stat.bulletPrefabs ? stat.bulletPrefabs.name : "null")}"
+            );
+        }
+    }
+
 
 
 }

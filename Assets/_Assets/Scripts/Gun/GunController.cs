@@ -24,7 +24,6 @@ public class GunController : MonoBehaviour
     // Data
     private GunData _gunData;
     private GunStatData _gunStatData;
-    private LoadData _loadData;
   
     // runtime
     private Animator _animator;
@@ -47,13 +46,10 @@ public class GunController : MonoBehaviour
         _pointFireTf = _pointFire != null ? _pointFire : transform;
     }
 
-    
-
     private void Start()
     {
-        _loadData = LoadData.Instance;
-        _gunData = _loadData.GetGunData();
-        _gunStatData = _loadData.GetGunStatData();
+        _gunData = LoadData.Instance.GetGunData();
+        _gunStatData = LoadData.Instance.GetGunStatData();
 
         _paramasters = GunDataReslover.GetParamasters(_gunData, _gunStatData);
 

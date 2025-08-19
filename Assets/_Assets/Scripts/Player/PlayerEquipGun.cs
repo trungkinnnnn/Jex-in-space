@@ -9,20 +9,32 @@ public class PlayerEquipGun : MonoBehaviour
     // data
     [SerializeField] Transform _gunPostion;
 
-    private LoadData _loadData;
     private GunData _gunData;
 
-    private void Start()
+    private void OnEnable()
     {
-        _loadData = LoadData.Instance;
-        _gunData = _loadData.GetGunData();
+        LoadData.OnLoadData += GetData;
+    }
 
+    private void OnDisable()
+    {
+        LoadData.OnLoadData -= GetData;
+    }
+
+    private void GetData()
+    {
+        _gunData = LoadData.Instance.GetGunData();
+        SetUpGun();
+    }    
+
+    private void SetUpGun()
+    {
         var unlockedGun = _gunData.gunStats.FirstOrDefault(stat => stat.equip);
+        Debug.Log("id" + unlockedGun.idGun);
         if (unlockedGun != null)
         {
             Instantiate(unlockedGun.gunPrefabs, _gunPostion);
         }
-    }
-
+    }    
 
 }
