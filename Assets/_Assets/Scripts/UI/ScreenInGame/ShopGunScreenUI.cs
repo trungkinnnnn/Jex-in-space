@@ -21,16 +21,22 @@ public class ShopGunScreenUI : MonoBehaviour
     [SerializeField] Image _imageGun;
     [SerializeField] List<Sprite> _spriteGunList;
 
-    [Header("Info Gun")]
+    [Header("Info Scrollview Gun mid")]
     [SerializeField] GameObject _lockGunobj;
     [SerializeField] GameObject _scrollViewObj;
     [SerializeField] List<Image> _imageLevels;
     [SerializeField] List<Button> _buttonUpdateLevels;
 
-    [Header("Image Scrollview Gun")]
+    [Header("Image Scrollview Gun bottom")]
     [SerializeField] List<GameObject> _borderSelectedObj;
     [SerializeField] List<GameObject> _lockObj;
     [SerializeField] List<GameObject> _unlockObj;
+
+    [Header("ButtonEquip And UnEquip")]
+    [SerializeField] Button _equipOnRespawn;
+    [SerializeField] Button _cancelOnRespawn;
+
+    private int _gunIdOnRespawn = -1;
 
     private List<Image> _imageList = new();
     private List<Button> _buttons = new();
@@ -39,13 +45,14 @@ public class ShopGunScreenUI : MonoBehaviour
     private int _currentSelected = 0;
     private const float _durationChangeAlpha = 0.3f;
 
+    //Component
+    private ShopModuleSceenUI _shopModuleSceenUI;
+
     //Data
     private int _totalCoin;
     private const int maxLevel = 3;
-
     private List<GunStat> _gunStatDatas;
     private List<StatLevel> _gunStatLevels;
-
     private Dictionary<StatType, StatUI> _statUIs = new();
  
     //Save
@@ -59,6 +66,7 @@ public class ShopGunScreenUI : MonoBehaviour
 
     private void Start()
     {
+        _shopModuleSceenUI = GetComponent<ShopModuleSceenUI>();
         _saveSystem = GetComponent<SaveSystem>();
 
         _gunStatDatas = LoadData.Instance.GetGunData().gunStats;
@@ -104,7 +112,6 @@ public class ShopGunScreenUI : MonoBehaviour
                 _currentSelected = i;
                 ChangeInfoSelected(i);
                 ChangeGunSelected(i);
-                ChangeUpdateScrollViewInfo(_gunStatLevels[i]);
             }    
                
         }    
@@ -161,7 +168,6 @@ public class ShopGunScreenUI : MonoBehaviour
         ChangeBorderSelected(_imageList[index], _imageList[_currentSelected]);
         ChangeGunSelected(index);
         ChangeInfoSelected(index);
-        ChangeUpdateScrollViewInfo(_gunStatLevels[index]);
         _currentSelected = index;
     }
 
@@ -181,11 +187,19 @@ public class ShopGunScreenUI : MonoBehaviour
     private void ChangeInfoSelected(int index)
     {
         bool isUnlock = _gunStatDatas[index].unlock;
-        _scrollViewObj.SetActive(isUnlock);
+        bool isEquip = _gunStatDatas[index].equip;
+        _scrollViewObj.SetActive(isUnlock && isEquip);
         _lockGunobj.SetActive(!isUnlock);
 
-        if (isUnlock)
+        if (!isUnlock)
+        {
             _textCoinBuyGun.text = _gunStatDatas[index].priceCoin.ToString();
+        }
+
+        if(isEquip)
+            ChangeUpdateScrollViewInfo(_gunStatLevels[index]);
+     
+        CheckEquipGun(index, isUnlock, isEquip);
     }
 
 
@@ -225,8 +239,7 @@ public class ShopGunScreenUI : MonoBehaviour
         {
             List<DataLevel> levels = GetStatLevels(type);
             UpdateStatUI(type, levels);
-            _saveSystem.SaveData();
-            PlayerPrefs.SetInt(DataPlayerPrefs.para_TOTALCOIN, _totalCoin);
+            SaveData();
         }
     }    
 
@@ -243,7 +256,7 @@ public class ShopGunScreenUI : MonoBehaviour
         {
             if (levels[i].level != level) continue;
             levels[i + 1].unlock = true;
-            _totalCoin -= price;
+            SetTextCoin(_totalCoin -= price);
             return true;
         }
 
@@ -291,6 +304,55 @@ public class ShopGunScreenUI : MonoBehaviour
         }
     }
 
+    public void SetTextCoin(int coin)
+    {
+        _textTotalCoin.text = coin.ToString();
+        _shopModuleSceenUI.SetTextCoin(coin);
+    }
+
+    // ActionUnlockGun
+    public void ActionUnLockGun()
+    {
+        int price = _gunStatDatas[_currentSelected].priceCoin;
+        if (_totalCoin < price) return;
+        _gunStatDatas[_currentSelected].unlock = true;
+        SetTextCoin(_totalCoin -= price);
+        CheckEquipGun(_currentSelected);
+        SetUpUnlockGun();
+        SaveData();
+    }    
+
+    public void ActionEquipOnRespawn()
+    {
+        _gunIdOnRespawn = _currentSelected;
+        CheckEquipGun(_currentSelected);
+    }    
+
+    public void ActionCancelOnRespawn()
+    {
+        _gunIdOnRespawn = -1;
+        CheckEquipGun(_currentSelected);
+    }    
+
+    private void CheckEquipGun(int index, bool isUnlock = true, bool isEquip = false)
+    {
+        bool isEquipRespawn = _gunIdOnRespawn == index;
+        _equipOnRespawn.gameObject.SetActive(isUnlock && !isEquip && !isEquipRespawn);
+        _cancelOnRespawn.gameObject.SetActive(isUnlock && !isEquip && isEquipRespawn);
+    }
+
+    private void SetUpUnlockGun()
+    {
+        _lockGunobj.gameObject.SetActive(false);
+        _unlockObj[_currentSelected].gameObject.SetActive(true);
+        _lockObj[_currentSelected].gameObject.SetActive(false);
+    }    
+
+    private void SaveData()
+    {
+        _saveSystem.SaveData();
+        PlayerPrefs.SetInt(DataPlayerPrefs.para_TOTALCOIN, _totalCoin);
+    }
 
 }
 

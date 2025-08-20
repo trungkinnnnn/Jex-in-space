@@ -27,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
     private float _lastTimeTakenDamage = -Mathf.Infinity;
 
     public float addForceImpact = 0.1f;
+    public float addForceStay = 0.1f;
     public float impactSpeedMax = 0.2f;
 
     private void Awake()
@@ -54,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
 
                 //Event
                 Hurt?.Invoke();
-                AddForceFrom(collision.collider.transform.position);
+                AddForceFrom(collision.collider.transform.position, addForceImpact);
             }
         }
 
@@ -67,6 +68,14 @@ public class PlayerHealth : MonoBehaviour
             var item = collision.collider.GetComponent<ItemHealth>();
             if (item != null) item.HandleDestroyHealth();
         }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag(_asteroidTag))
+        {
+            AddForceFrom(collision.collider.transform.position, addForceStay);
+        }    
     }
 
     public void TakeDamage(int damage)
@@ -96,10 +105,10 @@ public class PlayerHealth : MonoBehaviour
         OnCatCrack();
     }
 
-    private void AddForceFrom(Vector3 sourcePosition)
+    private void AddForceFrom(Vector3 sourcePosition, float force)
     {
         Vector3 direction = (transform.position - sourcePosition).normalized;
-        _rb.AddForce(direction * addForceImpact, ForceMode2D.Impulse);
+        _rb.AddForce(direction * force, ForceMode2D.Impulse);
     }
 
     private void OnCatCrack()

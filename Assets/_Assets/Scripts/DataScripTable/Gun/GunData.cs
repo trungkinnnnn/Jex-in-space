@@ -12,8 +12,8 @@ public class GunStat
 {
     public int idGun;
     public string nameGun;
-    public float priceCoin;
-    public float priceMoney;
+    public int priceCoin;
+    public int priceMoney;
     public bool unlock;
     public bool equip;
 

@@ -14,5 +14,10 @@ public class ShopModuleSceenUI : MonoBehaviour
         _textTotalCoin.text = _totalCoin.ToString();
     }
 
+    public void SetTextCoin(int coin)
+    {
+        _textTotalCoin.text = coin.ToString();
+    }
+
 }
 

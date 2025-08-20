@@ -31,8 +31,8 @@ public class Tool_ImportGunData
 
             stat.idGun = (int)TryParseInt(values[index++]);
             stat.nameGun = values[index++];
-            stat.priceCoin = (float)TryParseFloat(values[index++]);
-            stat.priceMoney = (float)TryParseFloat(values[index++]);
+            stat.priceCoin = (int)TryParseInt(values[index++]);
+            stat.priceMoney = (int)TryParseInt(values[index++]);
             stat.unlock = (bool)TryParseBool(values[index++]);
 
             gunData.gunStats.Add(stat);
