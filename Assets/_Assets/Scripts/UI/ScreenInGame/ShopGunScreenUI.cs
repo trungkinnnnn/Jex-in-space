@@ -10,6 +10,7 @@ public class ShopGunScreenUI : MonoBehaviour
 
     public Action<int> actionSelected;
     public Action<StatType> actionUpdateLevel;
+    public static Action UpdateData;
 
     [Header("TextUI Coin")]
     [SerializeField] TextMeshProUGUI _textTotalCoin;
@@ -239,6 +240,7 @@ public class ShopGunScreenUI : MonoBehaviour
         {
             List<DataLevel> levels = GetStatLevels(type);
             UpdateStatUI(type, levels);
+            UpdateData?.Invoke();
             SaveData();
         }
     }    

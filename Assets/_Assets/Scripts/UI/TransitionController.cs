@@ -103,19 +103,26 @@ public class TransitionController : MonoBehaviour
     {
         PlayerHealth.Die += HandleActionOnTabDie;
         GunController.Die += HandleActionOnTabDie;
+        SettingScreenUI.Die += HandleActionOnTabDie;
     }   
     
     private void UnregisterEvents()
     {
         PlayerHealth.Die -= HandleActionOnTabDie;
         GunController.Die -= HandleActionOnTabDie;
+        SettingScreenUI.Die -= HandleActionOnTabDie;
     }    
 
     private void HandleActionOnTabDie()
     {
         _tabObjs[_currentSeleted].SetActive(false);
+        _buttonONs[_currentSeleted].SetActive(false);
+        _currentSeleted = 0;
+
         _tabObjs[0] = _tabDie;
+        _buttonONs[0].SetActive(true);
         _tabDie.SetActive(true);
+       
     }
 
 }

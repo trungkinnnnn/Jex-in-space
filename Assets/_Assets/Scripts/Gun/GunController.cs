@@ -164,12 +164,21 @@ public class GunController : MonoBehaviour
     {
         BoxAmor.OnBoxBroken += HandleTakeAmor;
         ShootSignal.OnSkillShoot  = FireRoutineSkill;
+        ShopGunScreenUI.UpdateData += UpdateData;
     }
 
     private void OnDisable()
     {
         BoxAmor.OnBoxBroken -= HandleTakeAmor;
         ShootSignal.OnSkillShoot = null;
+        ShopGunScreenUI.UpdateData -= UpdateData;
+    }    
+
+    private void UpdateData()
+    {
+        _gunStatData = LoadData.Instance.GetGunStatData();
+        _paramasters = GunDataReslover.GetParamasters(_gunData, _gunStatData);
+        Debug.Log("Update Data");
     }    
 
     private void HandleTakeAmor(int amor)

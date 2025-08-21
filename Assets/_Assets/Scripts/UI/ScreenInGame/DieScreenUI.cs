@@ -1,9 +1,18 @@
 
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using DG;
+using DG.Tweening;
+using UnityEditor.Purchasing;
+using System;
 
 public class DieScreenUI : MonoBehaviour
 {
+
+    public static Action Reset;
+
+    [Header("Text")]
     [SerializeField] TextMeshProUGUI _textUIForDie;
     [SerializeField] TextMeshProUGUI _textCoin;
     [SerializeField] TextMeshProUGUI _textScore;
@@ -12,10 +21,20 @@ public class DieScreenUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI _textHighWave;
     [SerializeField] TextMeshProUGUI _textNewBestScore;
     [SerializeField] TextMeshProUGUI _textNewBestWave;
+
+    [Header("CanvasGroup")]
+    [SerializeField] CanvasGroup _canvasScreenUI_HUD;
+    [SerializeField] CanvasGroup _canvasScreenUI_PAUSE;
+    [SerializeField] CanvasGroup _canvasScreenEmpty;
+
+    [Header("Component")]
     [SerializeField] GameStateManager _gameStateManager;
+
+    private float _timeOffScreen = 0.3f;
 
     private static string _textDieForHealth = "ANOMALY DETECTED!";
     private static string _textDieForOutOfAmmor = "OUT OF AMMO!";
+    private static string _textDieForPlayBad = "INDUCED COMA!";
     private static string _textNewBest = "NEW BEST:";
     private static string _textYourBest = "YOUR BEST:";
 
@@ -58,6 +77,8 @@ public class DieScreenUI : MonoBehaviour
         PlayerHealth.Die += OnScreenDie;
         GunController.Die += HandleDieForOutOfAmmo;
         GunController.Die += OnScreenDie;
+        SettingScreenUI.Die += HandleDieForPlayBad;
+        SettingScreenUI.Die += OnScreenDieForPlayBad;
         WaveManager.GetWave += HandleGetWave;
     }
 
@@ -67,19 +88,25 @@ public class DieScreenUI : MonoBehaviour
         PlayerHealth.Die -= OnScreenDie;
         GunController.Die -= HandleDieForOutOfAmmo;
         GunController.Die -= OnScreenDie;
+        SettingScreenUI.Die -= HandleDieForPlayBad;
+        SettingScreenUI.Die -= OnScreenDieForPlayBad;
         WaveManager.GetWave -= HandleGetWave;
     }
 
     private void HandleDieForHealth() => _textUIForDie.text = _textDieForHealth;
     private void HandleDieForOutOfAmmo() => _textUIForDie.text = _textDieForOutOfAmmor;
+    private void HandleDieForPlayBad() => _textUIForDie.text = _textDieForPlayBad;
+    private void HandleGetWave(int wave) => _wave = wave;
 
-    private void HandleGetWave(int wave) => _wave = wave;   
-
-    private void OnScreenDie()  
-    { 
+    private void OnScreenDie()
+    {
         _gameStateManager.ActionDownButtonPauseON();
         GetDataFromHUD();
+    }
 
+    private void OnScreenDieForPlayBad()
+    {
+        GetDataFromHUD();
     }
 
     private void GetDataFromHUD()
@@ -108,6 +135,15 @@ public class DieScreenUI : MonoBehaviour
             textHighValue.text = highValue.ToString();
         }
         return highValue;
+    }
+
+
+    public void ActionReset()
+    {
+        _canvasScreenUI_HUD.DOFade(0, _timeOffScreen).SetUpdate(true);
+        _canvasScreenUI_PAUSE.DOFade(0, _timeOffScreen).SetUpdate(true);
+        _canvasScreenEmpty.DOFade(0, _timeOffScreen).SetUpdate(true);
+        Reset?.Invoke();
     }
 
     private void SaveData(int highScore, int hightWave)

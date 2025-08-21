@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 2
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,7 +103,1897 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: clock-sheet-v3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1638.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c565ddc141f3f2c4f9761ab11d5f68fc
+      internalID: 1208139338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_1
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1638.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5041365, y: 0.49724135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b918676d2dafc40b090c4fde3d6f14
+      internalID: 1515322585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_2
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1638.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.50827354, y: 0.49862075}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b350b8662c15f944faf4f1052cfc3ac0
+      internalID: 222079228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_3
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1638.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.51103175, y: 0.49999955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0f7ae637d0a5143bfc8454bb1b8882
+      internalID: 762470017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_4
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1638
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5151537, y: 0.4999994}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ce6f1c3bda42242ba3d9b3ebcfcda7
+      internalID: 1046937104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_5
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 1638
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.51740843, y: 0.49841726}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce86687faf61ca429224d06ea97620b
+      internalID: -2039252195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_6
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1638.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5221778, y: 0.49841568}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787f73a07f2b466429786c23ae805465
+      internalID: 169003708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_7
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 1638.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5285144, y: 0.5000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffbfc7b20ab2c5d43b55b65d09ee73ac
+      internalID: -1724000476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_8
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 1638
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5247499, y: 0.49850062}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba3d80235eaa6c4bad929efec3c24ec
+      internalID: 2031340466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_9
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 1638.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.53491056, y: 0.5003465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 399c0d8f7ff29e24984938318193bfa0
+      internalID: -1751638419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1434.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6bdae5ef86479e4d9194e53b1f54a2f
+      internalID: -1551396065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_11
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1434.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.50231963, y: 0.4976789}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a28aad51a8424468b1c31f0baf2ad8
+      internalID: -1332797741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_12
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1434
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5079977, y: 0.49536192}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcdaf6b67f2244c4bbed54b92cf6f5fd
+      internalID: 1021766161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_13
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1434.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5115804, y: 0.4964378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 664aa32a5a841364f8425938ec432f56
+      internalID: 857357774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_14
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1434.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.51514834, y: 0.49529922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d87f2017d6b446948a73233e30ec2df2
+      internalID: 1513281199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_15
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 1434.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5184734, y: 0.49452546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36bb1fe1f7b5ec0429dc5ff7e65de259
+      internalID: 650700012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_16
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1434.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5234355, y: 0.49603304}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c995ae9fd3a21b478697217e0a3379f
+      internalID: -857850919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_17
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 1434
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.52680606, y: 0.49616998}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e3228a2e9a1314b976fbaa0a8c75b1
+      internalID: -1044528320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_18
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1434.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.53081214, y: 0.49513528}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f44e24db84c65c64793e99021402786c
+      internalID: 550490937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_19
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 1434.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5348784, y: 0.4945505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1498744b251b32a488c4db51f99df361
+      internalID: -2086131136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1230.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5002531, y: 0.49152464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0feb9be343017ad4291f50c77dfa7cca
+      internalID: -718861895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_21
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1230.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.50424707, y: 0.49150497}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ad3961a12aec940837b4cf1c5dbcf0
+      internalID: 143106334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_22
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1230.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.50679326, y: 0.48952588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b978b364f745e4c9d8b1f1259ad2ee
+      internalID: -1548947915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_23
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1230.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5110505, y: 0.49253267}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4888a8f28854fa94ca01247a7feeca8f
+      internalID: 1734251735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_24
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1230.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5145523, y: 0.4916039}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb4d6c8f92c16b45b33213e489975fa
+      internalID: 1927840204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_25
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 1230.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5201334, y: 0.49232998}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d1041215cc4bc42891a2b9f1ef9ed0
+      internalID: 196175174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_26
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1230.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.52331567, y: 0.49256665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aebffcaf49946654dbd7381f219c1f1e
+      internalID: -1409048587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_27
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1230
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5220655, y: 0.49208984}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b49ba15e2435184eafc4d46bf0aacae
+      internalID: -79471436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_28
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1230.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5318117, y: 0.48995388}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158ed5df4cc4f9e4d883eb3ce7889471
+      internalID: 1983473046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_29
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 1229
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5334538, y: 0.49681425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4166c868235ef4f86402eb244fc43d
+      internalID: 1232146833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1026.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5012009, y: 0.48678914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860c92bf2fa0fae46949d18d4d6b1ade
+      internalID: -151882176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_31
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1026.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.50481766, y: 0.4866401}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f39dece25c0414bbb578c1ed1b7a7a
+      internalID: 513678182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_32
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1026.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5082083, y: 0.4867188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e7709971f83df45a199781532bc746
+      internalID: -1075398943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_33
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1026.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5123347, y: 0.48734888}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4d80fa6f59a7941945fcd57c6c729b
+      internalID: -920176941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_34
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1026.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.51434547, y: 0.48872828}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d2ea5c9a058e74d8910864ed030f45
+      internalID: 848113027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_35
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 1026
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5191001, y: 0.48878857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f742502b77ec8c44697fe597ced4d098
+      internalID: -452812714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_36
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1026.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5238503, y: 0.48851606}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ffb3ffa3a69b04db22c4d851e7c47e
+      internalID: -1712353216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_37
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 1026
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.52627784, y: 0.4882991}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5729c3adfd71e4fb72b24f239e89d3
+      internalID: 2048738101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_38
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1026
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5308433, y: 0.48798054}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5ec3233be24aa469321b09a2e69bcc
+      internalID: 1477126223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_39
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 1026.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5351949, y: 0.48793247}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e20d7a761e76a84b8267f13546adcf8
+      internalID: -400931816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 822.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.50078416, y: 0.48588157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f4235df1c5b4a4aa4097ac36608b07
+      internalID: 1932379157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_41
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 822.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5039212, y: 0.48392063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29aed8572832fea4dbdabcdf844e7a09
+      internalID: 92740665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_42
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 822.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5086267, y: 0.48470482}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8f4aa7528a71a449ac7784890390ad
+      internalID: 287648834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_43
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 822.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5117637, y: 0.48274392}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6203045f53f91e94c8a987c98bec48f2
+      internalID: 782527951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_44
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 822.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5152929, y: 0.4854893}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c51a26fd9ac5a49b89b42e9b316931
+      internalID: 409608027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_45
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 822.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5196065, y: 0.48509708}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e4120c860fb334b8cc8dd6bbabb20c
+      internalID: 1334925497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_46
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 822.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.52235126, y: 0.4843126}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e633a204e3e1749b8d444dae782300
+      internalID: -1892075950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_47
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 822
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.52645355, y: 0.48346663}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc70e272676eab84387ce439212c419a
+      internalID: 716479679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_48
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 822.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5296004, y: 0.4837749}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 946cadfd50cbd5c4bad9299cbc031299
+      internalID: -561463468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_49
+      rect:
+        serializedVersion: 2
+        x: 1837
+        y: 822
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5288247, y: 0.48636356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 453c817b9912ef4449412f0f9e623fd3
+      internalID: 191791392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 618.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.49967694, y: 0.47963938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ebace106240e14c906f2397b553fc7
+      internalID: 111057694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_51
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 618
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.50288725, y: 0.4801728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c699db38d30a30c4ca148020d0eb2f81
+      internalID: -1807245984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_52
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 618.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5077189, y: 0.48178002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b11d56e0657684f80c2e6231b59b02
+      internalID: 1702431684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_53
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 618.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5109188, y: 0.48135617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c62cbe7cdc9854ca4368c9f70671ef
+      internalID: 1030848224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_54
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 618
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.51408035, y: 0.4808272}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc5877bc899c538408d8369d2dcd8c01
+      internalID: -1229372867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_55
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 618.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.519734, y: 0.48110998}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6172a32098a98404f8de1a31e6fc90c1
+      internalID: -1795241670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_56
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 618.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.52323043, y: 0.48193023}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf785545ac33e374e92fc2011d1e480e
+      internalID: -1972892174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_57
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 618.2222
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.52634776, y: 0.48117733}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab897639131e724b9fe0c07c8bd53ee
+      internalID: -1923049897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_58
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 618
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5296351, y: 0.48201814}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a728a6b6eea5aa40842b9eb312eca02
+      internalID: 1740478736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_59
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 618
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5333246, y: 0.48174065}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fdb09078af0b774585090b10b22f437
+      internalID: -748696125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 414.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.50054187, y: 0.47668937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7cbebfa78b96f54b987dc8ab68f18a8
+      internalID: 795465365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_61
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 414.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.50487846, y: 0.47777355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 892957a80b06dbc4cb695931c727580b
+      internalID: 605095352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_62
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 414.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5081305, y: 0.47723153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe124e049375e24babf3fdc0d0a0900
+      internalID: 642162471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_63
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 414.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5113828, y: 0.47940004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885a7c6c86ae16a4f82672a86074666b
+      internalID: -1216124091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_64
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 414.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.51571935, y: 0.47885787}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2b5b3d562d230469db6310a58b0377
+      internalID: 1006612545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_65
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 414.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5184293, y: 0.47885787}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81e2c2e641f7b4439dc56ada45484d2
+      internalID: 2061795552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_66
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 414.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5222237, y: 0.4783157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86f6abfad0de3f74487b09794b2d3b2a
+      internalID: -91075595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_67
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 414.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.52764416, y: 0.47777355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f48898665418060479a0d4e3b44058dc
+      internalID: -1113958130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_68
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 414.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.531438, y: 0.47777355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b1a0df6835dec249a6da5a201b17d73
+      internalID: 37926181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_69
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 414.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5346906, y: 0.47723153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3eb363c24ac074489cf4209430fc61
+      internalID: 435013354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5006124, y: 0.47060323}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb3206d332a15144b9f9483bf918f0c
+      internalID: 637985996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_71
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 210.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5043441, y: 0.4746559}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 001bae2262a16c34aa119eebcd945aeb
+      internalID: -1148930904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_72
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 210.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5086884, y: 0.47393176}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c58c54bbdbebc4bbf8ae6d41308e19
+      internalID: -1029133327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_73
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 210.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5112845, y: 0.47281182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde8a193929ab1541bf248d029e63172
+      internalID: 1292009553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_74
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 210.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5161041, y: 0.47257665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39626e57ca0ad0e4b8f216316c72a9e5
+      internalID: -1098636990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_75
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 210
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5194068, y: 0.4728928}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072728cc99e6ced4aa055663efa5a5f7
+      internalID: 499646285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_76
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 210.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5243033, y: 0.47215}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a4a19f307076d409597e53c9f8bbe3
+      internalID: 927907255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_77
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 210
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5271717, y: 0.47230536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c867d9062451b994cb6742318922de2f
+      internalID: -123169622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_78
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 210
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.53239745, y: 0.47387293}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a01b4c33df31f7a4e897d5c01b8c949f
+      internalID: -992157848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_79
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 210.22223
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.53504467, y: 0.4727984}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a223313a86ef03c41b1023811483cd00
+      internalID: 527684630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6.222229
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5009472, y: 0.4696817}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3609010a3e0973a429afac33969eac17
+      internalID: -1509054297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_81
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 6.222229
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5043104, y: 0.46982354}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a956abd262d30d44a0ff9d0f04152cb
+      internalID: 483146531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_82
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 6.222229
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5077587, y: 0.4689616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b64501a254d564aaf160da773f82a9
+      internalID: -1129987724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_83
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 6
+        width: 205
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5103346, y: 0.46985582}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da1b079a4692a843ab3b2247cdb8327
+      internalID: -120197391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_84
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 6.222229
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.51508635, y: 0.46853036}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56509a756e1ae4a4e8f1cd970f470d44
+      internalID: -1302053663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_85
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 6.222229
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5198282, y: 0.4689613}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a514ee1700edf49a28efae7337da4b
+      internalID: -1488888161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_86
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 6.222229
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.5237067, y: 0.4693923}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb26639ee9c42e48a8454052709d811
+      internalID: -558543634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_87
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 6.222229
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.52758634, y: 0.46939257}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae995b629251744fb7201af5454e54e
+      internalID: 1492356051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_88
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 6.222229
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.53103447, y: 0.46939257}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d8eaf02a6408a44adc1bcfadd0f88c
+      internalID: -2027842463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clock-sheet-v3_89
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 6.222229
+        width: 204.8
+        height: 204.77777
+      alignment: 9
+      pivot: {x: 0.534482, y: 0.46809885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac5b9b2f38e10b438a67d6579b3e538
+      internalID: 1931142458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +2004,97 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      clock-sheet-v3_0: 1208139338
+      clock-sheet-v3_1: 1515322585
+      clock-sheet-v3_10: -1551396065
+      clock-sheet-v3_11: -1332797741
+      clock-sheet-v3_12: 1021766161
+      clock-sheet-v3_13: 857357774
+      clock-sheet-v3_14: 1513281199
+      clock-sheet-v3_15: 650700012
+      clock-sheet-v3_16: -857850919
+      clock-sheet-v3_17: -1044528320
+      clock-sheet-v3_18: 550490937
+      clock-sheet-v3_19: -2086131136
+      clock-sheet-v3_2: 222079228
+      clock-sheet-v3_20: -718861895
+      clock-sheet-v3_21: 143106334
+      clock-sheet-v3_22: -1548947915
+      clock-sheet-v3_23: 1734251735
+      clock-sheet-v3_24: 1927840204
+      clock-sheet-v3_25: 196175174
+      clock-sheet-v3_26: -1409048587
+      clock-sheet-v3_27: -79471436
+      clock-sheet-v3_28: 1983473046
+      clock-sheet-v3_29: 1232146833
+      clock-sheet-v3_3: 762470017
+      clock-sheet-v3_30: -151882176
+      clock-sheet-v3_31: 513678182
+      clock-sheet-v3_32: -1075398943
+      clock-sheet-v3_33: -920176941
+      clock-sheet-v3_34: 848113027
+      clock-sheet-v3_35: -452812714
+      clock-sheet-v3_36: -1712353216
+      clock-sheet-v3_37: 2048738101
+      clock-sheet-v3_38: 1477126223
+      clock-sheet-v3_39: -400931816
+      clock-sheet-v3_4: 1046937104
+      clock-sheet-v3_40: 1932379157
+      clock-sheet-v3_41: 92740665
+      clock-sheet-v3_42: 287648834
+      clock-sheet-v3_43: 782527951
+      clock-sheet-v3_44: 409608027
+      clock-sheet-v3_45: 1334925497
+      clock-sheet-v3_46: -1892075950
+      clock-sheet-v3_47: 716479679
+      clock-sheet-v3_48: -561463468
+      clock-sheet-v3_49: 191791392
+      clock-sheet-v3_5: -2039252195
+      clock-sheet-v3_50: 111057694
+      clock-sheet-v3_51: -1807245984
+      clock-sheet-v3_52: 1702431684
+      clock-sheet-v3_53: 1030848224
+      clock-sheet-v3_54: -1229372867
+      clock-sheet-v3_55: -1795241670
+      clock-sheet-v3_56: -1972892174
+      clock-sheet-v3_57: -1923049897
+      clock-sheet-v3_58: 1740478736
+      clock-sheet-v3_59: -748696125
+      clock-sheet-v3_6: 169003708
+      clock-sheet-v3_60: 795465365
+      clock-sheet-v3_61: 605095352
+      clock-sheet-v3_62: 642162471
+      clock-sheet-v3_63: -1216124091
+      clock-sheet-v3_64: 1006612545
+      clock-sheet-v3_65: 2061795552
+      clock-sheet-v3_66: -91075595
+      clock-sheet-v3_67: -1113958130
+      clock-sheet-v3_68: 37926181
+      clock-sheet-v3_69: 435013354
+      clock-sheet-v3_7: -1724000476
+      clock-sheet-v3_70: 637985996
+      clock-sheet-v3_71: -1148930904
+      clock-sheet-v3_72: -1029133327
+      clock-sheet-v3_73: 1292009553
+      clock-sheet-v3_74: -1098636990
+      clock-sheet-v3_75: 499646285
+      clock-sheet-v3_76: 927907255
+      clock-sheet-v3_77: -123169622
+      clock-sheet-v3_78: -992157848
+      clock-sheet-v3_79: 527684630
+      clock-sheet-v3_8: 2031340466
+      clock-sheet-v3_80: -1509054297
+      clock-sheet-v3_81: 483146531
+      clock-sheet-v3_82: -1129987724
+      clock-sheet-v3_83: -120197391
+      clock-sheet-v3_84: -1302053663
+      clock-sheet-v3_85: -1488888161
+      clock-sheet-v3_86: -558543634
+      clock-sheet-v3_87: 1492356051
+      clock-sheet-v3_88: -2027842463
+      clock-sheet-v3_89: 1931142458
+      clock-sheet-v3_9: -1751638419
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
