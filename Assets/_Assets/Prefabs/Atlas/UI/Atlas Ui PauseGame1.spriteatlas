@@ -42,6 +42,9 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 53519633a8c03f448858d8798c74ef3c, type: 3}
     - {fileID: 2800000, guid: 0b7de0362fd787d4c8cf3b6b7a1e9a5d, type: 3}
     - {fileID: 2800000, guid: 4271ccc6153883443b333f5d01697a27, type: 3}
+    - {fileID: 2800000, guid: 01b4be3bc5b04e24988b1ff56cca6b30, type: 3}
+    - {fileID: 2800000, guid: 85b50193b34270242a196fb7b07a9c5c, type: 3}
+    - {fileID: 2800000, guid: 4b512ff8c4a3a474c95e9142e3bf759c, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -50,10 +53,13 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c75e0aa0b83aa234f8b351fd3d26aa82, type: 3}
   - {fileID: 21300000, guid: 73227951efdfa3b4193bf87884a8f92a, type: 3}
   - {fileID: 21300000, guid: 53519633a8c03f448858d8798c74ef3c, type: 3}
+  - {fileID: 21300000, guid: 85b50193b34270242a196fb7b07a9c5c, type: 3}
   - {fileID: 21300000, guid: 216ac224b3e85624fad07814b8b63435, type: 3}
   - {fileID: 21300000, guid: 0b7de0362fd787d4c8cf3b6b7a1e9a5d, type: 3}
   - {fileID: 21300000, guid: 4271ccc6153883443b333f5d01697a27, type: 3}
   - {fileID: 21300000, guid: 0155cf9752130314c998f5f38b4feeeb, type: 3}
+  - {fileID: 21300000, guid: 4b512ff8c4a3a474c95e9142e3bf759c, type: 3}
+  - {fileID: 21300000, guid: 01b4be3bc5b04e24988b1ff56cca6b30, type: 3}
   - {fileID: 21300000, guid: 2d90cafbecf9f974690d7ac296881731, type: 3}
   - {fileID: 21300000, guid: 93e564adb75476e40a0706d95649252d, type: 3}
   - {fileID: 21300000, guid: a37f1cbfb68b8884a835c109299ef6c8, type: 3}
@@ -61,10 +67,13 @@ SpriteAtlas:
   - system-holo-tab-shop-inactive
   - system-holo-tab-settings-active
   - system-holo-tab-bottom-left-inactive
+  - system-holo-tab-mid-inactive
   - UI-sys-paw
   - system-holo-tab-cat-icon
   - system-holo-tab-weapon-icon
   - system-holo-tab-bottom-left-active
+  - medal
+  - system-holo-tab-mid-active
   - system-holo-tab-shop-active
   - system-holo-bg-v2
   - system-holo-tab-settings-inactive
