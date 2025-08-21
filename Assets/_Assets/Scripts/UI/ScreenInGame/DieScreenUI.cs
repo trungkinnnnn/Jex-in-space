@@ -153,7 +153,7 @@ public class DieScreenUI : MonoBehaviour
         PlayerPrefs.SetInt(DataPlayerPrefs.para_HIGHWAVE, hightWave);
         PlayerPrefs.Save();
 
-        _saveSystem.SaveData();
+        _saveSystem.SaveDataForRespawn();
     }    
 
     

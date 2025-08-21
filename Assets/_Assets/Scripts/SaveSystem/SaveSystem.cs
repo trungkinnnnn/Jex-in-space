@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class SaveSystem : MonoBehaviour
 {
-    private LoadData _loadData;
     private GunData _gunData;
     private GunStatData _gunStatData;
     private string savePath;
+
+    private int _gunIdOnRespawn = -1;
 
     private void Awake()
     {
@@ -16,16 +17,33 @@ public class SaveSystem : MonoBehaviour
         Debug.Log("Save path: " + savePath);
     }
 
+    public void SaveDataForRespawn()
+    {
+        LoadDataScripTable();
+        if(_gunIdOnRespawn != -1)
+            _gunData.gunStats[_gunIdOnRespawn].equip = true;
+        SaveJson();
+    }    
+
     public void SaveData()
+    {
+        LoadDataScripTable();
+        SaveJson();
+    }
+
+    private void LoadDataScripTable()
     {
         _gunData = LoadData.Instance.GetGunData();
         _gunStatData = LoadData.Instance.GetGunStatData();
+    }    
 
+    private void SaveJson()
+    {
         GunProgessList gunProgessList = new GunProgessList();
         for (int i = 0; i < _gunData.gunStats.Count; i++)
         {
-            var gunData = _gunData.gunStats[i]; 
-            if(!gunData.unlock) continue;
+            var gunData = _gunData.gunStats[i];
+            if (!gunData.unlock) continue;
             var gunStatData = _gunStatData.statLevels.Find(s => s.idGun == gunData.idGun);
 
             GunProgress gunProgress = new GunProgress
@@ -44,7 +62,7 @@ public class SaveSystem : MonoBehaviour
         string json = JsonUtility.ToJson(gunProgessList, true);
         File.WriteAllText(savePath, json);
         Debug.Log("Save Done");
-    }
+    }    
 
     private int GetLevelUnlock(List<DataLevel> dataLevels)
     {
@@ -56,7 +74,7 @@ public class SaveSystem : MonoBehaviour
         return 1;
     }    
 
-
+    public void SetGunNextSpawn(int gunID) => _gunIdOnRespawn = gunID;
    
 }
 

@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
@@ -9,7 +10,8 @@ public class TimeLineWatcher : MonoBehaviour
     [SerializeField] PlayableDirector _timeLine1;
     [SerializeField] PlayableDirector _timeLine2;
 
-    private bool _resetScene = false;   
+    private bool _resetScene = false;
+    public float _timeDuration = 3f;
     private void Start()
     {
         if (_timeLine1 != null)
@@ -30,7 +32,6 @@ public class TimeLineWatcher : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Time.time + " + Time.time);
         if (!_resetScene) return;
         if (_timeLine2 != null && 
             _timeLine2.state == PlayState.Playing && 
@@ -54,7 +55,8 @@ public class TimeLineWatcher : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
-        Time.timeScale = 1;
+
+        Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;
     }    
 
@@ -64,8 +66,8 @@ public class TimeLineWatcher : MonoBehaviour
         _timeLine2.gameObject.SetActive(true);
         _timeLine2.time = 0;
         _timeLine2.Play();
-        _resetScene = true; 
-    }
-        
+        _resetScene = true;
 
+        Time.timeScale = 1;
+    }  
 }

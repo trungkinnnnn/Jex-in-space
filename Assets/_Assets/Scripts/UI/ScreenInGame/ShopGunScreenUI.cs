@@ -327,12 +327,14 @@ public class ShopGunScreenUI : MonoBehaviour
     public void ActionEquipOnRespawn()
     {
         _gunIdOnRespawn = _currentSelected;
+        _saveSystem.SetGunNextSpawn(_gunIdOnRespawn);
         CheckEquipGun(_currentSelected);
     }    
 
     public void ActionCancelOnRespawn()
     {
         _gunIdOnRespawn = -1;
+        _saveSystem.SetGunNextSpawn(_gunIdOnRespawn);
         CheckEquipGun(_currentSelected);
     }    
 

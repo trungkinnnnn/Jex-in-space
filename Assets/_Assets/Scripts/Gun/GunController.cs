@@ -136,7 +136,7 @@ public class GunController : MonoBehaviour
         OnActionTotalBullet?.Invoke(_totalbullet);
         OnActionCurrentBullet?.Invoke(_currentMagSizebullet);
 
-        Debug.Log("TotalBullet : " + _totalbullet);
+        //Debug.Log("TotalBullet : " + _totalbullet);
         FireRate.canShoot = true;
         
         if(_currentMagSizebullet <= 0f && _totalbullet <= 0f)
