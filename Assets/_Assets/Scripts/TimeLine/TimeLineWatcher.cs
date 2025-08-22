@@ -9,11 +9,16 @@ public class TimeLineWatcher : MonoBehaviour
 {
     [SerializeField] PlayableDirector _timeLine1;
     [SerializeField] PlayableDirector _timeLine2;
+    [SerializeField] Camera _camera;
 
     private bool _resetScene = false;
+    private Animator _animator;
+
     public float _timeDuration = 3f;
     private void Start()
     {
+        _animator = _camera.GetComponent<Animator>();
+
         if (_timeLine1 != null)
         {
             _timeLine1.gameObject.SetActive(true);
@@ -32,6 +37,7 @@ public class TimeLineWatcher : MonoBehaviour
 
     private void Update()
     {
+        
         if (!_resetScene) return;
         if (_timeLine2 != null && 
             _timeLine2.state == PlayState.Playing && 
@@ -56,7 +62,7 @@ public class TimeLineWatcher : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
 
-        Time.timeScale = 1f;
+        ////Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;
     }    
 
@@ -68,6 +74,9 @@ public class TimeLineWatcher : MonoBehaviour
         _timeLine2.Play();
         _resetScene = true;
 
+        _animator.enabled = true;
+
         Time.timeScale = 1;
+        //Time.fixedDeltaTime = 0.02f;
     }  
 }
