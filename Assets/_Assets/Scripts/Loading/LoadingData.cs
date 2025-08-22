@@ -4,7 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadData : MonoBehaviour
+public class LoadingData : MonoBehaviour
 {
     public static Action OnLoadData;
 
@@ -14,10 +14,9 @@ public class LoadData : MonoBehaviour
 
     private GunData _gunDataClone;
     private GunStatData _gunStatDataClone;
-    private static string _para_NAMESCENE_NEXT = "InGameScreen";
     private string _pathData;
 
-    public static LoadData Instance;
+    public static LoadingData Instance;
     private void Awake()
     {
         if (Instance == null)
@@ -71,11 +70,6 @@ public class LoadData : MonoBehaviour
         level.bulletSpeed[levelProgress.bulletSpeedLevel - 1].unlock = true;
         level.timeReload[levelProgress.reloadLevel - 1].unlock = true;
         level.fireRate[levelProgress.fireRateLevel - 1].unlock = true;
-    }
-
-    public void ActionNextScene()
-    {
-        SceneManager.LoadScene(_para_NAMESCENE_NEXT);
     }
 
     public GunData GetGunData() => _gunDataClone;

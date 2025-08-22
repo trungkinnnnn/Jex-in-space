@@ -70,8 +70,8 @@ public class ShopGunScreenUI : MonoBehaviour
         _shopModuleSceenUI = GetComponent<ShopModuleSceenUI>();
         _saveSystem = GetComponent<SaveSystem>();
 
-        _gunStatDatas = LoadData.Instance.GetGunData().gunStats;
-        _gunStatLevels = LoadData.Instance.GetGunStatData().statLevels;
+        _gunStatDatas = LoadingData.Instance.GetGunData().gunStats;
+        _gunStatLevels = LoadingData.Instance.GetGunStatData().statLevels;
 
         AddList();
 

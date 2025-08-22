@@ -33,8 +33,8 @@ public class SaveSystem : MonoBehaviour
 
     private void LoadDataScripTable()
     {
-        _gunData = LoadData.Instance.GetGunData();
-        _gunStatData = LoadData.Instance.GetGunStatData();
+        _gunData = LoadingData.Instance.GetGunData();
+        _gunStatData = LoadingData.Instance.GetGunStatData();
     }    
 
     private void SaveJson()

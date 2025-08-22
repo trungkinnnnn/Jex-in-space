@@ -60,7 +60,7 @@ public class TimeLineWatcher : MonoBehaviour
     private void OnTimeFinished(PlayableDirector director)
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name);
+        LoadingScene.Instance.LoadingScence(currentScene.name);
 
         ////Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;

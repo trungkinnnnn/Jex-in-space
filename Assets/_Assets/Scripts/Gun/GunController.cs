@@ -48,8 +48,8 @@ public class GunController : MonoBehaviour
 
     private void Start()
     {
-        _gunData = LoadData.Instance.GetGunData();
-        _gunStatData = LoadData.Instance.GetGunStatData();
+        _gunData = LoadingData.Instance.GetGunData();
+        _gunStatData = LoadingData.Instance.GetGunStatData();
 
         _paramasters = GunDataReslover.GetParamasters(_gunData, _gunStatData);
 
@@ -176,7 +176,7 @@ public class GunController : MonoBehaviour
 
     private void UpdateData()
     {
-        _gunStatData = LoadData.Instance.GetGunStatData();
+        _gunStatData = LoadingData.Instance.GetGunStatData();
         _paramasters = GunDataReslover.GetParamasters(_gunData, _gunStatData);
         Debug.Log("Update Data");
     }    
