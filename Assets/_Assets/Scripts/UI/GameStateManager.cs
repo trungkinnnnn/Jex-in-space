@@ -45,6 +45,8 @@ public class GameStateManager : MonoBehaviour
 
     public void ActionDownButtonPauseON()
     {
+        AudioManager.Instance.PlayPauseBGM();
+
         Debug.Log("Pause Game");
         if(_pausePhysic != null) { _pausePhysic.PauseGame(); }
 

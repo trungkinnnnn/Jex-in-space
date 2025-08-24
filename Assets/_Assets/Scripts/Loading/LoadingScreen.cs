@@ -13,7 +13,7 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField] AnimationCurve _animationCurveShow = AnimationCurve.EaseInOut(0, 0, 1, 1);
     [SerializeField] AnimationCurve _animationCurveHide = AnimationCurve.EaseInOut(0, 0, 1, 1);
     private static string _para_MAT_RADIUS = "_Radius";
-    private float _timeDuration = 0.5f;
+    private float _timeDuration = 0.7f;
 
     private void Awake()
     {
