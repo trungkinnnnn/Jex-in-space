@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("AudioSources")]
     [SerializeField] AudioSource _bgmSource;
+    [SerializeField] AudioSource _pauseSource;
 
     [Header("Setting")]
     public float bgVolume = 1.0f;
@@ -19,8 +20,12 @@ public class AudioManager : MonoBehaviour
     public float fadeInTime = 2f;
     public float fadeOutTime = 2f;    
     public float pauseBetweenTracks = 2f;
+    public float pauseTime = 1f;
+
 
     private Coroutine _bgmCoroutine;
+    private Coroutine _pauseCoroutine;
+    private float _bgPauseTime = 0f;
 
     public static AudioManager Instance;
 
@@ -40,7 +45,20 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        _pauseSource.clip = _pauseList[0];
         StartCoroutine(WaitStartMusicMenu());
+    }
+
+    public IEnumerator WaitStartMusicMenu()
+    {
+        yield return new WaitForSeconds(2f);
+        PlayMenuBGM();
+    }
+
+    public IEnumerator WaitStartMusicInGame()
+    {
+        yield return new WaitForSeconds(1f);
+        PlayInGameBGM();
     }
 
     private void PlayBGMList(List<AudioClip> list)
@@ -129,20 +147,75 @@ public class AudioManager : MonoBehaviour
         }    
     }
 
-    public void PlayMenuBGM() => PlayBGMList(_menuList);
-    public void PlayInGameBGM() => PlayBGMList(_inGameList);
-    public void PlayPauseBGM() => PlayBGMList(_pauseList);
-
-    public IEnumerator WaitStartMusicMenu()
+    public void PlayMenuBGM()
     {
-        yield return new WaitForSeconds(2f);
-        PlayMenuBGM();
+        if (_pauseSource.isPlaying)
+        {
+            StartCoroutine(FadeOutAndPause(_pauseSource, pauseTime - 1f));
+        }
+
+        PlayBGMList(_menuList);
     }
 
-    public IEnumerator WaitStartMusicInGame()
+    public void PlayInGameBGM()
     {
-        yield return new WaitForSeconds(1f);
-        PlayInGameBGM();
+        if (_pauseSource.isPlaying)
+        {
+            StartCoroutine(FadeOutAndPause(_pauseSource, pauseTime - 1f));
+        }
+
+        PlayBGMList(_inGameList);
     }
+
+    public void PauseBGM()
+    {
+        if(_bgmSource.isPlaying)
+        {
+            _bgPauseTime = _bgmSource.time;
+            if(_pauseCoroutine != null) StopCoroutine(_pauseCoroutine);
+            _pauseCoroutine = StartCoroutine(FadeOutAndPause(_bgmSource, pauseTime));
+        }
+
+        if (_pauseSource != null)
+        {
+            _pauseSource.Play();
+            StartCoroutine(FadeIn(_pauseSource, pauseTime + 1f));
+        }
+
+    }    
+
+    public void ResumeBGM()
+    {
+
+        if (_pauseSource.isPlaying)
+        {
+            StartCoroutine(FadeOutAndPause(_pauseSource, pauseTime - 1f));
+        }
+
+        if (_bgPauseTime > 0f)
+        {
+            _bgmSource.time = _bgPauseTime;
+            _bgmSource.Play();
+            if(_pauseCoroutine != null) StopCoroutine(_pauseCoroutine);
+            _pauseCoroutine = StartCoroutine(FadeIn(_bgmSource, pauseTime));
+        }
+    }
+
+    private IEnumerator FadeOutAndPause(AudioSource audio, float duration)
+    {
+        float startVol = audio.volume;
+        yield return StartCoroutine(WhileLerp(audio, startVol, 0, duration));
+        audio.volume = 0f;
+        audio.Pause();
+    }
+
+    private IEnumerator FadeIn(AudioSource audio, float duration)
+    {
+        audio.volume = 0f;
+        float startVol = bgVolume;
+        yield return StartCoroutine(WhileLerp(audio, 0, startVol, duration));
+        audio.volume = startVol;
+    }
+
 
 }

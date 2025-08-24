@@ -14,7 +14,6 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField] AnimationCurve _animationCurveHide = AnimationCurve.EaseInOut(0, 0, 1, 1);
     private static string _para_MAT_RADIUS = "_Radius";
     private float _timeDuration = 0.7f;
-
     private void Awake()
     {
         if (Instance == null)
@@ -25,6 +24,12 @@ public class LoadingScreen : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+    }
+
+    private void Start()
+    {
+        _material.SetFloat(_para_MAT_RADIUS, 1f);
     }
 
     public IEnumerator Show()

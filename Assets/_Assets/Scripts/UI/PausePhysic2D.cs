@@ -15,7 +15,7 @@ public class PausePhysic2D : MonoBehaviour
 
     private List<RigibodyState2D> pauseRb = new List<RigibodyState2D>();
 
-    public void PausePhysics2D()
+    private void PausePhysics2D()
     {
         Rigidbody2D[] allRb = FindObjectsOfType<Rigidbody2D>();
         pauseRb.Clear();
@@ -38,7 +38,7 @@ public class PausePhysic2D : MonoBehaviour
         }
     }
 
-    public void ResumePhysic2D()
+    private void ResumePhysic2D()
     {
         foreach(var rigi in pauseRb)
         {
