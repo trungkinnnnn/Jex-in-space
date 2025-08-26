@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0775de87ae607bd4385e3f42b9eff28f, type: 3}
+  m_Name: AudioHitRock
+  m_EditorClassIdentifier: 
+  clipList:
+  - {fileID: 8300000, guid: f0e9a06f8dc98e44da8242863bb01e1e, type: 3}
+  - {fileID: 8300000, guid: 444c86326729cf0488069b7b70277541, type: 3}
+  - {fileID: 8300000, guid: e2ab4e138302a94418149581caa35d58, type: 3}

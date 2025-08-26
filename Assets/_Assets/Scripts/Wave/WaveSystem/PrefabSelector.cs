@@ -12,6 +12,7 @@ public static class PrefabSelector
             SpawnType.MediumAst => GetRandomFrom(data.mediumAts),
             SpawnType.SmallAst => GetRandomFrom(data.smallAts),
             SpawnType.GoldAst => GetRandomFrom(data.goldAts),
+            SpawnType.ExplosionAst => GetRandomFrom(data.explosionAst),
             SpawnType.ItemHealth => GetRandomFrom(data.itemHealth),
             SpawnType.AmorBox => GetRandomFrom(data.amorBox),   
             _ => null

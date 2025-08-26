@@ -8,7 +8,8 @@ public class ScreenHome : MonoBehaviour
   
 
     public void ActionNextSceneInGame()
-    {  
+    {
+        AudioSystem.Instance.PlayAudioClick();
         LoadingScene.Instance.LoadingScence(_SCENE_NAME);
     }    
 

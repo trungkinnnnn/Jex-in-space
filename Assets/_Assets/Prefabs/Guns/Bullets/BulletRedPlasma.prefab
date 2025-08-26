@@ -269,8 +269,8 @@ MonoBehaviour:
   COLORHEXA: FFFFFF
   _lightEffect: {fileID: 8486099257211429435, guid: 09307714e38a44c48a6aeb8bbfddbd72, type: 3}
   radiusEffectLight: 0.8
-  forceStay: 1
-  forceEnter: 0.8
+  forceStay: 0.6
+  forceEnter: 0.3
 --- !u!1 &3922995304631226399
 GameObject:
   m_ObjectHideFlags: 0

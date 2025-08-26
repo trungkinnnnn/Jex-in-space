@@ -24,7 +24,7 @@ public static class SpawnUtility
 
     public static bool IsTrackAst(SpawnType spawnType)
     {
-        return spawnType == SpawnType.BigAst || spawnType == SpawnType.MediumAst || spawnType == SpawnType.SmallAst;
+        return spawnType == SpawnType.BigAst || spawnType == SpawnType.MediumAst || spawnType == SpawnType.SmallAst || spawnType == SpawnType.ExplosionAst;
     }
 
     public static float GetDelayForType(SpawnType spawnType, WaveConfig waveConfig)
@@ -35,6 +35,7 @@ public static class SpawnUtility
             SpawnType.MediumAst => waveConfig.mediumAts.delayBetweenBatch,
             SpawnType.SmallAst => waveConfig.smallAts.delayBetweenBatch,
             SpawnType.GoldAst => waveConfig.goldAts.delayBetweenBatch,
+            SpawnType.ExplosionAst => waveConfig.explosionAst.delayBetweenBatch,
             SpawnType.ItemHealth => waveConfig.itemHealth.delayBetweenBatch,
             SpawnType.AmorBox => waveConfig.amorBox.delayBetweenBatch,
             _ => 0.5f

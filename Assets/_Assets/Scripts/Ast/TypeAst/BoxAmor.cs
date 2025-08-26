@@ -15,6 +15,7 @@ public class BoxAmor : Ast
     private int _alphaEnd = 0;
     private int _alphaStart = 1;
 
+    [Header("Amor")]
     public int maxAmor = 40;
     public int minAmor = 15;
 

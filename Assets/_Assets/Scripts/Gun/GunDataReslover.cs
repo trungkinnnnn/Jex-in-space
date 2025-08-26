@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public static class GunDataReslover
 {
@@ -30,6 +31,7 @@ public static class GunDataReslover
     public static GunParamasters GetParamasters(GunData gunData, GunStatData gunStatData)
     {
         var currentGun = FindEquippedGun(gunData);
+        PlayerPrefs.SetInt(DataPlayerPrefs.para_IDGUN, currentGun.idGun);
         if (currentGun == null) return new GunParamasters(null, 0, 0f, 0f, 0f);
 
         var statLevel = FindStatForGun(gunStatData, currentGun.idGun);

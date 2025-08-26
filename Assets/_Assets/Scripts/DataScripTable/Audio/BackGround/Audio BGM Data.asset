@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3787743d65f5f53419e764729eb1f6d5, type: 3}
+  m_Name: Audio BGM Data
+  m_EditorClassIdentifier: 
+  menuClips:
+  - {fileID: 8300000, guid: 597e9d2906a5ed348868addbc478182e, type: 3}
+  inGameClips:
+  - {fileID: 8300000, guid: e2c16c7f5896b5a4384cf739a33e0db9, type: 3}
+  - {fileID: 8300000, guid: 1dcc7ddf408e18f47929f0edef362f6b, type: 3}
+  - {fileID: 8300000, guid: 9bfb2dc11f5e7a944b437f5616802f32, type: 3}
+  - {fileID: 8300000, guid: 0ce1fe94817810e41b2802ab011d29e1, type: 3}
+  - {fileID: 8300000, guid: 435a66496867b9b478823de134d5cc27, type: 3}
+  - {fileID: 8300000, guid: 3478c5b4ae0723643859d54df3ce336d, type: 3}
+  - {fileID: 8300000, guid: d8281361e5ff1f54693f21fd7cdec3d8, type: 3}
+  - {fileID: 8300000, guid: 978b4e8cdc8566f4984ecd205c43b3de, type: 3}
+  - {fileID: 8300000, guid: 7498df145f3fb6f43bc58549f9ba26cb, type: 3}
+  pauseClips:
+  - {fileID: 8300000, guid: acc53859470bf54478187d5b26e5d20d, type: 3}

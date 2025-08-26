@@ -34,6 +34,7 @@ public class WaveSpawner
         SpawnUtility.AddMultiple(list, SpawnType.MediumAst, _waveConfig.mediumAts.totalCount,_waveConfig.mediumAts.score, _speedGame);
         SpawnUtility.AddMultiple(list, SpawnType.SmallAst, _waveConfig.smallAts.totalCount, _waveConfig.smallAts.score, _speedGame);
         SpawnUtility.AddMultiple(list, SpawnType.GoldAst, _waveConfig.goldAts.totalCount, _waveConfig.goldAts.score, _speedGame);
+        SpawnUtility.AddMultiple(list, SpawnType.ExplosionAst, _waveConfig.explosionAst.totalCount, _waveConfig.explosionAst.score, _speedGame);
         SpawnUtility.AddMultiple(list, SpawnType.ItemHealth, _waveConfig.itemHealth.totalCount, _waveConfig.itemHealth.score, _speedGame);
         SpawnUtility.AddMultiple(list, SpawnType.AmorBox, _waveConfig.amorBox.totalCount, _waveConfig.amorBox.score, _speedGame);
 

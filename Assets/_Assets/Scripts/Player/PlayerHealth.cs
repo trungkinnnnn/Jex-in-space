@@ -21,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     
 
     private Rigidbody2D _rb;
+    private PlayerAudio _audio;
     private int _hpMax;
     private int _currentHp;
     private float _timeImmortal;
@@ -28,11 +29,12 @@ public class PlayerHealth : MonoBehaviour
 
     public float addForceImpact = 0.1f;
     public float addForceStay = 0.1f;
-    public float impactSpeedMax = 0.2f;
+    public float impactSpeedMax = 0.25f;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _audio = GetComponent<PlayerAudio>();
     }
 
     private void Start()
@@ -47,6 +49,10 @@ public class PlayerHealth : MonoBehaviour
         if (collision.collider.CompareTag(_asteroidTag))
         {
             float impactSpeed = collision.relativeVelocity.magnitude;
+
+            var impact = collision.collider.GetComponent<Ast>();
+            float perSpeed = Mathf.Max(0.01f, impactSpeed / impactSpeedMax);
+            impact?.PlayAudioImpact(perSpeed);
 
             if (impactSpeed >= impactSpeedMax && Time.time - _lastTimeTakenDamage >= _timeImmortal)
             {
@@ -82,7 +88,7 @@ public class PlayerHealth : MonoBehaviour
     {
         _currentHp = Math.Max(0, _currentHp - damage);
         //Debug.Log("Hp" + _currentHp);
-
+        _audio.PlayClipHurt();
 
         OnCatCrack();
 
@@ -91,6 +97,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (_currentHp <= 0)
         {
+            _audio.PlayClipDie();
             Die?.Invoke();
             Debug.Log("Jex die");
         }
@@ -100,6 +107,7 @@ public class PlayerHealth : MonoBehaviour
     {
         _currentHp = Mathf.Min(_currentHp + heal, _hpMax);
 
+        _audio.PlayClipEat();
         //Event
         OnActionHp?.Invoke(_currentHp);
         OnCatCrack();
@@ -122,6 +130,7 @@ public class PlayerHealth : MonoBehaviour
     }
     else
     {
+        _audio.PlayClipGlassBreak();
         _catCracks[0].gameObject.SetActive(true);
         _catCracks[1].gameObject.SetActive(_currentHp <= 1);
     }

@@ -4,6 +4,7 @@ public enum SpawnType
    MediumAst = 2,
    SmallAst = 3,
    GoldAst = 4,
-   ItemHealth = 5,
-   AmorBox = 6,
+   ExplosionAst = 5,
+   ItemHealth = 6,
+   AmorBox = 7,
 }

@@ -45,7 +45,8 @@ public class GameStateManager : MonoBehaviour
 
     public void ActionDownButtonPauseON()
     {
-        AudioManager.Instance.PauseBGM();
+        AudioBGMManager.Instance.PauseBGM();
+        AudioSystem.Instance.PlayAudioClick();
 
         Debug.Log("Pause Game");
         if(_pausePhysic != null) { _pausePhysic.PauseGame(); }
@@ -58,8 +59,10 @@ public class GameStateManager : MonoBehaviour
 
     public void ActionUpButtonPauseOFF()
     {
+        AudioSystem.Instance.PlayAudioClick();
+
         StartCoroutine(HandleActionPauseOFF());
-        AudioManager.Instance.ResumeBGM();
+        AudioBGMManager.Instance.ResumeBGM();
     }
 
     public IEnumerator HandleActionPauseOFF()

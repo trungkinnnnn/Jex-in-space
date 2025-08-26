@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum AsteroidType { AstNormal, AstExplosion, AstNon}
@@ -30,6 +31,22 @@ public class Ast : MonoBehaviour
     [Header("Score")]
     [SerializeField] protected int _score = 1;
 
+    [Header("Audio")]    
+    [SerializeField] AudioData _audioDataHit;
+    [SerializeField] AudioData _audioImpact;
+    [SerializeField] AudioData _audioBreak;
+    [SerializeField] AudioData _audioCrack;
+    public float volume = 1f;
+    private AudioSource _audioSource;
+
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
+
+    public List<AudioClip> GetAudioHitBulletList() => _audioDataHit == null ? null : _audioDataHit.clipList;
+
     public void InitOnDestroy(System.Action onDestroy)
     {
         OnDestroyAst = onDestroy;
@@ -39,6 +56,16 @@ public class Ast : MonoBehaviour
     {
         _score = score;
     }    
+
+    public void PlayAudioImpact(float perSpeed)
+    {
+        AudioSFX.Instance.PlayAudioOneShortChangeVolume(_audioSource, _audioImpact.clipList, perSpeed);
+    }
+
+    public void PlayAudioCrack()
+    {
+        AudioSFX.Instance.PlayAudioOneShortChangeVolume(_audioSource, _audioCrack.clipList, volume + 2f);
+    }
 
     private void Start()
     {
@@ -75,6 +102,7 @@ public class Ast : MonoBehaviour
     {
         if (_objBroken != null)
         {
+            PlayAudioCrack();
             _objBroken.SetActive(true);
         }
     }    
@@ -92,7 +120,10 @@ public class Ast : MonoBehaviour
     private void CreateAniDestroy()
     {
         if (_effectAniDestroy == null) return;
-        Instantiate(_effectAniDestroy, transform.position, Quaternion.identity);
+        var obj = Instantiate(_effectAniDestroy, transform.position, Quaternion.identity);
+        if (_audioBreak == null || _audioBreak.clipList.Count == 0) return;
+        EffectController effect = obj.GetComponent<EffectController>();
+        effect.InitAudioVolumDownBackground(_audioBreak.clipList, volume);
     }    
 
     private void CreateCoins()

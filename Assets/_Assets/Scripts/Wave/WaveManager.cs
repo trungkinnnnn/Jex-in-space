@@ -79,6 +79,7 @@ public class WaveManager : MonoBehaviour
         _waveConfig.mediumAts.totalCount += _waveConfig.mediumAts.countUpNextWave;
         _waveConfig.smallAts.totalCount += _waveConfig.smallAts.countUpNextWave;
         _waveConfig.goldAts.totalCount += _waveConfig.goldAts.countUpNextWave;
+        _waveConfig.explosionAst.totalCount += _waveConfig.explosionAst.countUpNextWave;
         _waveConfig.itemHealth.totalCount += _waveConfig.itemHealth.countUpNextWave;
         _waveConfig.amorBox.totalCount += _waveConfig.amorBox.countUpNextWave;
 

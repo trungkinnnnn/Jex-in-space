@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class SaveSystem : MonoBehaviour
@@ -21,7 +22,10 @@ public class SaveSystem : MonoBehaviour
     {
         LoadDataScripTable();
         if(_gunIdOnRespawn != -1)
+        {
+            _gunData.gunStats[PlayerPrefs.GetInt(DataPlayerPrefs.para_IDGUN)].equip = false;
             _gunData.gunStats[_gunIdOnRespawn].equip = true;
+        }    
         SaveJson();
     }    
 

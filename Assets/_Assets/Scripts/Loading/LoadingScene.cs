@@ -52,7 +52,6 @@ public class LoadingScene : MonoBehaviour
 
         while (!asyncLoad.isDone)
         {
-            Debug.Log("Done Screen load : " + asyncLoad.progress);
             if (asyncLoad.progress >= 0.9f && !_hideShow)
             {
                 
@@ -61,11 +60,9 @@ public class LoadingScene : MonoBehaviour
 
                 _loadingScreen = LoadingScreen.Instance;
                 if (_loadingScreen != null) yield return StartCoroutine(_loadingScreen.Hide());
-                Debug.Log("Check if");
                 _hideShow = true;
                 _isloading = false;
             }
-            Debug.Log("Hide" + _hideShow);
             yield return null;
         }    
 

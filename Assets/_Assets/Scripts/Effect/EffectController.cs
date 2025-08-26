@@ -1,16 +1,34 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 
 public class EffectController : MonoBehaviour
 {
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
-    void Start()
+    private AudioSource _audioSource;
+    private List<AudioClip> _audioSources;
+    public float volume = 1.5f;
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
-
+        _audioSource = GetComponent<AudioSource>();
+    }
+    private void Start()
+    {
         StartCoroutine(WaitTimeDestroy(_animator));
     }
+
+    public void InitAudioVolumDownBackground(List<AudioClip> clips, float per)
+    {
+        AudioSFX.Instance.PlayAudioOneShortAndVolumeDownBackGround(_audioSource, clips, per);
+    }    
+
+    public void InitAudioOneShortNormal(List<AudioClip> clips)
+    {
+        AudioSFX.Instance.PlayAudioOneShortChangeVolume(_audioSource, clips, volume);
+    }    
 
     public void ApplyHexColor(string hexColor)
     {

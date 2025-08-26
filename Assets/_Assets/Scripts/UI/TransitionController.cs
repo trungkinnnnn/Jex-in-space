@@ -66,6 +66,8 @@ public class TransitionController : MonoBehaviour
 
     private void HandleTabSelected(int tabIndex)
     {
+        AudioSystem.Instance.PlayAudioClick();
+
         for (int i = 0; i < _tabObjs.Count; i++)
         {
             if (i != tabIndex) continue;

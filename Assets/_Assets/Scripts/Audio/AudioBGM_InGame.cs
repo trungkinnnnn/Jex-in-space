@@ -6,7 +6,7 @@ public class AudioBGM_InGame : MonoBehaviour
 {
     void Start()
     {
-        StartCoroutine(AudioManager.Instance.WaitStartMusicInGame());
+        StartCoroutine(AudioBGMManager.Instance.WaitStartMusicInGame());
     }
 
 }

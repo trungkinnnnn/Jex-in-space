@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GunController : MonoBehaviour
 {
@@ -20,6 +22,13 @@ public class GunController : MonoBehaviour
     [SerializeField] Transform _positionSpawnMagazine;
     [SerializeField] GameObject _prefabCasing;
     [SerializeField] GameObject _prefabMagazine;
+
+    [Header("Audio")]
+    [SerializeField] AudioData _audioSFXDataShoting;
+    [SerializeField] AudioData _audioShellCas;
+    private AudioSource _audioSource;
+
+    public float _upVolume = 1.5f;
 
     // Data
     private GunData _gunData;
@@ -42,7 +51,8 @@ public class GunController : MonoBehaviour
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();   
+        _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
         _pointFireTf = _pointFire != null ? _pointFire : transform;
     }
 
@@ -67,10 +77,16 @@ public class GunController : MonoBehaviour
 
         if (ShootSignal.fire && _currentMagSizebullet > 0 && FireRate.canShoot)
         {
+            AudioSFX.Instance.PlayAudioOneShortChangeVolume(_audioSource, GetAudioClipsShoting(), _upVolume);
+            AudioSFX.Instance.PlayAudioOneShortChangeVolume(_audioSource, GetAudioClipsShellCas(), _upVolume);
+
             _animator.SetTrigger(SHOOT_HASH);
             StartCoroutine(FireRoutine());
         }
     }
+
+    private List<AudioClip> GetAudioClipsShoting() => _audioSFXDataShoting == null ? null : _audioSFXDataShoting.clipList;
+    private List<AudioClip> GetAudioClipsShellCas() => _audioShellCas == null ? null : _audioShellCas.clipList;
 
 
     private IEnumerator FireRoutine()

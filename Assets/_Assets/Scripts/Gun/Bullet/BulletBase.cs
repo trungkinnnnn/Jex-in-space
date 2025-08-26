@@ -9,7 +9,6 @@ public abstract class BulletBase : MonoBehaviour
     public string COLORHEXA = "FFC015";
     [SerializeField] protected GameObject _lightEffect;
 
-
     //Para
     private Vector2 _direction;
     private float _speed;
@@ -24,6 +23,10 @@ public abstract class BulletBase : MonoBehaviour
    
     protected string NAME_COMPARETAG_PHYSIC = "Ast";
     protected string NAME_COMPARETAG_PHYSIC_ITEM = "Health";
+
+
+    //Audio
+    private List<AudioClip> _audioClipList;
 
     //Component
     private Rigidbody2D _rb;
@@ -49,6 +52,9 @@ public abstract class BulletBase : MonoBehaviour
         var effect = objEffect.GetComponent<EffectController>();
         effect?.ApplyHexColor(COLORHEXA);
 
+        if (_audioClipList != null && _audioClipList.Count > 0)
+            effect?.InitAudioOneShortNormal(_audioClipList);
+
         CreateEffectLight();
     }    
 
@@ -73,8 +79,8 @@ public abstract class BulletBase : MonoBehaviour
     {
         if (other.CompareTag(NAME_COMPARETAG_PHYSIC) || other.CompareTag(NAME_COMPARETAG_PHYSIC_ITEM))
         {
-            HandleHitAst(other);
             AstHitBullet(other);
+            HandleHitAst(other);
         }
     }
 
@@ -83,6 +89,7 @@ public abstract class BulletBase : MonoBehaviour
     private void AstHitBullet(Collider2D other)
     {
         var obj = other.GetComponent<Ast>();
+        _audioClipList = obj.GetAudioHitBulletList();
         obj?.TakeDameBullet(_damage);
     }
 

@@ -9,8 +9,11 @@ public class BounceOffWall : MonoBehaviour
     public string wallTag = "Wall";
 
     private Rigidbody2D _rb;
-    void Start()
+    private PlayerAudio _audio;
+
+    private void Awake()
     {
+        _audio = GetComponent<PlayerAudio>();
         _rb = GetComponent<Rigidbody2D>();
     }
 
@@ -18,6 +21,7 @@ public class BounceOffWall : MonoBehaviour
     {
         if(collision.gameObject.CompareTag(wallTag))
         {
+            _audio.PlayClipImpactWall();
             BounceBreak(collision, bounceForceEnter);
             OnAnnoyed?.Invoke();
         }

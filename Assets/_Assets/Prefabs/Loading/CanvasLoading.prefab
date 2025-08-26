@@ -62,7 +62,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &3047202376951188655
 MonoBehaviour:
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _material: {fileID: 2100000, guid: e3e5af31fd39a074f8ff1a6919522dc9, type: 2}
-  _animationCurve:
+  _animationCurveShow:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -130,10 +130,10 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.09961669
-      value: 0.498455
-      inSlope: 1.4979314
-      outSlope: 1.4979314
+      time: 0.10182193
+      value: 0.49553162
+      inSlope: 1.2272801
+      outSlope: 1.2272801
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -150,6 +150,40 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _animationCurveHide:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.8247563
+      value: 0.39523667
+      inSlope: 1.3893118
+      outSlope: 1.3893118
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _timeDuration: 0.4
 --- !u!114 &1962784410508826866
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class WaveData : ScriptableObject
     public List<GameObject> mediumAts;
     public List<GameObject> smallAts;
     public List<GameObject> goldAts;
+    public List<GameObject> explosionAst;
     public List<GameObject> itemHealth;
     public List<GameObject> amorBox;
 }

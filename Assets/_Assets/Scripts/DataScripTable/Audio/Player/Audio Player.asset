@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d60575090e1b054395102e8066564db, type: 3}
+  m_Name: Audio Player
+  m_EditorClassIdentifier: 
+  clipsImpactWall:
+  - {fileID: 8300000, guid: 82e249614f8fd134d8a2caa484437f75, type: 3}
+  clipsMeoWall:
+  - {fileID: 8300000, guid: ac61de51b1a4d304586e70d8eb78a1d2, type: 3}
+  - {fileID: 8300000, guid: d869a2d8eeeae414988dccb15f17f63d, type: 3}
+  clipsTakeCoin:
+  - {fileID: 8300000, guid: fb4c30c7a9e6a7b4cb3aac5870f98727, type: 3}
+  clipsEat:
+  - {fileID: 8300000, guid: ec6f5848e1acfd7429d64cfd080c141e, type: 3}
+  clipsHurt:
+  - {fileID: 8300000, guid: 8a0787b2de4ccf74fb1b0763105dbcb5, type: 3}
+  clipDie:
+  - {fileID: 8300000, guid: a8da9f264fcab9e409ed117e0cafe60e, type: 3}
+  clipGlassBreak:
+  - {fileID: 8300000, guid: 644c96adc8128474e942d8e994e02cab, type: 3}

@@ -8,6 +8,7 @@ public class WaveConfig : ScriptableObject
     public SpawnUnitConfig mediumAts;
     public SpawnUnitConfig smallAts;
     public SpawnUnitConfig goldAts;
+    public SpawnUnitConfig explosionAst;
     public SpawnUnitConfig itemHealth;
     public SpawnUnitConfig amorBox;
 

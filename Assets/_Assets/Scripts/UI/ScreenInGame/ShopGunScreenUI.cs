@@ -166,6 +166,9 @@ public class ShopGunScreenUI : MonoBehaviour
 
     private void HandleSelectedGun(int index)
     {
+
+        AudioSystem.Instance.PlayAudioClick();
+
         ChangeBorderSelected(_imageList[index], _imageList[_currentSelected]);
         ChangeGunSelected(index);
         ChangeInfoSelected(index);
@@ -315,6 +318,7 @@ public class ShopGunScreenUI : MonoBehaviour
     // ActionUnlockGun
     public void ActionUnLockGun()
     {
+        AudioSystem.Instance.PlayAudioClick();
         int price = _gunStatDatas[_currentSelected].priceCoin;
         if (_totalCoin < price) return;
         _gunStatDatas[_currentSelected].unlock = true;
@@ -326,6 +330,7 @@ public class ShopGunScreenUI : MonoBehaviour
 
     public void ActionEquipOnRespawn()
     {
+        AudioSystem.Instance.PlayAudioClick();
         _gunIdOnRespawn = _currentSelected;
         _saveSystem.SetGunNextSpawn(_gunIdOnRespawn);
         CheckEquipGun(_currentSelected);
@@ -333,6 +338,7 @@ public class ShopGunScreenUI : MonoBehaviour
 
     public void ActionCancelOnRespawn()
     {
+        AudioSystem.Instance.PlayAudioClick();
         _gunIdOnRespawn = -1;
         _saveSystem.SetGunNextSpawn(_gunIdOnRespawn);
         CheckEquipGun(_currentSelected);
