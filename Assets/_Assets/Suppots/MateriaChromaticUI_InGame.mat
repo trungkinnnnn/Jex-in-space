@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MateriaChromaticUI_Button
+  m_Name: MateriaChromaticUI_InGame
   m_Shader: {fileID: 4800000, guid: d3cd5f73d4d943e419869e7d9ecbc0f6, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -43,9 +43,10 @@ Material:
     - _Brightness: 1
     - _EnableExternalAlpha: 0
     - _Intensity: 0
-    - _IntensityX: 0.02
-    - _IntensityY: 0.02
-    - _Reveal: 1
+    - _IntensityX: 0
+    - _IntensityY: 0
+    - _Reveal: 0
+    - _Stencil: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

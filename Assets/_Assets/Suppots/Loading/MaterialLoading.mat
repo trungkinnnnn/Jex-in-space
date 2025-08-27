@@ -34,7 +34,7 @@ Material:
     - _Aspect: 0
     - _ColorMask: 15
     - _EnableExternalAlpha: 0
-    - _Feather: 0.2
+    - _Feather: 0.25
     - _Invert: 1
     - _Radius: 1
     - _Stencil: 0

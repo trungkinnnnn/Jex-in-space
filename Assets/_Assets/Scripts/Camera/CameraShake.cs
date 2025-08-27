@@ -24,13 +24,19 @@ public class CameraShake : MonoBehaviour
     private void OnEnable()
     {
         EffectLightExplosion.OnExploed += HandleExploed;
+        EffectScreen.onTakeDamage += HandleEffectScreen;
     }
 
     private void OnDisable()
     {
         EffectLightExplosion.OnExploed -= HandleExploed;    
+        EffectScreen.onTakeDamage -= HandleEffectScreen;
     }
 
+    private void HandleEffectScreen(float range, float intensity)
+    {
+        TriggerShake(_playerTranform.position, range, intensity);
+    }
 
     private void HandleExploed(Vector2 pos, float range, float intensity)
     {

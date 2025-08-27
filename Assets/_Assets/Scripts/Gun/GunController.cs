@@ -211,7 +211,7 @@ public class GunController : MonoBehaviour
         SpawnBullet(_paramasters.currentGun?.bulletPrefabs, _pointFireTf.position,
                     _pointFireTf.rotation, _pointFireTf.right, _paramasters.bulletSpeed);
 
-        AudioSFX.Instance.PlayAudioOneShortChangeVolume(GetAudioClipsShoting(), _upVolume);
+        AudioSFX.Instance.PlayAudioOneShortChangeVolume(GetAudioClipsShoting(), _upVolume + 0.5f);
         AudioSFX.Instance.PlayAudioOneShortChangeVolume(GetAudioClipsShellCas(), _upVolume + 1f);
 
         if (_paramasters.currentGun != null && _paramasters.currentGun.idGun == ID_BULLET_REDPLASMA)
