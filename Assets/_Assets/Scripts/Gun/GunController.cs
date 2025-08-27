@@ -77,8 +77,8 @@ public class GunController : MonoBehaviour
 
         if (ShootSignal.fire && _currentMagSizebullet > 0 && FireRate.canShoot)
         {
-            AudioSFX.Instance.PlayAudioOneShortChangeVolume(_audioSource, GetAudioClipsShoting(), _upVolume);
-            AudioSFX.Instance.PlayAudioOneShortChangeVolume(_audioSource, GetAudioClipsShellCas(), _upVolume);
+            AudioSFX.Instance.PlayAudioOneShortChangeVolume(GetAudioClipsShoting(), _upVolume);
+            AudioSFX.Instance.PlayAudioOneShortChangeVolume(GetAudioClipsShellCas(), _upVolume + 1f);
 
             _animator.SetTrigger(SHOOT_HASH);
             StartCoroutine(FireRoutine());
@@ -210,6 +210,9 @@ public class GunController : MonoBehaviour
     {
         SpawnBullet(_paramasters.currentGun?.bulletPrefabs, _pointFireTf.position,
                     _pointFireTf.rotation, _pointFireTf.right, _paramasters.bulletSpeed);
+
+        AudioSFX.Instance.PlayAudioOneShortChangeVolume(GetAudioClipsShoting(), _upVolume);
+        AudioSFX.Instance.PlayAudioOneShortChangeVolume(GetAudioClipsShellCas(), _upVolume + 1f);
 
         if (_paramasters.currentGun != null && _paramasters.currentGun.idGun == ID_BULLET_REDPLASMA)
         {

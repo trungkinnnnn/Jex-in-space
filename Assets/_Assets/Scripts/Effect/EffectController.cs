@@ -7,13 +7,10 @@ public class EffectController : MonoBehaviour
 {
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
-    private AudioSource _audioSource;
-    private List<AudioClip> _audioSources;
     public float volume = 1.5f;
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _audioSource = GetComponent<AudioSource>();
     }
     private void Start()
     {
@@ -22,12 +19,12 @@ public class EffectController : MonoBehaviour
 
     public void InitAudioVolumDownBackground(List<AudioClip> clips, float per)
     {
-        AudioSFX.Instance.PlayAudioOneShortAndVolumeDownBackGround(_audioSource, clips, per);
+        AudioSFX.Instance.PlayAudioOneShortAndVolumeDownBackGround( clips, per);
     }    
 
     public void InitAudioOneShortNormal(List<AudioClip> clips)
     {
-        AudioSFX.Instance.PlayAudioOneShortChangeVolume(_audioSource, clips, volume);
+        AudioSFX.Instance.PlayAudioOneShortChangeVolume(clips, volume);
     }    
 
     public void ApplyHexColor(string hexColor)

@@ -218,9 +218,9 @@ public class AudioBGMManager : MonoBehaviour
         yield return StartCoroutine(WhileLerp(_bgmSource, startVol, targetVol, 0.3f));
         _bgmSource.volume = targetVol;
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
 
-        yield return StartCoroutine(WhileLerp(_bgmSource, targetVol, startVol, 0.5f));
+        yield return StartCoroutine(WhileLerp(_bgmSource, targetVol, startVol, 0.3f));
         _bgmSource.volume = startVol;
     }
 

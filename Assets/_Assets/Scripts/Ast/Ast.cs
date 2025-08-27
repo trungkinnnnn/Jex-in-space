@@ -36,14 +36,8 @@ public class Ast : MonoBehaviour
     [SerializeField] AudioData _audioImpact;
     [SerializeField] AudioData _audioBreak;
     [SerializeField] AudioData _audioCrack;
-    public float volume = 1f;
-    private AudioSource _audioSource;
-
-
-    private void Awake()
-    {
-        _audioSource = GetComponent<AudioSource>();
-    }
+    public float volumeNormal = 1f;
+    public float volumeExplosion = 1.4f;
 
     public List<AudioClip> GetAudioHitBulletList() => _audioDataHit == null ? null : _audioDataHit.clipList;
 
@@ -59,12 +53,12 @@ public class Ast : MonoBehaviour
 
     public void PlayAudioImpact(float perSpeed)
     {
-        AudioSFX.Instance.PlayAudioOneShortChangeVolume(_audioSource, _audioImpact.clipList, perSpeed);
+        AudioSFX.Instance.PlayAudioOneShortChangeVolume(_audioImpact.clipList, perSpeed);
     }
 
     public void PlayAudioCrack()
     {
-        AudioSFX.Instance.PlayAudioOneShortChangeVolume(_audioSource, _audioCrack.clipList, volume + 2f);
+        AudioSFX.Instance.PlayAudioOneShortChangeVolume(_audioCrack.clipList, volumeNormal + 2f);
     }
 
     private void Start()
@@ -81,11 +75,13 @@ public class Ast : MonoBehaviour
     {
         hp -= dmage;
 
-        OnBroken();
-
         if (hp == 0)
         {
             AstDestroy();
+        }
+        else
+        {
+            OnBroken();
         }    
     }
 
@@ -123,7 +119,7 @@ public class Ast : MonoBehaviour
         var obj = Instantiate(_effectAniDestroy, transform.position, Quaternion.identity);
         if (_audioBreak == null || _audioBreak.clipList.Count == 0) return;
         EffectController effect = obj.GetComponent<EffectController>();
-        effect.InitAudioVolumDownBackground(_audioBreak.clipList, volume);
+        effect.InitAudioVolumDownBackground(_audioBreak.clipList, volumeExplosion);
     }    
 
     private void CreateCoins()

@@ -5,31 +5,52 @@ using UnityEngine;
 public class AudioSFX : MonoBehaviour
 {
     public static AudioSFX Instance;
+    public float volume = 1f;
+    public float duration = 3f;
 
-    public float volume;
+    [SerializeField] AudioSource _audio;
 
     public void Awake()
     {
         if (Instance == null)
             Instance = this;
+       
     }
 
-    public void PlayAudioOneShortAndVolumeDownBackGround(AudioSource audioSource, List<AudioClip> clips, float per)
+    public void PlayAudioOneShortAndVolumeDownBackGround(List<AudioClip> clips, float per)
     {
         AudioClip clip = clips.Count <= 1 ? clips[0] : clips[Random.Range(0, clips.Count)];
         AudioBGMManager.Instance.VolumeDownBackGround();
-        audioSource.PlayOneShot(clip, volume * per);
+        _audio.PlayOneShot(clip, volume * per);
     }    
 
-    public void PlayAudioOneShort(AudioSource audioSource, List<AudioClip> clips)
+    public void PlayAudioOneShort(List<AudioClip> clips)
     {
         AudioClip clip = clips.Count <= 1 ? clips[0] : clips[Random.Range(0, clips.Count)];
-        audioSource.PlayOneShot(clip, volume);
+        _audio.PlayOneShot(clip, volume);
     }
 
-    public void PlayAudioOneShortChangeVolume(AudioSource audioSource, List<AudioClip> clips, float per)
+    public void PlayAudioOneShortChangeVolume(List<AudioClip> clips, float per)
     {
         AudioClip clip = clips.Count <= 1 ? clips[0] : clips[Random.Range(0, clips.Count)];
-        audioSource.PlayOneShot(clip, volume * per);
+        _audio.PlayOneShot(clip, volume * per);
     }
+
+    public IEnumerator PlayAudioVolumeLoop(AudioSource audio, AudioClip clip, float per)
+    {
+        audio.clip = clip;
+        float targetVolume = audio.volume * per;
+        audio.volume = 0f;
+        audio.Play();
+
+        float timer = 0f;
+        while(timer < duration)
+        {
+            timer += Time.deltaTime;    
+            audio.volume = Mathf.Lerp(0f, targetVolume, timer/duration);
+            yield return null;
+        }    
+         
+        audio.volume = targetVolume;
+    }    
 }
