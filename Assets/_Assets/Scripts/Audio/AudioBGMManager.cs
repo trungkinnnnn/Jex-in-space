@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Rendering;
 
 public class AudioBGMManager : MonoBehaviour
@@ -222,6 +223,17 @@ public class AudioBGMManager : MonoBehaviour
 
         yield return StartCoroutine(WhileLerp(_bgmSource, targetVol, startVol, 0.3f));
         _bgmSource.volume = startVol;
+    }
+
+    public void MuteAudioPause()
+    {
+        StartCoroutine(MuteAudio(_pauseSource));
+    }
+
+    private IEnumerator MuteAudio(AudioSource audio)
+    {
+        float startVol = audio.volume;
+        yield return StartCoroutine(WhileLerp(audio, startVol, 0f, 0.3f));
     }
 
 }

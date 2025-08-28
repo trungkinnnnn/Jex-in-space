@@ -202,6 +202,7 @@ MonoBehaviour:
   _sysSource: {fileID: 1780163241}
   _clipClick: {fileID: 8300000, guid: 4a2014fc3d0c2fd4f8a574645b450f62, type: 3}
   _clipGameOver: {fileID: 8300000, guid: a8da9f264fcab9e409ed117e0cafe60e, type: 3}
+  _clipNextWave: {fileID: 8300000, guid: 1f67504bb85bc3c428683e6c12ae224e, type: 3}
   volume: 0.4
 --- !u!114 &2975274608386719429
 MonoBehaviour:

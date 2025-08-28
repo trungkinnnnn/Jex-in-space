@@ -9,7 +9,7 @@ using System;
 
 public class DieScreenUI : MonoBehaviour
 {
-
+    // TimeLineWatcher
     public static Action Reset;
 
     [Header("Text")]
@@ -21,6 +21,9 @@ public class DieScreenUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI _textHighWave;
     [SerializeField] TextMeshProUGUI _textNewBestScore;
     [SerializeField] TextMeshProUGUI _textNewBestWave;
+
+    [Header("Button")]
+    [SerializeField] GameObject _buttonDie;
 
     [Header("CanvasGroup")]
     [SerializeField] CanvasGroup _canvasScreenUI_HUD;
@@ -53,6 +56,8 @@ public class DieScreenUI : MonoBehaviour
         _hudController = GetComponent<HUDController>();
         _saveSystem = GetComponent<SaveSystem>();
         LoadData();
+
+        _buttonDie.SetActive(true);
     }
 
     private void LoadData()
@@ -100,6 +105,8 @@ public class DieScreenUI : MonoBehaviour
 
     private void OnScreenDie()
     {
+        InputManager.isInputLocked = true;
+        _buttonDie.SetActive(false);
         _gameStateManager.ActionDownButtonPauseON();
         GetDataFromHUD();
     }
@@ -107,6 +114,7 @@ public class DieScreenUI : MonoBehaviour
     private void OnScreenDieForPlayBad()
     {
         GetDataFromHUD();
+        InputManager.isInputLocked = true;
     }
 
     private void GetDataFromHUD()

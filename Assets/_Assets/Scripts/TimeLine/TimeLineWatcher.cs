@@ -73,10 +73,11 @@ public class TimeLineWatcher : MonoBehaviour
         _timeLine2.time = 0;
         _timeLine2.Play();
         _resetScene = true;
-
         _animator.enabled = true;
-
         Time.timeScale = 1;
+
+        AudioBGMManager.Instance.MuteAudioPause();
+
         //Time.fixedDeltaTime = 0.02f;
     }  
 }

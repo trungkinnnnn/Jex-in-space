@@ -63,7 +63,7 @@ public class Escape : MonoBehaviour
         float time = 0f;
         while (time < timeActive)
         {
-            // Xác định tốc độ theo giai đoạn
+           
             float currentSpeed = speedPhase1;
             if (time <= timePhase1)
                 currentSpeed = speedPhase1;
@@ -72,17 +72,17 @@ public class Escape : MonoBehaviour
             else
                 currentSpeed = speedPhase3;
 
-            // Xoay vòng nếu trong khoảng turnAfter → turnBefor
+           
             if (time > turnAfter && time < turnBefor)
             {
                 float angle = angulerSpeed * Time.unscaledDeltaTime;
                 _direction = Quaternion.Euler(0, 0, angle) * _direction;
             }
 
-            // Di chuyển
+          
             transform.localPosition += (Vector3)(_direction.normalized * currentSpeed * Time.unscaledDeltaTime);
 
-            // Cập nhật rotation
+            
             float angleZ = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
             transform.localRotation = Quaternion.Euler(0, 0, angleZ - 90f);
 
@@ -112,4 +112,4 @@ public class Escape : MonoBehaviour
         power.AddForce(direction);
     }
 
-}
+}

@@ -7,6 +7,7 @@ public class AudioSystem : MonoBehaviour
     [SerializeField] AudioSource _sysSource;
     [SerializeField] AudioClip _clipClick;
     [SerializeField] AudioClip _clipGameOver;
+    [SerializeField] AudioClip _clipNextWave;
 
     public static AudioSystem Instance;
     public float volume = 0.4f;
@@ -27,4 +28,9 @@ public class AudioSystem : MonoBehaviour
     {
         _sysSource.PlayOneShot(_clipGameOver, volume);
     }
+
+    public void PlayNextWave()
+    {
+        _sysSource.PlayOneShot(_clipNextWave, volume);
+    }    
 }
