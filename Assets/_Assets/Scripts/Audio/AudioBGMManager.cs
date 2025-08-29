@@ -26,6 +26,9 @@ public class AudioBGMManager : MonoBehaviour
     private Coroutine _pauseCoroutine;
     private Coroutine _duckCoroutine;
     private float _bgPauseTime = 0f;
+    private float _defaultVolume;
+
+    private bool _isActive;
 
     public static AudioBGMManager Instance;
 
@@ -44,6 +47,8 @@ public class AudioBGMManager : MonoBehaviour
 
     private void Start()
     {
+        _isActive = LoadingData.Instance.ActiveSoundMusic();
+        _defaultVolume = bgVolume;
         _pauseSource.clip = _data.pauseClips[0];
         StartCoroutine(WaitStartMusicMenu());
     }
@@ -234,6 +239,33 @@ public class AudioBGMManager : MonoBehaviour
     {
         float startVol = audio.volume;
         yield return StartCoroutine(WhileLerp(audio, startVol, 0f, 0.3f));
+    }
+
+    public void SetActive(bool active)
+    {
+        _isActive = active;
+        if (_isActive)
+        {
+            bgVolume = _defaultVolume;
+            MusicOn();
+        }
+        else
+        {
+           StartCoroutine(MusicOff());
+        }    
+    }    
+
+    private void MusicOn()
+    {
+        StartCoroutine(WhileLerp(_bgmSource, 0f, bgVolume, 1f));
+        StartCoroutine(WhileLerp(_pauseSource, 0f, bgVolume, 1f));
+    }  
+    
+    private IEnumerator MusicOff()
+    {
+        StartCoroutine(WhileLerp(_bgmSource, bgVolume, 0f, 1f));
+        yield return StartCoroutine(WhileLerp(_pauseSource, bgVolume, 0f, 1f));
+        bgVolume = 0f;
     }
 
 }

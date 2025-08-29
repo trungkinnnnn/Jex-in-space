@@ -18,6 +18,14 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] string _healthItemTag = "Health";
     [SerializeField] int _damage = 1;
     [SerializeField] int _healAmount = 1;
+
+    [Header("Animation Break Bowl")]
+    [SerializeField] Animator _animatorBreak;
+    private static int _para_NAME_BREAK = Animator.StringToHash("isBreak");
+    
+
+    
+    
     
 
     private Rigidbody2D _rb;
@@ -97,11 +105,18 @@ public class PlayerHealth : MonoBehaviour
 
         if (_currentHp <= 0)
         {
-            _audio.PlayClipDie();
-            Die?.Invoke();
-            Debug.Log("Jex die");
+            IsDie();
         }
     }
+
+    private void IsDie()
+    {
+        _rb.angularDrag = 3f;
+        _animatorBreak.SetTrigger(_para_NAME_BREAK);
+        _audio.PlayClipDie();
+        Die?.Invoke();
+        Debug.Log("Jex die");
+    }    
 
     private void AddHealth(int heal)
     {

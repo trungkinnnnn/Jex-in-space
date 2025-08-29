@@ -6,6 +6,7 @@ using DG;
 using DG.Tweening;
 using UnityEditor.Purchasing;
 using System;
+using System.Collections;
 
 public class DieScreenUI : MonoBehaviour
 {
@@ -105,11 +106,18 @@ public class DieScreenUI : MonoBehaviour
 
     private void OnScreenDie()
     {
+        StartCoroutine(HandleDie());
+    }
+
+    private IEnumerator HandleDie()
+    {
         InputManager.isInputLocked = true;
+        yield return StartCoroutine(Wait(4f));
+
         _buttonDie.SetActive(false);
         _gameStateManager.ActionDownButtonPauseON();
         GetDataFromHUD();
-    }
+    }    
 
     private void OnScreenDieForPlayBad()
     {
@@ -152,6 +160,8 @@ public class DieScreenUI : MonoBehaviour
         _canvasScreenUI_PAUSE.DOFade(0, _timeOffScreen).SetUpdate(true);
         _canvasScreenEmpty.DOFade(0, _timeOffScreen).SetUpdate(true);
         Reset?.Invoke();
+
+        _saveSystem.SaveDataForRespawn();
     }
 
     private void SaveData(int highScore, int hightWave)
@@ -164,5 +174,9 @@ public class DieScreenUI : MonoBehaviour
         _saveSystem.SaveDataForRespawn();
     }    
 
-    
+    private IEnumerator Wait(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }    
+
 }

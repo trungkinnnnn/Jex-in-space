@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,10 +11,10 @@ public class LoadingData : MonoBehaviour
 
     [SerializeField] GunData _gunData;
     [SerializeField] GunStatData _gunStatData;
-
-
     private GunData _gunDataClone;
     private GunStatData _gunStatDataClone;
+    private List<bool> _listSettings = new();
+
     private string _pathData;
 
     public static LoadingData Instance;
@@ -34,6 +35,7 @@ public class LoadingData : MonoBehaviour
         _gunDataClone = Instantiate(_gunData);
         _gunStatDataClone = Instantiate(_gunStatData);
         LoadDataGun();
+        LoadingDataSetting();
     }
 
     private void LoadDataGun()
@@ -72,8 +74,21 @@ public class LoadingData : MonoBehaviour
         level.fireRate[levelProgress.fireRateLevel - 1].unlock = true;
     }
 
-    public GunData GetGunData() => _gunDataClone;
+    private void LoadingDataSetting()
+    {
+        var setting = PlayerPrefs.GetString(DataPlayerPrefs.para_Setting).Split(',');
+        for(int i = 0; i < setting.Length; i++)
+        {  
+            _listSettings.Add((bool)TryPaserBool(setting[i]));
+        }    
+    }    
+    private bool? TryPaserBool(string str) => str.Trim().ToLower() == "true";
 
+    public bool ActiveSoundFX() => _listSettings[0];
+    public bool ActiveSoundMusic() => _listSettings[1];
+    public bool ActiveCameraShake() => _listSettings[2];
+
+    public GunData GetGunData() => _gunDataClone;
     public GunStatData GetGunStatData() => _gunStatDataClone;
 
 }

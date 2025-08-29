@@ -24,11 +24,6 @@ public class LoadingScreen : MonoBehaviour
         
     }
 
-    private void Start()
-    {
-        _material.SetFloat(_para_MAT_RADIUS, 1f);
-    }
-
     public IEnumerator Show()
     {
         _material.SetFloat(_para_MAT_RADIUS, 1f);

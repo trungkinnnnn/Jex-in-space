@@ -1,8 +1,11 @@
 ﻿using System.Collections;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
+    public static CameraShake Instance;
+
     [SerializeField] float _timeDuration = 0.4f;
     [SerializeField] float _damping = 1.5f;
     [SerializeField] float _frequency = 20f;
@@ -10,15 +13,23 @@ public class CameraShake : MonoBehaviour
     [SerializeField] private float _seedMultiplier = 37.1f;
     [SerializeField] Transform _playerTranform;
 
-    private Vector3 _originalLocalPosition;
-    private bool _originalCaptured = false;
-    private Coroutine _currentShake;
+    private bool _isActive;
 
+    private bool _originalCaptured = false;
+    private Vector3 _originalLocalPosition;  
+    private Coroutine _currentShake;
     private Animator _animator;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        _isActive = LoadingData.Instance.ActiveCameraShake();
     }
 
     private void OnEnable()
@@ -42,9 +53,11 @@ public class CameraShake : MonoBehaviour
     {
         TriggerShake(pos, range, intensity);
     }    
-
+    
+    // Lưu vị trí camera lúc đầu => rung xong trở về vị trí ban đầu
     private void TriggerShake(Vector2 positionEx, float range, float maxIntensity)
     {
+        if (!_isActive) return;
         if (_playerTranform == null) return;
         if(range <= 0) return;
 
@@ -104,4 +117,9 @@ public class CameraShake : MonoBehaviour
     {
         _originalCaptured = false;
     }
+
+    public void SetActive(bool active)
+    {
+        _isActive = active;
+    }    
 }

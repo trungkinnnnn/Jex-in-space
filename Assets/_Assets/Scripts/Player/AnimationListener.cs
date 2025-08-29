@@ -8,7 +8,8 @@ public class AnimationListener : MonoBehaviour
     private static readonly int HashHurt = Animator.StringToHash("isHurt");
     private static readonly int HashEat = Animator.StringToHash("isEat");
     private static readonly int HashEat2 = Animator.StringToHash("isEat2");
-    private static readonly int HashDie = Animator.StringToHash("isDie");
+    private static readonly int HashDie = Animator.StringToHash("isDieTrigger");
+    private static readonly int HashDieBool = Animator.StringToHash("isDieBool");
 
     private float _timeDelaySate = 0.3f;
     private float _lastTimeState = 0f;   
@@ -62,8 +63,11 @@ public class AnimationListener : MonoBehaviour
         _timeDelaySate = Time.time;
     }
 
-    private void Die() => _animator.SetTrigger(HashDie);
-
+    private void Die()
+    {
+        _animator.SetBool(HashDieBool, true);
+        _animator.SetTrigger(HashDie);
+    }     
     private void TryTrigger(int hash)
     {
         if(!CanChangeState()) return;

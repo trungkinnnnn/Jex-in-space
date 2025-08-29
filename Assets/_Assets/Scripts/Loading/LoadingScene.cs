@@ -43,8 +43,7 @@ public class LoadingScene : MonoBehaviour
 
     private IEnumerator LoadSceneAsync(string nameScene)
     {
-        _loadingScreen = LoadingScreen.Instance;
-        if (_loadingScreen != null) 
+        if (_loadingScreen != null)
             yield return StartCoroutine(_loadingScreen.Show());
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nameScene, LoadSceneMode.Single);
