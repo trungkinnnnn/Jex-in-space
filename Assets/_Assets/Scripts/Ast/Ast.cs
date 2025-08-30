@@ -8,7 +8,7 @@ public class Ast : MonoBehaviour
 {
     // WaveSpawner
     private System.Action OnDestroyAst;
-    // PlayerInventory
+    // PlayerInventory, CheckingAstTutorial
     public static System.Action<int> AddScoreOnDie;
 
     public AsteroidType type = AsteroidType.AstNormal;

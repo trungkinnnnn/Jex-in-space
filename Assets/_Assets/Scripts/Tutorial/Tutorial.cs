@@ -8,6 +8,8 @@ using UnityEngine.Playables;
 
 public class Tutorial : MonoBehaviour
 {
+    public static System.Action OnTutorialInGame;
+
     [Header("OBJ")]
     [SerializeField] GameObject _player;
     [SerializeField] GameObject _wave;
@@ -45,6 +47,7 @@ public class Tutorial : MonoBehaviour
     [Header("Audio")]
     [SerializeField] List<AudioClip> _clips;
     [SerializeField] AudioClip _clipFire;
+    [SerializeField] AudioClip _clipClick;
     public float volume = 1f;
 
     [Header("Canvas")]
@@ -120,6 +123,7 @@ public class Tutorial : MonoBehaviour
 
     private void ActionNextStory()
     {
+        AudioSFX.Instance.PlayAudioOneShortOneClip(_clipClick, 1.5f);
         AudioBGMManager.Instance.SetActive(false);
         StartCoroutine(NextStory());
     }
@@ -134,6 +138,7 @@ public class Tutorial : MonoBehaviour
         yield return new WaitForSeconds(1f);
         _imageTransforms[0].DOAnchorPos(_positionEndImage[0], 1f).SetEase(Ease.InQuad);
         AudioSFX.Instance.PlayAudioOneShortOneClip(_clips[0], volume);
+        
     }
 
     private void SetUp()
@@ -156,6 +161,7 @@ public class Tutorial : MonoBehaviour
     {
         if(_index < _imageTransforms.Count)
         {
+            AudioSFX.Instance.PlayAudioOneShortOneClip(_clipClick, 1.5f);
             _imageTransforms[_index].DOAnchorPos(_positionEndImage[_index], 1f).SetEase(Ease.InQuad);
             AudioSFX.Instance.PlayAudioOneShortOneClip(_clips[_index], volume);
             if(_index == 3) AudioSFX.Instance.PlayAudioOneShortOneClip(_clipFire, volume);
@@ -175,6 +181,7 @@ public class Tutorial : MonoBehaviour
     
     private void ActionNextIngameTutorial()
     {
+        AudioSFX.Instance.PlayAudioOneShortOneClip(_clipClick, 1.5f);
         StartCoroutine(SetUpIngameTutorial());
     }
 
@@ -189,6 +196,6 @@ public class Tutorial : MonoBehaviour
         yield return new WaitForSeconds(3f);
         _cameraAnimator.enabled = true;
         _timeline.Play();
-        
+        OnTutorialInGame?.Invoke();
     }
 }
