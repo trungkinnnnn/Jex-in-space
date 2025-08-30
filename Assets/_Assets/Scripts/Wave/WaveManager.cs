@@ -38,6 +38,7 @@ public class WaveManager : MonoBehaviour
 
     private void SetTextAlphaZero()
     {
+        if (_textMeshProAmorBox == null) return;
         Color color = _textMeshProAmorBox.color;
         color.a = _alphaStart;
         _textMeshProAmorBox.color = color;

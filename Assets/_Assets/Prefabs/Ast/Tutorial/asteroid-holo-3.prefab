@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8250895330669300315}
   - component: {fileID: 5660679474853098267}
   - component: {fileID: 2192176600189241494}
+  - component: {fileID: 5620554768173186659}
+  - component: {fileID: 4224275526701503039}
   m_Layer: 7
   m_Name: asteroid-holo-3
   m_TagString: Untagged
@@ -73,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -313323977
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ddc9f6def9299db47a00649a787c105a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -123,3 +125,44 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5620554768173186659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6470891059248719901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f3f7a7ffd2ddc4fbee430f70a45484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementData: {fileID: 11400000, guid: d172a252030af314180fa05c68b99c5a, type: 2}
+--- !u!114 &4224275526701503039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6470891059248719901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517faf8efb73eb342bb2755ffec01530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  _objBroken: {fileID: 0}
+  _effectLight2DExplosion: {fileID: 8486099257211429435, guid: 5cc2945671c72cd41925a87c5977b4c8, type: 3}
+  _effectAniDestroy: {fileID: 7960218921950989236, guid: 32e22ee9372b2e34fa5d42c2767f6a54, type: 3}
+  hp: 1
+  radiusExplosion: 0.6
+  _coinData: {fileID: 0}
+  _coinPrefab: {fileID: 0}
+  _shakeData: {fileID: 0}
+  _score: 1
+  _audioDataHit: {fileID: 11400000, guid: e51bc3cd97efa944488be1be03e328cc, type: 2}
+  _audioImpact: {fileID: 11400000, guid: f6d8bbf931c80354daea0598ed7919db, type: 2}
+  _audioBreak: {fileID: 11400000, guid: b1e0e2aca4955c546a0dd0acec783f2d, type: 2}
+  _audioCrack: {fileID: 0}
+  volumeNormal: 1
+  volumeExplosion: 1

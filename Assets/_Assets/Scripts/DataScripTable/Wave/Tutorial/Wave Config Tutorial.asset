@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316b1d3deebe17741847f6d2a834767f, type: 3}
+  m_Name: Wave Config Tutorial
+  m_EditorClassIdentifier: 
+  bigAts:
+    totalCount: 0
+    countUpNextWave: 0
+    delayBetweenBatch: 1
+    score: 1
+  mediumAts:
+    totalCount: 0
+    countUpNextWave: 0
+    delayBetweenBatch: 1
+    score: 1
+  smallAts:
+    totalCount: 30
+    countUpNextWave: 0
+    delayBetweenBatch: 3
+    score: 1
+  goldAts:
+    totalCount: 0
+    countUpNextWave: 0
+    delayBetweenBatch: 1
+    score: 1
+  explosionAst:
+    totalCount: 0
+    countUpNextWave: 0
+    delayBetweenBatch: 1
+    score: 1
+  itemHealth:
+    totalCount: 0
+    countUpNextWave: 0
+    delayBetweenBatch: 1
+    score: 1
+  amorBox:
+    totalCount: 0
+    countUpNextWave: 0
+    delayBetweenBatch: 1
+    score: 1
+  spawnIntervalTime: 7
+  spawnDownEvery3Wave: 0.5
+  minSpawnInterval: 5
+  totalAst: 30
+  upTotalNextWave: 5
+  timeNextWave: 10

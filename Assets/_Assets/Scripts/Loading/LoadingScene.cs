@@ -44,7 +44,7 @@ public class LoadingScene : MonoBehaviour
     private IEnumerator LoadSceneAsync(string nameScene)
     {
         if (_loadingScreen != null)
-            yield return StartCoroutine(_loadingScreen.Show());
+            yield return StartCoroutine(_loadingScreen.ShowCircle());
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nameScene, LoadSceneMode.Single);
         asyncLoad.allowSceneActivation = false;
@@ -58,7 +58,7 @@ public class LoadingScene : MonoBehaviour
                 yield return new WaitForSeconds(_timeWait);
 
                 _loadingScreen = LoadingScreen.Instance;
-                if (_loadingScreen != null) yield return StartCoroutine(_loadingScreen.Hide());
+                if (_loadingScreen != null) yield return StartCoroutine(_loadingScreen.HideCircle());
                 _hideShow = true;
                 _isloading = false;
             }

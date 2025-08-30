@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_Assets/Scenes/HomeScreen.unity
     guid: 409b09205fad36645a7cbd00f89296c9
   - enabled: 1
+    path: Assets/_Assets/Scenes/Tutorial.unity
+    guid: 2dc7376072dcef3468f9928505cb4235
+  - enabled: 1
     path: Assets/_Assets/Scenes/InGameScreen.unity
     guid: e50636503eab7d64ea82b8f7da4670c2
   m_configObjects: {}

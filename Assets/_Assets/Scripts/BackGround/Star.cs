@@ -9,7 +9,7 @@ public class Star : MonoBehaviour
 
     private struct StarState
     {
-        public Vector3 position;
+        public Vector3 localPosition;
         public Vector3 direction;
         public float timeLive;
         public float timeRemaining;
@@ -34,7 +34,7 @@ public class Star : MonoBehaviour
             StarState s = new StarState();
             s._sr = obj.GetComponent<SpriteRenderer>();
             Reset_Star(ref s, i++);
-            s.position = obj.transform.position;
+            s.localPosition = obj.transform.localPosition;
             starStates.Add(s);
         }
     }
@@ -46,14 +46,14 @@ public class Star : MonoBehaviour
             var s = starStates[i];
             UpdateStar(ref s, i);
             starStates[i] = s;
-            _starObjs[i].transform.position = s.position;
+            _starObjs[i].transform.localPosition = s.localPosition;
         }    
 
     }
 
     private void UpdateStar(ref StarState s, int index)
     {
-        s.position += s.direction * s.speedStar * Time.deltaTime;
+        s.localPosition += s.direction * s.speedStar * Time.deltaTime;
 
         s.timeRemaining -= Time.deltaTime;
         if (s.timeRemaining < 0f)
@@ -83,7 +83,7 @@ public class Star : MonoBehaviour
             return;
         }
 
-        Vector3 viewPort = _camera.WorldToViewportPoint(star.position);
+        Vector3 viewPort = _camera.WorldToViewportPoint(star.localPosition);
         
         if (viewPort.x < -minPosition || viewPort.x > maxPosition) star.direction.x *= -1;
         if (viewPort.y < -minPosition || viewPort.y > maxPosition) star.direction.y *= -1;

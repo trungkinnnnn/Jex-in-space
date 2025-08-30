@@ -6,6 +6,7 @@
         _Radius ("Radius", Range(0,1)) = 1
         _Feather ("Feather", Range(0.001,0.5)) = 0.05
         _Invert ("Invert (0=normal,1=invert)", Float) = 0
+        _Alpha ("Alpha Fade", Range(0,1)) = 1    // thêm alpha chung
     }
     SubShader
     {
@@ -25,6 +26,7 @@
             float _Radius;
             float _Feather;
             float _Invert;
+            float _Alpha;
 
             struct appdata
             {
@@ -51,24 +53,24 @@
                 float2 uv = i.uv;
                 float2 center = float2(0.5, 0.5);
 
-                // aspect ratio để giữ hình tròn
+                fixed4 col = tex2D(_MainTex, uv);
+
+                // --- Radius mask như cũ ---
                 float aspect = _ScreenParams.x / _ScreenParams.y;
                 float2 diff = uv - center;
                 diff.x *= aspect;
                 float dist = length(diff);
 
-                // alpha mask cơ bản
                 float alpha = smoothstep(_Radius, _Radius - _Feather, dist);
 
-                // fix hở chấm
                 if (_Radius <= 0.0001) alpha = 0; 
                 if (_Radius >= 1.0) alpha = 1;
 
-                // invert nếu cần
                 if (_Invert > 0.5) alpha = 1.0 - alpha;
 
-                fixed4 col = tex2D(_MainTex, uv);
-                col.a *= alpha;
+                // Nhân thêm alpha tổng
+                col.a *= alpha * _Alpha;
+
                 return col;
             }
             ENDCG

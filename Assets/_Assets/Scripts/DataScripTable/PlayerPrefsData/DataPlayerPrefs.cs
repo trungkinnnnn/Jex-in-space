@@ -13,4 +13,7 @@ public static class DataPlayerPrefs
 
     // Data
     public static string _pathSaveData = "GunData.json";
+
+    // FirstPlay
+    public static string fistPlay = "FirstPlay";
 }

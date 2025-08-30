@@ -490,6 +490,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3047202377083330134, guid: 0d1d66a1993855948a3265e821439b2c, type: 3}
+      propertyPath: m_Color.a
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047202377083330134, guid: 0d1d66a1993855948a3265e821439b2c, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047202377083330134, guid: 0d1d66a1993855948a3265e821439b2c, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}

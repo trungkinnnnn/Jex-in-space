@@ -48,6 +48,11 @@ public class AudioSFX : MonoBehaviour
         _audio.PlayOneShot(clip, volume * per);
     }
 
+    public void PlayAudioOneShortOneClip(AudioClip clip, float per)
+    {
+        _audio.PlayOneShot(clip, volume * per);
+    }
+
     public IEnumerator PlayAudioVolumeLoop(AudioSource audio, AudioClip clip, float per)
     {
         _listAudio.Add((audio, per));

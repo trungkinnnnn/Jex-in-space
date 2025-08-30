@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1640923793819955524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1640923793819955525}
+  - component: {fileID: 1640923793819955522}
+  m_Layer: 0
+  m_Name: AsteroiHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1640923793819955525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640923793819955524}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8638631733465947570}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1640923793819955522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640923793819955524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a83f6e35b021448a19342d986e9fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefabsWarningRed: {fileID: 1118471225010676909, guid: 0d8b76d3dc242054f8d64f8dbe962676, type: 3}
+  _prefabsWarningOrange: {fileID: 3556102951333708680, guid: 4b9038d3f023d8643895722f528ec9ab, type: 3}
+  _playerTransform: {fileID: 0}
+  _asteroidLayerMark:
+    serializedVersion: 2
+    m_Bits: 128
+  _warningRadius: 1.3
+  _viewPortMinPlayer: 0.1
+  _viewPortMaxPlayer: 0.9
+  _viewPortMinAst: 0.05
+  _viewPortMaxAst: 1.05
+  _viewPortEdgeOffset: 0.02
+  _checkInterval: 0.5
+  _overlapBuffSize: 15
+--- !u!1 &8638631733465947564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8638631733465947570}
+  - component: {fileID: 8638631733465947565}
+  - component: {fileID: 8638631733465947571}
+  m_Layer: 0
+  m_Name: WaveTutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8638631733465947570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8638631733465947564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1640923793819955525}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8638631733465947565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8638631733465947564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1381849a1584aa048884050cad8d3fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waveData: {fileID: 11400000, guid: 989877e646e3f504cb3249936084f28d, type: 2}
+  _waveConfig: {fileID: 11400000, guid: f9cb20b4223f2d64887d5a8d069e2d07, type: 2}
+  _playerTransform: {fileID: 0}
+  _textMeshProAmorBox: {fileID: 0}
+  _asteroiHolder: {fileID: 1640923793819955525}
+  _gameSpeed: 2
+  _delayStart: 5
+--- !u!114 &8638631733465947571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8638631733465947564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd072fd3d00ba8a4abf482c679920427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zDepth: 10
