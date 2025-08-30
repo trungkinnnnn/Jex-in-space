@@ -18,7 +18,7 @@ MonoBehaviour:
     priceCoin: 0
     priceMoney: 0
     unlock: 1
-    equip: 0
+    equip: 1
     gunPrefabs: {fileID: 9115486880346418809, guid: 881ec5ebcb8a7ad48b49aafbf01ffb33, type: 3}
     bulletPrefabs: {fileID: 8112682384249088649, guid: b277be9936651ac4bb0de435bd319151, type: 3}
   - idGun: 1

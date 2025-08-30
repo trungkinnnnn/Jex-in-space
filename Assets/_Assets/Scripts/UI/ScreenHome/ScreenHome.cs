@@ -11,7 +11,8 @@ public class ScreenHome : MonoBehaviour
     private static string _para_Raius_Name = "_Radius";
     private static string _para_Alpha_Name = "_Alpha";
 
-    private const string _SCENE_NAME = "Tutorial";
+    private const string _SCENE_NAME_TUTORIAL = "Tutorial";
+    private const string _SCENE_NAME_INGAME = "InGameScreen";
 
     private void Start()
     {
@@ -39,7 +40,7 @@ public class ScreenHome : MonoBehaviour
     public void ActionNextSceneInGame()
     {
         AudioSystem.Instance.PlayAudioClick();
-        LoadingScene.Instance.LoadingScence(_SCENE_NAME);
+        LoadingScene.Instance.LoadingScence(_SCENE_NAME_INGAME);
     }    
 
     private void SetAlpha(float alpha)
@@ -53,7 +54,7 @@ public class ScreenHome : MonoBehaviour
     {
         int first = PlayerPrefs.GetInt(DataPlayerPrefs.fistPlay, 0);
         if (first == 0)
-            SceneManager.LoadScene(_SCENE_NAME);
+            SceneManager.LoadScene(_SCENE_NAME_TUTORIAL);
     }
 
 }

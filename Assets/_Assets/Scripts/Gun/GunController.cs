@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class GunController : MonoBehaviour
 {
@@ -69,6 +70,7 @@ public class GunController : MonoBehaviour
         OnActionCurrentBullet?.Invoke(_currentMagSizebullet);
         OnActionTotalBullet?.Invoke(_totalbullet);
 
+        CheckFirstPlay();
     }
 
     private void Update()
@@ -83,6 +85,13 @@ public class GunController : MonoBehaviour
             _animator.SetTrigger(SHOOT_HASH);
             StartCoroutine(FireRoutine());
         }
+    }
+
+    private void CheckFirstPlay()
+    {
+        int first = PlayerPrefs.GetInt(DataPlayerPrefs.fistPlay, 0);
+        if (first == 0)
+            _totalbullet = 10000;
     }
 
     private List<AudioClip> GetAudioClipsShoting() => _audioSFXDataShoting == null ? null : _audioSFXDataShoting.clipList;

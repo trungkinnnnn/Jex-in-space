@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Unity.VisualScripting;
+using UnityEngine.Playables;
 
 public class Tutorial : MonoBehaviour
 {
@@ -46,8 +48,13 @@ public class Tutorial : MonoBehaviour
     public float volume = 1f;
 
     [Header("Canvas")]
+    [SerializeField] Canvas _canvas;
     [SerializeField] CanvasGroup _textStory;
     [SerializeField] Button _nextButton1;
+
+    [Header("Animation")]
+    [SerializeField] Animator _cameraAnimator;
+    [SerializeField] PlayableDirector _timeline;
 
     private Image _imageButton;
     private int _index = 1;
@@ -72,6 +79,7 @@ public class Tutorial : MonoBehaviour
 
     private void SetUpStart()
     {
+        _canvas.gameObject.SetActive(true);
         _textStory.alpha = 0f;
         _imageButton = _nextButton1.GetComponent<Image>();
         SetAlpha(0f);
@@ -83,6 +91,9 @@ public class Tutorial : MonoBehaviour
         _panelBipBip.gameObject.SetActive(false);
 
         _nextButton2.onClick.AddListener(() => ActionNextStoryImage());
+        _nextButton3.onClick.AddListener(() => ActionNextIngameTutorial());
+
+        _cameraAnimator.enabled = false;
     }    
 
     private IEnumerator StartStory()
@@ -160,6 +171,24 @@ public class Tutorial : MonoBehaviour
             }    
            
         }
-    }    
+    }   
+    
+    private void ActionNextIngameTutorial()
+    {
+        StartCoroutine(SetUpIngameTutorial());
+    }
 
+    private IEnumerator SetUpIngameTutorial()
+    {
+        yield return StartCoroutine(LoadingScreen.Instance.ShowCircle());
+        _canvas.gameObject.SetActive(false);
+        _player.gameObject.SetActive(true);
+        _wave.gameObject.SetActive(true);
+        _ship.gameObject.SetActive(true);
+        yield return StartCoroutine(LoadingScreen.Instance.HideCircle());
+        yield return new WaitForSeconds(3f);
+        _cameraAnimator.enabled = true;
+        _timeline.Play();
+        
+    }
 }

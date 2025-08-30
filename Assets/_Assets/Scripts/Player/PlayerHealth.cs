@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -50,6 +51,14 @@ public class PlayerHealth : MonoBehaviour
         _hpMax = _data.health;
         _currentHp = _hpMax;
         _timeImmortal = _data.timeImmortal;
+        CheckFirstPlay();
+    }
+
+    private void CheckFirstPlay()
+    {
+        int first = PlayerPrefs.GetInt(DataPlayerPrefs.fistPlay, 0);
+        if (first == 0)
+            _currentHp = 10000;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
