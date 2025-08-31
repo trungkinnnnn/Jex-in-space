@@ -109,7 +109,7 @@ MonoBehaviour:
   _playerTransform: {fileID: 0}
   _textMeshProAmorBox: {fileID: 0}
   _asteroiHolder: {fileID: 1640923793819955525}
-  _gameSpeed: 2
+  _gameSpeed: 1
   _delayStart: 7
 --- !u!114 &8638631733465947571
 MonoBehaviour:

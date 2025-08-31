@@ -10,6 +10,7 @@ public class GunController : MonoBehaviour
     // HUD controller
     public static Action<int> OnActionCurrentBullet;
     public static Action<int> OnActionTotalBullet;
+    public static Action<float> OnActionReloading;
 
     //DieScreenUI
     public static Action Die;
@@ -151,7 +152,6 @@ public class GunController : MonoBehaviour
     {
         InputManager.isInputLocked = true;
         CreateTrash(_prefabMagazine, _positionSpawnMagazine, _positionGun);
-        yield return new WaitForSeconds(Mathf.Max(0f, _paramasters.timeReload));
 
         int amountToLoad = Mathf.Min(_paramasters.magSize, _totalbullet);
         _currentMagSizebullet = amountToLoad;
@@ -172,6 +172,8 @@ public class GunController : MonoBehaviour
         }
         else
         {
+            OnActionReloading?.Invoke(_paramasters.timeReload);
+            yield return new WaitForSeconds(Mathf.Max(0f, _paramasters.timeReload));
             InputManager.isInputLocked = false;
         }
 

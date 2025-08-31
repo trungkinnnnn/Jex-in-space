@@ -5,6 +5,14 @@ using UnityEngine.Rendering;
 
 public class PausePhysic2D : MonoBehaviour
 {
+
+    public static PausePhysic2D Instance;
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+    }
+
     private class RigibodyState2D
     {
         public Rigidbody2D rb;

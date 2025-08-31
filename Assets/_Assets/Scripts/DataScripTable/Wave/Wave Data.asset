@@ -42,6 +42,10 @@ MonoBehaviour:
   - {fileID: 7650081949019583947, guid: 394dc678542355e42b8272ae05c3f325, type: 3}
   - {fileID: 8480982556268782696, guid: 7cb0e2bbf3b902b419ec163cfd9722dd, type: 3}
   - {fileID: 3637614284199269361, guid: cc91b4d054f2c1248ac328a79fe425d3, type: 3}
+  - {fileID: 2039777122048623161, guid: 961e3d4b1930fdd4e8dbca6ca8e56bfe, type: 3}
+  - {fileID: 2039777122048623161, guid: e1da22a328e565b4a8742e9ef57b9d0a, type: 3}
+  - {fileID: 2039777122048623161, guid: d5c773bfeb9e4d0498a293688fd13916, type: 3}
+  - {fileID: 2039777122048623161, guid: 74e76ee2578fadc4383ababb46954152, type: 3}
   goldAts:
   - {fileID: 4062856154581699655, guid: 2706cc4103d3deb49a511064817a758f, type: 3}
   explosionAst:

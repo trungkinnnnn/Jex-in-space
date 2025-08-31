@@ -10142,6 +10142,8 @@ MonoBehaviour:
   _damage: 1
   _healAmount: 1
   _animatorBreak: {fileID: 1619543564680379326}
+  _canvasGroupHit: {fileID: 0}
+  _keepPlayButton: {fileID: 0}
   addForceImpact: 0.1
   addForceStay: 0.01
   impactSpeedMax: 0.4

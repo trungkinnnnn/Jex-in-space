@@ -20,14 +20,13 @@ public class Tutorial_InGame : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioClip _clipClick;
 
-    private PausePhysic2D _pausePhysic2D;
+  
     private float _rotationZ = 44f;
 
     private bool _showTutorial_1 = false;
 
     private void Start()
     {
-        _pausePhysic2D = GetComponent<PausePhysic2D>();
         SetUp();
     }
 
@@ -75,7 +74,7 @@ public class Tutorial_InGame : MonoBehaviour
         if(zAngle > _rotationZ - 5f && zAngle < _rotationZ + 5f)
         {
             InputManager.isInputLocked = true;
-            _pausePhysic2D.PauseGame();
+            PausePhysic2D.Instance.PauseGame();
             _canvasTutorial_1.DOFade(1f, 2f).SetEase(Ease.InQuad).SetUpdate(true);
             _showTutorial_1 = false;
         }
@@ -90,7 +89,7 @@ public class Tutorial_InGame : MonoBehaviour
     private IEnumerator SetUpTutorial()
     {
         InputManager.isInputLocked = false;
-        _pausePhysic2D.ResumeGame();
+        PausePhysic2D.Instance.ResumeGame();
         _canvasTutorial_1.DOFade(0f, 1f).SetEase(Ease.Linear).SetUpdate(true);
         yield return new WaitForSeconds(1.5f);
         _canvasTutorial_2.DOFade(1f, 2f).SetEase(Ease.InQuad);

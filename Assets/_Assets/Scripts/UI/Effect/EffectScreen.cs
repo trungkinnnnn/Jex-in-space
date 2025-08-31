@@ -1,12 +1,14 @@
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class EffectScreen : MonoBehaviour
 {
     public static System.Action<float, float> onTakeDamage;
 
-    [SerializeField] Material _mat;
+    [SerializeField] Material _matImage;
     [SerializeField] Image _imageEffect;
     [SerializeField] Sprite _spriteEffectHealth;
     [SerializeField] Sprite _spriteEffectTakeDamage;
@@ -26,8 +28,8 @@ public class EffectScreen : MonoBehaviour
     private void Start()
     {
         SetAlpha(0f);
-        _mat.SetFloat(_para_IntensityX, 0f);
-        _mat.SetFloat(_para_IntensityY, 0f);
+        _matImage.SetFloat(_para_IntensityX, 0f);
+        _matImage.SetFloat(_para_IntensityY, 0f);
     }
 
     private void OnEnable()
@@ -85,14 +87,14 @@ public class EffectScreen : MonoBehaviour
 
         Sequence seq = DOTween.Sequence();
 
-        seq.Append(DOTween.To(() => _mat.GetFloat(_para_IntensityX), x => _mat.SetFloat(_para_IntensityX, x), targetX, duration[0]));
-        seq.Join(DOTween.To(() => _mat.GetFloat(_para_IntensityY), y => _mat.SetFloat(_para_IntensityY, y), targetY, duration[0]));
+        seq.Append(DOTween.To(() => _matImage.GetFloat(_para_IntensityX), x => _matImage.SetFloat(_para_IntensityX, x), targetX, duration[0]));
+        seq.Join(DOTween.To(() => _matImage.GetFloat(_para_IntensityY), y => _matImage.SetFloat(_para_IntensityY, y), targetY, duration[0]));
         seq.Join(_imageEffect.DOFade(1f, duration[0]));
 
         seq.AppendInterval(durationHold);
 
-        seq.Append(DOTween.To(() => _mat.GetFloat(_para_IntensityX), x => _mat.SetFloat(_para_IntensityX, x), startX, duration[1]));
-        seq.Join(DOTween.To(() => _mat.GetFloat(_para_IntensityY), y => _mat.SetFloat(_para_IntensityY, y), startY, duration[1]));
+        seq.Append(DOTween.To(() => _matImage.GetFloat(_para_IntensityX), x => _matImage.SetFloat(_para_IntensityX, x), startX, duration[1]));
+        seq.Join(DOTween.To(() => _matImage.GetFloat(_para_IntensityY), y => _matImage.SetFloat(_para_IntensityY, y), startY, duration[1]));
         seq.Join(_imageEffect.DOFade(0f, duration[1]));
 
         seq.Play();
@@ -105,6 +107,6 @@ public class EffectScreen : MonoBehaviour
         Color color = _imageEffect.color;
         color.a = alpha;
         _imageEffect.color = color;
-    }    
-
+    }
+    
 }

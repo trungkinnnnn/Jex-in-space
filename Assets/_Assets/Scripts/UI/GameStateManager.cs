@@ -24,7 +24,7 @@ public class GameStateManager : MonoBehaviour
 
     public float timeOffScreen = 0.4f;
 
-    private PausePhysic2D _pausePhysic;
+   
 
     private void Awake()
     {
@@ -38,8 +38,6 @@ public class GameStateManager : MonoBehaviour
         _canvasGroupInGame = _screenInGame.GetComponent<CanvasGroup>();
         _canvasGroupPauseGame = _screenPauseGame.GetComponent<CanvasGroup>();
         _canvasGroupEmpty = _sceenEmpty.GetComponent<CanvasGroup>();
-
-        _pausePhysic = GetComponent<PausePhysic2D>();
     }
    
 
@@ -49,7 +47,7 @@ public class GameStateManager : MonoBehaviour
         AudioSystem.Instance.PlayAudioClick();
 
         Debug.Log("Pause Game");
-        if(_pausePhysic != null) { _pausePhysic.PauseGame(); }
+        PausePhysic2D.Instance.PauseGame();
 
         StartCoroutine(OffScreen(_canvasGroupInGame, _screenInGame));
         StartCoroutine(OnScreen(_canvasGroupEmpty, _sceenEmpty));
@@ -72,7 +70,7 @@ public class GameStateManager : MonoBehaviour
         yield return StartCoroutine(OffScreen(_canvasGroupPauseGame, _screenPauseGame));
         StartCoroutine(OffScreen(_canvasGroupEmpty, _sceenEmpty));
 
-        if (_pausePhysic != null) { _pausePhysic.ResumeGame(); }
+        PausePhysic2D.Instance.ResumeGame(); 
         StartCoroutine(OnScreen(_canvasGroupInGame, _screenInGame));
     }    
 
