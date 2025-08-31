@@ -68,9 +68,9 @@ public class EffectScreen : MonoBehaviour
 
         Sequence seq = DOTween.Sequence();
 
-        seq.Append(_imageEffect.DOFade(1f, duration[0]));
+        seq.Append(_imageEffect.DOFade(1f, duration[0])).SetEase(Ease.OutQuad);
         seq.AppendInterval(durationHold);
-        seq.Append(_imageEffect.DOFade(0f, duration[1]));
+        seq.Append(_imageEffect.DOFade(0f, duration[1])).SetEase(Ease.OutQuad);
 
         seq.Play();
     }    
@@ -87,15 +87,15 @@ public class EffectScreen : MonoBehaviour
 
         Sequence seq = DOTween.Sequence();
 
-        seq.Append(DOTween.To(() => _matImage.GetFloat(_para_IntensityX), x => _matImage.SetFloat(_para_IntensityX, x), targetX, duration[0]));
-        seq.Join(DOTween.To(() => _matImage.GetFloat(_para_IntensityY), y => _matImage.SetFloat(_para_IntensityY, y), targetY, duration[0]));
-        seq.Join(_imageEffect.DOFade(1f, duration[0]));
+        seq.Append(DOTween.To(() => _matImage.GetFloat(_para_IntensityX), x => _matImage.SetFloat(_para_IntensityX, x), targetX, duration[0])).SetEase(Ease.OutQuad);
+        seq.Join(DOTween.To(() => _matImage.GetFloat(_para_IntensityY), y => _matImage.SetFloat(_para_IntensityY, y), targetY, duration[0])).SetEase(Ease.OutQuad);
+        seq.Join(_imageEffect.DOFade(1f, duration[0])).SetEase(Ease.OutQuad);
 
         seq.AppendInterval(durationHold);
 
-        seq.Append(DOTween.To(() => _matImage.GetFloat(_para_IntensityX), x => _matImage.SetFloat(_para_IntensityX, x), startX, duration[1]));
-        seq.Join(DOTween.To(() => _matImage.GetFloat(_para_IntensityY), y => _matImage.SetFloat(_para_IntensityY, y), startY, duration[1]));
-        seq.Join(_imageEffect.DOFade(0f, duration[1]));
+        seq.Append(DOTween.To(() => _matImage.GetFloat(_para_IntensityX), x => _matImage.SetFloat(_para_IntensityX, x), startX, duration[1])).SetEase(Ease.OutQuad);
+        seq.Join(DOTween.To(() => _matImage.GetFloat(_para_IntensityY), y => _matImage.SetFloat(_para_IntensityY, y), startY, duration[1])).SetEase(Ease.OutQuad);
+        seq.Join(_imageEffect.DOFade(0f, duration[1])).SetEase(Ease.OutQuad);
 
         seq.Play();
 

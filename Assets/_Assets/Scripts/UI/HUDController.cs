@@ -1,4 +1,5 @@
 
+using DG.Tweening;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -18,6 +19,20 @@ public class HUDController : MonoBehaviour
     [SerializeField] Image _hpSprite;
     [SerializeField] List<Sprite> _hpSpriteList;
     [SerializeField] Animator _hpAnimator;
+
+    [Header("ButtonOpenSkill")]
+    [SerializeField] Button _onSkillButton;
+    public float openButtonRotationZ = 5f;
+    public float closeButtonRotationZ = -5f; 
+
+    [Header("Panel")]
+    [SerializeField] RectTransform _panelRect;
+    public float sizeOpen = 260f;
+    public float sizeClose = 32.5f;
+    public float duration = 1f;
+    public float timeClose = 3f;
+    private bool _isOpen = false;
+
     private static int HASH_ANI_HP = Animator.StringToHash("Hp");
 
     private int _highScore;
@@ -29,6 +44,8 @@ public class HUDController : MonoBehaviour
     {
         _highScore = PlayerPrefs.GetInt(DataPlayerPrefs.para_HIGHSCORE, 0);
         _highScoreText.text = _highScore.ToString();
+
+        _onSkillButton.onClick.AddListener(() => ActionOpenSkill());
     }
 
 
@@ -90,6 +107,20 @@ public class HUDController : MonoBehaviour
         _hpAnimator.SetInteger(HASH_ANI_HP, hp);
     }
 
-   
+   private void ActionOpenSkill()
+   {
+        _isOpen = !_isOpen;
+        if(_isOpen)
+        {
+            _panelRect.DOSizeDelta(new Vector2(_panelRect.sizeDelta.x, sizeOpen), duration).SetEase(Ease.OutQuad);
+            _onSkillButton.transform.DOLocalRotate(new Vector3(0f, 0f, closeButtonRotationZ), duration).SetEase(Ease.OutQuad);
+        }       
+        else
+        {
+            _panelRect.DOSizeDelta(new Vector2(_panelRect.sizeDelta.x, sizeClose), duration).SetEase(Ease.OutQuad);
+            _onSkillButton.transform.DOLocalRotate(new Vector3(0f, 0f, openButtonRotationZ), duration).SetEase(Ease.OutQuad);
+        }    
+
+    }
 
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public static class InputManager
 {
@@ -12,19 +13,17 @@ public static class FireRate
     public static bool canShoot = true;
 }
 
-public static class SkillShootActive
-{
-   
-}
-
-public class ShootSignal : MonoBehaviour
+public class PlayerSkill : MonoBehaviour
 {
     public static bool fire = false;
     public static bool skillShootOn = false;
 
     public static Action OnSkillShoot;
 
-    [Header("Skill")]
+    [Header("Button")]
+    [SerializeField] Button _buttonSkillShoot;
+
+    [Header("SkillShoot")]
     public int magSizeBulletSkill = 30;
     public float fireRateSkill = 0.2f;
     public float forceToque = 0.03f;
@@ -37,6 +36,8 @@ public class ShootSignal : MonoBehaviour
     {
         _magSkill = magSizeBulletSkill;
         _playerMovement = GetComponent<PlayerMovement>();
+
+        if (_buttonSkillShoot != null) _buttonSkillShoot.onClick.AddListener(() => ActionSkillShootOn());
         
     }
 

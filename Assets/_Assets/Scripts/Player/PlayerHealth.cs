@@ -143,7 +143,7 @@ public class PlayerHealth : MonoBehaviour
         InputManager.isInputLocked = true;
         PausePhysic2D.Instance.PauseGame();
         _canvasGroupHit.gameObject.SetActive(true);
-        _canvasGroupHit.DOFade(1f, 2f).SetEase(Ease.InQuad).SetUpdate(true);
+        _canvasGroupHit.DOFade(1f, 2f).SetEase(Ease.OutQuad).SetUpdate(true);
         _firstPlay = 2;
         PlayerPrefs.SetInt(DataPlayerPrefs.fistPlay, _firstPlay);
         PlayerPrefs.Save();
@@ -158,7 +158,7 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator HideWarningFirstHit()
     {
-        _canvasGroupHit.DOFade(0f, 1f).SetEase(Ease.InQuad).SetUpdate(true);
+        _canvasGroupHit.DOFade(0f, 1f).SetEase(Ease.OutQuad).SetUpdate(true);
         yield return new WaitForSecondsRealtime(1.5f);
         InputManager.isInputLocked = false;
         PausePhysic2D.Instance.ResumeGame();

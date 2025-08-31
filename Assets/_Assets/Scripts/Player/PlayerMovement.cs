@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (ShootSignal.fire && FireRate.canShoot)
+        if (PlayerSkill.fire && FireRate.canShoot)
         {
             Vector2 direction = (Vector2)transform.position - (Vector2)_positionForce.position;
             float now = Time.time;

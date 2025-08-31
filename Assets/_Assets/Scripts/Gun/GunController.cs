@@ -78,7 +78,7 @@ public class GunController : MonoBehaviour
     {
         if (InputManager.isInputLocked) return;
 
-        if (ShootSignal.fire && _currentMagSizebullet > 0 && FireRate.canShoot)
+        if (PlayerSkill.fire && _currentMagSizebullet > 0 && FireRate.canShoot)
         {
             AudioSFX.Instance.PlayAudioOneShortChangeVolume(GetAudioClipsShoting(), _upVolume);
             AudioSFX.Instance.PlayAudioOneShortChangeVolume(GetAudioClipsShellCas(), _upVolume + 1f);
@@ -124,7 +124,7 @@ public class GunController : MonoBehaviour
         }
         yield return new WaitForSeconds(Mathf.Max(0.01f, _paramasters.fireRate));
         FireRate.canShoot = true;
-        ShootSignal.fire = false;
+        PlayerSkill.fire = false;
     }
 
 
@@ -190,14 +190,14 @@ public class GunController : MonoBehaviour
     private void OnEnable()
     {
         BoxAmor.OnBoxBroken += HandleTakeAmor;
-        ShootSignal.OnSkillShoot  = FireRoutineSkill;
+        PlayerSkill.OnSkillShoot  = FireRoutineSkill;
         ShopGunScreenUI.UpdateData += UpdateData;
     }
 
     private void OnDisable()
     {
         BoxAmor.OnBoxBroken -= HandleTakeAmor;
-        ShootSignal.OnSkillShoot = null;
+        PlayerSkill.OnSkillShoot = null;
         ShopGunScreenUI.UpdateData -= UpdateData;
     }    
 
@@ -214,7 +214,7 @@ public class GunController : MonoBehaviour
 
         // Event
         OnActionTotalBullet?.Invoke(_totalbullet);
-        Debug.Log("Amor last : " + _totalbullet);
+        //Debug.Log("Amor last : " + _totalbullet);
     }
 
     private void FireRoutineSkill()

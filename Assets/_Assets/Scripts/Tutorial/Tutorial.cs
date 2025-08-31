@@ -136,7 +136,7 @@ public class Tutorial : MonoBehaviour
         SetUp();
         StartCoroutine(LoadingScreen.Instance.HideAlpha(1f));
         yield return new WaitForSeconds(1f);
-        _imageTransforms[0].DOAnchorPos(_positionEndImage[0], 1f).SetEase(Ease.InQuad);
+        _imageTransforms[0].DOAnchorPos(_positionEndImage[0], 1f).SetEase(Ease.OutQuad);
         AudioSFX.Instance.PlayAudioOneShortOneClip(_clips[0], volume);
         
     }
@@ -162,7 +162,7 @@ public class Tutorial : MonoBehaviour
         if(_index < _imageTransforms.Count)
         {
             AudioSFX.Instance.PlayAudioOneShortOneClip(_clipClick, 1.5f);
-            _imageTransforms[_index].DOAnchorPos(_positionEndImage[_index], 1f).SetEase(Ease.InQuad);
+            _imageTransforms[_index].DOAnchorPos(_positionEndImage[_index], 1f).SetEase(Ease.OutQuad);
             AudioSFX.Instance.PlayAudioOneShortOneClip(_clips[_index], volume);
             if(_index == 3) AudioSFX.Instance.PlayAudioOneShortOneClip(_clipFire, volume);
             _index++;

@@ -315,6 +315,7 @@ public class ShopGunScreenUI : MonoBehaviour
         _shopModuleSceenUI.SetTextCoin(coin);
     }
 
+
     // ActionUnlockGun
     public void ActionUnLockGun()
     {
@@ -362,6 +363,7 @@ public class ShopGunScreenUI : MonoBehaviour
     {
         _saveSystem.SaveData();
         PlayerPrefs.SetInt(DataPlayerPrefs.para_TOTALCOIN, _totalCoin);
+        PlayerPrefs.Save();
     }
 
 }
