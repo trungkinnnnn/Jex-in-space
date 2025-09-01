@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8b56f8f9a44004eb265cc9df07444c, type: 3}
   m_Name: Skill Data
   m_EditorClassIdentifier: 
-  price: c800000064000000
+  price: 64000000c8000000

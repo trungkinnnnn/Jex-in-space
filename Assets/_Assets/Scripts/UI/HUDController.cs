@@ -23,7 +23,11 @@ public class HUDController : MonoBehaviour
     [Header("ButtonOpenSkill")]
     [SerializeField] Button _onSkillButton;
     public float openButtonRotationZ = 5f;
-    public float closeButtonRotationZ = -5f; 
+    public float closeButtonRotationZ = -5f;
+
+    [Header("TextNumberSkill")]
+    [SerializeField] List<TextMeshProUGUI> _textNumberSkills;
+    [SerializeField] SkillController _skillController;
 
     [Header("Panel")]
     [SerializeField] RectTransform _panelRect;
@@ -39,12 +43,30 @@ public class HUDController : MonoBehaviour
     private int _score;
     private int _coin;
 
+    private void OnEnable()
+    {
+        RegisterEvents();
+        SetTextNumberSkill(_skillController.GetListNumberSkill());
+    }
+
+    private void OnDisable()
+    {
+        UnRegisterEvents();
+    }
+
+    public void SetTextNumberSkill(List<int> numberSkillList)
+    {
+        for(int i = 0; i < numberSkillList.Count; i++)
+        {
+            _textNumberSkills[i].text = numberSkillList[i].ToString();
+        }
+    }
+
 
     private void Start()
     {
         _highScore = PlayerPrefs.GetInt(DataPlayerPrefs.para_HIGHSCORE, 0);
         _highScoreText.text = _highScore.ToString();
-
         _onSkillButton.onClick.AddListener(() => ActionOpenSkill());
     }
 
@@ -53,15 +75,7 @@ public class HUDController : MonoBehaviour
     public int GetHighScore() => _highScore;
     public int GetCoin() => _coin;
 
-    private void OnEnable()
-    {
-        RegisterEvents();
-    }
 
-    private void OnDisable()
-    {
-        UnRegisterEvents();
-    }
     
     private void RegisterEvents()
     {

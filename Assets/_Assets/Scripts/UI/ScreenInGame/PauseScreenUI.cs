@@ -8,30 +8,27 @@ public class PauseScreenUI : MonoBehaviour
     [Header("Text")]
     [SerializeField] TextMeshProUGUI _textCoin;
     [SerializeField] TextMeshProUGUI _textScore;
+    [SerializeField] List<TextMeshProUGUI> _textSkills;
+
+    [Header("Script")]
+    [SerializeField] HUDController _hudScreen;
+    [SerializeField] SkillController _skillController;
 
     private void OnEnable()
     {
-        RegisterEvents();
+        HandleUpdateCoin();
+        HandleUpdateScore();
+        SetTextSkillNumber(_skillController.GetListNumberSkill());
     }
 
-    private void OnDisable()
+    private void SetTextSkillNumber(List<int> lists)
     {
-        UnRegisterEvents();
+        for(int i = 0; i < lists.Count; i++)
+        {
+            _textSkills[i].text = lists[i].ToString();
+        }
     }
-
-    private void RegisterEvents()
-    {
-        PlayerInventory.OnActionCoin += HandleUpdateCoin;
-        PlayerInventory.OnActionScore += HandleUpdateScore;
-    }
-
-    private void UnRegisterEvents()
-    {
-        PlayerInventory.OnActionCoin -= HandleUpdateCoin;
-        PlayerInventory.OnActionScore -= HandleUpdateScore; 
-    }
-
     
-    private void HandleUpdateCoin(int coin) => _textCoin.text = coin.ToString();
-    private void HandleUpdateScore(int score) => _textScore.text = score.ToString();
+    private void HandleUpdateCoin() => _textCoin.text = _hudScreen.GetCoin().ToString();
+    private void HandleUpdateScore() => _textScore.text = _hudScreen.GetScore().ToString();
 }

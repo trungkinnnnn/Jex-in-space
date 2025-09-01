@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,31 +19,38 @@ public class ShopModuleSceenUI : MonoBehaviour
 
     [Header("Text")]    
     [SerializeField] List<TextMeshProUGUI> _textBuyModules;
-    [SerializeField] List<TextMeshProUGUI> _textNumberModules;
-    private List<int> _counts = new List<int> {1, 1};
+    [SerializeField] List<TextMeshProUGUI> _textNumberSkills;
 
+    [Header("Script")]
+    [SerializeField] SkillController _skillController;
+    private List<int> _countSkills;
 
     private Dictionary<TypeModule, int> _dicModules = new();
-    private ShopGunScreenUI _shopGunScreenUI;
     private int _totalCoin;
+
+    private void OnEnable()
+    {
+        SetTextCoin();
+        SetTextNumberSkill(_skillController.GetListNumberSkill());
+    }
+
     private void Start()
     {
-        _shopGunScreenUI = GetComponent<ShopGunScreenUI>();
-        SetUpTotalCoin();
         SetUpText();
         AddModuleType();
         AddActionButtonBuys();
     }
 
-    private void SetUpTotalCoin()
+    private void SetTextCoin()
     {
         _totalCoin = PlayerPrefs.GetInt(DataPlayerPrefs.para_TOTALCOIN);
         _textTotalCoin.text = _totalCoin.ToString();
     }
 
-    public void SetTextCoin(int coin)
+    private void SetTextCoin(int totalCoin)
     {
-        _textTotalCoin.text = coin.ToString();
+        totalCoin = PlayerPrefs.GetInt(DataPlayerPrefs.para_TOTALCOIN);
+        _textTotalCoin.text = totalCoin.ToString();
     }
 
     private void SetUpText()
@@ -50,9 +58,17 @@ public class ShopModuleSceenUI : MonoBehaviour
         for(int i = 0; i < _textBuyModules.Count; i++)
         {
             _textBuyModules[i].text = _skillData.price[i].ToString();
-            _textNumberModules[i].text = _counts[i].ToString();
         }    
-    }    
+    }
+
+    private void SetTextNumberSkill(List<int> numberSkillList)
+    {
+        _countSkills = numberSkillList;
+        for (int i = 0; i < numberSkillList.Count; i++)
+        {
+            _textNumberSkills[i].text = numberSkillList[i].ToString();
+        }
+    }
 
     private void AddModuleType()
     {
@@ -72,7 +88,6 @@ public class ShopModuleSceenUI : MonoBehaviour
     }    
 
 
-
     private void ActionBuyModule(TypeModule type)
     {
         int index = (int)type;
@@ -80,17 +95,18 @@ public class ShopModuleSceenUI : MonoBehaviour
         if(_totalCoin - price > 0)
         {
             BuyModule(index);
-            _totalCoin -= price;
-            _shopGunScreenUI.SetTextCoin(_totalCoin);
+            SetTextCoin(_totalCoin -= price);
             SaveData();
         }    
     }    
 
     private void BuyModule(int index)
     {
-        _counts[index] += 1;
-        HandleUpdateTextNumberModule(index, _counts[index]);
+        _skillController.SetNumberIndexList(index, _countSkills[index] += 1);
+        HandleUpdateTextNumberModule(index, _countSkills[index]);
     }
+
+    private void HandleUpdateTextNumberModule(int index, int count) => _textNumberSkills[index].text = count.ToString();
 
     private void SaveData()
     { 
@@ -98,15 +114,17 @@ public class ShopModuleSceenUI : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    private void HandleUpdateTextNumberModule(int index, int count) => _textNumberModules[index].text = count.ToString();
+    
 
 
 }
 
 public enum TypeModule
 {
-    shoot,
     shockwave,
+    shoot,
 }
+    
+    
 
 

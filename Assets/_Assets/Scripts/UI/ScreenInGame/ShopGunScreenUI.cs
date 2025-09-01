@@ -57,19 +57,28 @@ public class ShopGunScreenUI : MonoBehaviour
     private Dictionary<StatType, StatUI> _statUIs = new();
  
     //Save
-    private SaveSystem _saveSystem;
+    [SerializeField] SaveSystem _saveSystem;
 
-    private void Awake()
+    private void OnEnable()
+    {
+        SetTextCoin();
+    }
+    private void SetTextCoin()
     {
         _totalCoin = PlayerPrefs.GetInt(DataPlayerPrefs.para_TOTALCOIN);
         _textTotalCoin.text = _totalCoin.ToString();
-    }
+    }   
+    
+    private void SetTextCoin(int totalCoin)
+    {
+        totalCoin = PlayerPrefs.GetInt(DataPlayerPrefs.para_TOTALCOIN);
+        _textTotalCoin.text = totalCoin.ToString();
+    }    
 
     private void Start()
     {
         _shopModuleSceenUI = GetComponent<ShopModuleSceenUI>();
-        _saveSystem = GetComponent<SaveSystem>();
-
+     
         _gunStatDatas = LoadingData.Instance.GetGunData().gunStats;
         _gunStatLevels = LoadingData.Instance.GetGunStatData().statLevels;
 
@@ -260,8 +269,10 @@ public class ShopGunScreenUI : MonoBehaviour
         for (int i = 0; i < levels.Count; i++)
         {
             if (levels[i].level != level) continue;
+
             levels[i + 1].unlock = true;
             SetTextCoin(_totalCoin -= price);
+
             return true;
         }
 
@@ -309,13 +320,6 @@ public class ShopGunScreenUI : MonoBehaviour
         }
     }
 
-    public void SetTextCoin(int coin)
-    {
-        _textTotalCoin.text = coin.ToString();
-        _shopModuleSceenUI.SetTextCoin(coin);
-    }
-
-
     // ActionUnlockGun
     public void ActionUnLockGun()
     {
@@ -323,7 +327,9 @@ public class ShopGunScreenUI : MonoBehaviour
         int price = _gunStatDatas[_currentSelected].priceCoin;
         if (_totalCoin < price) return;
         _gunStatDatas[_currentSelected].unlock = true;
+
         SetTextCoin(_totalCoin -= price);
+
         CheckEquipGun(_currentSelected);
         SetUpUnlockGun();
         SaveData();

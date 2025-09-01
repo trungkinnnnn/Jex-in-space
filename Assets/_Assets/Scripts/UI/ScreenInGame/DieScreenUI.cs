@@ -33,6 +33,9 @@ public class DieScreenUI : MonoBehaviour
 
     [Header("Component")]
     [SerializeField] GameStateManager _gameStateManager;
+    [Header("Script")]
+    [SerializeField] HUDController _hudController;
+
 
     private float _timeOffScreen = 0.3f;
 
@@ -42,7 +45,7 @@ public class DieScreenUI : MonoBehaviour
     private static string _textNewBest = "NEW BEST:";
     private static string _textYourBest = "YOUR BEST:";
 
-    private HUDController _hudController;
+    
     private int _coin;
     private int _totalCoin;
     private int _score;
@@ -54,7 +57,6 @@ public class DieScreenUI : MonoBehaviour
 
     private void Awake()
     {
-        _hudController = GetComponent<HUDController>();
         _saveSystem = GetComponent<SaveSystem>();
         LoadData();
 

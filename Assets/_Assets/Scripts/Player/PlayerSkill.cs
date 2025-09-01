@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,19 +24,24 @@ public class PlayerSkill : MonoBehaviour
     [Header("Button")]
     [SerializeField] Button _buttonSkillShoot;
 
+    [Header("UI")]
+    [SerializeField] HUDController _hudController;
+
     [Header("SkillShoot")]
+    [SerializeField] SkillController _skillController;
     public int magSizeBulletSkill = 30;
     public float fireRateSkill = 0.2f;
     public float forceToque = 0.03f;
     public float force = 0.01f;
 
-    private float _magSkill;
+    private List<int> _counts;
     private PlayerMovement _playerMovement;
-
+    private float _magSkill;
     private void Start()
     {
         _magSkill = magSizeBulletSkill;
         _playerMovement = GetComponent<PlayerMovement>();
+        _counts = _skillController.GetListNumberSkill();
 
         if (_buttonSkillShoot != null) _buttonSkillShoot.onClick.AddListener(() => ActionSkillShootOn());
         
@@ -49,13 +55,18 @@ public class PlayerSkill : MonoBehaviour
 
     public void ActionSkillShootOn()
     {
-        if (skillShootOn) return; // tránh bật nhiều lần 
+        if (_counts[1] < 1 || skillShootOn) return; // tránh bật nhiều lần 
+        skillShootOn = true;
+
+        _skillController.SetNumberIndexList(1, _skillController.GetListNumberSkill()[1] - 1);
+        _hudController.SetTextNumberSkill(_skillController.GetListNumberSkill());
+
         StartCoroutine(FireSkillCoroutine());
     }
 
     private IEnumerator FireSkillCoroutine()
     {
-       InputManager.isInputLocked = true;
+        InputManager.isInputLocked = true;
         while (_magSkill > 0)
         {
             _magSkill--;

@@ -7,7 +7,7 @@ public static class DataPlayerPrefs
     public static string para_HIGHWAVE = "HighWave";
     public static string para_HIGHSCORE = "HighScore";
     public static string para_IDGUN = "IdGun";
-
+    public static string para_SKILL = "Skill";
     // Setting
     public static string para_Setting = "Setting";
 
