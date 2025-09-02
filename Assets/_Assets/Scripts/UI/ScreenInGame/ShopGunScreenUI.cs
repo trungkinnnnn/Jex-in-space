@@ -52,6 +52,7 @@ public class ShopGunScreenUI : MonoBehaviour
     //Data
     private int _totalCoin;
     private const int maxLevel = 3;
+    private static string maxLevelText = "MAX";
     private List<GunStat> _gunStatDatas;
     private List<StatLevel> _gunStatLevels;
     private Dictionary<StatType, StatUI> _statUIs = new();
@@ -316,6 +317,12 @@ public class ShopGunScreenUI : MonoBehaviour
                 statUI.Price = levels[i + 1].price;
                 statUI.TextCoin.text = statUI.Price.ToString();
             }
+
+            if(statUI.Level == maxLevel)
+            {
+                statUI.TextCoin.text = maxLevelText;
+            }    
+
             break;
         }
     }
