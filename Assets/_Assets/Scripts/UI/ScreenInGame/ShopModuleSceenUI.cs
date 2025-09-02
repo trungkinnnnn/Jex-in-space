@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class ShopModuleSceenUI : MonoBehaviour
 {
     [Header("data")]
-    [SerializeField] SkillData _skillData;
+    [SerializeField] SkillDataPrice _skillData;
 
     [Header("TextUI")]
     [SerializeField] TextMeshProUGUI _textTotalCoin;

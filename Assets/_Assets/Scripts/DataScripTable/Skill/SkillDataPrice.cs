@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = ("Skill/DataSkill"))]
-public class SkillData : ScriptableObject
+[CreateAssetMenu(menuName = ("Skill/DataSkillPrice"))]
+public class SkillDataPrice : ScriptableObject
 {
     public List<int> price;
-   
 }
 

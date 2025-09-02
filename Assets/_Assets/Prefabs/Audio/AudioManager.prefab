@@ -182,7 +182,7 @@ MonoBehaviour:
   _bgmSource: {fileID: 2975274609636738684}
   _pauseSource: {fileID: 2975274607925161910}
   bgVolume: 0.3
-  bgVolumeDuckPer: 0.8
+  bgVolumeDuckPer: 0.5
   fadeInTime: 3
   fadeOutTime: 1
   pauseBetweenTracks: 2
