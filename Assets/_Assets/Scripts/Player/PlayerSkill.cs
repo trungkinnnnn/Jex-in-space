@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
@@ -60,7 +61,15 @@ public class PlayerSkill : MonoBehaviour
 
     private void Update()
     {
-        fire = Input.GetMouseButtonDown(0);
+        if(Input.GetMouseButtonDown(0))
+        {
+            if(EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }    
+
+            fire = true;
+        }    
     }
 
     private void ActionOnShockWave()
