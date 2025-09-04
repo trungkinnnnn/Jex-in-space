@@ -1,9 +1,6 @@
 using DG.Tweening;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,6 +28,8 @@ public class CheckingAst : MonoBehaviour
     {
         _textDestroysMax.text = "/" + _countDestroyMax.ToString();
         _canvasChecking.alpha = 0f;
+
+        _canvasDoneTutorial.gameObject.SetActive(false);
         _canvasDoneTutorial.alpha = 0f;
         _playReal.onClick.AddListener(() => ActionPlayReal());  
     }
@@ -65,6 +64,7 @@ public class CheckingAst : MonoBehaviour
         InputManager.isInputLocked = true;
         _canvasChecking.DOFade(0f, 3f).SetEase(Ease.Linear);
         yield return new WaitForSeconds(2f);
+        _canvasDoneTutorial.gameObject.SetActive(true);
         _canvasDoneTutorial.DOFade(1f, 3f).SetEase(Ease.Linear);
         PlayerPrefs.SetInt(DataPlayerPrefs.fistPlay, 1);
         PlayerPrefs.Save();

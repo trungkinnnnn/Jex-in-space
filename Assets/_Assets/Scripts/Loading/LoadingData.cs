@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class LoadingData : MonoBehaviour
 {
@@ -76,10 +76,17 @@ public class LoadingData : MonoBehaviour
 
     private void LoadingDataSetting()
     {
-        var setting = PlayerPrefs.GetString(DataPlayerPrefs.para_Setting).Split(',');
-        for(int i = 0; i < setting.Length; i++)
+        string setting = PlayerPrefs.GetString(DataPlayerPrefs.para_Setting, "");
+        if (setting == "")
+        {
+            setting = "true,true,true";
+        }
+
+        var listSetting = setting.Split(',');
+
+        for (int i = 0; i < listSetting.Length; i++)
         {  
-            _listSettings.Add((bool)TryPaserBool(setting[i]));
+            _listSettings.Add((bool)TryPaserBool(listSetting[i]));
         }    
     }    
     private bool? TryPaserBool(string str) => str.Trim().ToLower() == "true";

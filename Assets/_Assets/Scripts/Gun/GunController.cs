@@ -2,8 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.SceneManagement;
+
 
 public class GunController : MonoBehaviour
 {
@@ -92,7 +91,7 @@ public class GunController : MonoBehaviour
     {
         int first = PlayerPrefs.GetInt(DataPlayerPrefs.fistPlay, 0);
         if (first == 0)
-            _totalbullet = 10000;
+            _currentMagSizebullet = 10000;
     }
 
     private List<AudioClip> GetAudioClipsShoting() => _audioSFXDataShoting == null ? null : _audioSFXDataShoting.clipList;

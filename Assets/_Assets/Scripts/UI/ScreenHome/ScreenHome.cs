@@ -14,6 +14,11 @@ public class ScreenHome : MonoBehaviour
     private const string _SCENE_NAME_TUTORIAL = "Tutorial";
     private const string _SCENE_NAME_INGAME = "InGameScreen";
 
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 0;
+    }
     private void Start()
     {
         StartCoroutine(SetUp());

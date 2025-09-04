@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
+
 
 [CreateAssetMenu(menuName =("Data/LogoScipTable"))]
 public class LogoScripTable : ScriptableObject

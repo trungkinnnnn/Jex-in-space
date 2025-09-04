@@ -1,10 +1,7 @@
 
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using DG;
 using DG.Tweening;
-using UnityEditor.Purchasing;
 using System;
 using System.Collections;
 

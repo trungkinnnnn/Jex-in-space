@@ -53,7 +53,8 @@ public class PlayerSkill : MonoBehaviour
     {
         _magSkill = magSizeBulletSkill;
         _playerMovement = GetComponent<PlayerMovement>();
-        _counts = _skillController.GetListNumberSkill();
+        if (_skillController != null)
+            _counts = _skillController.GetListNumberSkill();
 
         if (_buttonSkillShoot != null) _buttonSkillShoot.onClick.AddListener(() => ActionSkillShootOn());
         if (_buttonShockWave != null) _buttonShockWave.onClick.AddListener(() => ActionOnShockWave());
@@ -74,7 +75,7 @@ public class PlayerSkill : MonoBehaviour
 
     private void ActionOnShockWave()
     {
-        if (_counts[0] < 1 || _isShock) return;
+        if (_counts == null ||  _counts[0] < 1 || _isShock) return;
         _isShock = true;
 
         _skillController.SetNumberIndexList(0, _skillController.GetListNumberSkill()[0] - 1);
@@ -97,7 +98,7 @@ public class PlayerSkill : MonoBehaviour
 
     private void ActionSkillShootOn()
     {
-        if (_counts[1] < 1 || skillShootOn) return; // tránh bật nhiều lần 
+        if (_counts == null || _counts[1] < 1 || skillShootOn) return; // tránh bật nhiều lần 
         skillShootOn = true;
 
         _skillController.SetNumberIndexList(1, _skillController.GetListNumberSkill()[1] - 1);

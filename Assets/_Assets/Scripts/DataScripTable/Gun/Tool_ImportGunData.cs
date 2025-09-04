@@ -1,7 +1,9 @@
-using System.Collections;
+
+#if UNITY_EDITOR
 using System.Collections.Generic;
+
 using System.IO;
-using UnityEditor;
+using UnityEditor; // Thêm dòng này
 using UnityEngine;
 
 public class Tool_ImportGunData
@@ -54,3 +56,5 @@ public class Tool_ImportGunData
     static bool? TryParseBool(string str) => str.Trim().ToLower() == "true";
 
 }
+
+#endif

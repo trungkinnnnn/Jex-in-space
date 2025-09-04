@@ -692,7 +692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1709,7 +1709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 38f2392bf1a6286498adaa075def5126, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3898,7 +3898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6362,6 +6362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1229697746}
+  - component: {fileID: 1229697747}
   m_Layer: 0
   m_Name: BackGroundALL
   m_TagString: Untagged
@@ -6386,6 +6387,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1229697747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229697745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba70a80065bdfa4b926c3d3ad732e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: {fileID: 949702183}
+  right: {fileID: 1045104561}
+  bottom: {fileID: 280548009}
+  left: {fileID: 472604421}
+  timeStart: 7
 --- !u!1 &1258555436
 GameObject:
   m_ObjectHideFlags: 0
@@ -7315,7 +7333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8489,7 +8507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8796,7 +8814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -9867,7 +9885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -10056,7 +10074,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1.5
   m_LinearDrag: 0.085
-  m_AngularDrag: 0.95
+  m_AngularDrag: 0.8
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: bc0c344aa0e84c445b337a449a5adeed, type: 2}
   m_Interpolate: 1
@@ -11461,10 +11479,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294926c48c329a240bca9f113693f7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buttonSkillShoot: {fileID: 0}
+  _buttonShockWave: {fileID: 0}
+  _hudController: {fileID: 0}
+  _skillController: {fileID: 0}
   magSizeBulletSkill: 50
   fireRateSkill: 0.1
   forceToque: 0.001
   force: 1
+  _shockWave: []
+  shockTime: 0.5
+  _audioClips: []
+  volume: 1.5
 --- !u!224 &5118469092834460684
 RectTransform:
   m_ObjectHideFlags: 0
