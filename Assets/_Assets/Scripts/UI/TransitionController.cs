@@ -86,7 +86,6 @@ public class TransitionController : MonoBehaviour
 
     private void SetObj(GameObject objTab, GameObject button, bool value)
     {
-        Debug.Log(objTab.name);
         objTab.SetActive(value);
         button.SetActive(value);
     }

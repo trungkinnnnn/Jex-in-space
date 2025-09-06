@@ -14,6 +14,7 @@ public class Tutorial : MonoBehaviour
     [SerializeField] GameObject _player;
     [SerializeField] GameObject _wave;
     [SerializeField] GameObject _ship;
+    [SerializeField] GameObject _walls;
 
     [Header("Moving")]
     [SerializeField] GameObject _camera;
@@ -72,6 +73,7 @@ public class Tutorial : MonoBehaviour
         _player.SetActive(false);
         _wave.SetActive(false);
         _ship.SetActive(false);
+        _walls.SetActive(false);
     }
 
     private void Start()
@@ -181,6 +183,7 @@ public class Tutorial : MonoBehaviour
     
     private void ActionNextIngameTutorial()
     {
+        _walls.SetActive(true);
         AudioSFX.Instance.PlayAudioOneShortOneClip(_clipClick, 1.5f);
         StartCoroutine(SetUpIngameTutorial());
     }

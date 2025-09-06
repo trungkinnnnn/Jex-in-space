@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using TMPro;
@@ -31,7 +31,7 @@ public class Login : MonoBehaviour
         }
         else
         {
-            _infoLogin.text = "SignIn Fal";
+            _infoLogin.text = $"❌ SignIn Failed!!\nStatus: {status.ToString()}";
         }    
     }    
 

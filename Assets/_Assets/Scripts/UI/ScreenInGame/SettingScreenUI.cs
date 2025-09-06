@@ -16,14 +16,16 @@ public class SettingScreenUI : MonoBehaviour
     [Header("ButtonOff")]
     [SerializeField] List<Button> _buttonOff;
 
+    [Header("ButtonDie")]
+    [SerializeField] Button _buttonDie;
+
     private string _setting;
     private List<bool> _isActive;
 
     private const string _SCENE_NAME = "HomeScreen";
-    private PausePhysic2D _pausePhysic2D;
+   
     private void Start()
     {
-        _pausePhysic2D = GetComponent<PausePhysic2D>();
         AddListenerButton();
         GetData();
         SetUpButton();
@@ -76,20 +78,23 @@ public class SettingScreenUI : MonoBehaviour
         for(int i = 0; i < _isActive.Count;i++)
         {
             SetActive(i, _isActive[i]);
-        }    
+        }
+
+        _buttonDie.onClick.AddListener(() => ActionDie());
     }    
 
     public void ActionBackMenu()
     {
         AudioSystem.Instance.PlayAudioClick();
 
-        _pausePhysic2D.ResumeGame();
+        PausePhysic2D.Instance.ResumeGame();
         AudioBGMManager.Instance.PlayMenuBGM();
         LoadingScene.Instance.LoadingScence(_SCENE_NAME);
     }
 
     public void ActionDie()
     {
+        _buttonDie.gameObject.SetActive(false);
         AudioSystem.Instance.PlayAudioClick();
         AudioSystem.Instance.PlayAudioGameOver();
         Die?.Invoke();

@@ -174,6 +174,7 @@ public class GunController : MonoBehaviour
             OnActionReloading?.Invoke(_paramasters.timeReload);
             yield return new WaitForSeconds(Mathf.Max(0f, _paramasters.timeReload));
             InputManager.isInputLocked = false;
+            PlayerSkill.fire = false;
         }
 
     }

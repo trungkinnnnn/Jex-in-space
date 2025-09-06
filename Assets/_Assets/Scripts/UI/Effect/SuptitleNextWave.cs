@@ -69,14 +69,11 @@ public class SuptitleNextWave : MonoBehaviour
     {
         if(currentWave > _waveHigh)
         {
-            currentWave = _waveHigh;
-            _textWaveCurrent.text = currentWave.ToString();
-            _textWaveBest.text = currentWave.ToString();
+            _waveHigh = currentWave;
+            _textWaveBest.text = _waveHigh.ToString();
         }
-        else
-        {
-            _textWaveCurrent.text = currentWave.ToString();
-        }
+        _textWaveCurrent.text = currentWave.ToString();
+        
     }    
 
     private void StartTitle()
