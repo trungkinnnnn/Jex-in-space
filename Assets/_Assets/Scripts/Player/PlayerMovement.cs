@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _rb.AddTorque(-_addTorqueWind, ForceMode2D.Force);
         }
+        
     }
 
     public void AddForceMin(float force, float forceToque)
