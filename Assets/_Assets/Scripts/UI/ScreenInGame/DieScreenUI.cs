@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using System;
 using System.Collections;
+using UnityEngine.UI;
 
 public class DieScreenUI : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class DieScreenUI : MonoBehaviour
 
     [Header("Button")]
     [SerializeField] GameObject _buttonDie;
+    [SerializeField] Button _showAds;
 
     [Header("CanvasGroup")]
     [SerializeField] CanvasGroup _canvasScreenUI_HUD;
@@ -76,6 +78,11 @@ public class DieScreenUI : MonoBehaviour
         UnRegisterEvents();
     }
 
+    private void Start()
+    {
+        _showAds.onClick.AddListener(() => ShowAds());
+    }
+
     private void RegisterEvents()
     {
         PlayerHealth.Die += HandleDieForHealth;
@@ -85,6 +92,8 @@ public class DieScreenUI : MonoBehaviour
         SettingScreenUI.Die += HandleDieForPlayBad;
         SettingScreenUI.Die += OnScreenDieForPlayBad;
         WaveManager.GetWave += HandleGetWave;
+
+        AdsManager.OnHandleX2Coin += HandleX2Coin;
     }
 
     private void UnRegisterEvents()
@@ -96,6 +105,8 @@ public class DieScreenUI : MonoBehaviour
         SettingScreenUI.Die -= HandleDieForPlayBad;
         SettingScreenUI.Die -= OnScreenDieForPlayBad;
         WaveManager.GetWave -= HandleGetWave;
+
+        AdsManager.OnHandleX2Coin -= HandleX2Coin;
     }
 
     private void HandleDieForHealth() => _textUIForDie.text = _textDieForHealth;
@@ -111,6 +122,10 @@ public class DieScreenUI : MonoBehaviour
     private IEnumerator HandleDie()
     {
         InputManager.isInputLocked = true;
+
+        // Loading Ads
+        AdsManager.Instance.LoadRewardedAd();
+
         yield return StartCoroutine(Wait(4f));
 
         _buttonDie.SetActive(false);
@@ -176,6 +191,19 @@ public class DieScreenUI : MonoBehaviour
     private IEnumerator Wait(float time)
     {
         yield return new WaitForSeconds(time);
+    }    
+
+    private void ShowAds()
+    {
+        AdsManager.Instance.ShowRewardedAd();
+    }    
+
+    private void HandleX2Coin()
+    {
+        int coinX2 = _coin * 2;
+        _textCoin.text = coinX2.ToString();
+        PlayerPrefs.SetInt(DataPlayerPrefs.para_TOTALCOIN, coinX2 + _totalCoin);
+        PlayerPrefs.Save();
     }    
 
 }

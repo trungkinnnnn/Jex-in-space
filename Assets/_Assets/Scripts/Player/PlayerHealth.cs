@@ -37,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
     private int _currentHp;
     private float _timeImmortal;
     private float _lastTimeTakenDamage = -Mathf.Infinity;
+    private bool _isDie = false;
 
     private int _firstPlay = 0;
 
@@ -61,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void CheckFirstPlay()
     {
-        _firstPlay = PlayerPrefs.GetInt(DataPlayerPrefs.fistPlay, 0);
+        _firstPlay = PlayerPrefs.GetInt(DataPlayerPrefs.fistPlay, 2);
         if (_firstPlay == 0)
             _currentHp = 10000;
         if (_firstPlay == 1)
@@ -167,10 +168,12 @@ public class PlayerHealth : MonoBehaviour
 
     private void IsDie()
     {
+        if(_isDie) return;
         _rb.angularDrag = 3f;
         _animatorBreak.SetTrigger(_para_NAME_BREAK);
         _audio.PlayClipDie();
         Die?.Invoke();
+        _isDie = true;
         Debug.Log("Jex die");
     }    
 

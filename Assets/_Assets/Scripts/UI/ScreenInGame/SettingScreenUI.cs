@@ -97,6 +97,9 @@ public class SettingScreenUI : MonoBehaviour
         _buttonDie.gameObject.SetActive(false);
         AudioSystem.Instance.PlayAudioClick();
         AudioSystem.Instance.PlayAudioGameOver();
+
+        AdsManager.Instance.LoadRewardedAd();
+
         Die?.Invoke();
     }
 

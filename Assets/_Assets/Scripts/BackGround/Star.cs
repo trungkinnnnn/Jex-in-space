@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class Star : MonoBehaviour
     [SerializeField] StarScripTable _starData;
     [SerializeField] List<GameObject> _starObjs;
 
+    public float minPosition = 0.1f;
+    public float maxPosition = 1.1f;
     private struct StarState
     {
         public Vector3 localPosition;
@@ -21,12 +24,9 @@ public class Star : MonoBehaviour
     private List<StarState> starStates = new List<StarState>();
     private Camera _camera;
 
-    public float minPosition = 0.1f;
-    public float maxPosition = 1.1f;
 
     private void Awake()
     {
-        _camera = Camera.main;
         starStates.Clear();
         int i = 0;
         foreach (var obj in _starObjs)
@@ -39,15 +39,20 @@ public class Star : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Start()
     {
-       for(int i = 0; i < starStates.Count; i++)
+        _camera = Camera.main;
+    }
+
+    private void Update()
+    {
+        for (int i = 0; i < starStates.Count; i++)
         {
             var s = starStates[i];
             UpdateStar(ref s, i);
             starStates[i] = s;
             _starObjs[i].transform.localPosition = s.localPosition;
-        }    
+        }
 
     }
 
@@ -68,11 +73,11 @@ public class Star : MonoBehaviour
         }
         else if (t > 0.5)
         {
-            ChangeAlpha(s._sr,Mathf.InverseLerp(0.8f, 0.5f, t));
+            ChangeAlpha(s._sr, Mathf.InverseLerp(0.8f, 0.5f, t));
         }
 
         CheckOutScreen(ref s);
-    }    
+    }
 
     private void CheckOutScreen(ref StarState star)
     {
@@ -84,10 +89,10 @@ public class Star : MonoBehaviour
         }
 
         Vector3 viewPort = _camera.WorldToViewportPoint(star.localPosition);
-        
+
         if (viewPort.x < -minPosition || viewPort.x > maxPosition) star.direction.x *= -1;
         if (viewPort.y < -minPosition || viewPort.y > maxPosition) star.direction.y *= -1;
-    }    
+    }
 
     private void Reset_Star(ref StarState star, int index)
     {
@@ -100,17 +105,17 @@ public class Star : MonoBehaviour
         star.scale = Random.Range(_starData.scale_min, _starData.scale_max);
 
         star.direction = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
-         
+
         _starObjs[index].transform.localScale = new Vector3(star.scale, star.scale, 1f);
 
         ChangeAlpha(star._sr, 0f);
     }
 
     private void ChangeAlpha(SpriteRenderer sprite, float value)
-    {   
+    {
         Color color = sprite.color;
         color.a = Mathf.Clamp01(value);
-        sprite.color = color;   
-    }    
+        sprite.color = color;
+    }
 
-}
+}

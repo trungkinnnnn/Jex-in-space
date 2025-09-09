@@ -15,6 +15,7 @@ public class AnimationListener : MonoBehaviour
     private float _lastTimeState = 0f;   
 
     private bool _eatToggle = false;
+    private bool _isDie = false;
     
     private Animator _animator;
 
@@ -65,8 +66,10 @@ public class AnimationListener : MonoBehaviour
 
     private void Die()
     {
+        if(_isDie) return;
         _animator.SetBool(HashDieBool, true);
         _animator.SetTrigger(HashDie);
+        _isDie = true;
     }     
     private void TryTrigger(int hash)
     {
