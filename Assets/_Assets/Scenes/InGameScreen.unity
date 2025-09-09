@@ -37114,6 +37114,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1084554151}
     m_Modifications:
+    - target: {fileID: 19184765, guid: 641f038e5e03e204a9db997e8f74b2c3, type: 3}
+      propertyPath: maxPosition
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19184765, guid: 641f038e5e03e204a9db997e8f74b2c3, type: 3}
+      propertyPath: minPosition
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 641367002, guid: 641f038e5e03e204a9db997e8f74b2c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.81
+      objectReference: {fileID: 0}
     - target: {fileID: 3083404106354054932, guid: 641f038e5e03e204a9db997e8f74b2c3, type: 3}
       propertyPath: m_Name
       value: StarIngame

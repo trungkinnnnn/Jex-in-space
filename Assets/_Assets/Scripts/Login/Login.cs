@@ -32,6 +32,7 @@ public class Login : MonoBehaviour
         else
         {
             _infoLogin.text = $"❌ SignIn Failed!!\nStatus: {status.ToString()}";
+        
         }    
     }    
 
