@@ -11,8 +11,12 @@ public class LoadingData : MonoBehaviour
 
     [SerializeField] GunData _gunData;
     [SerializeField] GunStatData _gunStatData;
+    [SerializeField] AchievementDataList _achievementsData;
+
     private GunData _gunDataClone;
     private GunStatData _gunStatDataClone;
+    private AchievementDataList _achievementsDataClone;
+
     private List<bool> _listSettings = new();
 
     private string _pathData;
@@ -32,11 +36,18 @@ public class LoadingData : MonoBehaviour
 
         _pathData = Path.Combine(Application.persistentDataPath, DataPlayerPrefs._pathSaveData);
         Debug.Log("Load path: " + _pathData);
-        _gunDataClone = Instantiate(_gunData);
-        _gunStatDataClone = Instantiate(_gunStatData);
+
+        SetUpClone();
         LoadDataGun();
         LoadingDataSetting();
     }
+
+    private void SetUpClone()
+    {
+        _gunDataClone = Instantiate(_gunData);
+        _gunStatDataClone = Instantiate(_gunStatData);
+        _achievementsDataClone = Instantiate(_achievementsData);
+    }    
 
     private void LoadDataGun()
     {

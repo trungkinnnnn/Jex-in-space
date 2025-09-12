@@ -6,7 +6,7 @@ public class PlayerInventory : MonoBehaviour
     private PlayerAudio _audio;
     // HUD Controller
     public static System.Action<int> OnActionCoin;
-    public static System.Action<int> OnActionScore;
+    public static System.Action<int , AsteroidType> OnActionScore;
 
     public int coinTotal = 0;
     public int scoreTotal = 0;
@@ -27,10 +27,10 @@ public class PlayerInventory : MonoBehaviour
         Ast.AddScoreOnDie -= HandleAddScore;
     }
 
-    private void HandleAddScore(int score)
+    private void HandleAddScore(int score, AsteroidType type)
     {
         scoreTotal += score;
-        OnActionScore?.Invoke(scoreTotal);  
+        OnActionScore?.Invoke(scoreTotal, type);  
     }
 
     public void HandleAddCoin(int amount)

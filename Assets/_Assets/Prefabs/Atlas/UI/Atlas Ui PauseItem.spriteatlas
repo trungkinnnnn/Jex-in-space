@@ -36,6 +36,10 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 931954e68ec84624a95312a231f50ea1, type: 3}
     - {fileID: 2800000, guid: fafec611e1a10b14e9fd23929f26bac8, type: 3}
     - {fileID: 2800000, guid: abeb8f8282359fd4380fb7e4418a05f5, type: 3}
+    - {fileID: 2800000, guid: 262f2f9447d243c429f6de444de4927c, type: 3}
+    - {fileID: 2800000, guid: 6e0013b79cdb5e4438a546275a7687a3, type: 3}
+    - {fileID: 2800000, guid: c58b36d40bb117a4b95730104fac8852, type: 3}
+    - {fileID: 2800000, guid: a334633ea4c2cd946bfc32145bb6d731, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -44,12 +48,20 @@ SpriteAtlas:
   - {fileID: 21300000, guid: fafec611e1a10b14e9fd23929f26bac8, type: 3}
   - {fileID: 21300000, guid: abeb8f8282359fd4380fb7e4418a05f5, type: 3}
   - {fileID: 21300000, guid: 7f6e7fc36a37f8a4988b9f518b47caf3, type: 3}
+  - {fileID: 21300000, guid: 262f2f9447d243c429f6de444de4927c, type: 3}
+  - {fileID: 21300000, guid: c58b36d40bb117a4b95730104fac8852, type: 3}
   - {fileID: 21300000, guid: 931954e68ec84624a95312a231f50ea1, type: 3}
+  - {fileID: 21300000, guid: 6e0013b79cdb5e4438a546275a7687a3, type: 3}
+  - {fileID: 21300000, guid: a334633ea4c2cd946bfc32145bb6d731, type: 3}
   m_PackedSpriteNamesToIndex:
   - module-bg
   - normal-button-bg
   - module-shockwave-icon
+  - trophy
+  - close
   - module-spiral-icon
+  - question-mark
+  - checkmark
   m_RenderDataMap: {}
   m_Tag: Atlas Ui PauseItem
   m_IsVariant: 0

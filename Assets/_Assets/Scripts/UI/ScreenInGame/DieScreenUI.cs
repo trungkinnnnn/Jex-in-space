@@ -52,6 +52,8 @@ public class DieScreenUI : MonoBehaviour
     private int _wave;
     private int _highWave = 0;
 
+    private int _countDestroyAst;
+
     private SaveSystem _saveSystem;
 
     private void Awake()
@@ -149,6 +151,8 @@ public class DieScreenUI : MonoBehaviour
         int highScore = _hudController.GetHighScore();
         _highScore = ShowText(_textScore, _textHighScore, _textNewBestScore, score, highScore);
         _highWave = ShowText(_textWave, _textHighWave, _textNewBestWave, _wave, _highWave);
+
+        _countDestroyAst = _hudController.GetCountDestroyAst();
 
         SaveData(_highScore, _highWave);    
     }

@@ -9,7 +9,7 @@ public class Ast : MonoBehaviour
     // WaveSpawner
     private System.Action OnDestroyAst;
     // PlayerInventory, CheckingAstTutorial
-    public static System.Action<int> AddScoreOnDie;
+    public static System.Action<int, AsteroidType> AddScoreOnDie;
 
     public AsteroidType type = AsteroidType.AstNormal;
 
@@ -90,7 +90,7 @@ public class Ast : MonoBehaviour
         CreateAniDestroy();
         CreatLight2DExplosion();
         CreateCoins();
-        AddScoreOnDie?.Invoke(_score);
+        AddScoreOnDie?.Invoke(_score, type);
         Destroy(gameObject);
     }
 

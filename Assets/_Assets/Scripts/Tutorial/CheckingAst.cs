@@ -44,7 +44,7 @@ public class CheckingAst : MonoBehaviour
         Ast.AddScoreOnDie -= HandleAddCount;
     }
 
-    private void HandleAddCount(int count)
+    private void HandleAddCount(int count, AsteroidType type)
     {
         _countDestroy += count;
         UpdateTextCount();

@@ -39,6 +39,7 @@ public class HUDController : MonoBehaviour
 
     private static int HASH_ANI_HP = Animator.StringToHash("Hp");
 
+    private int _countDestroyAst;
     private int _highScore;
     private int _score;
     private int _coin;
@@ -68,14 +69,14 @@ public class HUDController : MonoBehaviour
         _highScore = PlayerPrefs.GetInt(DataPlayerPrefs.para_HIGHSCORE, 0);
         _highScoreText.text = _highScore.ToString();
         _onSkillButton.onClick.AddListener(() => ActionOpenSkill());
+        _countDestroyAst = PlayerPrefs.GetInt(DataPlayerPrefs.para_COUNT_DESTROYASTEROID, 0);
     }
 
 
     public int GetScore() => _score;
     public int GetHighScore() => _highScore;
     public int GetCoin() => _coin;
-
-
+    public int GetCountDestroyAst() => _countDestroyAst;
     
     private void RegisterEvents()
     {
@@ -95,7 +96,7 @@ public class HUDController : MonoBehaviour
         GunController.OnActionTotalBullet -= HandleUpdateTotalBullet;
     }
 
-    private void HandleUpdateScore(int score)
+    private void HandleUpdateScore(int score, AsteroidType type)
     {  
         _score = score;
         _scoreText.text = score.ToString(); 
@@ -105,6 +106,8 @@ public class HUDController : MonoBehaviour
             _highScore = score;
             _highScoreText.text = _highScore.ToString();
         }
+
+        if (type != AsteroidType.AstNon) _countDestroyAst += 1;
 
     }
     private void HandleUpdateCoin(int coin)  

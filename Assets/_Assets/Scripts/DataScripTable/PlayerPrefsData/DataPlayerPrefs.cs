@@ -16,4 +16,8 @@ public static class DataPlayerPrefs
 
     // FirstPlay
     public static string fistPlay = "FirstPlay";
+
+    //Count DestroyAsteroid
+    public static string para_COUNT_DESTROYASTEROID = "CountDestroyAsteroid";
+    public static string para_ACHIEVEMENTLIST_SUCCESS = "AchievementListSuccess";
 }
