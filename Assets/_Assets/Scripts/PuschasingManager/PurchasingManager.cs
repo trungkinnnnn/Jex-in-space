@@ -5,9 +5,12 @@ using UnityEngine.Purchasing;
 
 public class PurchasingManager : MonoBehaviour
 {
-    private static string ID_PUR_COIN = "coin";
+    [SerializeField] ShopGunScreenUI _shopGunScreenUI;
+    [SerializeField] ShopModuleSceenUI _shopModuleSceenUI;
 
-    public PurchasingManager Instance;
+    private static string ID_PUR_COIN = "coin";
+    private static int _coinPurchasing = 50000;
+    public static PurchasingManager Instance;
 
     private void Awake()
     {
@@ -26,7 +29,22 @@ public class PurchasingManager : MonoBehaviour
     {
         if(product.definition.id == ID_PUR_COIN)
         {
-            Debug.Log("Buy Coin");
+            PurchasingCompleted();
         }    
-    }    
+    }  
+    
+    public void PurchasingCompleted()
+    {
+        int totalCoin = PlayerPrefs.GetInt(DataPlayerPrefs.para_TOTALCOIN, 0);
+        PlayerPrefs.SetInt(DataPlayerPrefs.para_TOTALCOIN, totalCoin + _coinPurchasing);
+        PlayerPrefs.Save();
+
+        ResetUI(totalCoin + _coinPurchasing);
+    }
+
+    public void ResetUI(int totalCoin)
+    {
+        _shopGunScreenUI.SetTextCoin(totalCoin);
+        _shopModuleSceenUI.SetTextCoin(totalCoin);
+    }
 }

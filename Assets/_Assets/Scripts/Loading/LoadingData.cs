@@ -40,6 +40,7 @@ public class LoadingData : MonoBehaviour
         SetUpClone();
         LoadDataGun();
         LoadingDataSetting();
+        LoadingDataAchievement();
     }
 
     private void SetUpClone()
@@ -100,6 +101,23 @@ public class LoadingData : MonoBehaviour
             _listSettings.Add((bool)TryPaserBool(listSetting[i]));
         }    
     }    
+
+    private void LoadingDataAchievement()
+    {
+        string achievementList = PlayerPrefs.GetString(DataPlayerPrefs.para_ACHIEVEMENTLIST, "");
+        if (string.IsNullOrEmpty(achievementList)) return;
+        
+        var achi = achievementList.Split(',');
+        int index = 0;
+        for(int i = 0;i < achi.Length;i+=4)
+        {
+            _achievementsDataClone.achievements[index].completed = (bool)TryPaserBool(achi[i + 1]);
+            _achievementsDataClone.achievements[index].claimed = (bool)TryPaserBool(achi[i + 2]);
+            _achievementsDataClone.achievements[index].secret = (bool)TryPaserBool(achi[i + 3]);
+            index++;
+        }
+    }
+
     private bool? TryPaserBool(string str) => str.Trim().ToLower() == "true";
 
     public bool ActiveSoundFX() => _listSettings[0];
@@ -109,4 +127,5 @@ public class LoadingData : MonoBehaviour
     public GunData GetGunData() => _gunDataClone;
     public GunStatData GetGunStatData() => _gunStatDataClone;
 
+    public AchievementDataList GetAchievementDataList() => _achievementsDataClone;
 }

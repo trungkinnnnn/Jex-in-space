@@ -70,9 +70,8 @@ public class ShopGunScreenUI : MonoBehaviour
         _textTotalCoin.text = _totalCoin.ToString();
     }   
     
-    private void SetTextCoin(int totalCoin)
+    public void SetTextCoin(int totalCoin)
     {
-        totalCoin = PlayerPrefs.GetInt(DataPlayerPrefs.para_TOTALCOIN);
         _textTotalCoin.text = totalCoin.ToString();
     }    
 

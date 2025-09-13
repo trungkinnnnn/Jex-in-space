@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4834767586478656480}
   - component: {fileID: 4834767586478656482}
   m_Layer: 5
-  m_Name: ButtonNormal
+  m_Name: ButtonCompleted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -487,9 +487,10 @@ MonoBehaviour:
   _secret: {fileID: 4834767586879902582}
   _textDescription: {fileID: 4834767587354059795}
   _textTarget: {fileID: 4834767587993957446}
-  _normalBtn: {fileID: 4834767586478656482}
-  _closeBtn: {fileID: 4834767587401209302}
-  _successBtn: {fileID: 4834767587950746556}
+  _textCoinSuccess: {fileID: 4834767587600698631}
+  _completedBtn: {fileID: 4834767586478656482}
+  _notCompletedBtn: {fileID: 4834767587401209302}
+  _claimedBtn: {fileID: 4834767587950746556}
 --- !u!1 &4834767587354059793
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +638,7 @@ GameObject:
   - component: {fileID: 4834767587401209297}
   - component: {fileID: 4834767587401209296}
   m_Layer: 5
-  m_Name: ButtonClose
+  m_Name: ButtonNotCompleted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -886,7 +887,7 @@ GameObject:
   - component: {fileID: 4834767587950746559}
   - component: {fileID: 4834767587950746558}
   m_Layer: 5
-  m_Name: ButtonSuccess
+  m_Name: ButtonClaimed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

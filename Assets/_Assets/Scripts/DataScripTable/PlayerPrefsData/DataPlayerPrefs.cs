@@ -19,5 +19,5 @@ public static class DataPlayerPrefs
 
     //Count DestroyAsteroid
     public static string para_COUNT_DESTROYASTEROID = "CountDestroyAsteroid";
-    public static string para_ACHIEVEMENTLIST_SUCCESS = "AchievementListSuccess";
+    public static string para_ACHIEVEMENTLIST = "AchievementList";
 }

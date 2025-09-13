@@ -18,9 +18,10 @@ public class Achievement
     public int min;
     public int max;
     public int coin;
-    public bool secret;
-    public bool success;
+    public bool completed;
+    public bool claimed;
     public bool reset;
+    public bool secret;
 }
 
 public enum AchievementType

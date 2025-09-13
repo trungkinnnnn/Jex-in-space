@@ -187,6 +187,7 @@ public class DieScreenUI : MonoBehaviour
         PlayerPrefs.SetInt(DataPlayerPrefs.para_TOTALCOIN, _coin + _totalCoin);
         PlayerPrefs.SetInt(DataPlayerPrefs.para_HIGHSCORE, highScore);
         PlayerPrefs.SetInt(DataPlayerPrefs.para_HIGHWAVE, hightWave);
+        PlayerPrefs.SetInt(DataPlayerPrefs.para_COUNT_DESTROYASTEROID, AchievementManager.Instace.GetCountDestroy());
         PlayerPrefs.Save();
 
         _saveSystem.SaveDataForRespawn();
