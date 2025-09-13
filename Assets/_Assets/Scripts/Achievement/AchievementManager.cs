@@ -1,10 +1,11 @@
-using GooglePlayGames.BasicApi;
-using System.Collections;
+
 using System.Collections.Generic;
 using TMPro;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.Rendering;
+using GooglePlayGames;
+using UnityEngine.SocialPlatforms;
+using UnityEngine.UI;
+
 
 public class AchievementManager : MonoBehaviour
 {
@@ -18,7 +19,11 @@ public class AchievementManager : MonoBehaviour
     [Header("Text")]
     [SerializeField] TextMeshProUGUI _textTotalCoin;
 
-    private List<Achievement> _achievementDataListClone;
+    [Header("Button")]
+    [SerializeField] Button _showAchievementBtn;
+
+    [Header("=======================")]
+    private List<Achievement> _dataAchiClone;
 
     private int _countDestroyAst;
 
@@ -65,7 +70,8 @@ public class AchievementManager : MonoBehaviour
     {
         _reTransform = _parentContent.GetComponent<RectTransform>();
         _countDestroyAst = PlayerPrefs.GetInt(DataPlayerPrefs.para_COUNT_DESTROYASTEROID, 0);
-        _achievementDataListClone = LoadingData.Instance.GetAchievementDataList().achievements;
+        _dataAchiClone = LoadingData.Instance.GetAchievementDataList().achievements;
+        _showAchievementBtn.onClick.AddListener(() => ShowAchievement());
 
         DeleteChildTransform();
         SetUp();
@@ -93,8 +99,8 @@ public class AchievementManager : MonoBehaviour
     
     private void SetUp()
     {
-        if (_achievementDataListClone == null || _achievementDataListClone.Count <= 0) return;
-        foreach(Achievement achi in _achievementDataListClone)
+        if (_dataAchiClone == null || _dataAchiClone.Count <= 0) return;
+        foreach(Achievement achi in _dataAchiClone)
         {
             CreateAchiChild(achi);
             PlusHeight();
@@ -124,31 +130,35 @@ public class AchievementManager : MonoBehaviour
             _countDestroyAst += 1;
         }
 
-        for(int i = 0; i < _achievementDataListClone.Count; i++)
+        for(int i = 0; i < _dataAchiClone.Count; i++)
         {
-            if (_achievementDataListClone[i].type != AchievementType.DestroyAsteroid 
-                || _achievementDataListClone[i].completed) continue;
+            if (_dataAchiClone[i].type != AchievementType.DestroyAsteroid 
+                || _dataAchiClone[i].completed) continue;
 
-            _achievementDataListClone[i].min = _countDestroyAst;
-            if(_countDestroyAst == _achievementDataListClone[i].max)
+            _dataAchiClone[i].min = _countDestroyAst;
+            if(_countDestroyAst == _dataAchiClone[i].max)
             {
-                _achievementDataListClone[i].completed = true;
+                _dataAchiClone[i].completed = true;
                 SaveAchievementData();
+                UnlockAchievement(_dataAchiClone[i].gpgId, _dataAchiClone[i].description);
             }
         }
     }
 
+    public int GetCountDestroy() => _countDestroyAst;
+
     private void HandleCountWave(int wave)
     {
-       for(int i = 0; i < _achievementDataListClone.Count; i++)
+       for(int i = 0; i < _dataAchiClone.Count; i++)
        {
-            if (_achievementDataListClone[i].type != AchievementType.WaveSurvive || _achievementDataListClone[i].completed) continue;
+            if (_dataAchiClone[i].type != AchievementType.WaveSurvive || _dataAchiClone[i].completed) continue;
 
-            _achievementDataListClone[i].min = wave;
-            if(wave == _achievementDataListClone[i].max)
+            _dataAchiClone[i].min = wave;
+            if(wave == _dataAchiClone[i].max)
             {
-                _achievementDataListClone[i].completed = true;
+                _dataAchiClone[i].completed = true;
                 SaveAchievementData();
+                UnlockAchievement(_dataAchiClone[i].gpgId, _dataAchiClone[i].description);
             }
        }    
 
@@ -156,9 +166,9 @@ public class AchievementManager : MonoBehaviour
 
     private void HandleTimeLife(int hp)
     {
-        for(int i = 0; i < _achievementDataListClone.Count; i++)
+        for(int i = 0; i < _dataAchiClone.Count; i++)
         {
-            if (_achievementDataListClone[i].type != AchievementType.TimeLife || _achievementDataListClone[i].completed) continue;
+            if (_dataAchiClone[i].type != AchievementType.TimeLife || _dataAchiClone[i].completed) continue;
             
             if(hp == 1)
             {
@@ -176,16 +186,17 @@ public class AchievementManager : MonoBehaviour
         _timeLife = Time.time - _timeStartOneHP;
         bool checkAchi = false;
         Debug.Log("TimeLife with onehp : " +  _timeLife);   
-        for(int i = 0; i < _achievementDataListClone.Count;i++)
+        for(int i = 0; i < _dataAchiClone.Count;i++)
         {
-            if (_achievementDataListClone[i].type != AchievementType.TimeLife || _achievementDataListClone[i].completed) continue;
+            if (_dataAchiClone[i].type != AchievementType.TimeLife || _dataAchiClone[i].completed) continue;
 
-            _achievementDataListClone[i].min = (int)_timeLife;
-            if((int)_timeLife == _achievementDataListClone[i].max)
+            _dataAchiClone[i].min = (int)_timeLife;
+            if((int)_timeLife == _dataAchiClone[i].max)
             {
-                _achievementDataListClone[i].completed=true;
-                _achievementDataListClone[i].secret = false;
+                _dataAchiClone[i].completed=true;
+                _dataAchiClone[i].secret = false;
                 SaveAchievementData();
+                UnlockAchievement(_dataAchiClone[i].gpgId, _dataAchiClone[i].description);
             }
             checkAchi = true;
         }
@@ -193,19 +204,19 @@ public class AchievementManager : MonoBehaviour
         if(!checkAchi) _startCountTime = false ;
 
     }    
-    
+
     public void SaveAchievementData()
     {
-        string saveAchi = $"{_achievementDataListClone[0].idAchi}," +
-                            $"{_achievementDataListClone[0].completed}," +
-                            $"{_achievementDataListClone[0].claimed}," +
-                            $"{_achievementDataListClone[0].secret}";
-        for (int i = 1; i < _achievementDataListClone.Count; i++)
+        string saveAchi = $"{_dataAchiClone[0].idAchi}," +
+                            $"{_dataAchiClone[0].completed}," +
+                            $"{_dataAchiClone[0].claimed}," +
+                            $"{_dataAchiClone[0].secret}";
+        for (int i = 1; i < _dataAchiClone.Count; i++)
         {
-            saveAchi += $",{_achievementDataListClone[i].idAchi}," +
-                            $"{_achievementDataListClone[i].completed}," +
-                            $"{_achievementDataListClone[i].claimed}," +
-                            $"{_achievementDataListClone[i].secret}";
+            saveAchi += $",{_dataAchiClone[i].idAchi}," +
+                            $"{_dataAchiClone[i].completed}," +
+                            $"{_dataAchiClone[i].claimed}," +
+                            $"{_dataAchiClone[i].secret}";
         }
 
         PlayerPrefs.SetString(DataPlayerPrefs.para_ACHIEVEMENTLIST, saveAchi);
@@ -213,6 +224,16 @@ public class AchievementManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public int GetCountDestroy() => _countDestroyAst;
+    private void UnlockAchievement(string idGPG, string description)
+    {
+        if (!Social.localUser.authenticated) return;
+        Social.ReportProgress(idGPG, 100.0f, success => { Debug.Log("Success " + description);});
+    }    
+
+    private void ShowAchievement()
+    {
+        if (!Social.localUser.authenticated) return;
+        Social.ShowAchievementsUI();
+    }    
 
 }

@@ -9,6 +9,7 @@ public class Login : MonoBehaviour
 
     private void Start()
     {
+        PlayGamesPlatform.Activate();
         SignIn();
     }
 
