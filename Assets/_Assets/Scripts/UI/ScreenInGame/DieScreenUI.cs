@@ -149,12 +149,22 @@ public class DieScreenUI : MonoBehaviour
 
         int score = _hudController.GetScore();
         int highScore = _hudController.GetHighScore();
+
+
         _highScore = ShowText(_textScore, _textHighScore, _textNewBestScore, score, highScore);
         _highWave = ShowText(_textWave, _textHighWave, _textNewBestWave, _wave, _highWave);
 
+        Debug.Log("highScore : " + _highScore);
+
         _countDestroyAst = _hudController.GetCountDestroyAst();
 
-        SaveData(_highScore, _highWave);    
+        SaveData(_highScore, _highWave);
+        PushHighScore();
+    }
+
+    private void PushHighScore()
+    {
+        LeaderboardManager.Instance.PushHighScore(_highScore);
     }
 
     private int ShowText(TextMeshProUGUI textValue, TextMeshProUGUI textHighValue, TextMeshProUGUI textTitle, int currentValue, int highValue)

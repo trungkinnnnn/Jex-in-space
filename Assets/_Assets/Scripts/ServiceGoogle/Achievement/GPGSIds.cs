@@ -24,11 +24,12 @@
 
 public static class GPGSIds
 {
-        public const string achievement_survive_to_wave_2 = "CgkIrrTF08APEAIQBA"; // <GPGSID>
-        public const string achievement_survive_with_one_health_for_one_minute = "CgkIrrTF08APEAIQBg"; // <GPGSID>
+        public const string leaderboard_high_score = "CgkIrrTF08APEAIQBw"; // <GPGSID>
         public const string achievement_survive_to_wave_5 = "CgkIrrTF08APEAIQBQ"; // <GPGSID>
         public const string achievement_destroy_50_asteroid = "CgkIrrTF08APEAIQAw"; // <GPGSID>
+        public const string achievement_survive_with_one_health_for_one_minute = "CgkIrrTF08APEAIQBg"; // <GPGSID>
         public const string achievement_destroy_10_asteroid = "CgkIrrTF08APEAIQAg"; // <GPGSID>
+        public const string achievement_survive_to_wave_2 = "CgkIrrTF08APEAIQBA"; // <GPGSID>
 
 }
 
