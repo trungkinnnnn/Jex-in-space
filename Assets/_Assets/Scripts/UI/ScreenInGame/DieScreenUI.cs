@@ -59,7 +59,6 @@ public class DieScreenUI : MonoBehaviour
     private void Awake()
     {
         _saveSystem = GetComponent<SaveSystem>();
-        LoadData();
 
         _buttonDie.SetActive(true);
     }
@@ -143,6 +142,8 @@ public class DieScreenUI : MonoBehaviour
 
     private void GetDataFromHUD()
     {
+        LoadData();
+
         _coin = _hudController.GetCoin();
         _textCoin.text = _coin.ToString();
 

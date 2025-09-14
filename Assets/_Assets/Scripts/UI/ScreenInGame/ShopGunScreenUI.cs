@@ -72,6 +72,7 @@ public class ShopGunScreenUI : MonoBehaviour
     
     public void SetTextCoin(int totalCoin)
     {
+        _totalCoin = totalCoin;
         _textTotalCoin.text = totalCoin.ToString();
     }    
 
