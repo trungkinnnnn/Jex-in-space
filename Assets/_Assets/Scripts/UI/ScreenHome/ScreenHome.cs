@@ -57,7 +57,7 @@ public class ScreenHome : MonoBehaviour
 
     private void CheckFirstPlay()
     {
-        int first = PlayerPrefs.GetInt(DataPlayerPrefs.fistPlay, 2);
+        int first = PlayerPrefs.GetInt(DataPlayerPrefs.fistPlay, 0);
         if (first == 0)
             SceneManager.LoadScene(_SCENE_NAME_TUTORIAL);
     }

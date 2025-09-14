@@ -1138,7 +1138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &72626283
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38365,14 +38365,6 @@ PrefabInstance:
     - target: {fileID: 7000615503755856130, guid: 170bc2756387fbc4faeffba1953c0c6d, type: 3}
       propertyPath: m_Name
       value: WaveTest
-      objectReference: {fileID: 0}
-    - target: {fileID: 7000615503755856130, guid: 170bc2756387fbc4faeffba1953c0c6d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7000615503755856131, guid: 170bc2756387fbc4faeffba1953c0c6d, type: 3}
-      propertyPath: _gameSpeed
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7000615503755856131, guid: 170bc2756387fbc4faeffba1953c0c6d, type: 3}
       propertyPath: _playerTransform

@@ -62,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void CheckFirstPlay()
     {
-        _firstPlay = PlayerPrefs.GetInt(DataPlayerPrefs.fistPlay, 2);
+        _firstPlay = PlayerPrefs.GetInt(DataPlayerPrefs.fistPlay, 0);
         if (_firstPlay == 0)
             _currentHp = 10000;
         if (_firstPlay == 1)
