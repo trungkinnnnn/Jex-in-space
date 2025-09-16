@@ -5,6 +5,8 @@ using UnityEngine.Rendering.Universal;
 [RequireComponent(typeof(Light2D), typeof(CircleCollider2D))]
 public class EffectLightExplosion : MonoBehaviour
 {
+
+    //CameraShake
     public static Action<Vector2, float, float> OnExploed;
 
     //CameraShake
