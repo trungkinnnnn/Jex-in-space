@@ -20,14 +20,23 @@ public class Coin : MonoBehaviour, IPickUp
     private float _timeAlphaToggePlayer = 0.5f;
     private Rigidbody2D _rb;
     private SpriteRenderer _sprite;
-    private void Start()
+    private void OnEnable()
     {
-        _sprite = GetComponent<SpriteRenderer>();
-        _rb = GetComponent<Rigidbody2D>();
+        if(_rb == null)
+        {
+            _sprite = GetComponent<SpriteRenderer>();
+            _rb = GetComponent<Rigidbody2D>();
+        }
+        ChangeAlpha(1f);
+        StartCoroutine(WaitToNextFrame());
+    }
 
+    private IEnumerator WaitToNextFrame()
+    {
+        yield return null;
         SetUp();
         StartCoroutine(LifeCycle());
-    }
+    }    
 
     private void SetUp()
     {
@@ -58,7 +67,7 @@ public class Coin : MonoBehaviour, IPickUp
             ChangeAlpha(Mathf.Lerp(1f, 0f, elapsed / time));
             yield return null;
         }
-        Destroy(gameObject);
+        PoolManager.Instance.Despawner(gameObject);
     }    
 
     private void ChangeAlpha(float alpha)

@@ -127,7 +127,7 @@ public class Ast : MonoBehaviour
         if(_coinData == null) return;   
         for (int i = 0; i < _quanityCoin; i++)
         {
-            Instantiate(_coinPrefab, transform.position, Quaternion.identity);
+            PoolManager.Instance.Spawner(_coinPrefab, transform.position, Quaternion.identity);
         }
     }    
    
