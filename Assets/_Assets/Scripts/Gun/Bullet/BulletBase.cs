@@ -1,8 +1,9 @@
 ﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BulletBase : MonoBehaviour
+public class BulletBase : MonoBehaviour
 {
     //Data
     [SerializeField] protected List<GameObject> _effectHits;
@@ -24,11 +25,7 @@ public abstract class BulletBase : MonoBehaviour
     protected string NAME_COMPARETAG_PHYSIC = "Ast";
     protected string NAME_COMPARETAG_PHYSIC_ITEM = "Health";
 
-
-    //Audio
     private List<AudioClip> _audioClipList;
-
-    //Component
     private Rigidbody2D _rb;
 
     public void Init(Vector2 direction, float speed)
@@ -37,11 +34,14 @@ public abstract class BulletBase : MonoBehaviour
         _speed = speed;
     }
 
-    protected virtual void Start()
+    private void OnEnable()
     {
-        _rb = GetComponent<Rigidbody2D>();
-        _rb.velocity = _direction * _speed;
-        Destroy(gameObject, _timeLife);
+        if (_rb == null)
+        {
+            _rb = GetComponent<Rigidbody2D>();
+        }
+        StartCoroutine(WaitToNextFrame());
+        StartCoroutine(WaitTimeDestroy(_timeLife));
     }
 
     // Hiệu ứng va chạm
@@ -84,13 +84,29 @@ public abstract class BulletBase : MonoBehaviour
         }
     }
 
-    protected abstract void HandleHitAst(Collider2D other);
+    protected virtual void HandleHitAst(Collider2D other)
+    {
+        CreateEffectHit();
+        PoolManager.Instance.Despawner(gameObject);
+    }    
 
     private void AstHitBullet(Collider2D other)
     {
         var obj = other.GetComponent<Ast>();
         _audioClipList = obj.GetAudioHitBulletList();
         obj?.TakeDameBullet(_damage);
+    }
+
+    private IEnumerator WaitTimeDestroy(float time)
+    {
+        yield return new WaitForSeconds(time);
+        PoolManager.Instance.Despawner(gameObject);
+    }    
+
+    private IEnumerator WaitToNextFrame()
+    {
+        yield return null;
+        _rb.velocity = _direction * _speed;
     }
 
 }

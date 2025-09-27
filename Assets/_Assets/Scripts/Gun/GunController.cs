@@ -131,7 +131,7 @@ public class GunController : MonoBehaviour
     private void SpawnBullet(GameObject prefab, Vector3 pos,  Quaternion rot, Vector3 dir, float speed)
     {
         if(prefab == null) return;
-        GameObject bullet = Instantiate(prefab, pos, rot);
+        GameObject bullet = PoolManager.Instance.Spawner(prefab, pos, rot);
         var ctrl = bullet.GetComponent<BulletBase>();
         ctrl?.Init(dir, speed);
     }
@@ -182,7 +182,7 @@ public class GunController : MonoBehaviour
     private void CreateTrash(GameObject trashPrefab, Transform pointSpawn, Transform pointGun)
     {
         Vector2 dir = (pointSpawn.position - pointGun.position).normalized;
-        GameObject trash = Instantiate(trashPrefab, pointSpawn.position, Quaternion.identity);
+        GameObject trash = PoolManager.Instance.Spawner(trashPrefab, pointSpawn.position, Quaternion.identity);
         var trashInit = trash.GetComponent<TrashGun>();
         if (trashInit != null) trashInit.Init(dir);
     }

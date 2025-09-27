@@ -10,26 +10,28 @@ public class TrashGun : MonoBehaviour
     public float addForceMinToque = 0.05f;
     public float addForceMaxToque = 0.1f;
 
-    public float alphaStart = 1f;
-    public float alphaEnd = 0f;
-
     private float _addForce;
     private float _addForceToque;
     private Vector2 _direction;
     private Rigidbody2D _rb;
     private SpriteRenderer _sprite;
 
+    private void OnEnable()
+    {
+        if (_rb == null)
+        {
+            _rb = GetComponent<Rigidbody2D>();
+            _sprite = GetComponent<SpriteRenderer>();
+        }
+        
+        StartCoroutine(WaitToNextFrame());
+        StartCoroutine(TrashEnd());
+        SetAlpha(1f);
+    }
+
     public void Init(Vector2 direction)
     {
         _direction = direction;
-    }
-
-    private void Start()
-    {
-        _rb = GetComponent<Rigidbody2D>();
-        _sprite = GetComponent<SpriteRenderer>();
-        SetUp();
-        StartCoroutine(TrashEnd());
     }
 
     private void SetUp()
@@ -51,12 +53,12 @@ public class TrashGun : MonoBehaviour
         float time = 0;
         while(time < timeLife)
         {
-            float alpha = Mathf.Lerp(alphaStart, alphaEnd, time/timeLife);
+            float alpha = Mathf.Lerp(1f, 0f, time/timeLife);
             SetAlpha(alpha);
             time += Time.deltaTime;
             yield return null;
         }
-        Destroy(gameObject);
+        PoolManager.Instance.Despawner(gameObject);
     }
 
     private void SetAlpha(float alpha)
@@ -65,5 +67,11 @@ public class TrashGun : MonoBehaviour
         color.a = alpha;
         _sprite.color = color;
     }
+
+    private IEnumerator WaitToNextFrame()
+    {
+        yield return null;
+        SetUp();
+    }    
 
 }
