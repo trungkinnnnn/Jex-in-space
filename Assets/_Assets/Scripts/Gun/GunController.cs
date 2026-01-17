@@ -63,7 +63,7 @@ public class GunController : MonoBehaviour
         _gunStatData = LoadingData.Instance.GetGunStatData();
 
         _paramasters = GunDataReslover.GetParamasters(_gunData, _gunStatData);
-
+       
         _totalbullet = _paramasters.magSize * maxMag;
         _currentMagSizebullet = _paramasters.magSize;
 
@@ -105,6 +105,12 @@ public class GunController : MonoBehaviour
 
         //Event
         OnActionCurrentBullet?.Invoke(_currentMagSizebullet);
+
+        if(_paramasters.currentGun.bulletPrefabs == null)
+        {
+            Debug.Log("Bullet null");
+            yield break;
+        }
 
         SpawnBullet(_paramasters.currentGun?.bulletPrefabs, _pointFireTf.position, 
                     _pointFireTf.rotation, _pointFireTf.right, _paramasters.bulletSpeed);
