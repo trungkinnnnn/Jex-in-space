@@ -1892,7 +1892,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '@ Halfroom Studio products are cloned by @TrungKien'
+  m_text: '@ Halfroom Studio products are cloned by @Hoa Hana'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0588ea9069687344081986bc23dddaf1, type: 2}
   m_sharedMaterial: {fileID: -8338825429954943475, guid: 0588ea9069687344081986bc23dddaf1, type: 2}
