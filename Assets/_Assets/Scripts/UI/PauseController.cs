@@ -100,6 +100,7 @@ public class PauseController : MonoBehaviour
 
     private IEnumerator HandON()
     {
+        _sceen.SetActive(true);
         _buttonResume.SetActive(true);
         
         // ChangePosition
@@ -128,6 +129,8 @@ public class PauseController : MonoBehaviour
         yield return StartCoroutine(MoveHand());
         MatReset(_materialImageBorder, _para_NAME_IntensityX, _paraIntensityStart);
         MatReset(_materialImageBorder, _para_NAME_IntensityY, _paraIntensityStart);
+
+        _sceen.SetActive(false );
     }
 
     private IEnumerator MoveHand()
