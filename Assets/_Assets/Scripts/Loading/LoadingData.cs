@@ -48,6 +48,7 @@ public class LoadingData : MonoBehaviour
         _gunDataClone = Instantiate(_gunData);
         _gunStatDataClone = Instantiate(_gunStatData);
         _achievementsDataClone = Instantiate(_achievementsData);
+        PlayerPrefs.SetInt(DataPlayerPrefs.para_TOTALCOIN, 50000);
     }    
 
     private void LoadDataGun()
